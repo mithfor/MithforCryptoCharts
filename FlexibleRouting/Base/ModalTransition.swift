@@ -5,13 +5,6 @@
 //  Created by Dmitrii Voronin on 13.03.2023.
 //
 
-//
-//  ModalTransition.swift
-//  RoutingExample
-//
-//  Created by Cassius Pacheco on 5/3/20.
-//  Copyright © 2020 Cassius Pacheco. All rights reserved.
-//
 import UIKit
 
 final class ModalTransition: NSObject {
@@ -32,13 +25,13 @@ final class ModalTransition: NSObject {
 extension ModalTransition: Transition {
     
     // MARK: - Transition
-    func open(_ viewController: UIViewController, from: UIViewController, completion: (() -> Void)? = nil) {
+    func open(_ viewController: UIViewController, from: UIViewController) {
         viewController.modalPresentationStyle = modalPresentationStyle
         viewController.modalTransitionStyle = modalTransitionStyle
-        from.present(viewController, animated: isAnimated, completion: completion)
+        from.present(viewController, animated: isAnimated)
     }
 
-    func close(_ viewController: UIViewController, completion: (() -> Void)? = nil) {
-        viewController.dismiss(animated: isAnimated, completion: completion)
+    func close(_ viewController: UIViewController) {
+        viewController.dismiss(animated: isAnimated)
     }
 }

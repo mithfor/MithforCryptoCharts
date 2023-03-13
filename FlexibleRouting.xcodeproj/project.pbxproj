@@ -16,9 +16,15 @@
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
+		88A18CA329BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
+		88A18CA429BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
+		88A18CA529BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
+		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
+		88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
+		88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
 		88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */; };
-		88E25EA329BF7DCE0018C150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA229BF7DCE0018C150 /* ViewController.swift */; };
+		88E25EA329BF7DCE0018C150 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */; };
 		88E25EA629BF7DCE0018C150 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA429BF7DCE0018C150 /* Main.storyboard */; };
 		88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA729BF7DD00018C150 /* Assets.xcassets */; };
 		88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */; };
@@ -47,10 +53,12 @@
 		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		88A18CA229BF925D008015DB /* AssetsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRoute.swift; sourceTree = "<group>"; };
+		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		88E25EA229BF7DCE0018C150 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		88E25EA529BF7DCE0018C150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		88E25EA729BF7DD00018C150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88E25EAA29BF7DD00018C150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -88,13 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88A18C9129BF866E008015DB /* Protocols */ = {
+		88A18C9129BF866E008015DB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				88A18C9529BF86C2008015DB /* DefaultRouter.swift */,
 				88A18C8329BF84D9008015DB /* Routable.swift */,
 				88A18C8A29BF85C8008015DB /* Transition.swift */,
+				88A18CAC29BF9327008015DB /* ModalTransition.swift */,
 			);
-			path = Protocols;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		88E25E9229BF7DCE0018C150 = {
@@ -120,15 +130,15 @@
 		88E25E9D29BF7DCE0018C150 /* FlexibleRouting */ = {
 			isa = PBXGroup;
 			children = (
-				88A18C9129BF866E008015DB /* Protocols */,
+				88A18C9129BF866E008015DB /* Base */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
 				88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */,
-				88E25EA229BF7DCE0018C150 /* ViewController.swift */,
+				88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */,
 				88E25EA429BF7DCE0018C150 /* Main.storyboard */,
 				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
 				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
-				88A18C9529BF86C2008015DB /* DefaultRouter.swift */,
+				88A18CA229BF925D008015DB /* AssetsRoute.swift */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -281,12 +291,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88A18C8B29BF85C8008015DB /* Transition.swift in Sources */,
-				88E25EA329BF7DCE0018C150 /* ViewController.swift in Sources */,
+				88E25EA329BF7DCE0018C150 /* AssetsViewController.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
 				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
+				88A18CA329BF925D008015DB /* AssetsRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88A18CA429BF925D008015DB /* AssetsRoute.swift in Sources */,
 				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
 				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
@@ -305,7 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88A18CA529BF925D008015DB /* AssetsRoute.swift in Sources */,
 				88A18C8D29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */,
 				88A18C8629BF84D9008015DB /* Routable.swift in Sources */,
