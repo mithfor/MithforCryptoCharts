@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A18C8429BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
+		88A18C8529BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
+		88A18C8629BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
+		88A18C8B29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
+		88A18C8C29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
+		88A18C8D29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
+		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
+		88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
+		88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
 		88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */; };
 		88E25EA329BF7DCE0018C150 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA229BF7DCE0018C150 /* ViewController.swift */; };
@@ -35,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88A18C9129BF866E008015DB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				88A18C8329BF84D9008015DB /* Routable.swift */,
+				88A18C8A29BF85C8008015DB /* Transition.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		88E25E9229BF7DCE0018C150 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +120,7 @@
 		88E25E9D29BF7DCE0018C150 /* FlexibleRouting */ = {
 			isa = PBXGroup;
 			children = (
+				88A18C9129BF866E008015DB /* Protocols */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
 				88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */,
 				88E25EA229BF7DCE0018C150 /* ViewController.swift */,
@@ -106,6 +128,7 @@
 				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
 				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
+				88A18C9529BF86C2008015DB /* DefaultRouter.swift */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -258,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18C8B29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EA329BF7DCE0018C150 /* ViewController.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
 				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
+				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +294,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
+				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88A18C8D29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */,
+				88A18C8629BF84D9008015DB /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
