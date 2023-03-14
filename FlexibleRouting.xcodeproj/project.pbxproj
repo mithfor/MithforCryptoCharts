@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
+		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
 		88A18C8429BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
 		88A18C8529BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
 		88A18C8629BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
+		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
 				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
+				8885267529C0BD77006259E8 /* Constants.swift */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */,
+				8885267629C0BD77006259E8 /* Constants.swift in Sources */,
 				88E25EA329BF7DCE0018C150 /* AssetsViewController.swift in Sources */,
 				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
