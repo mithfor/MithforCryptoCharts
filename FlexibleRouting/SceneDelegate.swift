@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let mainRouter = DefaultRouter(rootTransition:  EmptyTransition())
-        let tabs = [mainRouter.makeAssetsTab(), mainRouter.makeWatchlistTab()]
+        let tabs = [mainRouter.makeAssetsTab(), mainRouter.makeWatchlistTab(), mainRouter.makeSettingsTab()]
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
