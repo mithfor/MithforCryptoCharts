@@ -26,9 +26,15 @@ final class AssetsViewController: UIViewController {
     //MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print(#function)
         
+        setupUI()
+    }
+    
+    //MARK: - Setup
+    fileprivate func setupUI() {
         view.backgroundColor = .cyan
+        self.title = Constants.Title.assets
     }
 }
 

@@ -27,7 +27,13 @@ final class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+    }
+    
+    //MARK: - Setup
+    fileprivate func setupUI() {
         view.backgroundColor = .yellow
+        self.title = Constants.Title.settings
     }
 }
 

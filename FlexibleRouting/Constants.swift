@@ -7,8 +7,23 @@
 
 import Foundation
 
-struct TitlesConstants {
-    static let assets = "Assets"
-    static let watchlist = "Watchlist"
-    static let settings = "Settings"
+struct Constants {
+
+    struct Title {
+        static let assets = "Assets"
+        static let watchlist = "Watchlist"
+        static let settings = "Settings"
+    }
+    
+    struct Icon {
+        static let watchlist = "heart"
+        static let search = "magnifyingglass"
+        static let details = "chevron.right"
+    }
+    
+    struct IconFill {
+        static let assets = "bitcoinsign.circle.fill"
+        static let watchlist = "heart.fill"
+        static let settings = "gearshape.fill"
+    }
 }

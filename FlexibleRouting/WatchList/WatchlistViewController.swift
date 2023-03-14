@@ -28,7 +28,14 @@ final class WatchlistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
+    }
+    
+    //MARK: - Setup
+    fileprivate func setupUI() {
         view.backgroundColor = .systemPink
+        self.title = Constants.Title.watchlist
     }
 }
 
