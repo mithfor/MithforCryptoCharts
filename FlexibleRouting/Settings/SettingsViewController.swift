@@ -34,6 +34,7 @@ final class SettingsViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .yellow
         self.title = Constants.Title.settings
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 

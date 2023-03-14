@@ -35,6 +35,7 @@ final class AssetsViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .cyan
         self.title = Constants.Title.assets
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 

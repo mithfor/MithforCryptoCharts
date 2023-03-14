@@ -36,6 +36,7 @@ final class WatchlistViewController: UIViewController {
     fileprivate func setupUI() {
         view.backgroundColor = .systemPink
         self.title = Constants.Title.watchlist
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
