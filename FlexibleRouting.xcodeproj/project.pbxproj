@@ -16,13 +16,20 @@
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
-		88A18CA329BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
-		88A18CA429BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
-		88A18CA529BF925D008015DB /* AssetsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CA229BF925D008015DB /* AssetsRoute.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
+		88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48429C090EA000572FF /* MainTabBarController.swift */; };
+		88E1E48A29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
+		88E1E48B29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
+		88E1E48C29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
+		88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
+		88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
+		88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
+		88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
+		88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
+		88E1E4AE29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
 		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
 		88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */; };
 		88E25EA329BF7DCE0018C150 /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */; };
@@ -53,9 +60,12 @@
 		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
-		88A18CA229BF925D008015DB /* AssetsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRoute.swift; sourceTree = "<group>"; };
 		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		88E1E48429C090EA000572FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		88E1E48929C09238000572FF /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTabRoute.swift; sourceTree = "<group>"; };
+		88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTabRoute.swift; sourceTree = "<group>"; };
 		88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +126,24 @@
 			path = Transitions;
 			sourceTree = "<group>";
 		};
+		88E1E49029C0A9A2000572FF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */,
+				88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		88E1E49729C0A9B1000572FF /* WatchList */ = {
+			isa = PBXGroup;
+			children = (
+				88E1E48929C09238000572FF /* WatchlistViewController.swift */,
+				88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */,
+			);
+			path = WatchList;
+			sourceTree = "<group>";
+		};
 		88E25E9229BF7DCE0018C150 = {
 			isa = PBXGroup;
 			children = (
@@ -142,11 +170,12 @@
 				88A18C9129BF866E008015DB /* Base */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
 				88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */,
-				88E25EA229BF7DCE0018C150 /* AssetsViewController.swift */,
+				88E1E49729C0A9B1000572FF /* WatchList */,
+				88E1E49029C0A9A2000572FF /* Assets */,
+				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
 				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
 				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
-				88A18CA229BF925D008015DB /* AssetsRoute.swift */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -300,13 +329,16 @@
 			files = (
 				88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88A18C8B29BF85C8008015DB /* Transition.swift in Sources */,
+				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				88E25EA329BF7DCE0018C150 /* AssetsViewController.swift in Sources */,
+				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
+				88E1E48A29C09238000572FF /* WatchlistViewController.swift in Sources */,
 				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
-				88A18CA329BF925D008015DB /* AssetsRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */,
+				88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88A18CA429BF925D008015DB /* AssetsRoute.swift in Sources */,
+				88E1E48B29C09238000572FF /* WatchlistViewController.swift in Sources */,
+				88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
 				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
@@ -328,8 +362,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */,
+				88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88A18CA529BF925D008015DB /* AssetsRoute.swift in Sources */,
+				88E1E48C29C09238000572FF /* WatchlistViewController.swift in Sources */,
+				88E1E4AE29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8D29BF85C8008015DB /* Transition.swift in Sources */,
 				88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */,
 				88A18C8629BF84D9008015DB /* Routable.swift in Sources */,
