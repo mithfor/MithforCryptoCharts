@@ -10,9 +10,9 @@ import Foundation
 struct Constants {
 
     struct Title {
-        static let assets = "Assets"
-        static let watchlist = "Watchlist"
-        static let settings = "Settings"
+        static let assets = "Assets".localized()
+        static let watchlist = "Watchlist".localized()
+        static let settings = "Settings".localized()
     }
     
     struct Icon {
