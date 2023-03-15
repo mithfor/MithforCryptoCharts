@@ -171,7 +171,8 @@ extension AssetsViewController: UITableViewDelegate {
 //MARK: - AssetsTableViewCellDelegate
 extension AssetsViewController: AssetsTableViewCellDelegate {
     func details(of asset: Asset) {
-        
+        print("AssetsViewController: \(#function)")
+        viewModel?.viewAssetTapped()
 //        let vc = AssetDetailsConfigurator.configured( AssetDetailsViewController(asset: asset))
 //        navigationController?.pushViewController(vc, animated: true)
     }

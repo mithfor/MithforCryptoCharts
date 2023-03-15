@@ -1,13 +1,22 @@
 //
-//  String+Ext.swift
-//  devoronin-swift-test
+//  Extension + String.swift
+//  FlexibleRouting
 //
-//  Created by Dmitrii Voronin on 27.02.2023.
+//  Created by Dmitrii Voronin on 14.03.2023.
 //
 
 import Foundation
 
 extension String {
+    
+    func localized() -> String {
+        NSLocalizedString(self,
+                          tableName: "Localizable",
+                          bundle: .main,
+                          value: self,
+                          comment: self)
+    }
+    
     func decimalPlaces(equalsTo: Int) -> String {
         guard let str = Double(self) else {
             return self
