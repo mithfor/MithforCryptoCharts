@@ -95,7 +95,7 @@ class ChartRenderer: LineChartRenderer {
                                                 x: point.x,
                                                 y: point.y ),
                                              align: .center,
-                                             attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: Constants.Color.Asset.priceUSD])
+                                             attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.priceUSD])
                         }
                     }
                 }

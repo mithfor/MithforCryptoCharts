@@ -43,7 +43,7 @@ final class AssetDetailsView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 64, weight: .thin)
-        label.textColor = Constants.Color.Asset.name
+        label.textColor = Constants.Colors.Asset.name
         label.translatesAutoresizingMaskIntoConstraints =  false
         return label
     }()
@@ -80,7 +80,7 @@ final class AssetDetailsView: UIView {
         stack.leftLabel.text = "Market Cap"
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Color.Asset.priceUSD
+        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
         return stack
     }()
     
@@ -89,7 +89,7 @@ final class AssetDetailsView: UIView {
         stack.leftLabel.text = "Supply"
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Color.Asset.priceUSD
+        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
         return stack
     }()
     
@@ -98,7 +98,7 @@ final class AssetDetailsView: UIView {
         stack.leftLabel.text = "Volume (24h)"
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Color.Asset.priceUSD
+        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
         return stack
     }()
     
