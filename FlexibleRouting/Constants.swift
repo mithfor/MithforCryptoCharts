@@ -51,4 +51,8 @@ struct Constants {
             static let priceUSD: UIColor = UIColor(red: 0.24, green: 0.24, blue: 0.26, alpha: 0.60)
         }
     }
+    
+    struct Network {
+        static let title = "Network error".localized()
+    }
 }

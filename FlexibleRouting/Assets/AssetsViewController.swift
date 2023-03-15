@@ -180,7 +180,7 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: "NetworkError", message: error.rawValue, buttonTitle: "OK")
+        presentAlertOnMainThread(title: Constants.Network.title, message: error.rawValue, buttonTitle: "OK")
     }
     
     
