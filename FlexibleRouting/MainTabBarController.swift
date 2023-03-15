@@ -26,11 +26,17 @@ enum Tabs {
     var item: UITabBarItem {
         switch self {
         case .assets:
-            return UITabBarItem(title: Constants.Title.assets, image: UIImage(systemName:  Constants.IconFill.assets), tag: index)
+            return UITabBarItem(title: Constants.Strings.Title.assets,
+                                image: UIImage(systemName:  Constants.Strings.IconFill.assets),
+                                tag: index)
         case .watchlist:
-            return UITabBarItem(title: Constants.Title.watchlist, image: UIImage(systemName: Constants.IconFill.watchlist), tag: index)
+            return UITabBarItem(title: Constants.Strings.Title.watchlist,
+                                image: UIImage(systemName: Constants.Strings.IconFill.watchlist),
+                                tag: index)
         case .settings:
-            return UITabBarItem(title: Constants.Title.settings, image: UIImage(systemName: Constants.IconFill.settings), tag: index)
+            return UITabBarItem(title: Constants.Strings.Title.settings,
+                                image: UIImage(systemName: Constants.Strings.IconFill.settings),
+                                tag: index)
         }
     }
 }

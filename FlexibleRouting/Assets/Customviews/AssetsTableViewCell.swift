@@ -25,7 +25,7 @@ class AssetsTableViewCell: UITableViewCell {
     
     private var assetDetailsButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: Constants.Icon.details),
+        button.setImage(UIImage(systemName: Constants.Strings.Icon.details),
                         for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -44,7 +44,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
-        label.textColor = Constants.Color.Asset.symbol
+        label.textColor = Constants.Colors.Asset.symbol
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +53,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = Constants.Color.Asset.name
+        label.textColor = Constants.Colors.Asset.name
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -62,7 +62,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 22, weight: .regular)
-        label.textColor = Constants.Color.Asset.priceUSD
+        label.textColor = Constants.Colors.Asset.priceUSD
         label.translatesAutoresizingMaskIntoConstraints =  false
         return label
     }()
@@ -71,7 +71,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = ChangePercent24HrLabel()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        label.textColor = Constants.Color.Asset.changePercent24HrPositive
+        label.textColor = Constants.Colors.Asset.changePercent24HrPositive
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

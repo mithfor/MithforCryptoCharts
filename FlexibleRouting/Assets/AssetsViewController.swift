@@ -44,7 +44,7 @@ class AssetsViewController: UIViewController {
        let tableView = AssetsTableView()
         tableView.register(AssetsTableViewCell.self,
                            forCellReuseIdentifier: AssetsTableViewCell.identifier)
-        tableView.backgroundColor = Constants.Color.mainBackground
+        tableView.backgroundColor = Constants.Colors.mainBackground
         
         return tableView
     }()
@@ -84,7 +84,7 @@ class AssetsViewController: UIViewController {
     // MARK: - Private methods
     private func setupUI() {
         
-        self.title = Constants.Title.assets
+        self.title = Constants.Strings.Title.assets
         
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
@@ -180,7 +180,9 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.Network.title, message: error.rawValue, buttonTitle: "OK")
+        presentAlertOnMainThread(title: Constants.Strings.Network.title,
+                                 message: error.rawValue,
+                                 buttonTitle: Constants.Strings.Common.ok)
     }
     
     
@@ -188,20 +190,26 @@ extension AssetsViewController: AssetsPresenterOutput {
         self.assets = assets
         self.filteredAssets = assets
         
-        let group = DispatchGroup()
+        let queue = DispatchQueue(label: "ImageFetchQueue",
+                                  qos: .default,
+                                  attributes: .concurrent)
         
-        self.assets?.forEach { [weak self] asset in
-            group.enter()
-            self?.interactor?.fetchImageFor(asset: asset) {  [weak self] (assetIcon) in
-                self?.assetWithImage[asset] = assetIcon.image
-                group.leave()
+        queue.async {
+            let group = DispatchGroup()
+            
+            //TODO: - Move to Interactor!
+            self.assets?.forEach { [weak self] asset in
+                group.enter()
+                self?.interactor?.fetchImageFor(asset: asset) {  [weak self] assetIcon in
+                    self?.assetWithImage[asset] = assetIcon.image
+                    group.leave()
+                }
+            }
+            
+            group.notify(queue: .main) {
+                self.assetsTableView.reloadData()
             }
         }
-        
-        group.notify(queue: .main) {
-            self.assetsTableView.reloadData()
-        }
-        
     }
 }
 

@@ -20,7 +20,7 @@ extension WatchlistTabRoute where Self: Router {
         
         let navigation = UINavigationController(rootViewController: viewController)
         navigation.tabBarItem = Tabs.watchlist.item
-        navigation.tabBarItem.title = Constants.Title.watchlist
+        navigation.tabBarItem.title = Constants.Strings.Title.watchlist
         return navigation
     }
     

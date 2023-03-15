@@ -25,9 +25,6 @@
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
 		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
 		88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48429C090EA000572FF /* MainTabBarController.swift */; };
-		88E1E48A29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
-		88E1E48B29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
-		88E1E48C29C09238000572FF /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48929C09238000572FF /* WatchlistViewController.swift */; };
 		88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
 		88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
 		88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
@@ -60,6 +57,21 @@
 		88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */; };
 		88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2529C2073D00719E0E /* SearchTextField.swift */; };
 		88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2629C2073D00719E0E /* PaddingLabel.swift */; };
+		88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
+		88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
+		88E31B7F29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
+		88E31B8029C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
+		88E31B8129C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
+		88E31B8229C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
+		88E31B8329C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
+		88E31B8429C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
+		88E31B8529C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
+		88E31B8629C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
+		88E31B8729C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
+		88E31B8829C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
+		88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
+		88E31B8A29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
+		88E31B8B29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +103,6 @@
 		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		88E1E48429C090EA000572FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		88E1E48929C09238000572FF /* WatchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
 		88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTabRoute.swift; sourceTree = "<group>"; };
 		88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTabRoute.swift; sourceTree = "<group>"; };
 		88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +135,11 @@
 		88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePercent24HrLabel.swift; sourceTree = "<group>"; };
 		88E31B2529C2073D00719E0E /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		88E31B2629C2073D00719E0E /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		88E31B7729C21C6100719E0E /* WatchlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
+		88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistConfigurator.swift; sourceTree = "<group>"; };
+		88E31B7B29C21C6100719E0E /* WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
+		88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +212,11 @@
 		88E1E49729C0A9B1000572FF /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
-				88E1E48929C09238000572FF /* WatchlistViewController.swift */,
+				88E31B7729C21C6100719E0E /* WatchlistViewController.swift */,
+				88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */,
+				88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */,
+				88E31B7A29C21C6100719E0E /* Models */,
+				88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */,
 				88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */,
 			);
 			path = WatchList;
@@ -275,17 +295,10 @@
 		88E31AC629C2035C00719E0E /* CryptoTest */ = {
 			isa = PBXGroup;
 			children = (
+				88E31B7629C21C6100719E0E /* Watchlist */,
 				88E31AFC29C204CA00719E0E /* Managers */,
-				88E31AE629C2047F00719E0E /* Assets */,
 			);
 			path = CryptoTest;
-			sourceTree = "<group>";
-		};
-		88E31AE629C2047F00719E0E /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Assets;
 			sourceTree = "<group>";
 		};
 		88E31AE929C2047F00719E0E /* Models */ = {
@@ -334,6 +347,21 @@
 				88E31B2629C2073D00719E0E /* PaddingLabel.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		88E31B7629C21C6100719E0E /* Watchlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Watchlist;
+			sourceTree = "<group>";
+		};
+		88E31B7A29C21C6100719E0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E31B7B29C21C6100719E0E /* WatchList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,12 +495,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88E31B8329C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
+				88E31B8029C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
 				88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88A18C8B29BF85C8008015DB /* Transition.swift in Sources */,
 				88E31AF829C2047F00719E0E /* AssetsTableViewCell.swift in Sources */,
+				88E31B8629C21C6100719E0E /* WatchList.swift in Sources */,
 				88E31AF629C2047F00719E0E /* AssetsTableView.swift in Sources */,
 				88E31B1629C2066B00719E0E /* UILabel+Ext.swift in Sources */,
 				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
+				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E31B1729C2066B00719E0E /* String+Ext.swift in Sources */,
@@ -487,8 +519,8 @@
 				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
 				88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */,
-				88E1E48A29C09238000572FF /* WatchlistViewController.swift in Sources */,
 				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,
+				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
 				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
 				88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */,
 				88E31B1929C2066B00719E0E /* UIView+Ext.swift in Sources */,
@@ -509,10 +541,14 @@
 				88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88E1E48B29C09238000572FF /* WatchlistViewController.swift in Sources */,
+				88E31B8129C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
+				88E31B8A29C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
+				88E31B8429C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
 				88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
+				88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
+				88E31B8729C21C6100719E0E /* WatchList.swift in Sources */,
 				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
 				88E1E4BA29C0B6AE000572FF /* SettingsViewController.swift in Sources */,
 			);
@@ -525,10 +561,14 @@
 				88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */,
 				88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88E1E48C29C09238000572FF /* WatchlistViewController.swift in Sources */,
+				88E31B8229C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
+				88E31B8B29C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
+				88E31B8529C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
 				88E1E4AE29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8D29BF85C8008015DB /* Transition.swift in Sources */,
+				88E31B7F29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */,
+				88E31B8829C21C6100719E0E /* WatchList.swift in Sources */,
 				88A18C8629BF84D9008015DB /* Routable.swift in Sources */,
 				88E1E4BB29C0B6AE000572FF /* SettingsViewController.swift in Sources */,
 			);
