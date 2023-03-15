@@ -50,10 +50,9 @@
 		88E31B0029C204CA00719E0E /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFD29C204CA00719E0E /* IconManager.swift */; };
 		88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFE29C204CA00719E0E /* NetworkManager.swift */; };
 		88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFF29C204CA00719E0E /* DatabaseManager.swift */; };
-		88E31B1629C2066B00719E0E /* UILabel+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1229C2066B00719E0E /* UILabel+Ext.swift */; };
-		88E31B1729C2066B00719E0E /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1329C2066B00719E0E /* String+Ext.swift */; };
-		88E31B1829C2066B00719E0E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1429C2066B00719E0E /* UIViewController+Ext.swift */; };
-		88E31B1929C2066B00719E0E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1529C2066B00719E0E /* UIView+Ext.swift */; };
+		88E31B1629C2066B00719E0E /* Extenision + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */; };
+		88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */; };
+		88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1529C2066B00719E0E /* Extension + UIView.swift */; };
 		88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */; };
 		88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2529C2073D00719E0E /* SearchTextField.swift */; };
 		88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2629C2073D00719E0E /* PaddingLabel.swift */; };
@@ -128,10 +127,9 @@
 		88E31AFD29C204CA00719E0E /* IconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
 		88E31AFE29C204CA00719E0E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		88E31AFF29C204CA00719E0E /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		88E31B1229C2066B00719E0E /* UILabel+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Ext.swift"; sourceTree = "<group>"; };
-		88E31B1329C2066B00719E0E /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		88E31B1429C2066B00719E0E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
-		88E31B1529C2066B00719E0E /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extenision + UILabel.swift"; sourceTree = "<group>"; };
+		88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		88E31B1529C2066B00719E0E /* Extension + UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePercent24HrLabel.swift; sourceTree = "<group>"; };
 		88E31B2529C2073D00719E0E /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		88E31B2629C2073D00719E0E /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -167,6 +165,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		881FDEA829C22D4C0057AAB2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				88E1E49029C0A9A2000572FF /* Assets */,
+				88E1E4C229C0B6B3000572FF /* Settings */,
+				88E1E49729C0A9B1000572FF /* WatchList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		881FDEAF29C22E2F0057AAB2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8885267529C0BD77006259E8 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		881FDEBC29C22EF10057AAB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
+				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
+				88E25EAC29BF7DD00018C150 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		88A18C9129BF866E008015DB /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,14 +201,6 @@
 				88E1E47829C08EB8000572FF /* Transitions */,
 			);
 			path = Routing;
-			sourceTree = "<group>";
-		};
-		88DF5F9D29C0F8E900C47453 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				88DF5F9829C0F78300C47453 /* Extension + String.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		88E1E47829C08EB8000572FF /* Transitions */ = {
@@ -254,21 +272,17 @@
 		88E25E9D29BF7DCE0018C150 /* FlexibleRouting */ = {
 			isa = PBXGroup;
 			children = (
-				88E1E49029C0A9A2000572FF /* Assets */,
+				881FDEAF29C22E2F0057AAB2 /* Constants */,
+				88E31AC629C2035C00719E0E /* CryptoTest */,
 				88E31B2029C2073D00719E0E /* CustomViews */,
 				88E31B1129C2066B00719E0E /* Extensions */,
-				88E31AC629C2035C00719E0E /* CryptoTest */,
-				88DF5F9D29C0F8E900C47453 /* Extension */,
+				88E31AFC29C204CA00719E0E /* Managers */,
 				88A18C9129BF866E008015DB /* Routing */,
+				881FDEA829C22D4C0057AAB2 /* Scenes */,
+				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
 				88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */,
-				88E1E4C229C0B6B3000572FF /* Settings */,
-				88E1E49729C0A9B1000572FF /* WatchList */,
 				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
-				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
-				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
-				88E25EAC29BF7DD00018C150 /* Info.plist */,
-				8885267529C0BD77006259E8 /* Constants.swift */,
 				88DF5FA829C0F9FB00C47453 /* Localizable.strings */,
 			);
 			path = FlexibleRouting;
@@ -295,8 +309,6 @@
 		88E31AC629C2035C00719E0E /* CryptoTest */ = {
 			isa = PBXGroup;
 			children = (
-				88E31B7629C21C6100719E0E /* Watchlist */,
-				88E31AFC29C204CA00719E0E /* Managers */,
 			);
 			path = CryptoTest;
 			sourceTree = "<group>";
@@ -331,10 +343,10 @@
 		88E31B1129C2066B00719E0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				88E31B1229C2066B00719E0E /* UILabel+Ext.swift */,
-				88E31B1329C2066B00719E0E /* String+Ext.swift */,
-				88E31B1429C2066B00719E0E /* UIViewController+Ext.swift */,
-				88E31B1529C2066B00719E0E /* UIView+Ext.swift */,
+				88DF5F9829C0F78300C47453 /* Extension + String.swift */,
+				88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */,
+				88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */,
+				88E31B1529C2066B00719E0E /* Extension + UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,13 +359,6 @@
 				88E31B2629C2073D00719E0E /* PaddingLabel.swift */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		88E31B7629C21C6100719E0E /* Watchlist */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Watchlist;
 			sourceTree = "<group>";
 		};
 		88E31B7A29C21C6100719E0E /* Models */ = {
@@ -502,17 +507,16 @@
 				88E31AF829C2047F00719E0E /* AssetsTableViewCell.swift in Sources */,
 				88E31B8629C21C6100719E0E /* WatchList.swift in Sources */,
 				88E31AF629C2047F00719E0E /* AssetsTableView.swift in Sources */,
-				88E31B1629C2066B00719E0E /* UILabel+Ext.swift in Sources */,
+				88E31B1629C2066B00719E0E /* Extenision + UILabel.swift in Sources */,
 				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
-				88E31B1729C2066B00719E0E /* String+Ext.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */,
 				8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */,
 				88E31AF429C2047F00719E0E /* AssetsInteractor.swift in Sources */,
-				88E31B1829C2066B00719E0E /* UIViewController+Ext.swift in Sources */,
+				88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */,
 				88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */,
 				8885267629C0BD77006259E8 /* Constants.swift in Sources */,
 				88E31AF329C2047F00719E0E /* Asset.swift in Sources */,
@@ -523,7 +527,7 @@
 				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
 				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
 				88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */,
-				88E31B1929C2066B00719E0E /* UIView+Ext.swift in Sources */,
+				88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */,
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
 				88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */,
 				88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */,
