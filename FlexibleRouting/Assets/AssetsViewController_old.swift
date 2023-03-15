@@ -1,5 +1,5 @@
 //
-//  AssetsViewController.swift
+//  AssetsViewController_old.swift
 //  FlexibleRouting
 //
 //  Created by Dmitrii Voronin on 13.03.2023.
@@ -8,7 +8,7 @@
 import UIKit
 
 //MARK: - AssetsViewController
-final class AssetsViewController: UIViewController {
+final class AssetsViewController_old: UIViewController {
     
     private var viewModel: AssetsViewModel?
     

@@ -15,7 +15,8 @@ extension AssetsTabRoute where Self: Router {
     func makeAssetsTab() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = AssetsViewModel(router: router)
-        let viewController = AssetsViewController(viewModel: model)
+        //let viewController = AssetsViewController_old(viewModel: model)
+        let viewController = AssetsConfigurator.configured(AssetsViewController(viewModel: model))
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
