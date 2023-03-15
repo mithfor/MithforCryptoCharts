@@ -84,6 +84,8 @@ class AssetsViewController: UIViewController {
     // MARK: - Private methods
     private func setupUI() {
         
+        self.title = Constants.Title.assets
+        
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
         
@@ -226,6 +228,21 @@ extension AssetsViewController: UISearchBarDelegate {
         assetsTableView.reloadData()
     }
 }
+
+//MARK: - AssetsViewModel
+final class AssetsViewModel {
+    typealias Routes = AssetsTabRoute
+    private let router: Routes
+    
+    init(router: Routes) {
+        self.router = router
+    }
+    
+    func viewAssetTapped() {
+        print("AssetsViewModel: \(#function)")
+    }
+}
+
 
 
 //struct ViewControllerProvider: PreviewProvider {

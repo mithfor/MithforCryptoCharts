@@ -29,7 +29,6 @@ final class DatabaseManager {
     func updateWatchList(asset: Asset) {
         var assets = load()
         
-        
         assets.insert(asset)
         save(assets: assets)
     }

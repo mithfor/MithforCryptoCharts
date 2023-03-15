@@ -12,13 +12,14 @@ protocol IconManagable {
 }
 
 class IconManager: IconManagable {
-    func fetchIconFor(asset: Asset) -> AssetIcon {
-        AssetIcon(image: (UIImage(named: asset.symbol?.lowercased() ?? "usd") ?? UIImage(named: "usd")) ?? UIImage())
-    }
     
     static let shared = IconManager()
     
     private init() {}
+    
+    func fetchIconFor(asset: Asset) -> AssetIcon {
+        AssetIcon(image: (UIImage(named: asset.symbol?.lowercased() ?? "usd") ?? UIImage(named: "usd")) ?? UIImage())
+    }
 }
 
 struct AssetIcon {
