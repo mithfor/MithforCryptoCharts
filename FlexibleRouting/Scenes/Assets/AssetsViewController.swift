@@ -172,7 +172,7 @@ extension AssetsViewController: UITableViewDelegate {
 extension AssetsViewController: AssetsTableViewCellDelegate {
     func details(of asset: Asset) {
         print("AssetsViewController: \(#function)")
-        viewModel?.viewAssetTapped()
+        viewModel?.assetDetailsTapped(asset: asset)
 //        let vc = AssetDetailsConfigurator.configured( AssetDetailsViewController(asset: asset))
 //        navigationController?.pushViewController(vc, animated: true)
     }
@@ -247,8 +247,10 @@ final class AssetsViewModel {
         self.router = router
     }
     
-    func viewAssetTapped() {
-        print("AssetsViewModel: \(#function)")
+    // TODO: - Protocol?
+    func assetDetailsTapped(asset: Asset) {
+        print("AssetsViewModel: \(#function). Asset: \(asset)")
+        
     }
 }
 
