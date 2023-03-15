@@ -15,10 +15,11 @@ struct Constants {
             static let error = "Error".localized()
             static let cancel = "Cancel".localized()
         }
-        struct Network {
-            static let title = "Network error".localized()
+        struct Error {
+            struct Network {
+                static let title = "Network error".localized()
+            }
         }
-        
         struct Title {
             static let assets = "Assets".localized()
             static let watchlist = "Watchlist".localized()

@@ -15,6 +15,7 @@ extension AssetDetailsRoute where Self: Router {
     func openAssetDetails() {
         let push = PushTransition()
         let router = DefaultRouter(rootTransition: push)
+//        let viewModel = AssetD
         
     }
 }

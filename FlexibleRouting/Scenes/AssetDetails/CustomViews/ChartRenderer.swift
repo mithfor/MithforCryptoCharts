@@ -77,7 +77,6 @@ class ChartRenderer: LineChartRenderer {
 
                     if dataSet.isDrawValuesEnabled
                     {
-                        // In this part we draw min and max values
                         var textValue: String?
                         if entry.y == maxValue {
                             point.y -= yOffset

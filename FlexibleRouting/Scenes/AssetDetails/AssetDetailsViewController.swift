@@ -120,7 +120,7 @@ final class AssetDetailsViewController: UIViewController {
     
     
     //MARK: - ACTIONS
-    // TODO: - move logic to interactor
+    // TODO: - move logic to interactor (if it is allready in)
     @objc func didTapAddToWatchList() {
         
         var imageName = ""
@@ -161,6 +161,21 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: "NetworkError", message: error.rawValue, buttonTitle: "OK")
+        print(#function)
+        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title, message: error.rawValue, buttonTitle: Constants.Strings.Common.ok)
+    }
+}
+
+//MARK: - AssetDetailsViewModel
+final class AssetDetailsViewModel {
+    typealias Routes = AssetDetailsRoute
+    private var router: Routes
+    
+    init(router: Routes) {
+        self.router = router
+    }
+    
+    func watchListTapped(asset: Asset) {
+        print(#function)
     }
 }

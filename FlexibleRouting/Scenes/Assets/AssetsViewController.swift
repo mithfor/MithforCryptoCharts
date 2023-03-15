@@ -112,9 +112,9 @@ class AssetsViewController: UIViewController {
         
        interactor?.fetchAssets()
 
-       // TODO: - replace with CFRunLoopPerformBlock
+        // TODO: - replace with CFRunLoopPerformBlock
         
-//        CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
+        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
         DispatchQueue.main.async {
           self.searchController.searchBar.text = ""
             
@@ -181,7 +181,7 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.Strings.Network.title,
+        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title,
                                  message: error.rawValue,
                                  buttonTitle: Constants.Strings.Common.ok)
     }
