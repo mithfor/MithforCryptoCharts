@@ -359,7 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				881FDEAF29C22E2F0057AAB2 /* Constants */,
-				88E31AC629C2035C00719E0E /* CryptoTest */,
 				88E31B2029C2073D00719E0E /* CustomViews */,
 				88E31B1129C2066B00719E0E /* Extensions */,
 				88E31AFC29C204CA00719E0E /* Managers */,
@@ -391,13 +390,6 @@
 				88E25EC229BF7DD00018C150 /* Info.plist */,
 			);
 			path = FlexibleRoutingUITests;
-			sourceTree = "<group>";
-		};
-		88E31AC629C2035C00719E0E /* CryptoTest */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CryptoTest;
 			sourceTree = "<group>";
 		};
 		88E31AE929C2047F00719E0E /* Models */ = {

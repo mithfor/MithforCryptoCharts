@@ -12,7 +12,7 @@ typealias AssetsInteractorInput = AssetsViewControllerOutput
 
 protocol AssetsInteractorOutput: AnyObject {
     func fetched(assets: Assets)
-    func fetched(_ assetIcon: AssetIcon, completion: @escaping ((AssetIcon) -> ()))
+    func fetched(assetIcon: AssetIcon, for asset: Asset)
     func fetchFailure(error: NetworkError)
 }
 
@@ -24,21 +24,32 @@ final class AssetsInteractor {
 
 extension AssetsInteractor: AssetsInteractorInput {
     
-    func fetchImageFor(asset: Asset, completion: @escaping (AssetIcon) -> ()){
-
-        let assetIcon = IconManager.shared.fetchIconFor(asset: asset)
-        
-        self.presenter?.fetched(assetIcon, completion: completion)
+    func fetchImageFor(asset: Asset, completion: @escaping () -> ()){
+        let queue = DispatchQueue(label: "IconQueue", qos: .default, attributes: .concurrent)
+        queue.async {
+            IconManager.shared.fetchIconFor(asset) { [weak self] (result) in
+                
+                switch result {
+                case .success(let icon):
+                    self?.presenter?.fetched(assetIcon: icon, for: asset)
+                case .failure(let error):
+                    self?.presenter?.fetchFailure(error: error)
+                }
+            }
+        }
     }
     
     func fetchAssets() {
-        NetworkManager.shared.fetchAssets(page: 1) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.assets = response.data
-                self?.presenter?.fetched(assets: self?.assets ?? Assets())
-            case .failure(let error):
-                self?.presenter?.fetchFailure(error: error)
+        DispatchQueue.global().async {
+            
+            NetworkManager.shared.fetchAssets(page: 1) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.assets = response.data
+                    self?.presenter?.fetched(assets: self?.assets ?? Assets())
+                case .failure(let error):
+                    self?.presenter?.fetchFailure(error: error)
+                }
             }
         }
     }

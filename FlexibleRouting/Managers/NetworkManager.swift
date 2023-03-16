@@ -40,8 +40,8 @@ class NetworkManager {
     
     func fetchAssetHistory(id: String, completed: @escaping AssetHistoryHandler) {
 
-    let endpoint = String("\(baseURL)assets/\(id)/history?interval=m30")
-
+        let endpoint = String("\(baseURL)assets/\(id)/history?interval=m30")
+        
         guard let url = URL(string: endpoint) else {
             completed(.failure(.endpoint))
             return

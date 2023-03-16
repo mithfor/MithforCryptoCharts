@@ -15,8 +15,10 @@ final class AssetsPresenter {
 }
 
 extension AssetsPresenter: AssetsPresenterInput {
-    func fetched(_ assetIcon: AssetIcon, completion: (AssetIcon) -> ()) {
-        completion(assetIcon)
+
+    
+    func fetched(assetIcon: AssetIcon, for asset: Asset) {
+        viewController?.updateAsset(asset, with: assetIcon)
     }
     
     func fetchFailure(error: NetworkError) {
@@ -24,6 +26,6 @@ extension AssetsPresenter: AssetsPresenterInput {
     }
     
     func fetched(assets: Assets) {
-        viewController?.updateAssets(assets: assets)
+        viewController?.updateAssets(assets)
     }
 }

@@ -8,17 +8,20 @@
 import UIKit
 //import SwiftUI
 
-typealias AssetsWithImages = [Asset: UIImage]
+typealias AssetId = String
 typealias AssetImage = UIImage
 
+typealias AssetModel = [AssetId: AssetImage]
+
 protocol AssetsViewControllerInput: AnyObject {
-    func updateAssets(assets: Assets)
+    func updateAssets(_ assets: Assets)
+    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon)
     func updateFailed(with error: NetworkError)
 }
 
 protocol AssetsViewControllerOutput: AnyObject {
     func fetchAssets()
-    func fetchImageFor(asset: Asset, completion: @escaping (AssetIcon) -> ())
+    func fetchImageFor(asset: Asset, completion: @escaping () -> ())
 }
 
 enum ActionState {
@@ -29,15 +32,21 @@ enum ActionState {
 //MARK: - AssetsViewController
 
 
+struct AssetWithImage {
+    let asset = Asset()
+    let image: UIImage
+}
+
 class AssetsViewController: UIViewController {
     
     private var viewModel: AssetsViewModel?
     
     var interactor: AssetsInteractorInput?
     
+    private var currentAsset: Asset?
     private var assets: Assets?
-    private var filteredAssets = Assets()
-    private var assetWithImage = AssetsWithImages()
+    private var filteredAssets: Assets = []
+    private var assetModel: AssetModel = [:]
     private var searching: ActionState = .inactive
     
     let assetsTableView: AssetsTableView = {
@@ -145,11 +154,11 @@ extension AssetsViewController: UITableViewDataSource {
             case .inactive:
                 cell.configureWith(delegate: self,
                                    and:  assets[indexPath.row],
-                                   image: assetWithImage[assets[indexPath.row]])
+                                   image: assetModel[assets[indexPath.row].id ?? "bitcoin"])
             case .active:
                 cell.configureWith(delegate: self,
                                    and:  filteredAssets[indexPath.row],
-                                   image: assetWithImage[filteredAssets[indexPath.row]])
+                                   image: assetModel[filteredAssets[indexPath.row].id ?? "bitcoin"])
             }
 
             return cell
@@ -175,6 +184,22 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
+    
+    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon) {
+        print(#function)
+        print(asset.id as Any)
+        if let id = asset.id {
+            assetModel[id] = assetIcon.image
+        }
+        
+        print(assetModel)
+        DispatchQueue.main.async {
+            self.assetsTableView.reloadData()
+        }
+        
+        
+    }
+    
     func updateFailed(with error: NetworkError) {
         presentAlertOnMainThread(title: Constants.Strings.Error.Network.title,
                                  message: error.rawValue,
@@ -182,29 +207,26 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     
-    func updateAssets(assets: Assets) {
+    func updateAssets(_ assets: Assets) {
+        
+        print(#function)
         self.assets = assets
         self.filteredAssets = assets
         
-        let queue = DispatchQueue(label: "ImageFetchQueue",
-                                  qos: .default,
-                                  attributes: .concurrent)
+        let group = DispatchGroup()
         
-        queue.async {
-            let group = DispatchGroup()
+        //TODO: - Move to Interactor!
+        self.assets?.forEach { [weak self] asset in
+            group.enter()
+            self?.currentAsset = asset
             
-            //TODO: - Move to Interactor!
-            self.assets?.forEach { [weak self] asset in
-                group.enter()
-                self?.interactor?.fetchImageFor(asset: asset) {  [weak self] assetIcon in
-                    self?.assetWithImage[asset] = assetIcon.image
-                    group.leave()
-                }
+            self?.interactor?.fetchImageFor(asset: asset) {
+                group.leave()
             }
-            
-            group.notify(queue: .main) {
-                self.assetsTableView.reloadData()
-            }
+        }
+        
+        group.notify(queue: .main) {
+            self.assetsTableView.reloadData()
         }
     }
 }
@@ -228,8 +250,10 @@ extension AssetsViewController: UISearchBarDelegate {
             filteredAssets = assets.filter({ (asset) -> Bool in
                 (asset.id?.lowercased().contains(text.lowercased()) ?? false)})
         }
-    
-        assetsTableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.assetsTableView.reloadData()
+        }
     }
 }
 
