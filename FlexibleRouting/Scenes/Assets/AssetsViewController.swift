@@ -13,11 +13,13 @@ typealias AssetImage = UIImage
 
 typealias AssetModel = [AssetId: AssetImage]
 
-protocol AssetsViewControllerInput: AnyObject {
-//    func updateAssets(_ assets: Assets)
-//    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon)
-    func updateAssets(_ assets: Assets, with assetModel: AssetModel)
+protocol ResultError {
     func updateFailed(with error: NetworkError)
+}
+
+protocol AssetsViewControllerInput: AnyObject, ResultError {
+    func update(_ assets: Assets, with assetModel: AssetModel)
+   
 }
 
 protocol AssetsViewControllerOutput: AnyObject {
@@ -187,25 +189,12 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
-    func updateAssets(_ assets: Assets, with assetModel: AssetModel) {
+    func update(_ assets: Assets, with assetModel: AssetModel) {
         self.assets = assets
         self.assetModel = assetModel
         
         DispatchQueue.main.async {
             self.removeSpinner()
-            self.assetsTableView.reloadData()
-        }
-    }
-    
-    
-    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon) {
-        if let id = asset.id {
-            assetModel[id] = assetIcon.image
-        }
-        
-        print(assetModel)
-        CFRunLoopPerformBlock(CFRunLoopGetMain(),
-                              CFRunLoopMode.defaultMode.rawValue) {
             self.assetsTableView.reloadData()
         }
     }
@@ -216,37 +205,6 @@ extension AssetsViewController: AssetsPresenterOutput {
                                  buttonTitle: Constants.Strings.Common.ok)
     }
     
-    
-//    func updateAssets(_ assets: Assets) {
-//
-//        print(#function)
-//        self.assets = assets
-//        self.filteredAssets = assets
-//
-//        let group = DispatchGroup()
-//
-//        //TODO: - Move to Interactor!
-//        let queue = DispatchQueue(label: "FetchingImageForAssetQueue",
-//                                  qos: .default,
-//                                  attributes: .concurrent)
-//
-////        queue.async {
-//            self.assets?.forEach { [weak self] asset in
-//                group.enter()
-//
-//                self?.interactor?.fetchImageFor(asset: asset) {
-//                    group.leave()
-//                }
-//            }
-//
-//            group.notify(queue: .global(qos: .userInitiated)) {
-//                CFRunLoopPerformBlock(CFRunLoopGetMain(),
-//                                      CFRunLoopMode.defaultMode.rawValue) {
-//                    self.assetsTableView.reloadData()
-//                }
-//            }
-////        }
-//    }
 }
 
 //MARK: - UISearchBarDelegate

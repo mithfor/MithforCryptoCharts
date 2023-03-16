@@ -8,13 +8,13 @@
 import UIKit
 
 //MARK: - WatchListViewControllerInput
-protocol WatchListViewControllerInput: class {
-    func updateFailed(with error: NetworkError)
-    func updateAssets(_ assets: Assets)
+protocol WatchListViewControllerInput: AnyObject, ResultError {
+    
+    func update(_ assets: Assets)
 }
 
 //MARK: - WatchListViewControllerOutput
-protocol WatchListViewControllerOutput: class {
+protocol WatchListViewControllerOutput: AnyObject {
     func fetchFavoriteAssets(watchList: WatchList)
     func fetchAssetDetails(by id: String, completion: @escaping (AssetResponse) -> ())
 }
@@ -177,7 +177,7 @@ extension WatchlistViewController: UITableViewDelegate {
 
 //MARK: - WatchlistViewControllerInput
 extension WatchlistViewController: WatchListViewControllerInput {
-    func updateAssets(_ assets: Assets) {
+    func update(_ assets: Assets) {
         self.assets = assets
         assetsTableView.reloadData()
     }
