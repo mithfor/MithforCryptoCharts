@@ -100,6 +100,8 @@ class ChartScrollView: UIScrollView {
         
         lineChartView.data = lineChartData
         
+        lineChartView.animate(xAxisDuration: TimeInterval(Constants.Animation.chartAnimationDuration))
+        
         lineChartView.renderer = ChartRenderer(view: lineChartView,
                                                minValue: minY ?? 0.0,
                                                maxValue: maxY ?? 0.0)

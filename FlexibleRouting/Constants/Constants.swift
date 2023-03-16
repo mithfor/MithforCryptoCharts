@@ -64,5 +64,7 @@ struct Constants {
         }
     }
     
-    
+    struct Animation {
+        static let chartAnimationDuration: Int = 2
+    }
 }
