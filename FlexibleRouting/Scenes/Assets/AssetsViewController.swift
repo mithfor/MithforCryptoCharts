@@ -114,12 +114,12 @@ class AssetsViewController: UIViewController {
 
         // TODO: - replace with CFRunLoopPerformBlock
         
-        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
-        DispatchQueue.main.async {
-          self.searchController.searchBar.text = ""
-            
-          self.assetsTableView.refreshControl?.endRefreshing()
-       }
+        CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                              CFRunLoopMode.defaultMode.rawValue) {
+            self.searchController.searchBar.text = ""
+              
+            self.assetsTableView.refreshControl?.endRefreshing()
+        }
     }
 }
 

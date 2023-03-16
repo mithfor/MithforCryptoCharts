@@ -77,7 +77,8 @@ final class AssetDetailsViewController: UIViewController {
         
         interactor?.fetchHistory(asset: asset)
 
-       DispatchQueue.main.async {
+        CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                              CFRunLoopMode.commonModes.rawValue) {
             self.assetDetailsView.scrollView.refreshControl?.endRefreshing()
        }
     }

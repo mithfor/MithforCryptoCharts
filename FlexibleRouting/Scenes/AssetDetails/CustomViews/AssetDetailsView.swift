@@ -230,7 +230,8 @@ extension AssetDetailsView: AssetDetailAccessable {
                                                           y: Double(item.priceUsd ?? "No Data") ?? 0.0))
         }
         
-        DispatchQueue.main.async {
+        CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                              CFRunLoopMode.defaultMode.rawValue) {
             self.chartScrollView.updateLineChart()
         }
     }
