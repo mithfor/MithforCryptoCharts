@@ -170,11 +170,8 @@ extension AssetsViewController: UITableViewDelegate {
 }
 //MARK: - AssetsTableViewCellDelegate
 extension AssetsViewController: AssetsTableViewCellDelegate {
-    func details(of asset: Asset) {
-        print("AssetsViewController: \(#function)")
+    func viewDetails(_ asset: Asset) {
         viewModel?.assetDetailsTapped(asset: asset)
-//        let vc = AssetDetailsConfigurator.configured( AssetDetailsViewController(asset: asset))
-//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -240,21 +237,17 @@ extension AssetsViewController: UISearchBarDelegate {
 
 //MARK: - AssetsViewModel
 final class AssetsViewModel {
-    typealias Routes = AssetsTabRoute
+    typealias Routes = AssetDetailsRoute
     private let router: Routes
     
     init(router: Routes) {
         self.router = router
     }
     
-    // TODO: - Protocol?
     func assetDetailsTapped(asset: Asset) {
-        print("AssetsViewModel: \(#function). Asset: \(asset)")
-        
+        router.openAssetDetails(asset)
     }
 }
-
-
 
 //struct ViewControllerProvider: PreviewProvider {
 //    static var previews: some View {

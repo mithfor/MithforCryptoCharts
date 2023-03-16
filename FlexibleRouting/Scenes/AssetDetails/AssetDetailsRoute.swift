@@ -8,14 +8,18 @@
 import Foundation
 
 protocol AssetDetailsRoute {
-    func openAssetDetails()
+    func openAssetDetails(_ asset: Asset)
 }
 
 extension AssetDetailsRoute where Self: Router {
-    func openAssetDetails() {
+    func openAssetDetails(_ asset: Asset) {
         let push = PushTransition()
         let router = DefaultRouter(rootTransition: push)
-//        let viewModel = AssetD
+        let model = AssetDetailsViewModel(router: router, asset: asset)
+        let viewController = AssetDetailsConfigurator.configured(AssetDetailsViewController(viewModel: model))
+        router.root = viewController
+        
+        route(to: viewController, as: push)
         
     }
 }

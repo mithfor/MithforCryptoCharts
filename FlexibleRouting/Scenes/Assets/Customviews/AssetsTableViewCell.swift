@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AssetsTableViewCellDelegate: class {
-    func details(of asset: Asset)
+    func viewDetails(_ asset: Asset)
 }
 
 class AssetsTableViewCell: UITableViewCell {
@@ -90,7 +90,7 @@ class AssetsTableViewCell: UITableViewCell {
     // MARK: - Actions
     @objc func assetDetailsButtonDidTap() {
         guard let asset = assetViewModel else {return}
-        delegate?.details(of: asset)
+        delegate?.viewDetails(asset)
     }
     
     // MARK: - Setup

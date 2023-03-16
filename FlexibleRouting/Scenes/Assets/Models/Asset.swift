@@ -37,22 +37,46 @@ struct AssetResponse: Codable {
 
 // MARK: - Asset
 struct Asset: Codable, Hashable, Equatable {
-
-  var id                : String? = nil
-  var rank              : String? = nil
-  var symbol            : String? = nil
-  var name              : String? = nil
-  var supply            : String? = nil
-  var maxSupply         : String? = nil
-  var marketCapUsd      : String? = nil
-  var volumeUsd24Hr     : String? = nil
-  var priceUsd          : String? = nil
-  var changePercent24Hr : String? = nil
-  var vwap24Hr          : String? = nil
-  var explorer          : String? = nil
+    internal init(id: String? = nil,
+                  rank: String? = nil,
+                  symbol: String? = nil,
+                  name: String? = nil,
+                  supply: String? = nil,
+                  maxSupply: String? = nil,
+                  marketCapUsd: String? = nil,
+                  volumeUsd24Hr: String? = nil,
+                  priceUsd: String? = nil,
+                  changePercent24Hr: String? = nil,
+                  vwap24Hr: String? = nil,
+                  explorer: String? = nil) {
+        self.id = id
+        self.rank = rank
+        self.symbol = symbol
+        self.name = name
+        self.supply = supply
+        self.maxSupply = maxSupply
+        self.marketCapUsd = marketCapUsd
+        self.volumeUsd24Hr = volumeUsd24Hr
+        self.priceUsd = priceUsd
+        self.changePercent24Hr = changePercent24Hr
+        self.vwap24Hr = vwap24Hr
+        self.explorer = explorer
+    }
     
-//  var isInWatchList: Bool
 
+  var id                : String?
+  var rank              : String?
+  var symbol            : String?
+  var name              : String?
+  var supply            : String?
+  var maxSupply         : String?
+  var marketCapUsd      : String?
+  var volumeUsd24Hr     : String?
+  var priceUsd          : String?
+  var changePercent24Hr : String?
+  var vwap24Hr          : String?
+  var explorer          : String?
+    
   enum CodingKeys: String, CodingKey {
 
     case id                = "id"

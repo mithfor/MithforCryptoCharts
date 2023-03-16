@@ -32,8 +32,8 @@ final class AssetDetailsViewController: UIViewController {
     }()
     
     // MARK: - INIT
-    init(asset: Asset) {
-        self.asset = asset
+    init(viewModel: AssetDetailsViewModel) {
+        self.asset = viewModel.asset ?? Asset()
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -171,8 +171,12 @@ final class AssetDetailsViewModel {
     typealias Routes = AssetDetailsRoute
     private var router: Routes
     
-    init(router: Routes) {
+    //TODO: - research need of optional Asset
+    var asset: Asset?
+    
+    init(router: Routes, asset: Asset? = nil) {
         self.router = router
+        self.asset = asset
     }
     
     func watchListTapped(asset: Asset) {
