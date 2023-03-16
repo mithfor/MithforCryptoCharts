@@ -1,5 +1,5 @@
 //
-//  WatchListConfigurator.swift
+//  WatchlistConfigurator.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 07.03.2023.
@@ -12,7 +12,7 @@ protocol WatchListConfiguratorProtocol {
                            with watchList: WatchList) -> WatchlistViewController
 }
 
-class WatchListConfigurator: WatchListConfiguratorProtocol {
+class WatchlistConfigurator: WatchListConfiguratorProtocol {
     static func configured(_ vc: WatchlistViewController,
                            with watchList: WatchList = WatchList()) -> WatchlistViewController {
         let interactor = WatchListInteractor()

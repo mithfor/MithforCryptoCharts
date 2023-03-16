@@ -77,8 +77,15 @@ final class AssetDetailsViewController: UIViewController {
         
         interactor?.fetchHistory(asset: asset)
 
+<<<<<<< HEAD
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
                               CFRunLoopMode.commonModes.rawValue) {
+=======
+        // TODO: - replace with CFRunLoopPerformBlock
+        
+        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
+       DispatchQueue.main.async {
+>>>>>>> Watchlist-scene
             self.assetDetailsView.scrollView.refreshControl?.endRefreshing()
        }
     }

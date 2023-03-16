@@ -31,8 +31,6 @@ extension WatchListInteractor: WatchListInteractorInput {
         NetworkManager.shared.fetchAsset(by: id) { [weak self] result in
             switch result {
             case .success(let response):
-//                self?.asset = response.data
-//                print(self?.asset as Any)
                 completion(response)
             case .failure(let error):
                 print(error)

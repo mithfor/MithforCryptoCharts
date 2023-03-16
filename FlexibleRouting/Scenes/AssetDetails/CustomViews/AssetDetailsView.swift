@@ -230,8 +230,15 @@ extension AssetDetailsView: AssetDetailAccessable {
                                                           y: Double(item.priceUsd ?? "No Data") ?? 0.0))
         }
         
+<<<<<<< HEAD
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
                               CFRunLoopMode.defaultMode.rawValue) {
+=======
+        // TODO: - replace with CFRunLoopPerformBlock
+        
+        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
+        DispatchQueue.main.async {
+>>>>>>> Watchlist-scene
             self.chartScrollView.updateLineChart()
         }
     }

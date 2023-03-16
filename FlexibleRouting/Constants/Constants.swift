@@ -14,6 +14,7 @@ struct Constants {
             static let ok = "OK".localized()
             static let error = "Error".localized()
             static let cancel = "Cancel".localized()
+            static let remove = "Remove".localized()
         }
         struct Error {
             struct Network {
