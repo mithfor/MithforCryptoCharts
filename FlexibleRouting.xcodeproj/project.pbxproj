@@ -956,7 +956,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 927E06E6354B021FDADC55C7 /* Pods-FlexibleRouting.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
@@ -976,7 +975,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89781D4F6833480B377FA305 /* Pods-FlexibleRouting.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
