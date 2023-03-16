@@ -51,9 +51,7 @@ class WatchlistViewController: UIViewController {
     //MARK:- OVERRIDEN METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .cyan
-                
+        
         setupUI()
         
         fetchFavoriteAssets()
@@ -71,7 +69,6 @@ class WatchlistViewController: UIViewController {
         assetsTableView.pinToEdges(of: view)
     }
     
-    
     // MARK: - SETUP
     private func setupAssetsTableViewConstraints() {
         view.addSubview(assetsTableView)
@@ -81,21 +78,46 @@ class WatchlistViewController: UIViewController {
     private func setupUI() {
         
         self.title = Constants.Strings.Title.watchlist
-        let backItem = UIBarButtonItem()
-        backItem.title = Constants.Strings.Title.watchlist
-        navigationItem.backBarButtonItem = backItem
         
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
         
+        configureRefreshControl()
+        
         setupAssetsTableViewConstraints()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .automatic
+        setupNavigationItem()
+        
+    }
+    
+    func configureRefreshControl () {
+        self.assetsTableView.refreshControl = UIRefreshControl()
+        self.assetsTableView.refreshControl?.addTarget(self, action:
+                                          #selector(handleRefreshControl),
+                                          for: .valueChanged)
+    }
+        
+    @objc func handleRefreshControl() {
+        
+        fetchFavoriteAssets()
+
+        CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                              CFRunLoopMode.defaultMode.rawValue) {
+              
+            self.assetsTableView.refreshControl?.endRefreshing()
+        }
     }
     
     private func fetchFavoriteAssets() {
         interactor?.fetchFavoriteAssets(watchList: watchlist)
+    }
+    
+    fileprivate func setupNavigationItem() {
+        let backItem = UIBarButtonItem()
+        backItem.title = Constants.Strings.Title.watchlist
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .automatic
     }
 }
 
