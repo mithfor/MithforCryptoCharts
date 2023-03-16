@@ -248,7 +248,15 @@ extension AssetsViewController: UISearchBarDelegate {
         } else {
             searching = .active
             filteredAssets = assets.filter({ (asset) -> Bool in
-                (asset.id?.lowercased().contains(text.lowercased()) ?? false)})
+                (asset.id?
+                    .lowercased()
+                    .contains(text.lowercased()) ?? false)
+                ||
+                    (asset.symbol?
+                    .lowercased()
+                    .contains(text.lowercased()) ?? false)
+                
+            })
         }
         
         DispatchQueue.main.async {
