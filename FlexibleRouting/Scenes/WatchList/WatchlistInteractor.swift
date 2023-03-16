@@ -8,8 +8,12 @@
 import Foundation
 typealias WatchListInteractorInput = WatchListViewControllerOutput
 
-protocol WatchListInteractorOutput: AnyObject {
-    func fetchFailure(error: NetworkError)
+protocol InteractableError {
+    func fetchFailure(with error: NetworkError)
+}
+
+protocol WatchListInteractorOutput: AnyObject, InteractableError {
+    
     func fetchAssets(_ assets: Assets)
 }
 
@@ -34,7 +38,7 @@ extension WatchListInteractor: WatchListInteractorInput {
                 completion(response)
             case .failure(let error):
                 print(error)
-                self?.presenter?.fetchFailure(error: error)
+                self?.presenter?.fetchFailure(with: error)
             }
         }
         

@@ -10,9 +10,9 @@ import Foundation
 typealias Assets = [Asset]
 typealias AssetsInteractorInput = AssetsViewControllerOutput
 
-protocol AssetsInteractorOutput: AnyObject {
+protocol AssetsInteractorOutput: AnyObject, InteractableError {
     func fetched(assets: Assets, with assetModel: AssetModel)
-    func fetchFailure(error: NetworkError)
+//    func fetchFailure(with error: NetworkError)
 }
 
 final class AssetsInteractor {
@@ -34,7 +34,7 @@ extension AssetsInteractor: AssetsInteractorInput {
                     self?.assetModel[asset.id ?? ""] = icon.image
                     completion()
                 case .failure(let error):
-                    self?.presenter?.fetchFailure(error: error)
+                    self?.presenter?.fetchFailure(with: error)
                 }
             }
         }
@@ -48,9 +48,8 @@ extension AssetsInteractor: AssetsInteractorInput {
                 case .success(let response):
                     self?.assets = response.data
                     self?.fetchImagesFor(self?.assets ?? Assets())
-                    //self?.presenter?.fetched(assets: self?.assets ?? Assets())
                 case .failure(let error):
-                    self?.presenter?.fetchFailure(error: error)
+                    self?.presenter?.fetchFailure(with: error)
                 }
             }
         }

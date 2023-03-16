@@ -19,7 +19,7 @@ extension WatchListPresenter: WatchListPresenterInput {
         viewController?.update(assets)
     }
     
-    func fetchFailure(error: NetworkError) {
+    func fetchFailure(with error: NetworkError) {
         viewController?.updateFailed(with: error)
     }
 }

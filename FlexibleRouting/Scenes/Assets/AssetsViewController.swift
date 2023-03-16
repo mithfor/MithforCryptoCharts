@@ -32,14 +32,12 @@ enum ActionState {
     case inactive
 }
 
-//MARK: - AssetsViewController
-
-
 struct AssetWithImage {
     let asset = Asset()
     let image: UIImage
 }
 
+//MARK: - AssetsViewController
 class AssetsViewController: UIViewController {
     
     private var viewModel: AssetsViewModel?
