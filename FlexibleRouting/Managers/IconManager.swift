@@ -32,29 +32,27 @@ class IconManager: IconManagable {
             completed(.failure(.endpoint))
             return
         }
-            let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                
-                if let _ = error {
-                    completed(.failure(.unableToComplete))
-                    return
-                }
-
-                guard let response = response as? HTTPURLResponse,
-                      response.statusCode == 200 else {
-                    completed(.failure(.invalidResponse))
-                    return
-                }
-                
-                if let data = try? Data(contentsOf: url) {
-                    assetIcon = AssetIcon(image: (UIImage(data: data) ?? UIImage(systemName: "house")) ?? UIImage())
-                    completed(.success(assetIcon))
-                    return
-                }
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let _ = error {
+                completed(.failure(.unableToComplete))
+                return
             }
             
-            dataTask.resume()
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200 else {
+                completed(.failure(.invalidResponse))
+                return
+            }
+            
+            if let data = try? Data(contentsOf: url) {
+                assetIcon = AssetIcon(image: (UIImage(data: data) ?? UIImage(systemName: "house")) ?? UIImage())
+                completed(.success(assetIcon))
+                return
+            }
+        }
         
-        //        completed(AssetIcon(image: UIImage(systemName: "house") ?? UIImage()))
+        dataTask.resume()
     }
 }
 

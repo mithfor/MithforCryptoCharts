@@ -47,11 +47,10 @@ final class AssetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-        
         interactor?.fetchHistory(asset: asset)
         
         configureRefreshControl()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -142,7 +141,8 @@ final class AssetDetailsViewController: UIViewController {
 //MARK: - AssetDetailsViewControllerInput
 extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     func updateHistory(with assetHistory: [AssetHistory]) {
-        assetDetailsView.updateHistoryChart(with: assetHistory)
+        
+            self.assetDetailsView.updateHistoryChart(with: assetHistory)
     }
     
     func updateTitle(with name: String, and symbol: String) {

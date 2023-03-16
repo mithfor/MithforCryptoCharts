@@ -9,6 +9,8 @@
 import UIKit
 import SwiftUI
 
+fileprivate var aView: UIView?
+
 extension UIViewController {
     func presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
@@ -35,6 +37,26 @@ extension UIViewController {
         }
         
     }
+    
+    
+    func showSpinnner() {
+        aView = UIView(frame: self.view.bounds)
+        aView?.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        let ai = UIActivityIndicatorView(style: .large)
+        ai.center = aView!.center
+        ai.startAnimating()
+        aView?.addSubview(ai)
+        self.view.addSubview(aView!)
+        
+    }
+    
+    func removeSpinner() {
+        if let view = aView {
+            view.removeFromSuperview()
+            aView = nil
+        }
+    }
+    
     
     func showPreview() -> some View {
         Preview(viewController: self).edgesIgnoringSafeArea(.all)

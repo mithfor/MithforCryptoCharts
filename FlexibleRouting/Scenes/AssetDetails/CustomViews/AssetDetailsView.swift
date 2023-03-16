@@ -225,16 +225,20 @@ extension AssetDetailsView: AssetDetailAccessable {
     
     func updateHistoryChart(with data: [AssetHistory]) {
         
-        data.enumerated().forEach { (index, item) in
-            chartScrollView.yValues.append(ChartDataEntry(x: Double(index),
-                                                          y: Double(item.priceUsd ?? "No Data") ?? 0.0))
-        }
-        
-        CFRunLoopPerformBlock(CFRunLoopGetMain(),
-                              CFRunLoopMode.defaultMode.rawValue) {
-            self.chartScrollView.updateLineChart()
+        let queue = DispatchQueue(label: "UpdatingHistoryChartQueue", qos: .default, attributes: .concurrent)
+        queue.async {
+            data.enumerated().forEach { (index, item) in
+                self.chartScrollView.yValues.append(ChartDataEntry(x: Double(index),
+                                                              y: Double(item.priceUsd ?? "No Data") ?? 0.0))
+            }
+            CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                                  CFRunLoopMode.defaultMode.rawValue) {
+                self.chartScrollView.updateLineChart()
+            }
         }
     }
+    
+
     
     func updateAssetPriceUSD(with text: String, and color: UIColor) {
         assetPriceUSDLabel.text = text

@@ -14,14 +14,15 @@ typealias AssetImage = UIImage
 typealias AssetModel = [AssetId: AssetImage]
 
 protocol AssetsViewControllerInput: AnyObject {
-    func updateAssets(_ assets: Assets)
-    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon)
+//    func updateAssets(_ assets: Assets)
+//    func updateAsset(_ asset: Asset, with assetIcon: AssetIcon)
+    func updateAssets(_ assets: Assets, with assetModel: AssetModel)
     func updateFailed(with error: NetworkError)
 }
 
 protocol AssetsViewControllerOutput: AnyObject {
     func fetchAssets()
-    func fetchImageFor(asset: Asset, completion: @escaping () -> ())
+    func fetchImageFor(asset: Asset, completion: @escaping (() -> ()))
 }
 
 enum ActionState {
@@ -43,11 +44,11 @@ class AssetsViewController: UIViewController {
     
     var interactor: AssetsInteractorInput?
     
-    private var currentAsset: Asset?
     private var assets: Assets?
     private var filteredAssets: Assets = []
     private var assetModel: AssetModel = [:]
     private var searching: ActionState = .inactive
+        
     
     let assetsTableView: AssetsTableView = {
        let tableView = AssetsTableView()
@@ -81,6 +82,8 @@ class AssetsViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        
+        self.showSpinnner()
         interactor?.fetchAssets()
     }
     
@@ -184,20 +187,27 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
+    func updateAssets(_ assets: Assets, with assetModel: AssetModel) {
+        self.assets = assets
+        self.assetModel = assetModel
+        
+        DispatchQueue.main.async {
+            self.removeSpinner()
+            self.assetsTableView.reloadData()
+        }
+    }
+    
     
     func updateAsset(_ asset: Asset, with assetIcon: AssetIcon) {
-        print(#function)
-        print(asset.id as Any)
         if let id = asset.id {
             assetModel[id] = assetIcon.image
         }
         
         print(assetModel)
-        DispatchQueue.main.async {
+        CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                              CFRunLoopMode.defaultMode.rawValue) {
             self.assetsTableView.reloadData()
         }
-        
-        
     }
     
     func updateFailed(with error: NetworkError) {
@@ -207,28 +217,36 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     
-    func updateAssets(_ assets: Assets) {
-        
-        print(#function)
-        self.assets = assets
-        self.filteredAssets = assets
-        
-        let group = DispatchGroup()
-        
-        //TODO: - Move to Interactor!
-        self.assets?.forEach { [weak self] asset in
-            group.enter()
-            self?.currentAsset = asset
-            
-            self?.interactor?.fetchImageFor(asset: asset) {
-                group.leave()
-            }
-        }
-        
-        group.notify(queue: .main) {
-            self.assetsTableView.reloadData()
-        }
-    }
+//    func updateAssets(_ assets: Assets) {
+//
+//        print(#function)
+//        self.assets = assets
+//        self.filteredAssets = assets
+//
+//        let group = DispatchGroup()
+//
+//        //TODO: - Move to Interactor!
+//        let queue = DispatchQueue(label: "FetchingImageForAssetQueue",
+//                                  qos: .default,
+//                                  attributes: .concurrent)
+//
+////        queue.async {
+//            self.assets?.forEach { [weak self] asset in
+//                group.enter()
+//
+//                self?.interactor?.fetchImageFor(asset: asset) {
+//                    group.leave()
+//                }
+//            }
+//
+//            group.notify(queue: .global(qos: .userInitiated)) {
+//                CFRunLoopPerformBlock(CFRunLoopGetMain(),
+//                                      CFRunLoopMode.defaultMode.rawValue) {
+//                    self.assetsTableView.reloadData()
+//                }
+//            }
+////        }
+//    }
 }
 
 //MARK: - UISearchBarDelegate

@@ -23,13 +23,18 @@ final class AssetDetailsInteractor {
 
 extension AssetDetailsInteractor: AssetDetailsInteractorInput {
     func fetchHistory(asset: Asset) {
-        NetworkManager.shared.fetchAssetHistory(id: asset.id ?? "bitcoin") { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.assetHistory = response.data
-                self?.presenter?.historyFetched(assetHistory: self?.assetHistory ?? [AssetHistory]())
-            case .failure(let error):
-                self?.presenter?.fetchFailure(error: error)
+        
+        let queue = DispatchQueue(label: "HistoryFetchingQueue", qos: .default, attributes: .concurrent)
+        
+        queue.async {
+            NetworkManager.shared.fetchAssetHistory(id: asset.id ?? "bitcoin") { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.assetHistory = response.data
+                    self?.presenter?.historyFetched(assetHistory: self?.assetHistory ?? [AssetHistory]())
+                case .failure(let error):
+                    self?.presenter?.fetchFailure(error: error)
+                }
             }
         }
     }
