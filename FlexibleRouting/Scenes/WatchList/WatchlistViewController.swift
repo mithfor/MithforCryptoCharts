@@ -142,7 +142,7 @@ extension WatchlistViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         
         //TODO: - Localize it!
-        return "Remove"
+        return Constants.Strings.Common.remove
     }
 }
 
@@ -170,7 +170,7 @@ final class WatchlistViewModel {
         self.router = router
     }
     
-    func viewAsetTapped() {
+    func viewAssetTapped() {
         print("WatchlistViewModel: \(#function)")
     }
 }

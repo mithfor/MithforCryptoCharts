@@ -15,7 +15,7 @@ extension WatchlistTabRoute where Self: Router {
     func makeWatchlistTab() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = WatchlistViewModel(router: router)
-        let viewController = WatchlistViewController(viewModel: model)
+        let viewController = WatchlistConfigurator.configured(WatchlistViewController(viewModel: model))
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
