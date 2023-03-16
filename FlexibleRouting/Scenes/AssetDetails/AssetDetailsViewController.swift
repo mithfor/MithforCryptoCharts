@@ -77,15 +77,8 @@ final class AssetDetailsViewController: UIViewController {
         
         interactor?.fetchHistory(asset: asset)
 
-<<<<<<< HEAD
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
                               CFRunLoopMode.commonModes.rawValue) {
-=======
-        // TODO: - replace with CFRunLoopPerformBlock
-        
-        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
-       DispatchQueue.main.async {
->>>>>>> Watchlist-scene
             self.assetDetailsView.scrollView.refreshControl?.endRefreshing()
        }
     }
@@ -106,10 +99,10 @@ final class AssetDetailsViewController: UIViewController {
         
         updateWatchList()
         
-        updateDetailView()
+        updateDetailsView()
     }
     
-    private func updateDetailView() {
+    private func updateDetailsView() {
         assetDetailsView.updateAssetPriceUSD(with: "$\(String.formatToCurrency(string: asset.priceUsd ?? "No data"))", and: Constants.Colors.Asset.symbol)
         assetDetailsView.updateAssetChangePercent24Hr(with: asset.changePercent24Hr ?? "No data")
         assetDetailsView.updateLine1(with: "$\(String.formatToCurrency(string: asset.marketCapUsd ?? "No data"))")
