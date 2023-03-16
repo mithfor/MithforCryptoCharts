@@ -11,6 +11,10 @@ import SwiftUI
 
 extension UIViewController {
     func presentAlertOnMainThread(title: String, message: String, buttonTitle: String) {
+        
+        // TODO: - replace with CFRunLoopPerformBlock
+        
+        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
         DispatchQueue.main.async {
             
             let alertVC = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

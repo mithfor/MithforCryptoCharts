@@ -77,6 +77,9 @@ final class AssetDetailsViewController: UIViewController {
         
         interactor?.fetchHistory(asset: asset)
 
+        // TODO: - replace with CFRunLoopPerformBlock
+        
+        // CFRunLoopPerformBlock(<#T##rl: CFRunLoop!##CFRunLoop!#>, <#T##mode: CFTypeRef!##CFTypeRef!#>, <#T##block: (() -> Void)!##(() -> Void)!##() -> Void#>)
        DispatchQueue.main.async {
             self.assetDetailsView.scrollView.refreshControl?.endRefreshing()
        }

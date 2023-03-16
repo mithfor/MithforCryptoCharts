@@ -21,13 +21,14 @@ protocol WatchListViewControllerOutput: class {
 
 //MARK: - WatchListViewController
 class WatchlistViewController: UIViewController {
+    
+    private var viewModel: WatchlistViewModel?
+    
     var interactor: WatchListInteractorInput?
     
     //MARK: - VARIABLES
     var watchlist = WatchList()
     var assets = Assets()
-    
-    private var viewModel: WatchlistViewModel?
     
     private lazy var assetsTableView: AssetsTableView = {
         let tableView = AssetsTableView()
@@ -80,6 +81,10 @@ class WatchlistViewController: UIViewController {
     private func setupUI() {
         
         self.title = Constants.Strings.Title.watchlist
+        let backItem = UIBarButtonItem()
+        backItem.title = Constants.Strings.Title.watchlist
+        navigationItem.backBarButtonItem = backItem
+        
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
         
@@ -110,6 +115,7 @@ extension WatchlistViewController: UITableViewDataSource {
         guard !assets.isEmpty else { return UITableViewCell() }
         if let cell = tableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier, for: indexPath) as? AssetsTableViewCell {
             cell.configureWith(delegate: nil, and: assets[indexPath.row], image: UIImage(systemName: "house"))
+            cell.delegate = self
             return cell
         } else {
             return UITableViewCell()
@@ -161,16 +167,24 @@ extension WatchlistViewController: WatchListViewControllerInput {
     }
 }
 
+extension WatchlistViewController: AssetsTableViewCellDelegate {
+    func viewDetails(_ asset: Asset) {
+        viewModel?.assetDetailsTapped(asset: asset)
+    }
+    
+    
+}
+
 //MARK: - WatchlistViewModel
 final class WatchlistViewModel {
-    typealias Routes = WatchlistTabRoute
+    typealias Routes = AssetDetailsRoute
     private let router: Routes
     
     init(router: Routes) {
         self.router = router
     }
     
-    func viewAssetTapped() {
-        print("WatchlistViewModel: \(#function)")
+    func assetDetailsTapped(asset: Asset) {
+        router.openAssetDetails(asset)
     }
 }
