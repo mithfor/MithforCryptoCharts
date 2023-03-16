@@ -163,7 +163,9 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     
     func updateFailed(with error: NetworkError) {
         print(#function)
-        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title, message: error.rawValue, buttonTitle: Constants.Strings.Common.ok)
+        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title,
+                                 message: error.rawValue,
+                                 buttonTitle: Constants.Strings.Common.ok)
     }
 }
 

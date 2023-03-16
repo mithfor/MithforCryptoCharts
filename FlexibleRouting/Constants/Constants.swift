@@ -38,6 +38,12 @@ struct Constants {
             static let watchlist = "heart.fill"
             static let settings = "gearshape.fill"
         }
+        
+        struct AssetDetails {
+            static let marketCap = "Market Cap".localized()
+            static let supply = "Supply".localized()
+            static let volume24Hr = "Volume (24h)".localized()
+        }
     }
     
     static let pagination: Int = 10
@@ -66,6 +72,6 @@ struct Constants {
     }
     
     struct Animation {
-        static let chartAnimationDuration: Int = 2
+        static let chartAnimationDuration: Float = 1.5
     }
 }

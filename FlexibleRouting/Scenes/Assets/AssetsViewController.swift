@@ -111,8 +111,6 @@ class AssetsViewController: UIViewController {
     @objc func handleRefreshControl() {
         
        interactor?.fetchAssets()
-
-        // TODO: - replace with CFRunLoopPerformBlock
         
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
                               CFRunLoopMode.defaultMode.rawValue) {

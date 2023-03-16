@@ -77,7 +77,7 @@ final class AssetDetailsView: UIView {
     
     private lazy var stackLine1: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = "Market Cap"
+        stack.leftLabel.text = Constants.Strings.AssetDetails.marketCap
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
@@ -86,7 +86,7 @@ final class AssetDetailsView: UIView {
     
     private lazy var stackLine2: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = "Supply"
+        stack.leftLabel.text = Constants.Strings.AssetDetails.supply
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
@@ -95,7 +95,7 @@ final class AssetDetailsView: UIView {
     
     private lazy var stackLine3: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = "Volume (24h)"
+        stack.leftLabel.text = Constants.Strings.AssetDetails.volume24Hr
         stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
         stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
