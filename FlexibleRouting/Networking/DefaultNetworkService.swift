@@ -1,5 +1,5 @@
 //
-//  NetworkService.swift
+//  DefaultNetworkService.swift
 //  FlexibleRouting
 //
 //  Created by Dmitrii Voronin on 17.03.2023.
@@ -60,6 +60,4 @@ final class DefaultNetworkService: NetworkService {
         }
         .resume()
     }
-    
-    
 }

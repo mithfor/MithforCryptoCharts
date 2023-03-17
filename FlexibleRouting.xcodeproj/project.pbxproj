@@ -88,8 +88,10 @@
 		88E68C0029C46BB4009F251C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68BFF29C46BB4009F251C /* Service.swift */; };
 		88E68C0629C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
 		88E68C0729C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
-		88E68C0F29C477F9009F251C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* NetworkService.swift */; };
-		88E68C1029C477F9009F251C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* NetworkService.swift */; };
+		88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
+		88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
+		88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
+		88E68C1929C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
 		88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88F01B0029C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88F01B0129C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
@@ -177,7 +179,8 @@
 		88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
 		88E68BFF29C46BB4009F251C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		88E68C0529C474D7009F251C /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
-		88E68C0E29C477F9009F251C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
+		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
 		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
 		89781D4F6833480B377FA305 /* Pods-FlexibleRouting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexibleRouting.release.xcconfig"; path = "Target Support Files/Pods-FlexibleRouting/Pods-FlexibleRouting.release.xcconfig"; sourceTree = "<group>"; };
 		927E06E6354B021FDADC55C7 /* Pods-FlexibleRouting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexibleRouting.debug.xcconfig"; path = "Target Support Files/Pods-FlexibleRouting/Pods-FlexibleRouting.debug.xcconfig"; sourceTree = "<group>"; };
@@ -467,7 +470,8 @@
 			isa = PBXGroup;
 			children = (
 				88E68C0529C474D7009F251C /* DataRequest.swift */,
-				88E68C0E29C477F9009F251C /* NetworkService.swift */,
+				88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */,
+				88E68C1729C4835B009F251C /* AssetsRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -746,7 +750,7 @@
 				88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */,
 				881FDED229C241360057AAB2 /* ChartScrollView.swift in Sources */,
 				8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */,
-				88E68C0F29C477F9009F251C /* NetworkService.swift in Sources */,
+				88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */,
 				88E31AF429C2047F00719E0E /* AssetsInteractor.swift in Sources */,
 				88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */,
 				88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */,
@@ -766,6 +770,7 @@
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
 				881FDED329C241360057AAB2 /* DetailHorizontalStackView.swift in Sources */,
 				88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */,
+				88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */,
 				88E68C0629C474D7009F251C /* DataRequest.swift in Sources */,
 				88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */,
 				881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */,
@@ -790,9 +795,10 @@
 				88E31B8429C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
 				88E68C0729C474D7009F251C /* DataRequest.swift in Sources */,
 				88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
+				88E68C1929C4835B009F251C /* AssetsRequest.swift in Sources */,
 				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
 				88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
-				88E68C1029C477F9009F251C /* NetworkService.swift in Sources */,
+				88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
 				88E31B8729C21C6100719E0E /* WatchList.swift in Sources */,
 				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
