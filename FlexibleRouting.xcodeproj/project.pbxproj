@@ -92,6 +92,8 @@
 		88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
 		88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
 		88E68C1929C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
+		88E68C1E29C495FC009F251C /* AssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* AssetListViewModel.swift */; };
+		88E68C1F29C495FC009F251C /* AssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* AssetListViewModel.swift */; };
 		88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88F01B0029C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88F01B0129C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
@@ -181,6 +183,7 @@
 		88E68C0529C474D7009F251C /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
+		88E68C1D29C495FC009F251C /* AssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListViewModel.swift; sourceTree = "<group>"; };
 		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
 		89781D4F6833480B377FA305 /* Pods-FlexibleRouting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexibleRouting.release.xcconfig"; path = "Target Support Files/Pods-FlexibleRouting/Pods-FlexibleRouting.release.xcconfig"; sourceTree = "<group>"; };
 		927E06E6354B021FDADC55C7 /* Pods-FlexibleRouting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlexibleRouting.debug.xcconfig"; path = "Target Support Files/Pods-FlexibleRouting/Pods-FlexibleRouting.debug.xcconfig"; sourceTree = "<group>"; };
@@ -414,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				88E31AEA29C2047F00719E0E /* Asset.swift */,
+				88E68C1D29C495FC009F251C /* AssetListViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -743,6 +747,7 @@
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
+				88E68C1E29C495FC009F251C /* AssetListViewModel.swift in Sources */,
 				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */,
@@ -800,6 +805,7 @@
 				88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */,
 				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
+				88E68C1F29C495FC009F251C /* AssetListViewModel.swift in Sources */,
 				88E31B8729C21C6100719E0E /* WatchList.swift in Sources */,
 				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
 				88F01B0029C3CBE2006EEF57 /* AssetsService.swift in Sources */,

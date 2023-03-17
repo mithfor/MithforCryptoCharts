@@ -9,7 +9,7 @@ import Foundation
 
 struct AssetsRequest: DataRequest {
         
-    private let apiKey: String = "some api"
+//    private let apiKey: String = "some api"
     
     var url: String {
         let baseURL: String = AppConstants.API.assetsBaseUrl
@@ -17,9 +17,9 @@ struct AssetsRequest: DataRequest {
         return "\(baseURL)\(path)"
     }
     
-    var queryItems: [String : String] {
-        ["api_key" : apiKey]
-    }
+//    var queryItems: [String : String] {
+//        ["api_key" : apiKey]
+//    }
     
     var method: HTTPMethod {
         .get
