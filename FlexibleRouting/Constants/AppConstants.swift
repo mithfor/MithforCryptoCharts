@@ -12,4 +12,10 @@ struct AppConstants {
     static let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
     
     static let navigationItemTextSize: CGFloat = 17
+    
+    struct API {
+        static let assetsBaseUrl: String = "http://api.coincap.io/v2/"
+        static let assetsPath: String = "assets"
+    }
+    
 }

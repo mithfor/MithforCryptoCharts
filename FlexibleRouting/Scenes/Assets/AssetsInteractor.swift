@@ -20,6 +20,8 @@ final class AssetsInteractor {
     private var assetModel: AssetModel = [:]
     
     var presenter: AssetsPresenterInput?
+    
+    var networkService: DefaultNetworkService?
 }
 
 extension AssetsInteractor: AssetsInteractorInput {
@@ -43,14 +45,17 @@ extension AssetsInteractor: AssetsInteractorInput {
     func fetchAssets() {
         DispatchQueue.global().async {
             
-            NetworkManager.shared.fetchAssets(page: 1) { [weak self] result in
-                switch result {
-                case .success(let response):
-                    self?.assets = response.data
-                    self?.fetchImagesFor(self?.assets ?? Assets())
-                case .failure(let error):
-                    self?.presenter?.fetchFailure(with: error)
-                }
+            let request = AssetsRequest()
+            if let networkService = self.networkService {
+                networkService.request(request, completion: { [weak self] (result) in
+                    switch result {
+                    case .success(let response):
+                        self?.assets = response
+                        self?.fetchImagesFor(self?.assets ?? Assets())
+                    case .failure(let error):
+                        self?.presenter?.fetchFailure(with: error)
+                    }
+                })
             }
         }
     }

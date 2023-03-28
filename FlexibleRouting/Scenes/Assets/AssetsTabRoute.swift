@@ -14,7 +14,7 @@ protocol AssetsTabRoute {
 extension AssetsTabRoute where Self: Router {
     func makeAssetsTab() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let model = AssetsViewModel(router: router)
+        let model = AssetListViewModel(router: router)
         let viewController = AssetsConfigurator.configured(AssetsViewController(viewModel: model))
         router.root = viewController
         

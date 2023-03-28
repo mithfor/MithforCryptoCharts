@@ -40,7 +40,7 @@ struct AssetWithImage {
 //MARK: - AssetsViewController
 class AssetsViewController: UIViewController {
     
-    private var viewModel: AssetsViewModel?
+    private var viewModel: AssetListViewModel?
     
     var interactor: AssetsInteractorInput?
     
@@ -67,7 +67,7 @@ class AssetsViewController: UIViewController {
     }()
 
     //MARK: - Init
-    init(viewModel: AssetsViewModel) {
+    init(viewModel: AssetListViewModel) {
         super.init(nibName: nil, bundle: nil)
         
         self.viewModel = viewModel
@@ -239,19 +239,6 @@ extension AssetsViewController: UISearchBarDelegate {
     }
 }
 
-//MARK: - AssetsViewModel
-final class AssetsViewModel {
-    typealias Routes = AssetDetailsRoute
-    private let router: Routes
-    
-    init(router: Routes) {
-        self.router = router
-    }
-    
-    func assetDetailsTapped(asset: Asset) {
-        router.openAssetDetails(asset)
-    }
-}
 
 //struct ViewControllerProvider: PreviewProvider {
 //    static var previews: some View {
