@@ -120,7 +120,7 @@ final class AssetDetailsViewController: UIViewController {
     
     
     //MARK: - ACTIONS
-    // TODO: - move logic to interactor (if it is allready in)
+    // TODO: - move logic to interactor (if it is already in)
     @objc func didTapAddToWatchList() {
         
         var imageName = ""
