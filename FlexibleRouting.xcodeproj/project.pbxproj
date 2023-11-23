@@ -49,7 +49,6 @@
 		88E1E4BA29C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
 		88E1E4BB29C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
 		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
-		88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */; };
 		88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA729BF7DD00018C150 /* Assets.xcassets */; };
 		88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */; };
 		88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EB529BF7DD00018C150 /* FlexibleRoutingTests.swift */; };
@@ -85,7 +84,6 @@
 		88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
 		88E31B8A29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
 		88E31B8B29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
-		88E68C0029C46BB4009F251C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68BFF29C46BB4009F251C /* Service.swift */; };
 		88E68C0629C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
 		88E68C0729C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
 		88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
@@ -150,7 +148,6 @@
 		88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlexibleRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		88E25EA729BF7DD00018C150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88E25EAA29BF7DD00018C150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88E25EAC29BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,7 +178,6 @@
 		88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistConfigurator.swift; sourceTree = "<group>"; };
 		88E31B7B29C21C6100719E0E /* WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
 		88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
-		88E68BFF29C46BB4009F251C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		88E68C0529C474D7009F251C /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
@@ -388,12 +384,10 @@
 				881FDEA829C22D4C0057AAB2 /* Scenes */,
 				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
-				88E25EA029BF7DCE0018C150 /* SceneDelegate.swift */,
 				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
 				88DF5FA829C0F9FB00C47453 /* Localizable.strings */,
 				88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */,
-				88E68BFF29C46BB4009F251C /* Service.swift */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -773,7 +767,6 @@
 				88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */,
 				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,
 				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
-				88E25EA129BF7DCE0018C150 /* SceneDelegate.swift in Sources */,
 				88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */,
 				88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */,
 				881FDED529C241360057AAB2 /* AssetDetailsView.swift in Sources */,
@@ -784,7 +777,6 @@
 				88E68C0629C474D7009F251C /* DataRequest.swift in Sources */,
 				88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */,
 				881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */,
-				88E68C0029C46BB4009F251C /* Service.swift in Sources */,
 				881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */,
 				88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
@@ -1002,6 +994,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				INFOPLIST_FILE = FlexibleRouting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1021,6 +1014,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				INFOPLIST_FILE = FlexibleRouting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

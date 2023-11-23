@@ -22,7 +22,7 @@ enum Tabs {
             return 2
         }
     }
-    
+
     var item: UITabBarItem {
         switch self {
         case .assets:
