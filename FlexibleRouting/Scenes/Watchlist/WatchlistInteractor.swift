@@ -41,7 +41,6 @@ extension WatchListInteractor: WatchListInteractorInput {
                 self?.presenter?.fetchFailure(with: error)
             }
         }
-        
     }
     
     func fetchFavoriteAssets(watchList: WatchList) {
