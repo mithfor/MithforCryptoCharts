@@ -36,7 +36,6 @@ class ChartScrollView: UIScrollView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     private func createChart() {
         
@@ -77,10 +76,17 @@ class ChartScrollView: UIScrollView {
     }
     
     private func setupChartConstraints() {
-        contentView.addSubview(lineChartView)
         lineChartView.translatesAutoresizingMaskIntoConstraints = false
+        lineChartView.autoScaleMinMaxEnabled = true
+        contentView.addSubview(lineChartView)
+//        contentView.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: 10).isActive = true
+//        contentView.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: 10).isActive = true
 
-        lineChartView.pinToEdges(of: contentView)
+
+
+//        lineChartView.pinToEdges(of: <#T##UIView#>)
+        contentView.backgroundColor = .red
+        lineChartView.pinToEdges(of: contentView, withConstant: 20)
 
     }
     

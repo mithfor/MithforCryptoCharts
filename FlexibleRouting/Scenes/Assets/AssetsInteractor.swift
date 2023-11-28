@@ -36,7 +36,7 @@ extension AssetsInteractor: AssetsInteractorInput {
                     self?.assetModel[asset.id ?? ""] = icon.image
                     completion()
                 case .failure(let error):
-                    self?.presenter?.fetchFailure(with: error)
+                    self?.presenter?.failureDidFetch(error)
                 }
             }
         }
@@ -53,7 +53,7 @@ extension AssetsInteractor: AssetsInteractorInput {
                         self?.assets = response
                         self?.fetchImagesFor(self?.assets ?? Assets())
                     case .failure(let error):
-                        self?.presenter?.fetchFailure(with: error)
+                        self?.presenter?.failureDidFetch(error)
                     }
                 })
             }

@@ -59,6 +59,8 @@ class WatchlistViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        setupUI()
         
         fetchFavoriteAssets()
     }
@@ -179,7 +181,9 @@ extension WatchlistViewController: UITableViewDelegate {
 extension WatchlistViewController: WatchListViewControllerInput {
     func update(_ assets: Assets) {
         self.assets = assets
-        assetsTableView.reloadData()
+        DispatchQueue.main.async {
+            self.assetsTableView.reloadData()
+        }
     }
     
     func updateFailed(with error: NetworkError) {

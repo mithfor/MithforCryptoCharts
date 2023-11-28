@@ -9,12 +9,12 @@ import Foundation
 typealias WatchListInteractorInput = WatchListViewControllerOutput
 
 protocol InteractableError {
-    func fetchFailure(with error: NetworkError)
+    func failureDidFetch(_ error: NetworkError)
 }
 
 protocol WatchListInteractorOutput: AnyObject, InteractableError {
     
-    func fetchAssets(_ assets: Assets)
+    func assetsDidFetch(_ assets: Assets)
 }
 
 final class WatchListInteractor {
@@ -38,7 +38,7 @@ extension WatchListInteractor: WatchListInteractorInput {
                 completion(response)
             case .failure(let error):
                 print(error)
-                self?.presenter?.fetchFailure(with: error)
+                self?.presenter?.failureDidFetch(error)
             }
         }
     }
@@ -63,7 +63,7 @@ extension WatchListInteractor: WatchListInteractorInput {
             }
             
             group.notify(queue: .main) {
-                self.presenter?.fetchAssets(self.assets)
+                self.presenter?.assetsDidFetch(self.assets)
             }
         }
     }
