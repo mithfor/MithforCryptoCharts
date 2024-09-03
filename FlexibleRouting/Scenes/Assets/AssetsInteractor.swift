@@ -10,7 +10,7 @@ import Foundation
 typealias Assets = [Asset]
 typealias AssetsInteractorInput = AssetsViewControllerOutput
 
-protocol AssetsInteractorOutput: AnyObject, InteractableError {
+protocol AssetsInteractorOutput: AnyObject, InteractingError {
     func fetched(assets: Assets, with assetModel: AssetModel)
 //    func fetchFailure(with error: NetworkError)
 }

@@ -39,9 +39,13 @@ class IconManager: IconManagable {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse,
-                  response.statusCode == 200 else {
+            guard let response = response as? HTTPURLResponse else {
                 completed(.failure(.invalidResponse))
+                return
+            }
+            
+            if response.statusCode == 404 {
+                completed(.failure(.endpoint))
                 return
             }
             

@@ -153,17 +153,6 @@ extension AssetsViewController: UITableViewDataSource {
         if let cell = assetsTableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier,
                                                           for: indexPath) as? AssetsTableViewCell {
             
-            switch searching {
-            case .inactive:
-                cell.configureWith(delegate: self,
-                                   and:  assets[indexPath.row],
-                                   image: assetModel[assets[indexPath.row].id ?? "bitcoin"])
-            case .active:
-                cell.configureWith(delegate: self,
-                                   and:  filteredAssets[indexPath.row],
-                                   image: assetModel[filteredAssets[indexPath.row].id ?? "bitcoin"])
-            }
-
             return cell
         } else {
             return UITableViewCell()

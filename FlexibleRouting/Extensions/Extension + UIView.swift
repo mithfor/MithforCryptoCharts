@@ -10,13 +10,13 @@ import UIKit
 
 extension UIView {
     
-    func pinToEdges(of superview: UIView) {
+    func pinToEdges(of superview: UIView, with constant: CGFloat = 0.0) {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            topAnchor.constraint(equalTo: superview.topAnchor),
-            leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            bottomAnchor.constraint(equalTo: superview.bottomAnchor),
-            trailingAnchor.constraint(equalTo: superview.trailingAnchor)
+            topAnchor.constraint(equalTo: superview.topAnchor, constant: constant),
+            leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: constant),
+            bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: constant),
+            trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: constant)
         ])
     }
 

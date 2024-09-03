@@ -150,7 +150,9 @@ class AssetsTableViewCell: UITableViewCell {
         ])
     }
     
-    func configureWith(delegate: AssetsTableViewCellDelegate?, and asset: Asset, image: UIImage?) {
+    func configureWith(delegate: AssetsTableViewCellDelegate?,
+                       and asset: Asset,
+                       image: UIImage?) {
         self.delegate = delegate
         self.assetViewModel = asset
         self.assetImage = image
