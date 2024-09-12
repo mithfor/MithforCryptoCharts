@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-protocol AssetDetailAccessable: class {
+protocol AssetDetailAccessable: AnyObject {
     
     func updateLine1(with value: String)
     func updateLine2(with value: String)

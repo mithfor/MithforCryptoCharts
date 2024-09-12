@@ -20,10 +20,10 @@ final class DefaultNetworkService: NetworkService {
             return completion(.failure(NetworkError.endpoint))
         }
         
-        var queryItems: [URLQueryItem] = []
+        let queryItems: [URLQueryItem] = []
         
         request.queryItems.forEach {
-            let urlQueryItems = URLQueryItem(name: $0.key, value: $0.value)
+            _ = URLQueryItem(name: $0.key, value: $0.value)
         }
         
         urlComponent.queryItems = queryItems
