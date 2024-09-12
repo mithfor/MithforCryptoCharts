@@ -167,6 +167,11 @@ extension AssetsViewController: UITableViewDelegate {
         return Constants.tableCellHeight
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let asset = assets?[indexPath.row] else { return }
+        viewDetails(asset)
+    }
 }
 //MARK: - AssetsTableViewCellDelegate
 extension AssetsViewController: AssetsTableViewCellDelegate {
