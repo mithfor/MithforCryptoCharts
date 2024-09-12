@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AssetsTableViewCellDelegate: class {
+protocol AssetsTableViewCellDelegate: AnyObject {
     func viewDetails(_ asset: Asset)
 }
 

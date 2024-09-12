@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Charts
+//import Charts
+import DGCharts
 
 protocol AssetDetailAccessable: AnyObject {
     

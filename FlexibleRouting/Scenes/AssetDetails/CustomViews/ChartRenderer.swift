@@ -6,7 +6,10 @@
 //
 
 import Foundation
-import Charts
+//import Charts
+import DGCharts
+import CoreGraphics
+import UIKit
 
 class ChartRenderer: LineChartRenderer {
     var xBounds = XBounds()

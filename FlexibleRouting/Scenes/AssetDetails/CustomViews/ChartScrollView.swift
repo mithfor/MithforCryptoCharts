@@ -5,7 +5,7 @@
 //  Created by Dmitrii Voronin on 02.03.2023.
 //
 
-import Charts
+import DGCharts
 import UIKit
 
 protocol Updateable {
