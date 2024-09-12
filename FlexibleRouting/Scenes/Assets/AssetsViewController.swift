@@ -152,6 +152,7 @@ extension AssetsViewController: UITableViewDataSource {
         
         if let cell = assetsTableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier,
                                                           for: indexPath) as? AssetsTableViewCell {
+            cell.configureWith(delegate: nil, and: assets[indexPath.row], image: nil)
             
             return cell
         } else {
