@@ -155,7 +155,13 @@ class AssetsTableViewCell: UITableViewCell {
                        image: UIImage?) {
         self.delegate = delegate
         self.assetViewModel = asset
-        self.assetImage = image
+        if let image = image {
+            self.assetImage = image
+        }
+        else {
+            self.assetImage = UIImage(named: "defaultlogo")
+        }
+        
         update()
     }
     
