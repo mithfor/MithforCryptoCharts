@@ -84,7 +84,6 @@ class ChartScrollView: UIScrollView {
 
 
 
-//        lineChartView.pinToEdges(of: <#T##UIView#>)
         contentView.backgroundColor = .red
         lineChartView.pinToEdges(of: contentView)
 
