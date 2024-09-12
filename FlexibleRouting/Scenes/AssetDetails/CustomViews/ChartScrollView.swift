@@ -8,11 +8,16 @@
 import DGCharts
 import UIKit
 
-protocol Updateable {
+protocol ChartUpdateable {
     func updateLineChart()
 }
 
 class ChartScrollView: UIScrollView {
+    
+    var yValues = [ChartDataEntry]()
+    
+    private var maxY: Double?
+    private var minY: Double?
 
     private lazy var lineChartView: LineChartView = {
         let view = LineChartView()
@@ -24,43 +29,32 @@ class ChartScrollView: UIScrollView {
         return view
     }()
     
-    var yValues = [ChartDataEntry]()
-    var maxY: Double?
-    var minY: Double?
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        createChart()
+        
+        configureChart()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func createChart() {
+    // MARK: - Private funcs
+    
+    private func configureChart() {
         
-        setupContentViewConstraints()
+        configureViewConstraints()
+        configureChartConstraints()
+        configureAxis()
+        configureLegend()
         
-        //create line chart
-        setupChartConstraints()
-        
-        //supply data
         setupData()
-        
-        //configure the axis
-        lineChartView.rightAxis.enabled = false
-        lineChartView.leftAxis.enabled = false
-        lineChartView.drawGridBackgroundEnabled = false
-        
-        lineChartView.xAxis.enabled = false
-        lineChartView.isUserInteractionEnabled = false
-        
-        //configure legend
-        lineChartView.legend.enabled = false
         
     }
     
-    private func setupContentViewConstraints() {
+    private func configureViewConstraints() {
         addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         let heightConstraint = contentView.heightAnchor.constraint(equalTo: heightAnchor)
@@ -75,21 +69,33 @@ class ChartScrollView: UIScrollView {
         ])
     }
     
-    private func setupChartConstraints() {
+    private func configureChartConstraints() {
         lineChartView.translatesAutoresizingMaskIntoConstraints = false
         lineChartView.autoScaleMinMaxEnabled = true
         contentView.addSubview(lineChartView)
 //        contentView.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: 10).isActive = true
 //        contentView.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: 10).isActive = true
 
-
-
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .systemBackground
         lineChartView.pinToEdges(of: contentView)
 
     }
     
+    private func configureAxis() {
+        lineChartView.rightAxis.enabled = false
+        lineChartView.leftAxis.enabled = false
+        lineChartView.drawGridBackgroundEnabled = false
+        
+        lineChartView.xAxis.enabled = false
+    }
+    
+    private func configureLegend() {
+        lineChartView.legend.enabled = false
+    }
+    
     private func setupData() {
+        
+        lineChartView.isUserInteractionEnabled = false
         
         let lineChartDataSet = LineChartDataSet(entries: yValues, label: "VALUE")
         
@@ -113,7 +119,7 @@ class ChartScrollView: UIScrollView {
     }
 }
 
-extension ChartScrollView: Updateable {
+extension ChartScrollView: ChartUpdateable {
     func updateLineChart() {
         setupData()
     }
