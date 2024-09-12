@@ -3,4 +3,80 @@
    uuid = "1DD72239-BD58-4772-89BE-8A87E04EE285"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "896BF29A-676B-4A78-8CEF-DF1874DFBEDB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlexibleRouting/Scenes/Assets/AssetsInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchAssets()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "896BF29A-676B-4A78-8CEF-DF1874DFBEDB - ce5b6c1b72d7dfa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;FlexibleRouting.Asset&gt;, FlexibleRouting.NetworkError&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in FlexibleRouting.AssetsInteractor.fetchAssets() -&gt; ()"
+                  moduleName = "FlexibleRouting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/FlexibleRouting/FlexibleRouting/Scenes/Assets/AssetsInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "896BF29A-676B-4A78-8CEF-DF1874DFBEDB - ce5b6c1b72d7dfa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;FlexibleRouting.Asset&gt;, FlexibleRouting.NetworkError&gt;) -&gt; () in closure #1 @Sendable () -&gt; () in FlexibleRouting.AssetsInteractor.fetchAssets() -&gt; ()"
+                  moduleName = "FlexibleRouting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/FlexibleRouting/FlexibleRouting/Scenes/Assets/AssetsInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "896BF29A-676B-4A78-8CEF-DF1874DFBEDB - 28a3474f55e2a131"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FlexibleRouting.AssetsInteractor.fetchAssets() -&gt; ()"
+                  moduleName = "FlexibleRouting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/FlexibleRouting/FlexibleRouting/Scenes/Assets/AssetsInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54">
+               </Location>
+               <Location
+                  uuid = "896BF29A-676B-4A78-8CEF-DF1874DFBEDB - 67e4269a3dca3987"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in FlexibleRouting.AssetsInteractor.fetchAssets() -&gt; ()"
+                  moduleName = "FlexibleRouting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/FlexibleRouting/FlexibleRouting/Scenes/Assets/AssetsInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

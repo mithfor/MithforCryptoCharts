@@ -21,7 +21,13 @@ final class AssetsInteractor {
     
     var presenter: AssetsPresenterInput?
     
-    var networkService: DefaultNetworkService?
+    var networkService: AssetNetworkService?
+}
+
+class AssetNetworkService: DefaultNetworkService {
+    override func request<Request>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
+        super.request(request, completion: completion)
+    }
 }
 
 extension AssetsInteractor: AssetsInteractorInput {

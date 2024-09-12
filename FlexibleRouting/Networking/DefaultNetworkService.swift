@@ -12,7 +12,7 @@ protocol NetworkService {
                                        completion: @escaping (Result<Request.Response, NetworkError>) -> Void)
 }
 
-final class DefaultNetworkService: NetworkService {
+class DefaultNetworkService: NetworkService {
     func request<Request>(_ request: Request,
                           completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
         

@@ -13,10 +13,10 @@ protocol AssetsCongfiguratorProtocol {
 
 class AssetsConfigurator: AssetsCongfiguratorProtocol {
     static func configured(_ vc: AssetsViewController) -> AssetsViewController {
-        let networkService = DefaultNetworkService()
+        let networkService = AssetNetworkService()
         let interactor = AssetsInteractor()
-        interactor.networkService = networkService
         let presenter = AssetsPresenter()
+        interactor.networkService = networkService
         vc.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = vc

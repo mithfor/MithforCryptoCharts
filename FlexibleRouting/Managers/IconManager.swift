@@ -7,15 +7,13 @@
 
 import UIKit
 
-typealias  AssetIconResponseHandler = (Result<AssetIcon, NetworkError>) -> Void
+typealias  AssetIconResponseHandler = (Result<IconAsset, NetworkError>) -> Void
 
 protocol IconManagable {
     func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler)
 }
 
 class IconManager: IconManagable {
-    
-    
     
     static let shared = IconManager()
     
@@ -25,7 +23,7 @@ class IconManager: IconManagable {
     
     func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler)  {
         
-        var assetIcon = AssetIcon()
+        var assetIcon = IconAsset()
         let urlString = "\(IconManager.baseURL)\(asset.symbol?.lowercased() ?? "usd")"
         
         guard let url = URL(string: urlString) else {
@@ -50,7 +48,7 @@ class IconManager: IconManagable {
             }
             
             if let data = try? Data(contentsOf: url) {
-                assetIcon = AssetIcon(image: (UIImage(data: data) ?? UIImage(systemName: "house")) ?? UIImage())
+                assetIcon = IconAsset(image: (UIImage(data: data) ?? UIImage(systemName: "house")) ?? UIImage())
                 completed(.success(assetIcon))
                 return
             }
@@ -62,7 +60,7 @@ class IconManager: IconManagable {
 
 //struct AssetIconResponse
 
-struct AssetIcon {
+struct IconAsset {
     var image = UIImage()
 }
 
