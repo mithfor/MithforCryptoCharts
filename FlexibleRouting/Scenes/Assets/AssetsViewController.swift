@@ -24,7 +24,7 @@ protocol AssetsViewControllerInput: AnyObject, ResultError {
 
 protocol AssetsViewControllerOutput: AnyObject {
     func fetchAssets()
-    func fetchImageFor(asset: Asset, completion: @escaping (() -> ()))
+    func fetchImage(for asset: Asset, completion: @escaping (() -> ()))
 }
 
 enum ActionState {

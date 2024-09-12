@@ -26,7 +26,7 @@ final class AssetsInteractor {
 
 extension AssetsInteractor: AssetsInteractorInput {
     
-    func fetchImageFor(asset: Asset, completion: @escaping (() -> ())) {
+    func fetchImage(for asset: Asset, completion: @escaping (() -> ())) {
         let queue = DispatchQueue(label: "IconQueue", qos: .default, attributes: .concurrent)
         queue.async {
             IconManager.shared.fetchIconFor(asset) { [weak self] (result) in
@@ -36,6 +36,8 @@ extension AssetsInteractor: AssetsInteractorInput {
                     self?.assetModel[asset.id ?? ""] = icon.image
                     completion()
                 case .failure(let error):
+                    self?.assetModel[asset.id ?? ""] = AssetImage()
+                    completion()
                     self?.presenter?.failureDidFetch(error)
                 }
             }
@@ -51,7 +53,9 @@ extension AssetsInteractor: AssetsInteractorInput {
                     switch result {
                     case .success(let response):
                         self?.assets = response
-                        self?.fetchImagesFor(self?.assets ?? Assets())
+                        self?.presenter?.fetched(assets: self?.assets ?? [],
+                                                 with: self?.assetModel ?? [:])
+//                        self?.fetchImagesFor(self?.assets ?? Assets())
                     case .failure(let error):
                         self?.presenter?.failureDidFetch(error)
                     }
@@ -68,7 +72,7 @@ extension AssetsInteractor: AssetsInteractorInput {
             assets.forEach({ asset in
                 group.enter()
                 
-                self.fetchImageFor(asset: asset) {
+                self.fetchImage(for: asset) {
                     group.leave()
                 }
             })
