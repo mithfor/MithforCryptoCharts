@@ -1,6 +1,0 @@
-framework module Pods_FlexibleRouting_FlexibleRoutingUITests {
-  umbrella header "Pods-FlexibleRouting-FlexibleRoutingUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
