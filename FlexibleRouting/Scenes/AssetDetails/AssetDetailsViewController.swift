@@ -46,17 +46,23 @@ final class AssetDetailsViewController: UIViewController {
     //MARK:- OVERRIDEN METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         
         interactor?.fetchHistory(asset: asset)
         
         configureRefreshControl()
-        setupUI()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
         updateUI()
+        setTabBarHidden(true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        setTabBarHidden(false)
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,9 +89,11 @@ final class AssetDetailsViewController: UIViewController {
     }
     
     // MARK: - SETUP
-    private func setupUI() {
+    private func configureUI() {
         view.backgroundColor = Constants.Colors.mainBackground
         navigationItem.largeTitleDisplayMode = .never
+        
+        navigationController?.navigationItem.rightBarButtonItem?.tintColor = .red
     
         view.addSubview(assetDetailsView)
     }
@@ -137,6 +145,23 @@ final class AssetDetailsViewController: UIViewController {
     }
 }
 
+extension UIViewController {
+
+    func setTabBarHidden(_ hidden: Bool, animated: Bool = true, duration: TimeInterval = 0.3) {
+        if animated {
+            if let frame = self.tabBarController?.tabBar.frame {
+                let factor: CGFloat = hidden ? 1 : -1
+                let y = frame.origin.y + (frame.size.height * factor)
+                UIView.animate(withDuration: duration, animations: {
+                    self.tabBarController?.tabBar.frame = CGRect(x: frame.origin.x, y: y, width: frame.width, height: frame.height)
+                })
+                return
+            }
+        }
+        self.tabBarController?.tabBar.isHidden = hidden
+    }
+
+}
 
 //MARK: - AssetDetailsViewControllerInput
 extension AssetDetailsViewController: AssetDetailsViewControllerInput {
