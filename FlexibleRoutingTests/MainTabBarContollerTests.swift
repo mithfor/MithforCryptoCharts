@@ -17,12 +17,14 @@ final class MainTabBarControllerTests: XCTestCase {
         XCTAssertNil(sut.viewControllers)
     }
     
-    func test_shouldInitiate_withControllers() throws {
+    func test_shouldInitiate_withControllersCount_EqualsTabsCount() throws {
 
-        let controllers = [UIViewController()]
+        let controllers = [UIViewController(),
+                           UIViewController(),
+                           UIViewController()]
         let sut = makeSUT(with: controllers)
 
-        XCTAssertEqual(sut.viewControllers?.count, controllers.count)
+        XCTAssertEqual(sut.viewControllers?.count, Tabs.allCases.count)
     }
     
     func test_tabsCount_equalsThree() {
