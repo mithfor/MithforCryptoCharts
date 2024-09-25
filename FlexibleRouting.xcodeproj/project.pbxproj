@@ -22,36 +22,22 @@
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
 		88A18C8429BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
-		88A18C8529BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
-		88A18C8629BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
 		88A18C8B29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
-		88A18C8C29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
-		88A18C8D29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
-		88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
-		88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
-		88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
-		88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
+		88E1105A2CA48A1D00052A7B /* FlexibleRoutingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */; };
+		88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */; };
 		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
 		88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48429C090EA000572FF /* MainTabBarController.swift */; };
 		88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
-		88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
-		88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
 		88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
-		88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
-		88E1E4AE29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
 		88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
-		88E1E4BA29C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
-		88E1E4BB29C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
 		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
 		88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA729BF7DD00018C150 /* Assets.xcassets */; };
 		88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */; };
-		88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EB529BF7DD00018C150 /* FlexibleRoutingTests.swift */; };
-		88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25EC029BF7DD00018C150 /* FlexibleRoutingUITests.swift */; };
 		88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */; };
 		88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE829C2047F00719E0E /* AssetsPresenter.swift */; };
 		88E31AF329C2047F00719E0E /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEA29C2047F00719E0E /* Asset.swift */; };
@@ -69,45 +55,21 @@
 		88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2529C2073D00719E0E /* SearchTextField.swift */; };
 		88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2629C2073D00719E0E /* PaddingLabel.swift */; };
 		88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
-		88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
-		88E31B7F29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
 		88E31B8029C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
-		88E31B8129C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
-		88E31B8229C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
 		88E31B8329C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
-		88E31B8429C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
-		88E31B8529C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
 		88E31B8629C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
-		88E31B8729C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
-		88E31B8829C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
 		88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
-		88E31B8A29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
-		88E31B8B29C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
 		88E68C0629C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
-		88E68C0729C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
 		88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
-		88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
 		88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
-		88E68C1929C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
 		88E68C1E29C495FC009F251C /* AssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* AssetListViewModel.swift */; };
-		88E68C1F29C495FC009F251C /* AssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* AssetListViewModel.swift */; };
 		88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
-		88E68C2529C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
 		88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
-		88F01B0029C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
-		88F01B0129C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88FE8D682C92A74C000664AE /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 88FE8D672C92A74C000664AE /* netfox */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		88E25EB229BF7DD00018C150 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88E25E9329BF7DCE0018C150 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 88E25E9A29BF7DCE0018C150;
-			remoteInfo = FlexibleRouting;
-		};
-		88E25EBD29BF7DD00018C150 /* PBXContainerItemProxy */ = {
+		88E110532CA4890700052A7B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 88E25E9329BF7DCE0018C150 /* Project object */;
 			proxyType = 1;
@@ -138,6 +100,10 @@
 		88DF5F9829C0F78300C47453 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88E1104F2CA4890700052A7B /* FlexibleRoutingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexibleRoutingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E110582CA48A1D00052A7B /* FlexibleRoutingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexibleRoutingTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleRoutingTests.swift; sourceTree = "<group>"; };
+		88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContollerTests.swift; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		88E1E48429C090EA000572FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTabRoute.swift; sourceTree = "<group>"; };
@@ -148,12 +114,7 @@
 		88E25EA729BF7DD00018C150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88E25EAA29BF7DD00018C150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88E25EAC29BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88E25EB129BF7DD00018C150 /* FlexibleRoutingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexibleRoutingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88E25EB529BF7DD00018C150 /* FlexibleRoutingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleRoutingTests.swift; sourceTree = "<group>"; };
 		88E25EB729BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88E25EBC29BF7DD00018C150 /* FlexibleRoutingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexibleRoutingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88E25EC029BF7DD00018C150 /* FlexibleRoutingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleRoutingUITests.swift; sourceTree = "<group>"; };
-		88E25EC229BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsConfigurator.swift; sourceTree = "<group>"; };
 		88E31AE829C2047F00719E0E /* AssetsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPresenter.swift; sourceTree = "<group>"; };
 		88E31AEA29C2047F00719E0E /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
@@ -184,26 +145,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88E1104C2CA4890700052A7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88E25E9829BF7DCE0018C150 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				88FE8D682C92A74C000664AE /* netfox in Frameworks */,
 				88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88E25EAE29BF7DD00018C150 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88E25EB929BF7DD00018C150 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +288,6 @@
 			children = (
 				88E25E9D29BF7DCE0018C150 /* FlexibleRouting */,
 				88E25EB429BF7DD00018C150 /* FlexibleRoutingTests */,
-				88E25EBF29BF7DD00018C150 /* FlexibleRoutingUITests */,
 				88E25E9C29BF7DCE0018C150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -343,8 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */,
-				88E25EB129BF7DD00018C150 /* FlexibleRoutingTests.xctest */,
-				88E25EBC29BF7DD00018C150 /* FlexibleRoutingUITests.xctest */,
+				88E1104F2CA4890700052A7B /* FlexibleRoutingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,12 +311,12 @@
 				88E31AFC29C204CA00719E0E /* Managers */,
 				88A18C9129BF866E008015DB /* Routing */,
 				881FDEA829C22D4C0057AAB2 /* Scenes */,
-				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
 				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
 				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
 				88DF5FA829C0F9FB00C47453 /* Localizable.strings */,
 				88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */,
+				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
 			);
 			path = FlexibleRouting;
 			sourceTree = "<group>";
@@ -372,19 +324,12 @@
 		88E25EB429BF7DD00018C150 /* FlexibleRoutingTests */ = {
 			isa = PBXGroup;
 			children = (
-				88E25EB529BF7DD00018C150 /* FlexibleRoutingTests.swift */,
+				88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */,
 				88E25EB729BF7DD00018C150 /* Info.plist */,
+				88E110582CA48A1D00052A7B /* FlexibleRoutingTests-Bridging-Header.h */,
+				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
 			);
 			path = FlexibleRoutingTests;
-			sourceTree = "<group>";
-		};
-		88E25EBF29BF7DD00018C150 /* FlexibleRoutingUITests */ = {
-			isa = PBXGroup;
-			children = (
-				88E25EC029BF7DD00018C150 /* FlexibleRoutingUITests.swift */,
-				88E25EC229BF7DD00018C150 /* Info.plist */,
-			);
-			path = FlexibleRoutingUITests;
 			sourceTree = "<group>";
 		};
 		88E31AE929C2047F00719E0E /* Models */ = {
@@ -458,6 +403,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		88E1104E2CA4890700052A7B /* FlexibleRoutingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88E110552CA4890700052A7B /* Build configuration list for PBXNativeTarget "FlexibleRoutingTests" */;
+			buildPhases = (
+				88E1104B2CA4890700052A7B /* Sources */,
+				88E1104C2CA4890700052A7B /* Frameworks */,
+				88E1104D2CA4890700052A7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88E110542CA4890700052A7B /* PBXTargetDependency */,
+			);
+			name = FlexibleRoutingTests;
+			productName = FlexibleRoutingTests;
+			productReference = 88E1104F2CA4890700052A7B /* FlexibleRoutingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		88E25E9A29BF7DCE0018C150 /* FlexibleRouting */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88E25EC529BF7DD00018C150 /* Build configuration list for PBXNativeTarget "FlexibleRouting" */;
@@ -479,42 +442,6 @@
 			productReference = 88E25E9B29BF7DCE0018C150 /* FlexibleRouting.app */;
 			productType = "com.apple.product-type.application";
 		};
-		88E25EB029BF7DD00018C150 /* FlexibleRoutingTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88E25EC829BF7DD00018C150 /* Build configuration list for PBXNativeTarget "FlexibleRoutingTests" */;
-			buildPhases = (
-				88E25EAD29BF7DD00018C150 /* Sources */,
-				88E25EAE29BF7DD00018C150 /* Frameworks */,
-				88E25EAF29BF7DD00018C150 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88E25EB329BF7DD00018C150 /* PBXTargetDependency */,
-			);
-			name = FlexibleRoutingTests;
-			productName = FlexibleRoutingTests;
-			productReference = 88E25EB129BF7DD00018C150 /* FlexibleRoutingTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		88E25EBB29BF7DD00018C150 /* FlexibleRoutingUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 88E25ECB29BF7DD00018C150 /* Build configuration list for PBXNativeTarget "FlexibleRoutingUITests" */;
-			buildPhases = (
-				88E25EB829BF7DD00018C150 /* Sources */,
-				88E25EB929BF7DD00018C150 /* Frameworks */,
-				88E25EBA29BF7DD00018C150 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88E25EBE29BF7DD00018C150 /* PBXTargetDependency */,
-			);
-			name = FlexibleRoutingUITests;
-			productName = FlexibleRoutingUITests;
-			productReference = 88E25EBC29BF7DD00018C150 /* FlexibleRoutingUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -522,19 +449,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					88E1104E2CA4890700052A7B = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+						TestTargetID = 88E25E9A29BF7DCE0018C150;
+					};
 					88E25E9A29BF7DCE0018C150 = {
 						CreatedOnToolsVersion = 12.4;
-					};
-					88E25EB029BF7DD00018C150 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 88E25E9A29BF7DCE0018C150;
-					};
-					88E25EBB29BF7DD00018C150 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 88E25E9A29BF7DCE0018C150;
 					};
 				};
 			};
@@ -557,13 +481,19 @@
 			projectRoot = "";
 			targets = (
 				88E25E9A29BF7DCE0018C150 /* FlexibleRouting */,
-				88E25EB029BF7DD00018C150 /* FlexibleRoutingTests */,
-				88E25EBB29BF7DD00018C150 /* FlexibleRoutingUITests */,
+				88E1104E2CA4890700052A7B /* FlexibleRoutingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88E1104D2CA4890700052A7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88E25E9929BF7DCE0018C150 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,23 +504,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88E25EAF29BF7DD00018C150 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88E25EBA29BF7DD00018C150 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		88E1104B2CA4890700052A7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88E1105A2CA48A1D00052A7B /* FlexibleRoutingTests.swift in Sources */,
+				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		88E25E9729BF7DCE0018C150 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -650,65 +575,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		88E25EAD29BF7DD00018C150 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88A18CAE29BF9327008015DB /* ModalTransition.swift in Sources */,
-				88E1E4A029C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
-				88A18C9729BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88E31B8129C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
-				88E31B8A29C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
-				88E31B8429C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
-				88E68C0729C474D7009F251C /* DataRequest.swift in Sources */,
-				88E68C2529C49E93009F251C /* ImageRequest.swift in Sources */,
-				88E1E4AD29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
-				88E68C1929C4835B009F251C /* AssetsRequest.swift in Sources */,
-				88A18C8C29BF85C8008015DB /* Transition.swift in Sources */,
-				88E31B7E29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
-				88E68C1029C477F9009F251C /* DefaultNetworkService.swift in Sources */,
-				88E25EB629BF7DD00018C150 /* FlexibleRoutingTests.swift in Sources */,
-				88E68C1F29C495FC009F251C /* AssetListViewModel.swift in Sources */,
-				88E31B8729C21C6100719E0E /* WatchList.swift in Sources */,
-				88A18C8529BF84D9008015DB /* Routable.swift in Sources */,
-				88F01B0029C3CBE2006EEF57 /* AssetsService.swift in Sources */,
-				88E1E4BA29C0B6AE000572FF /* SettingsViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		88E25EB829BF7DD00018C150 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				88A18CAF29BF9327008015DB /* ModalTransition.swift in Sources */,
-				88E1E4A129C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
-				88A18C9829BF86C2008015DB /* DefaultRouter.swift in Sources */,
-				88E31B8229C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
-				88E31B8B29C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
-				88E31B8529C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
-				88E1E4AE29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
-				88A18C8D29BF85C8008015DB /* Transition.swift in Sources */,
-				88E31B7F29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
-				88E25EC129BF7DD00018C150 /* FlexibleRoutingUITests.swift in Sources */,
-				88E31B8829C21C6100719E0E /* WatchList.swift in Sources */,
-				88A18C8629BF84D9008015DB /* Routable.swift in Sources */,
-				88F01B0129C3CBE2006EEF57 /* AssetsService.swift in Sources */,
-				88E1E4BB29C0B6AE000572FF /* SettingsViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88E25EB329BF7DD00018C150 /* PBXTargetDependency */ = {
+		88E110542CA4890700052A7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88E25E9A29BF7DCE0018C150 /* FlexibleRouting */;
-			targetProxy = 88E25EB229BF7DD00018C150 /* PBXContainerItemProxy */;
-		};
-		88E25EBE29BF7DD00018C150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 88E25E9A29BF7DCE0018C150 /* FlexibleRouting */;
-			targetProxy = 88E25EBD29BF7DD00018C150 /* PBXContainerItemProxy */;
+			targetProxy = 88E110532CA4890700052A7B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -733,6 +606,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		88E110562CA4890700052A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexibleRouting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlexibleRouting";
+			};
+			name = Debug;
+		};
+		88E110572CA4890700052A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexibleRouting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FlexibleRouting";
+			};
+			name = Release;
+		};
 		88E25EC329BF7DD00018C150 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -893,93 +822,18 @@
 			};
 			name = Release;
 		};
-		88E25EC929BF7DD00018C150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56U6P9HNQ5;
-				INFOPLIST_FILE = FlexibleRoutingTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = devoronin.FlexibleRoutingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexibleRouting.app/FlexibleRouting";
-			};
-			name = Debug;
-		};
-		88E25ECA29BF7DD00018C150 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56U6P9HNQ5;
-				INFOPLIST_FILE = FlexibleRoutingTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = devoronin.FlexibleRoutingTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlexibleRouting.app/FlexibleRouting";
-			};
-			name = Release;
-		};
-		88E25ECC29BF7DD00018C150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56U6P9HNQ5;
-				INFOPLIST_FILE = FlexibleRoutingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = devoronin.FlexibleRoutingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FlexibleRouting;
-			};
-			name = Debug;
-		};
-		88E25ECD29BF7DD00018C150 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 56U6P9HNQ5;
-				INFOPLIST_FILE = FlexibleRoutingUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = devoronin.FlexibleRoutingUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FlexibleRouting;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88E110552CA4890700052A7B /* Build configuration list for PBXNativeTarget "FlexibleRoutingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E110562CA4890700052A7B /* Debug */,
+				88E110572CA4890700052A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		88E25E9629BF7DCE0018C150 /* Build configuration list for PBXProject "FlexibleRouting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -994,24 +848,6 @@
 			buildConfigurations = (
 				88E25EC629BF7DD00018C150 /* Debug */,
 				88E25EC729BF7DD00018C150 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		88E25EC829BF7DD00018C150 /* Build configuration list for PBXNativeTarget "FlexibleRoutingTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88E25EC929BF7DD00018C150 /* Debug */,
-				88E25ECA29BF7DD00018C150 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		88E25ECB29BF7DD00018C150 /* Build configuration list for PBXNativeTarget "FlexibleRoutingUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				88E25ECC29BF7DD00018C150 /* Debug */,
-				88E25ECD29BF7DD00018C150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

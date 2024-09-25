@@ -25,7 +25,7 @@ extension WatchlistTabRoute where Self: Router {
     }
     
     func selectWatchlistTab() {
-        root?.tabBarController?.selectedIndex = Tabs.watchlist.index
+        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .watchlist) ?? 1
     }
 }
 

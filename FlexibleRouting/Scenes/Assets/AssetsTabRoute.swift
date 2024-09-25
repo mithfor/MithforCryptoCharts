@@ -24,7 +24,7 @@ extension AssetsTabRoute where Self: Router {
     }
     
     func selectAssetsTab() {
-        root?.tabBarController?.selectedIndex = Tabs.assets.index
+        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .assets) ?? 0
     }
 }
 

@@ -25,7 +25,7 @@ extension SettingsTabRoute where Self: Router {
     }
     
     func selectSettingsTab() {
-        root?.tabBarController?.selectedIndex = Tabs.settings.index
+        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .settings) ?? 2
     }
 }
 
