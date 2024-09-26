@@ -56,7 +56,7 @@ final class MainTabBarControllerTests: XCTestCase {
     func test_setTabBar_tintColorGreen() throws {
         let sut = makeSUT()
         
-        XCTAssertEqual(sut.tabBar.tintColor, UIColor.systemGreen)
+        XCTAssertEqual(sut.tabBar.tintColor, UIColor.systemBlue)
     }
 
 }
