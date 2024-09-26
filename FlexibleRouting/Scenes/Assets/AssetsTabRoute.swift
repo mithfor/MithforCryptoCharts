@@ -19,12 +19,12 @@ extension AssetsTabRoute where Self: Router {
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.assets.item
+        navigation.tabBarItem = MainTabs.assets.item
         return navigation
     }
     
     func selectAssetsTab() {
-        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .assets) ?? 0
+        root?.tabBarController?.selectedIndex = MainTabs.allCases.firstIndex(of: .assets) ?? 0
     }
 }
 

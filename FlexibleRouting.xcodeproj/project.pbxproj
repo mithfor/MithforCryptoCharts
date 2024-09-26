@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
 		88E1105A2CA48A1D00052A7B /* FlexibleRoutingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */; };
 		88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */; };
+		88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */; };
 		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
 		88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48429C090EA000572FF /* MainTabBarController.swift */; };
 		88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
@@ -103,6 +104,7 @@
 		88E1104F2CA4890700052A7B /* FlexibleRoutingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexibleRoutingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleRoutingTests.swift; sourceTree = "<group>"; };
 		88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContollerTests.swift; sourceTree = "<group>"; };
+		88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultRouter + ext.swift"; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
 		88E1E48429C090EA000572FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTabRoute.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				88A18C9529BF86C2008015DB /* DefaultRouter.swift */,
+				88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */,
 				88A18C8329BF84D9008015DB /* Routable.swift */,
 				88E1E47829C08EB8000572FF /* Transitions */,
 			);
@@ -553,6 +556,7 @@
 				88E31AF329C2047F00719E0E /* Asset.swift in Sources */,
 				881FDED429C241360057AAB2 /* ChartRenderer.swift in Sources */,
 				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
+				88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
 				88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */,
 				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,

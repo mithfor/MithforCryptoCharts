@@ -26,8 +26,8 @@ enum NetworkResponse {
 
 class NetworkManager {
     
-    static let shared           = NetworkManager()
-    let cache                   = NSCache<NSString, UIImage>()
+    static let shared = NetworkManager()
+    let cache = NSCache<NSString, UIImage>()
     
     typealias AssetsHandler = (Result<AssetListResponse, NetworkError>) -> Void
     typealias AssetHistoryHandler = (Result<AssetListHistoryResponse, NetworkError>) ->Void
