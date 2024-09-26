@@ -8,7 +8,7 @@
 import Foundation
 
 
-// TODO: - needs to imlement
+// TODO: - needs to implement
 final class DatabaseManager {
     private let WATCHLIST_KEY = "watchlist_key"
     

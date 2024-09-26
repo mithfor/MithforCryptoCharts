@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 //TODO: - actualize it
 enum NetworkError: String, Error {
     case endpoint = "Bad endpoint"
@@ -17,7 +16,7 @@ enum NetworkError: String, Error {
     case invalidData = "The data received from the server was invalid. Please try again"
     case unableToDecode = "Unable to decode an answer"
 //    case unableToFavorites = "No favorites. Please try again"
-//    case alreadyInFavorites = "This user is already in your favorites!"
+//    case alreadyInFavorites = "This asset is already in your favorites!"
 }
 
 enum NetworkResponse {
@@ -41,7 +40,7 @@ class NetworkManager {
     
     func fetchAssetHistory(id: String, completed: @escaping AssetHistoryHandler) {
 
-        let endpoint = String("\(baseURL)assets/\(id)/history?interval=m30")
+        let endpoint = String("\(baseURL)assets/\(id)/history?interval=d1")
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.endpoint))

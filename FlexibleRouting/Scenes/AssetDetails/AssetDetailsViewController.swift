@@ -20,7 +20,7 @@ protocol AssetDetailsViewControllerOutput: AnyObject {
 final class AssetDetailsViewController: UIViewController {
     
     //MARK: - Private vars
-    private let asset: Asset
+    private var asset: Asset
     private let watchList = WatchList()
     
     var interactor: AssetDetailsInteractorInput?
@@ -33,8 +33,7 @@ final class AssetDetailsViewController: UIViewController {
     
     // MARK: - INIT
     init(viewModel: AssetDetailsViewModel) {
-        self.asset = viewModel.asset ?? Asset()
-
+        self.asset = viewModel.asset
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -175,9 +174,9 @@ final class AssetDetailsViewModel {
     private var router: Routes
     
     //TODO: - research need of optional Asset
-    var asset: Asset?
+    var asset: Asset
     
-    init(router: Routes, asset: Asset? = nil) {
+    init(router: Routes, asset: Asset) {
         self.router = router
         self.asset = asset
     }
