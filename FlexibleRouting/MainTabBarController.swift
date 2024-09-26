@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Tabs: CaseIterable {
+enum MainTabs: CaseIterable {
     case assets
     case watchlist
     case settings
@@ -17,15 +17,15 @@ enum Tabs: CaseIterable {
         case .assets:
             return UITabBarItem(title: Constants.Strings.Title.assets,
                                 image: UIImage(systemName:  Constants.Strings.IconFill.assets),
-                                tag: Tabs.allCases.firstIndex(of: .assets) ?? 0)
+                                tag: MainTabs.allCases.firstIndex(of: .assets) ?? 0)
         case .watchlist:
             return UITabBarItem(title: Constants.Strings.Title.watchlist,
                                 image: UIImage(systemName: Constants.Strings.IconFill.watchlist),
-                                tag: Tabs.allCases.firstIndex(of: .watchlist) ?? 1)
+                                tag: MainTabs.allCases.firstIndex(of: .watchlist) ?? 1)
         case .settings:
             return UITabBarItem(title: Constants.Strings.Title.settings,
                                 image: UIImage(systemName: Constants.Strings.IconFill.settings),
-                                tag: Tabs.allCases.firstIndex(of: .settings) ?? 2)
+                                tag: MainTabs.allCases.firstIndex(of: .settings) ?? 2)
         }
     }
 }

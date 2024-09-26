@@ -19,13 +19,13 @@ extension WatchlistTabRoute where Self: Router {
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.watchlist.item
+        navigation.tabBarItem = MainTabs.watchlist.item
         navigation.tabBarItem.title = Constants.Strings.Title.watchlist
         return navigation
     }
     
     func selectWatchlistTab() {
-        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .watchlist) ?? 1
+        root?.tabBarController?.selectedIndex = MainTabs.allCases.firstIndex(of: .watchlist) ?? 1
     }
 }
 

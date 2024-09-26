@@ -24,30 +24,30 @@ final class MainTabBarControllerTests: XCTestCase {
                            UIViewController()]
         let sut = makeSUT(with: controllers)
 
-        XCTAssertEqual(sut.viewControllers?.count, Tabs.allCases.count)
+        XCTAssertEqual(sut.viewControllers?.count, MainTabs.allCases.count)
     }
     
     func test_tabsCount_equalsThree() {
         
-        XCTAssertEqual(Tabs.allCases.count, 3)
+        XCTAssertEqual(MainTabs.allCases.count, 3)
     }
     
     func test_setupTabBarItem_AssetsTagIsCorrect() {
-        let tab = Tabs.assets
+        let tab = MainTabs.assets
         let item = tab.item
         
         XCTAssertEqual(item.tag, 0)
     }
     
     func test_setupTabBarItem_WhatchListTagIsCorrect() {
-        let tab = Tabs.watchlist
+        let tab = MainTabs.watchlist
         let item = tab.item
         
         XCTAssertEqual(item.tag, 1)
     }
     
     func test_setupTabBarItem_SettingsTagIsCorrect() {
-        let tab = Tabs.settings
+        let tab = MainTabs.settings
         let item = tab.item
         
         XCTAssertEqual(item.tag, 2)

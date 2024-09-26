@@ -19,13 +19,13 @@ extension SettingsTabRoute where Self: Router {
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
-        navigation.tabBarItem = Tabs.settings.item
+        navigation.tabBarItem = MainTabs.settings.item
         
         return navigation
     }
     
     func selectSettingsTab() {
-        root?.tabBarController?.selectedIndex = Tabs.allCases.firstIndex(of: .settings) ?? 2
+        root?.tabBarController?.selectedIndex = MainTabs.allCases.firstIndex(of: .settings) ?? 2
     }
 }
 
