@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,7 +101,6 @@
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88E1104F2CA4890700052A7B /* FlexibleRoutingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlexibleRoutingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88E110582CA48A1D00052A7B /* FlexibleRoutingTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlexibleRoutingTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleRoutingTests.swift; sourceTree = "<group>"; };
 		88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContollerTests.swift; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
@@ -142,6 +141,7 @@
 		88E68C1D29C495FC009F251C /* AssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListViewModel.swift; sourceTree = "<group>"; };
 		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
+		D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlexibleRoutingTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,9 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				88E110592CA48A1D00052A7B /* FlexibleRoutingTests.swift */,
-				88E25EB729BF7DD00018C150 /* Info.plist */,
-				88E110582CA48A1D00052A7B /* FlexibleRoutingTests-Bridging-Header.h */,
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
+				88E25EB729BF7DD00018C150 /* Info.plist */,
+				D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */,
 			);
 			path = FlexibleRoutingTests;
 			sourceTree = "<group>";
@@ -617,7 +617,7 @@
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
@@ -646,7 +646,7 @@
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
@@ -791,7 +791,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				INFOPLIST_FILE = FlexibleRouting/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -810,7 +810,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				INFOPLIST_FILE = FlexibleRouting/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

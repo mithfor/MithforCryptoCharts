@@ -30,11 +30,10 @@
       <Testables>
          <TestableReference
             skipped = "NO"
-            parallelizable = "YES"
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88E25EB029BF7DD00018C150"
+               BlueprintIdentifier = "88E1104E2CA4890700052A7B"
                BuildableName = "FlexibleRoutingTests.xctest"
                BlueprintName = "FlexibleRoutingTests"
                ReferencedContainer = "container:FlexibleRouting.xcodeproj">
