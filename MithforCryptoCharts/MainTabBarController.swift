@@ -16,7 +16,7 @@ enum MainTabs: CaseIterable {
         switch self {
         case .assets:
             return UITabBarItem(title: Constants.Strings.Title.assets,
-                                image: UIImage(systemName:  Constants.Strings.IconFill.assets),
+                                image: UIImage(systemName: Constants.Strings.IconFill.assets),
                                 tag: MainTabs.allCases.firstIndex(of: .assets) ?? 0)
         case .watchlist:
             return UITabBarItem(title: Constants.Strings.Title.watchlist,
@@ -30,22 +30,17 @@ enum MainTabs: CaseIterable {
     }
 }
 
-
-//Mark: - MainTabBarController
+    // MARK: - MainTabBarController
 final class MainTabBarController: UITabBarController {
-    
     init(viewControllers: [UIViewController]) {
         super.init(nibName: nil, bundle: nil)
         self.viewControllers = viewControllers
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tabBar.tintColor = .systemBlue
     }
 }
