@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */; };
+		881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */; };
+		881FDED129C241360057AAB2 /* AssetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC729C241360057AAB2 /* AssetHistory.swift */; };
+		881FDED229C241360057AAB2 /* ChartScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC929C241360057AAB2 /* ChartScrollView.swift */; };
+		881FDED329C241360057AAB2 /* DetailHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDECA29C241360057AAB2 /* DetailHorizontalStackView.swift */; };
+		881FDED429C241360057AAB2 /* ChartRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDECB29C241360057AAB2 /* ChartRenderer.swift */; };
+		881FDED529C241360057AAB2 /* AssetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDECC29C241360057AAB2 /* AssetDetailsView.swift */; };
+		881FDED629C241360057AAB2 /* AssetDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDECD29C241360057AAB2 /* AssetDetailsConfigurator.swift */; };
+		881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDECE29C241360057AAB2 /* AssetDetailsInteractor.swift */; };
+		881FDEDC29C2420B0057AAB2 /* AssetDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */; };
+		881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEE029C242D10057AAB2 /* PushTransition.swift */; };
+		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
+		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
+		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
+		88A18C8429BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
+		88A18C8B29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
+		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
+		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
+		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
+		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
+		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
+		88E1105A2CA48A1D00052A7B /* MFCryptoChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */; };
+		88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */; };
+		88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */; };
+		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
+		88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E48429C090EA000572FF /* MainTabBarController.swift */; };
+		88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */; };
+		88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */; };
+		88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */; };
+		88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */; };
+		88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA729BF7DD00018C150 /* Assets.xcassets */; };
+		88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */; };
+		88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */; };
+		88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE829C2047F00719E0E /* AssetsPresenter.swift */; };
+		88E31AF329C2047F00719E0E /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEA29C2047F00719E0E /* Asset.swift */; };
+		88E31AF429C2047F00719E0E /* AssetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEB29C2047F00719E0E /* AssetsInteractor.swift */; };
+		88E31AF529C2047F00719E0E /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEC29C2047F00719E0E /* AssetsViewController.swift */; };
+		88E31AF629C2047F00719E0E /* AssetsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEE29C2047F00719E0E /* AssetsTableView.swift */; };
+		88E31AF829C2047F00719E0E /* AssetsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AF029C2047F00719E0E /* AssetsTableViewCell.swift */; };
+		88E31B0029C204CA00719E0E /* IconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFD29C204CA00719E0E /* IconManager.swift */; };
+		88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFE29C204CA00719E0E /* NetworkManager.swift */; };
+		88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AFF29C204CA00719E0E /* DatabaseManager.swift */; };
+		88E31B1629C2066B00719E0E /* Extenision + UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */; };
+		88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */; };
+		88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B1529C2066B00719E0E /* Extension + UIView.swift */; };
+		88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */; };
+		88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2529C2073D00719E0E /* SearchTextField.swift */; };
+		88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B2629C2073D00719E0E /* PaddingLabel.swift */; };
+		88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7729C21C6100719E0E /* WatchlistViewController.swift */; };
+		88E31B8029C21C6100719E0E /* WatchlistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */; };
+		88E31B8329C21C6100719E0E /* WatchlistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */; };
+		88E31B8629C21C6100719E0E /* WatchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7B29C21C6100719E0E /* WatchList.swift */; };
+		88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */; };
+		88E68C0629C474D7009F251C /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0529C474D7009F251C /* DataRequest.swift */; };
+		88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */; };
+		88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
+		88E68C1E29C495FC009F251C /* AssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* AssetListViewModel.swift */; };
+		88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
+		88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
+		88FE8D682C92A74C000664AE /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 88FE8D672C92A74C000664AE /* netfox */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88E110532CA4890700052A7B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88E25E9329BF7DCE0018C150 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88E25E9A29BF7DCE0018C150;
+			remoteInfo = FlexibleRouting;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsPresenter.swift; sourceTree = "<group>"; };
+		881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsViewController.swift; sourceTree = "<group>"; };
+		881FDEC729C241360057AAB2 /* AssetHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHistory.swift; sourceTree = "<group>"; };
+		881FDEC929C241360057AAB2 /* ChartScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartScrollView.swift; sourceTree = "<group>"; };
+		881FDECA29C241360057AAB2 /* DetailHorizontalStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailHorizontalStackView.swift; sourceTree = "<group>"; };
+		881FDECB29C241360057AAB2 /* ChartRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartRenderer.swift; sourceTree = "<group>"; };
+		881FDECC29C241360057AAB2 /* AssetDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsView.swift; sourceTree = "<group>"; };
+		881FDECD29C241360057AAB2 /* AssetDetailsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsConfigurator.swift; sourceTree = "<group>"; };
+		881FDECE29C241360057AAB2 /* AssetDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsInteractor.swift; sourceTree = "<group>"; };
+		881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsRoute.swift; sourceTree = "<group>"; };
+		881FDEE029C242D10057AAB2 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
+		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
+		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
+		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		88DF5F9829C0F78300C47453 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		88E1104F2CA4890700052A7B /* MithforCryptoChartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MithforCryptoChartsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFCryptoChartsTests.swift; sourceTree = "<group>"; };
+		88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContollerTests.swift; sourceTree = "<group>"; };
+		88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultRouter + ext.swift"; sourceTree = "<group>"; };
+		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
+		88E1E48429C090EA000572FF /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTabRoute.swift; sourceTree = "<group>"; };
+		88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTabRoute.swift; sourceTree = "<group>"; };
+		88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		88E25E9B29BF7DCE0018C150 /* MithforCryptoCharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MithforCryptoCharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88E25EA729BF7DD00018C150 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88E25EAA29BF7DD00018C150 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88E25EAC29BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88E25EB729BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsConfigurator.swift; sourceTree = "<group>"; };
+		88E31AE829C2047F00719E0E /* AssetsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPresenter.swift; sourceTree = "<group>"; };
+		88E31AEA29C2047F00719E0E /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		88E31AEB29C2047F00719E0E /* AssetsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsInteractor.swift; sourceTree = "<group>"; };
+		88E31AEC29C2047F00719E0E /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
+		88E31AEE29C2047F00719E0E /* AssetsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsTableView.swift; sourceTree = "<group>"; };
+		88E31AF029C2047F00719E0E /* AssetsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsTableViewCell.swift; sourceTree = "<group>"; };
+		88E31AFD29C204CA00719E0E /* IconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconManager.swift; sourceTree = "<group>"; };
+		88E31AFE29C204CA00719E0E /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		88E31AFF29C204CA00719E0E /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extenision + UILabel.swift"; sourceTree = "<group>"; };
+		88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		88E31B1529C2066B00719E0E /* Extension + UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
+		88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePercent24HrLabel.swift; sourceTree = "<group>"; };
+		88E31B2529C2073D00719E0E /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
+		88E31B2629C2073D00719E0E /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		88E31B7729C21C6100719E0E /* WatchlistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistViewController.swift; sourceTree = "<group>"; };
+		88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistInteractor.swift; sourceTree = "<group>"; };
+		88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistConfigurator.swift; sourceTree = "<group>"; };
+		88E31B7B29C21C6100719E0E /* WatchList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchList.swift; sourceTree = "<group>"; };
+		88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchlistPresenter.swift; sourceTree = "<group>"; };
+		88E68C0529C474D7009F251C /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
+		88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
+		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
+		88E68C1D29C495FC009F251C /* AssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListViewModel.swift; sourceTree = "<group>"; };
+		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
+		D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlexibleRoutingTests-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88E1104C2CA4890700052A7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E25E9829BF7DCE0018C150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88FE8D682C92A74C000664AE /* netfox in Frameworks */,
+				88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		881FDEA829C22D4C0057AAB2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				88E1E49029C0A9A2000572FF /* Assets */,
+				881FDEC329C241360057AAB2 /* AssetDetails */,
+				88E1E4C229C0B6B3000572FF /* Settings */,
+				88E1E49729C0A9B1000572FF /* Watchlist */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		881FDEAF29C22E2F0057AAB2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				881FDEF829C246F40057AAB2 /* AppConstants.swift */,
+				8885267529C0BD77006259E8 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		881FDEBC29C22EF10057AAB2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
+				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		881FDEC329C241360057AAB2 /* AssetDetails */ = {
+			isa = PBXGroup;
+			children = (
+				881FDEC829C241360057AAB2 /* CustomViews */,
+				881FDEC629C241360057AAB2 /* Models */,
+				881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */,
+				881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */,
+				881FDECD29C241360057AAB2 /* AssetDetailsConfigurator.swift */,
+				881FDECE29C241360057AAB2 /* AssetDetailsInteractor.swift */,
+				881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */,
+			);
+			path = AssetDetails;
+			sourceTree = "<group>";
+		};
+		881FDEC629C241360057AAB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				881FDEC729C241360057AAB2 /* AssetHistory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		881FDEC829C241360057AAB2 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				881FDEC929C241360057AAB2 /* ChartScrollView.swift */,
+				881FDECA29C241360057AAB2 /* DetailHorizontalStackView.swift */,
+				881FDECB29C241360057AAB2 /* ChartRenderer.swift */,
+				881FDECC29C241360057AAB2 /* AssetDetailsView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		88A18C9129BF866E008015DB /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				88A18C9529BF86C2008015DB /* DefaultRouter.swift */,
+				88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */,
+				88A18C8329BF84D9008015DB /* Routable.swift */,
+				88E1E47829C08EB8000572FF /* Transitions */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		88E1E47829C08EB8000572FF /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				88A18C8A29BF85C8008015DB /* Transition.swift */,
+				88A18CAC29BF9327008015DB /* ModalTransition.swift */,
+				88E1E47F29C08ED0000572FF /* EmptyTransition.swift */,
+				881FDEE029C242D10057AAB2 /* PushTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		88E1E49029C0A9A2000572FF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				88E31AE929C2047F00719E0E /* Models */,
+				88E31AED29C2047F00719E0E /* Customviews */,
+				88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */,
+				88E31AE829C2047F00719E0E /* AssetsPresenter.swift */,
+				88E31AEB29C2047F00719E0E /* AssetsInteractor.swift */,
+				88E31AEC29C2047F00719E0E /* AssetsViewController.swift */,
+				88E1E4AB29C0AE92000572FF /* AssetsTabRoute.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		88E1E49729C0A9B1000572FF /* Watchlist */ = {
+			isa = PBXGroup;
+			children = (
+				88E31B7729C21C6100719E0E /* WatchlistViewController.swift */,
+				88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */,
+				88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */,
+				88E31B7A29C21C6100719E0E /* Models */,
+				88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */,
+				88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */,
+			);
+			path = Watchlist;
+			sourceTree = "<group>";
+		};
+		88E1E4C229C0B6B3000572FF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				88E1E4B829C0B6AE000572FF /* SettingsViewController.swift */,
+				8885266829C0B873006259E8 /* SettingsTabRoute.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		88E25E9229BF7DCE0018C150 = {
+			isa = PBXGroup;
+			children = (
+				88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */,
+				88E25EB429BF7DD00018C150 /* MFCryptoChartsTests */,
+				88E25E9C29BF7DCE0018C150 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88E25E9C29BF7DCE0018C150 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88E25E9B29BF7DCE0018C150 /* MithforCryptoCharts.app */,
+				88E1104F2CA4890700052A7B /* MithforCryptoChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */ = {
+			isa = PBXGroup;
+			children = (
+				88E68C0429C474B3009F251C /* Networking */,
+				881FDEAF29C22E2F0057AAB2 /* Constants */,
+				88E31B2029C2073D00719E0E /* CustomViews */,
+				88E31B1129C2066B00719E0E /* Extensions */,
+				88E31AFC29C204CA00719E0E /* Managers */,
+				88A18C9129BF866E008015DB /* Routing */,
+				881FDEA829C22D4C0057AAB2 /* Scenes */,
+				88E25E9E29BF7DCE0018C150 /* AppDelegate.swift */,
+				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
+				88E25EAC29BF7DD00018C150 /* Info.plist */,
+				88DF5FA829C0F9FB00C47453 /* Localizable.strings */,
+				88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */,
+				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
+			);
+			path = MithforCryptoCharts;
+			sourceTree = "<group>";
+		};
+		88E25EB429BF7DD00018C150 /* MFCryptoChartsTests */ = {
+			isa = PBXGroup;
+			children = (
+				88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */,
+				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
+				88E25EB729BF7DD00018C150 /* Info.plist */,
+				D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */,
+			);
+			path = MFCryptoChartsTests;
+			sourceTree = "<group>";
+		};
+		88E31AE929C2047F00719E0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E31AEA29C2047F00719E0E /* Asset.swift */,
+				88E68C1D29C495FC009F251C /* AssetListViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E31AED29C2047F00719E0E /* Customviews */ = {
+			isa = PBXGroup;
+			children = (
+				88E31AEE29C2047F00719E0E /* AssetsTableView.swift */,
+				88E31AF029C2047F00719E0E /* AssetsTableViewCell.swift */,
+			);
+			path = Customviews;
+			sourceTree = "<group>";
+		};
+		88E31AFC29C204CA00719E0E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				88E31AFD29C204CA00719E0E /* IconManager.swift */,
+				88E31AFE29C204CA00719E0E /* NetworkManager.swift */,
+				88E31AFF29C204CA00719E0E /* DatabaseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		88E31B1129C2066B00719E0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88DF5F9829C0F78300C47453 /* Extension + String.swift */,
+				88E31B1229C2066B00719E0E /* Extenision + UILabel.swift */,
+				88E31B1429C2066B00719E0E /* Extension + UIViewController.swift */,
+				88E31B1529C2066B00719E0E /* Extension + UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		88E31B2029C2073D00719E0E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				88E31B2429C2073D00719E0E /* ChangePercent24HrLabel.swift */,
+				88E31B2529C2073D00719E0E /* SearchTextField.swift */,
+				88E31B2629C2073D00719E0E /* PaddingLabel.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		88E31B7A29C21C6100719E0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				88E31B7B29C21C6100719E0E /* WatchList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		88E68C0429C474B3009F251C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				88E68C0529C474D7009F251C /* DataRequest.swift */,
+				88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */,
+				88E68C1729C4835B009F251C /* AssetsRequest.swift */,
+				88E68C2329C49E93009F251C /* ImageRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88E1104E2CA4890700052A7B /* MithforCryptoChartsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88E110552CA4890700052A7B /* Build configuration list for PBXNativeTarget "MithforCryptoChartsTests" */;
+			buildPhases = (
+				88E1104B2CA4890700052A7B /* Sources */,
+				88E1104C2CA4890700052A7B /* Frameworks */,
+				88E1104D2CA4890700052A7B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88E110542CA4890700052A7B /* PBXTargetDependency */,
+			);
+			name = MithforCryptoChartsTests;
+			productName = FlexibleRoutingTests;
+			productReference = 88E1104F2CA4890700052A7B /* MithforCryptoChartsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		88E25E9A29BF7DCE0018C150 /* MithforCryptoCharts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88E25EC529BF7DD00018C150 /* Build configuration list for PBXNativeTarget "MithforCryptoCharts" */;
+			buildPhases = (
+				88E25E9729BF7DCE0018C150 /* Sources */,
+				88E25E9829BF7DCE0018C150 /* Frameworks */,
+				88E25E9929BF7DCE0018C150 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MithforCryptoCharts;
+			packageProductDependencies = (
+				88AA9A682C92A4EF004DDC8D /* DGCharts */,
+				88FE8D672C92A74C000664AE /* netfox */,
+			);
+			productName = FlexibleRouting;
+			productReference = 88E25E9B29BF7DCE0018C150 /* MithforCryptoCharts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88E25E9329BF7DCE0018C150 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					88E1104E2CA4890700052A7B = {
+						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
+						TestTargetID = 88E25E9A29BF7DCE0018C150;
+					};
+					88E25E9A29BF7DCE0018C150 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 88E25E9629BF7DCE0018C150 /* Build configuration list for PBXProject "MithforCryptoCharts" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 88E25E9229BF7DCE0018C150;
+			packageReferences = (
+				88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */,
+				88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */,
+			);
+			productRefGroup = 88E25E9C29BF7DCE0018C150 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88E25E9A29BF7DCE0018C150 /* MithforCryptoCharts */,
+				88E1104E2CA4890700052A7B /* MithforCryptoChartsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88E1104D2CA4890700052A7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E25E9929BF7DCE0018C150 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */,
+				88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */,
+				88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88E1104B2CA4890700052A7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88E1105A2CA48A1D00052A7B /* MFCryptoChartsTests.swift in Sources */,
+				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E25E9729BF7DCE0018C150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88E31B8329C21C6100719E0E /* WatchlistConfigurator.swift in Sources */,
+				88E31B8029C21C6100719E0E /* WatchlistInteractor.swift in Sources */,
+				88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */,
+				88A18C8B29BF85C8008015DB /* Transition.swift in Sources */,
+				88E31AF829C2047F00719E0E /* AssetsTableViewCell.swift in Sources */,
+				881FDEDC29C2420B0057AAB2 /* AssetDetailsRoute.swift in Sources */,
+				881FDED129C241360057AAB2 /* AssetHistory.swift in Sources */,
+				88E31B8629C21C6100719E0E /* WatchList.swift in Sources */,
+				88E31AF629C2047F00719E0E /* AssetsTableView.swift in Sources */,
+				88E31B1629C2066B00719E0E /* Extenision + UILabel.swift in Sources */,
+				881FDED629C241360057AAB2 /* AssetDetailsConfigurator.swift in Sources */,
+				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
+				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
+				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
+				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
+				88E68C1E29C495FC009F251C /* AssetListViewModel.swift in Sources */,
+				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
+				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
+				881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */,
+				88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */,
+				88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */,
+				881FDED229C241360057AAB2 /* ChartScrollView.swift in Sources */,
+				8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */,
+				88E68C0F29C477F9009F251C /* DefaultNetworkService.swift in Sources */,
+				88E31AF429C2047F00719E0E /* AssetsInteractor.swift in Sources */,
+				88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */,
+				88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */,
+				88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */,
+				881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */,
+				8885267629C0BD77006259E8 /* Constants.swift in Sources */,
+				88E31AF329C2047F00719E0E /* Asset.swift in Sources */,
+				881FDED429C241360057AAB2 /* ChartRenderer.swift in Sources */,
+				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
+				88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */,
+				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
+				88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */,
+				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,
+				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
+				88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */,
+				88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */,
+				881FDED529C241360057AAB2 /* AssetDetailsView.swift in Sources */,
+				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
+				881FDED329C241360057AAB2 /* DetailHorizontalStackView.swift in Sources */,
+				88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */,
+				88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */,
+				88E68C0629C474D7009F251C /* DataRequest.swift in Sources */,
+				88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */,
+				881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */,
+				881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */,
+				88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
+				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
+				88E31AF529C2047F00719E0E /* AssetsViewController.swift in Sources */,
+				88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88E110542CA4890700052A7B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88E25E9A29BF7DCE0018C150 /* MithforCryptoCharts */;
+			targetProxy = 88E110532CA4890700052A7B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		88DF5FA829C0F9FB00C47453 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88DF5FA729C0F9FB00C47453 /* en */,
+				88DF5FAC29C0FA5700C47453 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88E25EAA29BF7DD00018C150 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88E110562CA4890700052A7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MithforCryptoCharts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MithforCryptoCharts";
+			};
+			name = Debug;
+		};
+		88E110572CA4890700052A7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MithforCryptoCharts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MithforCryptoCharts";
+			};
+			name = Release;
+		};
+		88E25EC329BF7DD00018C150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88E25EC429BF7DD00018C150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88E25EC629BF7DD00018C150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				INFOPLIST_FILE = MithforCryptoCharts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = devoronin.MithforCryptoCharts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88E25EC729BF7DD00018C150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				INFOPLIST_FILE = MithforCryptoCharts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = devoronin.MithforCryptoCharts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88E110552CA4890700052A7B /* Build configuration list for PBXNativeTarget "MithforCryptoChartsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E110562CA4890700052A7B /* Debug */,
+				88E110572CA4890700052A7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		88E25E9629BF7DCE0018C150 /* Build configuration list for PBXProject "MithforCryptoCharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E25EC329BF7DD00018C150 /* Debug */,
+				88E25EC429BF7DD00018C150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		88E25EC529BF7DD00018C150 /* Build configuration list for PBXNativeTarget "MithforCryptoCharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88E25EC629BF7DD00018C150 /* Debug */,
+				88E25EC729BF7DD00018C150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		88AA9A682C92A4EF004DDC8D /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		88FE8D672C92A74C000664AE /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 88E25E9329BF7DCE0018C150 /* Project object */;
+}

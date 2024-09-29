@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  MithforCryptoCharts
+
+  Created by Dmitrii Voronin on 14.03.2023.
+  
+*/
+
+"Assets" = "Активы";
+"Watchlist" = "Избранное";
+"Settings" = "Настройки";
+
+"Network error" = "Ошибка сети";
+"Error" = "Ошибка";
+
+"OK" = "ОК";
+"Cancel" = "Отмена";
+"Remove" = "Убрать";
+
+"Market Cap" = "Капитализация";
+"Supply" = "Поддержка";
+"Volume (24h)" = "Итого за 24 часа";
