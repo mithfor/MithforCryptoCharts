@@ -28,7 +28,7 @@
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
-		88E1105A2CA48A1D00052A7B /* MFCryptoChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */; };
+		88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */; };
 		88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */; };
 		88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */; };
 		88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E1E47F29C08ED0000572FF /* EmptyTransition.swift */; };
@@ -102,7 +102,7 @@
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88E1104F2CA4890700052A7B /* MithforCryptoChartsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MithforCryptoChartsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFCryptoChartsTests.swift; sourceTree = "<group>"; };
+		88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MithforCryptoChartsTests.swift; sourceTree = "<group>"; };
 		88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarContollerTests.swift; sourceTree = "<group>"; };
 		88E1105D2CA5F22600052A7B /* DefaultRouter + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultRouter + ext.swift"; sourceTree = "<group>"; };
 		88E1E47F29C08ED0000572FF /* EmptyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTransition.swift; sourceTree = "<group>"; };
@@ -143,7 +143,6 @@
 		88E68C1D29C495FC009F251C /* AssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListViewModel.swift; sourceTree = "<group>"; };
 		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
-		D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlexibleRoutingTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */,
-				88E25EB429BF7DD00018C150 /* MFCryptoChartsTests */,
+				88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */,
 				88E25E9C29BF7DCE0018C150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -324,15 +323,14 @@
 			path = MithforCryptoCharts;
 			sourceTree = "<group>";
 		};
-		88E25EB429BF7DD00018C150 /* MFCryptoChartsTests */ = {
+		88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */ = {
 			isa = PBXGroup;
 			children = (
-				88E110592CA48A1D00052A7B /* MFCryptoChartsTests.swift */,
+				88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */,
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
 				88E25EB729BF7DD00018C150 /* Info.plist */,
-				D30F17E92CA5488600687148 /* FlexibleRoutingTests-Bridging-Header.h */,
 			);
-			path = MFCryptoChartsTests;
+			path = MithforCryptoChartsTests;
 			sourceTree = "<group>";
 		};
 		88E31AE929C2047F00719E0E /* Models */ = {
@@ -514,7 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88E1105A2CA48A1D00052A7B /* MFCryptoChartsTests.swift in Sources */,
+				88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */,
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,13 +623,12 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.MithforCryptoChartsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,12 +651,11 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mithfor.FlexibleRoutingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = mithfor.MithforCryptoChartsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "FlexibleRoutingTests/FlexibleRoutingTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MithforCryptoCharts.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MithforCryptoCharts";
