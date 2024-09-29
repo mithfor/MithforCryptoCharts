@@ -11,7 +11,6 @@ protocol Router: Routable {
     var root: UIViewController? { get set }
 }
 
-
 // MARK: - DefaultRouter
 class DefaultRouter: NSObject {
     
@@ -19,8 +18,7 @@ class DefaultRouter: NSObject {
 
     let rootTransition: Transition
     
-    init( rootTransition: Transition)  {
+    init( rootTransition: Transition) {
         self.rootTransition = rootTransition
     }
 }
-

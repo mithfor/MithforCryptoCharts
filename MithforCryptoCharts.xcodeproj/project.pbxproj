@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88159AE62CA9C10700028E9B /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 88159AE52CA9C10700028E9B /* SwiftLintFramework */; };
-		88159AE82CA9C10700028E9B /* swiftlint in Frameworks */ = {isa = PBXBuildFile; productRef = 88159AE72CA9C10700028E9B /* swiftlint */; };
 		881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */; };
 		881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */; };
 		881FDED129C241360057AAB2 /* AssetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC729C241360057AAB2 /* AssetHistory.swift */; };
@@ -160,9 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FE8D682C92A74C000664AE /* netfox in Frameworks */,
-				88159AE82CA9C10700028E9B /* swiftlint in Frameworks */,
 				88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */,
-				88159AE62CA9C10700028E9B /* SwiftLintFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,10 +266,10 @@
 		88E1E49729C0A9B1000572FF /* Watchlist */ = {
 			isa = PBXGroup;
 			children = (
+				88E31B7A29C21C6100719E0E /* Models */,
 				88E31B7729C21C6100719E0E /* WatchlistViewController.swift */,
 				88E31B7829C21C6100719E0E /* WatchlistInteractor.swift */,
 				88E31B7929C21C6100719E0E /* WatchlistConfigurator.swift */,
-				88E31B7A29C21C6100719E0E /* Models */,
 				88E31B7C29C21C6100719E0E /* WatchlistPresenter.swift */,
 				88E1E49E29C0A9E9000572FF /* WatchlistTabRoute.swift */,
 			);
@@ -437,14 +433,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				88159AEA2CA9C12A00028E9B /* PBXTargetDependency */,
+				88159AEF2CA9D08D00028E9B /* PBXTargetDependency */,
 			);
 			name = MithforCryptoCharts;
 			packageProductDependencies = (
 				88AA9A682C92A4EF004DDC8D /* DGCharts */,
 				88FE8D672C92A74C000664AE /* netfox */,
-				88159AE52CA9C10700028E9B /* SwiftLintFramework */,
-				88159AE72CA9C10700028E9B /* swiftlint */,
 			);
 			productName = FlexibleRouting;
 			productReference = 88E25E9B29BF7DCE0018C150 /* MithforCryptoCharts.app */;
@@ -483,7 +477,7 @@
 			packageReferences = (
 				88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */,
 				88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */,
-				88159AE42CA9C10700028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				88159AED2CA9D08200028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 88E25E9C29BF7DCE0018C150 /* Products */;
 			projectDirPath = "";
@@ -588,9 +582,9 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88159AEA2CA9C12A00028E9B /* PBXTargetDependency */ = {
+		88159AEF2CA9D08D00028E9B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 88159AE92CA9C12A00028E9B /* SwiftLintBuildToolPlugin */;
+			productRef = 88159AEE2CA9D08D00028E9B /* SwiftLintBuildToolPlugin */;
 		};
 		88E110542CA4890700052A7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -728,7 +722,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -786,7 +780,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -867,7 +861,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		88159AE42CA9C10700028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		88159AED2CA9D08200028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint";
 			requirement = {
@@ -894,19 +888,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		88159AE52CA9C10700028E9B /* SwiftLintFramework */ = {
+		88159AEE2CA9D08D00028E9B /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 88159AE42CA9C10700028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = SwiftLintFramework;
-		};
-		88159AE72CA9C10700028E9B /* swiftlint */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88159AE42CA9C10700028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = swiftlint;
-		};
-		88159AE92CA9C12A00028E9B /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88159AE42CA9C10700028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			package = 88159AED2CA9D08200028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 		88AA9A682C92A4EF004DDC8D /* DGCharts */ = {

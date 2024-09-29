@@ -5,11 +5,9 @@
 //  Created by Dmitrii Voronin on 08.01.2020.
 //  Copyright © 2020 Mithfor. All rights reserved.
 
-
 import UIKit
 
-
-//TODO: - actualize it
+// TODO: - actualize it
 enum NetworkError: String, Error {
     case endpoint = "Bad endpoint"
     case unableToComplete = "Unable to complete your request. Please check your internet connection."
@@ -30,11 +28,10 @@ class NetworkManager {
     let cache = NSCache<NSString, UIImage>()
     
     typealias AssetsHandler = (Result<AssetListResponse, NetworkError>) -> Void
-    typealias AssetHistoryHandler = (Result<AssetListHistoryResponse, NetworkError>) ->Void
+    typealias AssetHistoryHandler = (Result<AssetListHistoryResponse, NetworkError>) -> Void
     typealias ImageHandler = (Result<UIImage, NetworkError>) -> Void
     typealias AssetHandler = (Result<AssetResponse, NetworkError>) -> Void
-    
-    
+        
     private let baseURL: String = "http://api.coincap.io/v2/"
     
     private init() {}
@@ -50,7 +47,7 @@ class NetworkManager {
 
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
 
-            if let _ = error {
+            guard error != nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -91,7 +88,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
             
-            if let _ = error {
+            guard error != nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -133,7 +130,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
             
-            if let _ = error {
+            guard error != nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -183,7 +180,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            if let _ = error {
+            guard error != nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -193,7 +190,6 @@ class NetworkManager {
                 completed(.failure(.invalidResponse))
                 return
             }
-            
             
             guard let data = data else {
                 completed(.failure(.invalidData))
@@ -207,7 +203,6 @@ class NetworkManager {
                 } else {
                     completed(.failure(.invalidData))
                 }
-                
             }
         }
         

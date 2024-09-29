@@ -21,7 +21,7 @@ class IconManager: IconManagable {
     
     private init() {}
     
-    func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler)  {
+    func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler) {
         
         var assetIcon = IconAsset()
         let urlString = "\(IconManager.baseURL)\(asset.symbol?.lowercased() ?? "usd")"
@@ -32,7 +32,7 @@ class IconManager: IconManagable {
         }
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            if let _ = error {
+            guard error != nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -58,10 +58,6 @@ class IconManager: IconManagable {
     }
 }
 
-//struct AssetIconResponse
-
 struct IconAsset {
     var image = UIImage()
 }
-
-

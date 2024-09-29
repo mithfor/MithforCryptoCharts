@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import SwiftUI
 
 typealias AssetId = String
 typealias AssetImage = UIImage
@@ -24,7 +23,7 @@ protocol AssetsViewControllerInput: AnyObject, ResultError {
 
 protocol AssetsViewControllerOutput: AnyObject {
     func fetchAssets()
-    func fetchImage(for asset: Asset, completion: @escaping (() -> ()))
+    func fetchImage(for asset: Asset, completion: @escaping (() -> Void))
 }
 
 enum ActionState {
@@ -33,11 +32,11 @@ enum ActionState {
 }
 
 struct AssetWithImage {
-    let asset = Asset()
+    let asset: Asset
     let image: UIImage
 }
 
-//MARK: - AssetsViewController
+// MARK: - AssetsViewController
 class AssetsViewController: UIViewController {
     
     private var viewModel: AssetListViewModel?
@@ -49,7 +48,6 @@ class AssetsViewController: UIViewController {
     private var assetModel: AssetModel = [:]
     private var searching: ActionState = .inactive
         
-    
     let assetsTableView: AssetsTableView = {
        let tableView = AssetsTableView()
         tableView.register(AssetsTableViewCell.self,
@@ -66,7 +64,7 @@ class AssetsViewController: UIViewController {
         return searchController
     }()
 
-    //MARK: - Init
+    // MARK: - Init
     init(viewModel: AssetListViewModel) {
         super.init(nibName: nil, bundle: nil)
         
@@ -77,7 +75,7 @@ class AssetsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Overriden
+    // MARK: - Overriden
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -138,8 +136,10 @@ extension AssetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let assets = assets else {return .zero}
         switch searching {
-            case .active: return filteredAssets.count
-            case .inactive: return assets.count
+        case .active:
+            return filteredAssets.count
+        case .inactive:
+            return assets.count
         }
         
     }
@@ -161,7 +161,7 @@ extension AssetsViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension AssetsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.tableCellHeight
@@ -173,7 +173,7 @@ extension AssetsViewController: UITableViewDelegate {
         viewDetails(asset)
     }
 }
-//MARK: - AssetsTableViewCellDelegate
+// MARK: - AssetsTableViewCellDelegate
 extension AssetsViewController: AssetsTableViewCellDelegate {
     func viewDetails(_ asset: Asset) {
         viewModel?.assetDetailsTapped(asset: asset)
@@ -200,7 +200,7 @@ extension AssetsViewController: AssetsPresenterOutput {
     
 }
 
-//MARK: - UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension AssetsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -234,10 +234,8 @@ extension AssetsViewController: UISearchBarDelegate {
     }
 }
 
-
-//struct ViewControllerProvider: PreviewProvider {
+// struct ViewControllerProvider: PreviewProvider {
 //    static var previews: some View {
 //        AssetsViewController().showPreview()
 //    }
-//}
-
+// }

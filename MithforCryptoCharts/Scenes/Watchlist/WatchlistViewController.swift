@@ -7,26 +7,22 @@
 
 import UIKit
 
-//MARK: - WatchListViewControllerInput
+// MARK: - WatchListViewControllerInput
 protocol WatchListViewControllerInput: AnyObject, ResultError {
-    
     func update(_ assets: Assets)
 }
 
-//MARK: - WatchListViewControllerOutput
+// MARK: - WatchListViewControllerOutput
 protocol WatchListViewControllerOutput: AnyObject {
     func fetchFavoriteAssets(watchList: WatchList)
-    func fetchAssetDetails(by id: String, completion: @escaping (AssetResponse) -> ())
+    func fetchAssetDetails(by id: String, completion: @escaping (AssetResponse) -> Void)
 }
 
-//MARK: - WatchListViewController
+// MARK: - WatchListViewController
 class WatchlistViewController: UIViewController {
-    
     private var viewModel: WatchlistViewModel?
-    
     var interactor: WatchListInteractorInput?
-    
-    //MARK: - VARIABLES
+    // MARK: - VARIABLES
     var watchlist = WatchList()
     var assets = Assets()
     
@@ -37,7 +33,7 @@ class WatchlistViewController: UIViewController {
         return tableView
     }()
     
-    //MARK: - Init
+    // MARK: - Init
     init(viewModel: WatchlistViewModel) {
         super.init(nibName: nil, bundle: nil)
         

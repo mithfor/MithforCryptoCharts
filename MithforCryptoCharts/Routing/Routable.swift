@@ -18,5 +18,3 @@ protocol Closable: AnyObject {
 protocol Dismissable: AnyObject {
     func dismiss()
 }
-
-

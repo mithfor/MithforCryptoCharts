@@ -16,6 +16,4 @@ extension EmptyTransition: Transition {
     func open(_ viewConroller: UIViewController, from: UIViewController) {}
     
     func close(_ viewController: UIViewController) {}
-    
-    
 }
