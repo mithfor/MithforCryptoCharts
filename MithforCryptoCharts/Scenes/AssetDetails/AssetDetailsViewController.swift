@@ -19,7 +19,7 @@ protocol AssetDetailsViewControllerOutput: AnyObject {
 
 final class AssetDetailsViewController: UIViewController {
     
-    //MARK: - Private vars
+    // MARK: - Private vars
     private let asset: Asset
     private let watchList = WatchList()
     
@@ -33,7 +33,8 @@ final class AssetDetailsViewController: UIViewController {
     
     // MARK: - INIT
     init(viewModel: AssetDetailsViewModel) {
-        self.asset = viewModel.asset ?? Asset()
+        
+        self.asset = viewModel.asset
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -42,8 +43,7 @@ final class AssetDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
- 
-    //MARK:- OVERRIDEN METHODS
+    // MARK: - OVERRIDEN METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -98,7 +98,6 @@ final class AssetDetailsViewController: UIViewController {
         view.addSubview(assetDetailsView)
     }
     
-
     // MARK: UPDATES
     private func updateUI() {
                 
@@ -126,8 +125,7 @@ final class AssetDetailsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: imageName), style: .plain, target: self, action: #selector(didTapAddToWatchList))
     }
     
-    
-    //MARK: - ACTIONS
+    // MARK: - ACTIONS
     // TODO: - move logic to interactor (if it is allready in)
     @objc func didTapAddToWatchList() {
         
@@ -163,7 +161,7 @@ extension UIViewController {
 
 }
 
-//MARK: - AssetDetailsViewControllerInput
+// MARK: - AssetDetailsViewControllerInput
 extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     func updateHistory(with assetHistory: [AssetHistory]) {
         
@@ -173,18 +171,17 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     func updateTitle(with name: String, and symbol: String) {
         
         let navLabel = UILabel()
-        let navTitle = NSMutableAttributedString(string: name, attributes:[
+        let navTitle = NSMutableAttributedString(string: name, attributes: [
                                                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: AppConstants.navigationItemTextSize),
-                                                    NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.symbol,])
+                                                    NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.symbol])
         navTitle.append(NSMutableAttributedString(string: " "))
-        navTitle.append(NSMutableAttributedString(string: symbol, attributes:[
+        navTitle.append(NSMutableAttributedString(string: symbol, attributes: [
                                                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: AppConstants.navigationItemTextSize),
                                                     NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.name]))
 
         navLabel.attributedText = navTitle
         self.navigationItem.titleView = navLabel
     }
-    
     
     func updateFailed(with error: NetworkError) {
         print(#function)
@@ -194,15 +191,15 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     }
 }
 
-//MARK: - AssetDetailsViewModel
+// MARK: - AssetDetailsViewModel
 final class AssetDetailsViewModel {
     typealias Routes = AssetDetailsRoute
     private var router: Routes
     
-    //TODO: - research need of optional Asset
-    var asset: Asset?
+    // TODO: - research need of optional Asset
+    var asset: Asset
     
-    init(router: Routes, asset: Asset? = nil) {
+    init(router: Routes, asset: Asset) {
         self.router = router
         self.asset = asset
     }
