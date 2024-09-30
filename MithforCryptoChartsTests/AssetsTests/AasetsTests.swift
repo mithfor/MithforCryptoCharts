@@ -20,30 +20,28 @@ class AssetsTests: XCTestCase {
         let json = try Data(contentsOf: url)
         let decoder = JSONDecoder()
         
-        let asset = try decoder.decode(Asset.self, from: json)
+        let assets = try decoder.decode(AssetListResponse.self, from: json)
         
-        XCTAssertNotNil(asset)
-        XCTAssertEqual(asset.symbol, "BTC")
-        
+        XCTAssertNotNil(assets)
+        XCTAssertEqual(assets.data[0].id, "bitcoin")        
     }
     
     func test_AssetsModelWithOneNillValue() throws {
         let bundle = Bundle(for: type(of: self))
         
-        guard let url = bundle.url(forResource: "AssetsWithNil", withExtension: "json") else {
-            XCTFail("Missing file AssetsWithNil.json")
+        guard let url = bundle.url(forResource: "Assets", withExtension: "json") else {
+            XCTFail("Missing file Assets.json")
             return
         }
         
         let json = try Data(contentsOf: url)
         let decoder = JSONDecoder()
         
-        let asset = try decoder.decode(Asset.self, from: json)
+        let assets = try decoder.decode(AssetListResponse.self, from: json)
         
-        XCTAssertNotNil(asset)
-        XCTAssertEqual(asset.symbol, "ETH")
+        XCTAssertNotNil(assets)
+        XCTAssertEqual(assets.data[1].symbol, "ETH")
         
-        XCTAssertNil(asset.maxSupply)
-        
+        XCTAssertNil(assets.data[1].maxSupply)
     }
 }
