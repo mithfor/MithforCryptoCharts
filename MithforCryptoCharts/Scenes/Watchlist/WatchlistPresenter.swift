@@ -15,12 +15,12 @@ final class WatchListPresenter {
 }
 
 extension WatchListPresenter: WatchListPresenterInput {
-    func assetsDidFetch(_ assets: Assets) {
-        viewController?.update(assets)
+    func fetchFailure(with error: NetworkError) {
+        viewController?.updateFailed(with: error)
     }
     
-    func failureDidFetch(_ error: NetworkError) {
-        viewController?.updateFailed(with: error)
+    func assetsDidFetch(_ assets: Assets) {
+        viewController?.update(assets)
     }
 }
     

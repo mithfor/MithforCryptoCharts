@@ -19,7 +19,7 @@ extension AssetsPresenter: AssetsPresenterInput {
         viewController?.update(assets, with: assetModel)
     }
     
-    func failureDidFetch(_ error: NetworkError) {
+    func fetchFailure(with error: NetworkError) {
         viewController?.updateFailed(with: error)
     }
 }

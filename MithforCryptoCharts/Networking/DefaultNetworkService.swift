@@ -7,6 +7,19 @@
 
 import Foundation
 
+// TODO: - actualize it
+enum NetworkError: String, Error {
+    case endpoint = "Bad endpoint"
+    case unableToComplete = "Unable to complete your request. Please check your internet connection."
+    case invalidResponse = "Invalid response from the server. Please try again"
+    case invalidData = "The data received from the server was invalid. Please try again"
+    case unableToDecode = "Unable to decode an answer"
+}
+
+protocol InteractingError {
+    func fetchFailure(with error: NetworkError)
+}
+
 protocol NetworkService {
     func request<Request: DataRequest>(_ request: Request,
                                        completion: @escaping (Result<Request.Response, NetworkError>) -> Void)
@@ -14,7 +27,7 @@ protocol NetworkService {
 
 class DefaultNetworkService: NetworkService {
     func request<Request>(_ request: Request,
-                          completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
+                          completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request: DataRequest {
         
         guard var urlComponent = URLComponents(string: request.url) else {
             return completion(.failure(NetworkError.endpoint))

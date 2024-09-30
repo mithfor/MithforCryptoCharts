@@ -12,7 +12,7 @@ typealias AssetsInteractorInput = AssetsViewControllerOutput
 
 protocol AssetsInteractorOutput: AnyObject, InteractingError {
     func fetched(assets: Assets, with assetModel: AssetModel)
-//    func fetchFailure(with error: NetworkError)
+    func fetchFailure(with error: NetworkError)
 }
 
 final class AssetsInteractor {
@@ -25,7 +25,8 @@ final class AssetsInteractor {
 }
 
 class AssetNetworkService: DefaultNetworkService {
-    override func request<Request>(_ request: Request, completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
+    override func request<Request>(_ request: Request,
+                                   completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
         super.request(request, completion: completion)
     }
 }
@@ -44,7 +45,7 @@ extension AssetsInteractor: AssetsInteractorInput {
                 case .failure(let error):
                     self?.assetModel[asset.id ?? ""] = AssetImage()
                     completion()
-                    self?.presenter?.failureDidFetch(error)
+                    self?.presenter?.fetchFailure(with: error)
                 }
             }
         }
@@ -63,12 +64,27 @@ extension AssetsInteractor: AssetsInteractorInput {
                                                  with: self?.assetModel ?? [:])
 //                        self?.fetchImagesFor(self?.assets ?? Assets())
                     case .failure(let error):
-                        self?.presenter?.failureDidFetch(error)
+                        self?.presenter?.fetchFailure(with: error)
                     }
                 })
             }
         }
     }
+    
+    func fetchAssetsAsync() async throws {
+        let request = AssetsRequest()
+        let result = try await networkService?.request(request, completion: { [weak self] (result) in
+            switch result {
+            case .success(let response):
+                self?.assets = response
+                self?.presenter?.fetched(assets: self?.assets ?? [], with: self?.assetModel ?? [:])
+//                try? fetchImagesFor(self?.assets ?? Assets())
+            case .failure(let error):
+                self?.presenter?.fetchFailure(with: error)
+            }
+        })
+    }
+
     
     func fetchImagesFor(_ assets: Assets) {
         
