@@ -47,10 +47,11 @@ final class AssetDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        configureRefreshControl()
         
         interactor?.fetchHistory(asset: asset)
         
-        configureRefreshControl()
+        
         
     }
     
@@ -91,11 +92,16 @@ final class AssetDetailsViewController: UIViewController {
     // MARK: - SETUP
     private func configureUI() {
         view.backgroundColor = Constants.Colors.mainBackground
-        navigationItem.largeTitleDisplayMode = .never
         
-        navigationController?.navigationItem.rightBarButtonItem?.tintColor = .red
+        configureNavigation()
     
         view.addSubview(assetDetailsView)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.largeTitleDisplayMode = .never
+        
+        navigationController?.navigationBar.tintColor = .systemBlue
     }
     
     // MARK: UPDATES
@@ -196,7 +202,6 @@ final class AssetDetailsViewModel {
     typealias Routes = AssetDetailsRoute
     private var router: Routes
     
-    // TODO: - research need of optional Asset
     var asset: Asset
     
     init(router: Routes, asset: Asset) {
