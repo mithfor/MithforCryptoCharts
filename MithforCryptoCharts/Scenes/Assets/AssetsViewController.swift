@@ -211,6 +211,7 @@ extension AssetsViewController: UISearchBarDelegate {
             return
         }
         
+        // TODO: - Extract logic
         if searchText.isEmpty {
             searching = .inactive
             filteredAssets = assets
@@ -234,8 +235,3 @@ extension AssetsViewController: UISearchBarDelegate {
     }
 }
 
-// struct ViewControllerProvider: PreviewProvider {
-//    static var previews: some View {
-//        AssetsViewController().showPreview()
-//    }
-// }
