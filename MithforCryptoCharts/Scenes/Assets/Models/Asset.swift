@@ -34,7 +34,6 @@ struct AssetResponse: Codable {
     let data: Asset
 }
 
-// MARK: - Asset
 struct Asset: Codable, Hashable, Equatable {
 
     var id: String?

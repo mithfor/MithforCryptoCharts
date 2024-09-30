@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88159AF12CAA2C0700028E9B /* Assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* Assets.json */; };
+		88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* AasetsTests.swift */; };
+		88159AF52CAA2EB800028E9B /* AssetsWithNil.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* AssetsWithNil.json */; };
 		881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */; };
 		881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */; };
 		881FDED129C241360057AAB2 /* AssetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC729C241360057AAB2 /* AssetHistory.swift */; };
@@ -80,6 +83,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88159AF02CAA2C0700028E9B /* Assets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Assets.json; sourceTree = "<group>"; };
+		88159AF22CAA2C6500028E9B /* AasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AasetsTests.swift; sourceTree = "<group>"; };
+		88159AF42CAA2EB800028E9B /* AssetsWithNil.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssetsWithNil.json; sourceTree = "<group>"; };
 		881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsPresenter.swift; sourceTree = "<group>"; };
 		881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsViewController.swift; sourceTree = "<group>"; };
 		881FDEC729C241360057AAB2 /* AssetHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHistory.swift; sourceTree = "<group>"; };
@@ -165,6 +171,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88159AF62CAA2ED300028E9B /* AssetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				88159AF02CAA2C0700028E9B /* Assets.json */,
+				88159AF22CAA2C6500028E9B /* AasetsTests.swift */,
+				88159AF42CAA2EB800028E9B /* AssetsWithNil.json */,
+			);
+			path = AssetsTests;
+			sourceTree = "<group>";
+		};
 		881FDEA829C22D4C0057AAB2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +342,7 @@
 		88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */ = {
 			isa = PBXGroup;
 			children = (
+				88159AF62CAA2ED300028E9B /* AssetsTests */,
 				88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */,
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
 				88E25EB729BF7DD00018C150 /* Info.plist */,
@@ -494,6 +511,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88159AF52CAA2EB800028E9B /* AssetsWithNil.json in Resources */,
+				88159AF12CAA2C0700028E9B /* Assets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +535,7 @@
 			files = (
 				88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */,
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
+				88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

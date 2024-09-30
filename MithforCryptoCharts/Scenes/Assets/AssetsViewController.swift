@@ -218,13 +218,13 @@ extension AssetsViewController: UISearchBarDelegate {
         } else {
             searching = .active
             filteredAssets = assets.filter({ (asset) -> Bool in
-                (asset.id?
+                ((asset.id?
                     .lowercased()
-                    .contains(text.lowercased()) ?? false)
+                    .contains(text.lowercased())) != nil)
                 ||
-                    (asset.symbol?
+                ((asset.symbol?
                     .lowercased()
-                    .contains(text.lowercased()) ?? false)
+                    .contains(text.lowercased())) != nil)
                 
             })
         }

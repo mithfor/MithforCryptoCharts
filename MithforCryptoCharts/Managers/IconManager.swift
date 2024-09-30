@@ -24,7 +24,7 @@ class IconManager: IconManagable {
     func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler) {
         
         var assetIcon = IconAsset()
-        let urlString = "\(IconManager.baseURL)\(asset.symbol?.lowercased() ?? "usd")"
+        let urlString = "\(IconManager.baseURL)\(String(describing: asset.symbol?.lowercased()))"
         
         guard let url = URL(string: urlString) else {
             completed(.failure(.endpoint))

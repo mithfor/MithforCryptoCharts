@@ -165,7 +165,7 @@ class NetworkManager {
     func downloadImage(from asset: Asset, completed: @escaping ImageHandler) {
         
         
-        let urlString = "https://cryptoicon-api.vercel.app/api/icon/\(asset.symbol?.lowercased() ?? "btc")"
+        let urlString = "https://cryptoicon-api.vercel.app/api/icon/\(String(describing: asset.symbol?.lowercased()))"
         
         let cacheKey = NSString(string: urlString)
         
