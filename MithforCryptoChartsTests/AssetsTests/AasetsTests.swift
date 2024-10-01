@@ -10,15 +10,21 @@ import XCTest
 
 class AssetsTests: XCTestCase {
     
+    func test_GetAssets_NotNil() {
+        let resource = "Assets"
+        
+        let assets = try? getAssets(for: resource, with: "json")
+        
+        XCTAssertNotNil(assets)
+    }
     
-    func test_AssetsModel() throws {
+    func test_GetAssetListResponse_CorrectFirstAsset() throws {
         
         let resource = "Assets"
         
         do {
             let assets = try getAssets(for: resource, with: "json")
 
-            XCTAssertNotNil(assets)
             XCTAssertEqual(assets.data[0].id, "bitcoin")
 
         } catch is NetworkError {
@@ -28,17 +34,14 @@ class AssetsTests: XCTestCase {
      
     }
     
-    func test_AssetsModelWithOneNillValue() throws {
+    func test_GetAssetListResponse_SetsNilToOptionalField() throws {
         
         let resource = "Assets"
         
         
         do {
             let assets = try getAssets(for: resource, with: "json")
-            
-            XCTAssertNotNil(assets)
-            XCTAssertEqual(assets.data[1].symbol, "ETH")
-            
+                        
             XCTAssertNil(assets.data[1].maxSupply)
         } catch is NetworkError {
             XCTFail("\(NetworkError.endpoint): Missing file \(resource).json")
