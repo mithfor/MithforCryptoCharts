@@ -9,6 +9,12 @@ import XCTest
 @testable import MithforCryptoCharts
 
 final class MainTabBarControllerTests: XCTestCase {
+    
+    func test_initWithCoder() {
+        let archiver = NSKeyedArchiver(requiringSecureCoding: true)
+        let sut = MainTabBarController(coder: archiver)
+        XCTAssertNil(sut)
+    }
 
     func test_shouldInitiate_withZeroControllers() throws {
 
