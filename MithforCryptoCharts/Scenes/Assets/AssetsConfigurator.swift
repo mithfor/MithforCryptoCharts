@@ -17,7 +17,7 @@ class AssetsConfigurator: AssetsCongfiguratorProtocol {
         let interactor = AssetsInteractor()
         let presenter = AssetsPresenter()
         interactor.networkService = networkService
-        vc.presenter = presenter
+        vc.interactor = interactor
         presenter.interactor = interactor
         interactor.presenter = presenter
         presenter.viewController = vc

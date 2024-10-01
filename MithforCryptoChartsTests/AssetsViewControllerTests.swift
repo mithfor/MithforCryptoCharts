@@ -23,6 +23,50 @@ final class AssetsViewControllerTests: XCTestCase {
         let sut = AssetsViewController(coder: archiver)
         XCTAssertNil(sut)
     }
+    
+    func test_initInteractor_NotNill() {
+        
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        
+        let sut = AssetsConfigurator.configured(AssetsViewController(viewModel: AssetListViewModel(router: router)))
+        
+        
+        XCTAssertNotNil(sut.interactor)
+    }
+    
+    func test_SetUpTableDataSource() {
+        let sut = Helper.shared.makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertNotNil(sut.assetsTableView.dataSource)
+    }
+    
+    func test_SetUpTableDelegate() {
+        let sut = Helper.shared.makeSUT()
+        
+        sut.loadViewIfNeeded()
+        
+        XCTAssertNotNil(sut.assetsTableView.delegate)
+    }
+    
+    func test_clearSearchBarText_WhenPullingToRefresh() {
+        let sut = Helper.shared.makeSUT()
+        
+        let expectedSearchBarText = ""
+        
+        sut.handleRefreshControl()
+        
+        XCTAssertEqual(sut.searchController.searchBar.text, expectedSearchBarText)
+    }
+    
+    func test_EndRefreshing_RefreshControlIsNil() {
+        let sut = Helper.shared.makeSUT()
+        
+        sut.handleRefreshControl()
+        
+        XCTAssertNil(sut.assetsTableView.refreshControl)
+    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -31,4 +75,35 @@ final class AssetsViewControllerTests: XCTestCase {
         }
     }
 
+}
+
+// Helpers
+
+fileprivate class Helper {
+    static let shared = Helper()
+    
+    private init() {
+        
+    }
+    
+    func makeSUT() -> AssetsViewController {
+        
+        let router = DefaultRouter(rootTransition: EmptyTransition())
+        
+        let sut = AssetsConfigurator.configured(AssetsViewController(viewModel: AssetListViewModel(router: router)))
+        
+        sut.interactor = AssetInteractorStub()
+        
+        return sut
+    }
+}
+
+final class AssetInteractorStub: AssetsViewControllerOutput {
+    func fetchAssets() {
+        
+    }
+    
+    func fetchImage(for asset: MithforCryptoCharts.Asset, completion: @escaping (() -> Void)) {
+        
+    }
 }

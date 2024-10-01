@@ -42,15 +42,15 @@ class AssetsViewController: UIViewController {
     private var viewModel: AssetListViewModel?
     
     // TODO: - remove optional if needed
-    var presenter: AssetsViewControllerOutput?
+    var interactor: AssetsViewControllerOutput?
     
     private var assets: Assets?
     private var filteredAssets: Assets = []
     private var assetModel: AssetModel = [:]
     private var searching: ActionState = .inactive
         
-    let assetsTableView: AssetsTableView = {
-       let tableView = AssetsTableView()
+    lazy var assetsTableView: AssetsTableView = {
+        let tableView = AssetsTableView()
         tableView.register(AssetsTableViewCell.self,
                            forCellReuseIdentifier: AssetsTableViewCell.identifier)
         tableView.backgroundColor = Constants.Colors.mainBackground
@@ -83,7 +83,7 @@ class AssetsViewController: UIViewController {
         setupUI()
         
         self.showSpinnner()
-        presenter?.fetchAssets()
+        interactor?.fetchAssets()
     }
     
     override func viewDidLayoutSubviews() {
@@ -121,11 +121,19 @@ class AssetsViewController: UIViewController {
         
     @objc func handleRefreshControl() {
         
-        presenter?.fetchAssets()
+        interactor?.fetchAssets()
         
         self.searchController.searchBar.text = ""
         
-        self.assetsTableView.refreshControl?.endRefreshing()
+        // TODO: - how to test is endRefreshing?
+        if let refreshControl = self.assetsTableView.refreshControl,
+           refreshControl.isRefreshing {
+        
+            CFRunLoopPerformBlock(CFRunLoopGetMain(),
+                                  CFRunLoopMode.commonModes.rawValue) {
+                self.assetsTableView.refreshControl?.endRefreshing()
+            }
+        }
     }
 }
 
