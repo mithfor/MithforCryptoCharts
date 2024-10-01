@@ -10,8 +10,19 @@ import Foundation
 typealias AssetsPresenterInput = AssetsInteractorOutput
 typealias AssetsPresenterOutput = AssetsViewControllerInput
 
-final class AssetsPresenter {
+final class AssetsPresenter: AssetsViewControllerOutput {
+    func fetchAssets() {
+        interactor?.fetchAssets()
+    }
+    
+    func fetchImage(for asset: Asset, completion: @escaping (() -> Void)) {
+        interactor?.fetchImage(for: asset, completion: {
+            
+        })
+    }
+    
     weak var viewController: AssetsPresenterOutput?
+    var interactor: AssetsInteractorInput?
 }
 
 extension AssetsPresenter: AssetsPresenterInput {

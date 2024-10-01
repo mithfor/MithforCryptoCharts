@@ -41,7 +41,8 @@ class AssetsViewController: UIViewController {
     
     private var viewModel: AssetListViewModel?
     
-    var interactor: AssetsInteractorInput?
+    // TODO: - remove optional if needed
+    var presenter: AssetsViewControllerOutput?
     
     private var assets: Assets?
     private var filteredAssets: Assets = []
@@ -72,7 +73,7 @@ class AssetsViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
     // MARK: - Overriden
@@ -82,7 +83,7 @@ class AssetsViewController: UIViewController {
         setupUI()
         
         self.showSpinnner()
-        interactor?.fetchAssets()
+        presenter?.fetchAssets()
     }
     
     override func viewDidLayoutSubviews() {
@@ -120,14 +121,11 @@ class AssetsViewController: UIViewController {
         
     @objc func handleRefreshControl() {
         
-       interactor?.fetchAssets()
+        presenter?.fetchAssets()
         
-        CFRunLoopPerformBlock(CFRunLoopGetMain(),
-                              CFRunLoopMode.defaultMode.rawValue) {
-            self.searchController.searchBar.text = ""
-              
-            self.assetsTableView.refreshControl?.endRefreshing()
-        }
+        self.searchController.searchBar.text = ""
+        
+        self.assetsTableView.refreshControl?.endRefreshing()
     }
 }
 
