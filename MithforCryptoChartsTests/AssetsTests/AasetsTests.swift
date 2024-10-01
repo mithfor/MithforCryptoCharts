@@ -9,39 +9,72 @@ import XCTest
 @testable import MithforCryptoCharts
 
 class AssetsTests: XCTestCase {
+    
+    
     func test_AssetsModel() throws {
-        let bundle = Bundle(for: type(of: self))
         
-        guard let url = bundle.url(forResource: "Assets", withExtension: "json") else {
-            XCTFail("Missing file Assets.json")
+        let resource = "Assets"
+        
+        do {
+            let assets = try getAssets(for: resource, with: "json")
+
+            XCTAssertNotNil(assets)
+            XCTAssertEqual(assets.data[0].id, "bitcoin")
+
+        } catch is NetworkError {
+            XCTFail("\(NetworkError.endpoint) Missing file \(resource)).json")
             return
         }
-        
-        let json = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        
-        let assets = try decoder.decode(AssetListResponse.self, from: json)
-        
-        XCTAssertNotNil(assets)
-        XCTAssertEqual(assets.data[0].id, "bitcoin")        
+     
     }
     
     func test_AssetsModelWithOneNillValue() throws {
-        let bundle = Bundle(for: type(of: self))
         
-        guard let url = bundle.url(forResource: "Assets", withExtension: "json") else {
-            XCTFail("Missing file Assets.json")
+        let resource = "Assets"
+        
+        
+        do {
+            let assets = try getAssets(for: resource, with: "json")
+            
+            XCTAssertNotNil(assets)
+            XCTAssertEqual(assets.data[1].symbol, "ETH")
+            
+            XCTAssertNil(assets.data[1].maxSupply)
+        } catch is NetworkError {
+            XCTFail("\(NetworkError.endpoint): Missing file \(resource).json")
             return
         }
+    }
+    
+    func test_ThrowsAssertsModelWithInvalidJson() throws {
+        let resource = "AssetsInvalid"
+    
+        XCTAssertThrowsError(try getAssets(for: resource, with: "json"))
+    }
+}
+
+extension AssetsTests {
+    
+    func getAssets(for resource: String, with ext: String) throws -> AssetListResponse {
         
-        let json = try Data(contentsOf: url)
-        let decoder = JSONDecoder()
+        let bundle = Bundle(for: type(of: self))
         
-        let assets = try decoder.decode(AssetListResponse.self, from: json)
+        guard let url = bundle.url(forResource: resource, withExtension: ext) else {
+            throw NetworkError.endpoint
+        }
         
-        XCTAssertNotNil(assets)
-        XCTAssertEqual(assets.data[1].symbol, "ETH")
+        var response = AssetListResponse(data: [])
         
-        XCTAssertNil(assets.data[1].maxSupply)
+        do {
+            let json = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            response = try decoder.decode(AssetListResponse.self, from: json)
+        } catch let error as NetworkError {
+            throw error
+        } catch let error as NSError {
+            throw error
+        }
+        
+        return response
     }
 }
