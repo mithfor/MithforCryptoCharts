@@ -29,6 +29,7 @@
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
+		88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */; };
 		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
 		88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */; };
@@ -104,6 +105,7 @@
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
 		88DF5F9829C0F78300C47453 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		88DF5FAC29C0FA5700C47453 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */,
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
 				88E25EB729BF7DD00018C150 /* Info.plist */,
+				88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */,
 			);
 			path = MithforCryptoChartsTests;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */,
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
 				88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */,
+				88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
