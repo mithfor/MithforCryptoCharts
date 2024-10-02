@@ -10,6 +10,7 @@
 		88159AF12CAA2C0700028E9B /* Assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* Assets.json */; };
 		88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* AasetsTests.swift */; };
 		88159AF52CAA2EB800028E9B /* AssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* AssetsInvalid.json */; };
+		8817171B2CAD1810002CFE96 /* AssetsTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */; };
 		881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */; };
 		881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */; };
 		881FDED129C241360057AAB2 /* AssetHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC729C241360057AAB2 /* AssetHistory.swift */; };
@@ -87,6 +88,7 @@
 		88159AF02CAA2C0700028E9B /* Assets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Assets.json; sourceTree = "<group>"; };
 		88159AF22CAA2C6500028E9B /* AasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AasetsTests.swift; sourceTree = "<group>"; };
 		88159AF42CAA2EB800028E9B /* AssetsInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssetsInvalid.json; sourceTree = "<group>"; };
+		8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTableViewTests.swift; sourceTree = "<group>"; };
 		881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsPresenter.swift; sourceTree = "<group>"; };
 		881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsViewController.swift; sourceTree = "<group>"; };
 		881FDEC729C241360057AAB2 /* AssetHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetHistory.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
 				88E25EB729BF7DD00018C150 /* Info.plist */,
 				88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */,
+				8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */,
 			);
 			path = MithforCryptoChartsTests;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
 				88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */,
 				88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */,
+				8817171B2CAD1810002CFE96 /* AssetsTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

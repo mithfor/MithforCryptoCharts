@@ -7,8 +7,25 @@
 
 import UIKit
 
-class AssetsTableView: UITableView {
+enum TableState {
+    case initiate
+    case active
+    case refreshing
+}
 
+class AssetsTableView: UITableView {
+    
+    private(set) var state: TableState?
+    
+    init(frame: CGRect = .zero, style: UITableView.Style = .plain, state: TableState = .initiate) {
+        self.state = state
+        super.init(frame: frame, style: style)
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
+        
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
