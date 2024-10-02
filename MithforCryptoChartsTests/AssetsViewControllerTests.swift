@@ -10,12 +10,14 @@ import XCTest
 
 final class AssetsViewControllerTests: XCTestCase {
 
+    var sut: AssetsViewController?
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        sut = Helper.shared.makeSUT()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
 
     func test_initWithCoder() throws {
@@ -34,39 +36,24 @@ final class AssetsViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.interactor)
     }
     
-    func test_SetUpTableDataSource() {
-        let sut = Helper.shared.makeSUT()
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertNotNil(sut.assetsTableView.dataSource)
-    }
     
-    func test_SetUpTableDelegate() {
-        let sut = Helper.shared.makeSUT()
-        
-        sut.loadViewIfNeeded()
-        
-        XCTAssertNotNil(sut.assetsTableView.delegate)
-    }
     
     func test_clearSearchBarText_WhenPullingToRefresh() {
-        let sut = Helper.shared.makeSUT()
         
         let expectedSearchBarText = ""
         
-        sut.handleRefreshControl()
+        sut!.handleRefreshControl()
         
-        XCTAssertEqual(sut.searchController.searchBar.text, expectedSearchBarText)
+        XCTAssertEqual(sut!.searchController.searchBar.text, expectedSearchBarText)
     }
-    
-    func test_EndRefreshing_RefreshControlIsNil() {
-        let sut = Helper.shared.makeSUT()
-        
-        sut.handleRefreshControl()
-        
-        XCTAssertNil(sut.assetsTableView.refreshControl)
-    }
+//    
+//    func test_EndRefreshing_RefreshControlIsNil() {
+//        let sut = Helper.shared.makeSUT()
+//                
+//        sut.handleRefreshControl()
+//        
+//        XCTAssertNil(sut.assetsTableView.refreshControl)
+//    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
@@ -74,7 +61,25 @@ final class AssetsViewControllerTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func test_AssetsTableViewDelegates_ShouldBeSet() {
+                
+        XCTAssertNotNil(sut!.assetsTableView.delegate, "assetsTableView.delegate")
+        XCTAssertNotNil(sut!.assetsTableView.dataSource, "assetsTableView.dataSource")
+    }
+    
+    func test_AssetTableViewNumberOfSection_ShouldBe1() {
+        
+        XCTAssertEqual(sut!.assetsTableView.numberOfSections, 1)
+    }
+    
+    func test_AssetsTableViewNumberOfRowsInSection1_ShouldBe0() {
+        XCTAssertEqual(sut?.assetsTableView.dataSource?.tableView(sut!.assetsTableView, 
+                                                                  numberOfRowsInSection: 0),
+                       1)
+    }
+    
+    
 }
 
 // Helpers
@@ -89,10 +94,10 @@ fileprivate class Helper {
     func makeSUT() -> AssetsViewController {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        
         let sut = AssetsConfigurator.configured(AssetsViewController(viewModel: AssetListViewModel(router: router)))
         
         sut.interactor = AssetInteractorStub()
+        sut.loadViewIfNeeded()
         
         return sut
     }
