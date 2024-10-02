@@ -7,7 +7,7 @@
 
 import Foundation
 
-//MARK: - AssetListViewModel
+// MARK: - AssetListViewModel
 final class AssetListViewModel {
     typealias Routes = AssetDetailsRoute
     private let router: Routes

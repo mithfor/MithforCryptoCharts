@@ -26,11 +26,12 @@ protocol AssetsViewControllerOutput: AnyObject {
     func fetchImage(for asset: Asset, completion: @escaping (() -> Void))
 }
 
-enum ActionState {
+enum SearchActionState {
     case active
     case inactive
 }
 
+// TODO: - Fix AssetWithImage to AssetViewModel!!!
 struct AssetWithImage {
     let asset: Asset
     let image: UIImage
@@ -47,7 +48,7 @@ class AssetsViewController: UIViewController {
     private var assets: Assets?
     private var filteredAssets: Assets = []
     private var assetModel: AssetModel = [:]
-    private var searching: ActionState = .inactive
+    private var searching: SearchActionState = .inactive
         
     lazy var assetsTableView: AssetsTableView = {
         let tableView = AssetsTableView()
@@ -179,6 +180,7 @@ extension AssetsViewController: UITableViewDelegate {
         viewDetails(asset)
     }
 }
+
 // MARK: - AssetsTableViewCellDelegate
 extension AssetsViewController: AssetsTableViewCellDelegate {
     func viewDetails(_ asset: Asset) {
