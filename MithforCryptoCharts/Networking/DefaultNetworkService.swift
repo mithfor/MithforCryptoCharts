@@ -7,14 +7,6 @@
 
 import Foundation
 
-enum NetworkError: String, Error {
-    case endpoint = "Bad endpoint"
-    case unableToComplete = "Unable to complete your request. Please check your internet connection."
-    case invalidResponse = "Invalid response from the server. Please try again"
-    case invalidData = "The data received from the server was invalid. Please try again"
-    case unableToDecode = "Unable to decode an answer"
-}
-
 protocol InteractingError {
     func fetchFailure(with error: NetworkError)
 }

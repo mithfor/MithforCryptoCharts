@@ -202,7 +202,7 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.NetworkError.title,
+        presentAlertOnMainThread(title: NetworkError.title.rawValue,
                                  message: error.rawValue,
                                  buttonTitle: Constants.Common.ok)
     }
@@ -212,7 +212,6 @@ extension AssetsViewController: AssetsPresenterOutput {
 // MARK: - UISearchBarDelegate
 extension AssetsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
      
         guard let text = searchController.searchBar.text,
               let assets = assets

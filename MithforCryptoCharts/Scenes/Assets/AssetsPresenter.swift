@@ -22,5 +22,6 @@ extension AssetsPresenter: AssetsPresenterInput {
     
     func fetchFailure(with error: NetworkError) {
         viewController?.updateFailed(with: error)
+        
     }
 }
