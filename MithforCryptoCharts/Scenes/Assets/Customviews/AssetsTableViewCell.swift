@@ -13,7 +13,7 @@ protocol AssetsTableViewCellDelegate: AnyObject {
 
 class AssetsTableViewCell: UITableViewCell {
     
-    //TODO: - make ViewModel
+    // TODO: - make ViewModel
     private var assetViewModel: Asset?
     
     static let identifier = "AssetsTableViewCell"
@@ -25,7 +25,7 @@ class AssetsTableViewCell: UITableViewCell {
     
     private var assetDetailsButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: Constants.Strings.Icon.details),
+        button.setImage(UIImage(systemName: Constants.Icon.details),
                         for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -38,13 +38,12 @@ class AssetsTableViewCell: UITableViewCell {
                 
         return imageView
     }()
-    
-    
+
     private var assetSymbolLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
-        label.textColor = Constants.Colors.Asset.symbol
+        label.textColor = ColorConstants.Asset.symbol
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +52,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        label.textColor = Constants.Colors.Asset.name
+        label.textColor = ColorConstants.Asset.name
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -62,7 +61,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 22, weight: .regular)
-        label.textColor = Constants.Colors.Asset.priceUSD
+        label.textColor = ColorConstants.Asset.priceUSD
         label.translatesAutoresizingMaskIntoConstraints =  false
         return label
     }()
@@ -71,7 +70,7 @@ class AssetsTableViewCell: UITableViewCell {
         let label = ChangePercent24HrLabel()
         label.textAlignment = .left
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        label.textColor = Constants.Colors.Asset.changePercent24HrPositive
+        label.textColor = ColorConstants.Asset.changePercent24HrPositive
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -119,12 +118,11 @@ class AssetsTableViewCell: UITableViewCell {
 
     }
     
-    
-    //MARK: - Layout
+    // MARK: - Layout
     private func setupLayout() {
         NSLayoutConstraint.activate([
             
-            assetDetailsButton.trailingAnchor.constraint (equalTo: contentView.trailingAnchor, constant: -16),
+            assetDetailsButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             assetDetailsButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             assetDetailsButton.heightAnchor.constraint(equalToConstant: 22),
             assetDetailsButton.widthAnchor.constraint(equalToConstant: 16),
@@ -133,7 +131,6 @@ class AssetsTableViewCell: UITableViewCell {
             assetImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             assetImageView.widthAnchor.constraint(equalToConstant: 60),
             assetImageView.heightAnchor.constraint(equalToConstant: 60),
-            
             
             assetSymbolLabel.leadingAnchor.constraint(equalTo: assetImageView.trailingAnchor, constant: 8),
             assetSymbolLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
@@ -157,8 +154,7 @@ class AssetsTableViewCell: UITableViewCell {
         self.assetViewModel = asset
         if let image = image {
             self.assetImage = image
-        }
-        else {
+        } else {
             self.assetImage = UIImage(named: "defaultlogo")
         }
         

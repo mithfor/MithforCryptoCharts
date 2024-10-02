@@ -54,13 +54,6 @@ final class AssetsViewControllerTests: XCTestCase {
 //        
 //        XCTAssertNil(sut.assetsTableView.refreshControl)
 //    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
     func test_AssetsTableViewDelegates_ShouldBeSet() {
                 
@@ -75,9 +68,12 @@ final class AssetsViewControllerTests: XCTestCase {
     
     func test_AssetsTableViewNumberOfRowsInSection1_ShouldBe0() {
         XCTAssertEqual(sut?.assetsTableView.dataSource?.tableView(sut!.assetsTableView, 
-                                                                  numberOfRowsInSection: 0),
-                       1)
+                                                                  numberOfRowsInSection: 0), 0)
     }
+    
+//    func test_AssetsTableViewBackgroundColor_ShouldBeMainbackground() {
+//        XCTAssertEqual(sut!.assetsTableView.backgroundColor, .systemRed)
+//    }
     
     
 }

@@ -30,8 +30,8 @@ class ChangePercent24HrLabel: UILabel {
 
         let changePercent24HrTrend = value
         textColor = changePercent24HrTrend >= 0
-                                                ? Constants.Colors.Asset.changePercent24HrPositive
-                                                : Constants.Colors.Asset.changePersent24HrNegative
+                                                ? ColorConstants.Asset.changePercent24HrPositive
+                                                : ColorConstants.Asset.changePersent24HrNegative
 
         let positiveSign = changePercent24HrTrend >= 0 ? "+" : ""
 

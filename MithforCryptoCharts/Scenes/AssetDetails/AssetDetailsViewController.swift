@@ -50,9 +50,6 @@ final class AssetDetailsViewController: UIViewController {
         configureRefreshControl()
         
         interactor?.fetchHistory(asset: asset)
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +88,7 @@ final class AssetDetailsViewController: UIViewController {
     
     // MARK: - SETUP
     private func configureUI() {
-        view.backgroundColor = Constants.Colors.mainBackground
+        view.backgroundColor = ColorConstants.mainBackground
         
         configureNavigation()
     
@@ -115,7 +112,7 @@ final class AssetDetailsViewController: UIViewController {
     }
     
     private func updateDetailsView() {
-        assetDetailsView.updateAssetPriceUSD(with: "$\(String.formatToCurrency(string: asset.priceUsd ?? "No data"))", and: Constants.Colors.Asset.symbol)
+        assetDetailsView.updateAssetPriceUSD(with: "$\(String.formatToCurrency(string: asset.priceUsd ?? "No data"))", and: ColorConstants.Asset.symbol)
         assetDetailsView.updateAssetChangePercent24Hr(with: asset.changePercent24Hr ?? "No data")
         assetDetailsView.updateLine1(with: "$\(String.formatToCurrency(string: asset.marketCapUsd ?? "No data"))")
         assetDetailsView.updateLine2(with: "$\(String.formatToCurrency(string: asset.supply ?? "No data"))")
@@ -126,7 +123,7 @@ final class AssetDetailsViewController: UIViewController {
         
         watchList.load()
         
-        let imageName = watchList.contains(asset) == false ? Constants.Strings.Icon.watchlist : Constants.Strings.IconFill.watchlist
+        let imageName = watchList.contains(asset) == false ? Constants.Icon.watchlist : Constants.IconFill.watchlist
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: imageName), style: .plain, target: self, action: #selector(didTapAddToWatchList))
     }
@@ -137,11 +134,11 @@ final class AssetDetailsViewController: UIViewController {
         
         var imageName = ""
         if watchList.contains(asset) {
-            imageName = Constants.Strings.Icon.watchlist
+            imageName = Constants.Icon.watchlist
             watchList.remove(asset)
            
         } else {
-            imageName = Constants.Strings.IconFill.watchlist
+            imageName = Constants.IconFill.watchlist
             watchList.add(asset)
         }
 
@@ -179,11 +176,11 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
         let navLabel = UILabel()
         let navTitle = NSMutableAttributedString(string: name, attributes: [
                                                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: AppConstants.navigationItemTextSize),
-                                                    NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.symbol])
+                                                    NSAttributedString.Key.foregroundColor: ColorConstants.Asset.symbol])
         navTitle.append(NSMutableAttributedString(string: " "))
         navTitle.append(NSMutableAttributedString(string: symbol, attributes: [
                                                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: AppConstants.navigationItemTextSize),
-                                                    NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.name]))
+                                                    NSAttributedString.Key.foregroundColor: ColorConstants.Asset.name]))
 
         navLabel.attributedText = navTitle
         self.navigationItem.titleView = navLabel
@@ -191,9 +188,9 @@ extension AssetDetailsViewController: AssetDetailsViewControllerInput {
     
     func updateFailed(with error: NetworkError) {
         print(#function)
-        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title,
+        presentAlertOnMainThread(title: Constants.NetworkError.title,
                                  message: error.rawValue,
-                                 buttonTitle: Constants.Strings.Common.ok)
+                                 buttonTitle: Constants.Common.ok)
     }
 }
 

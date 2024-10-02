@@ -65,7 +65,7 @@ class ChartScrollView: UIScrollView {
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
             contentView.widthAnchor.constraint(equalTo: widthAnchor),
-            heightConstraint,
+            heightConstraint
         ])
     }
     
@@ -124,5 +124,3 @@ extension ChartScrollView: ChartUpdateable {
         setupData()
     }
 }
-
-

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import Charts
 import DGCharts
 
 protocol AssetDetailAccessable: AnyObject {
@@ -14,20 +13,12 @@ protocol AssetDetailAccessable: AnyObject {
     func updateLine1(with value: String)
     func updateLine2(with value: String)
     func updateLine3(with value: String)
-    func updateAssetPriceUSD(with value: String, and color:  UIColor)
+    func updateAssetPriceUSD(with value: String, and color: UIColor)
     func updateAssetChangePercent24Hr(with value: String)
     func updateHistoryChart(with data: [AssetHistory])
 }
 
-//protocol Refreshable: class {
-//    func refreshData()
-//}
-
 final class AssetDetailsView: UIView {
-    //MARK: - CHARTS
-    
-    
-    //MARK: VARIABLES
     
     // TODO: return to private
     lazy var scrollView: UIScrollView = {
@@ -44,7 +35,7 @@ final class AssetDetailsView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 64, weight: .thin)
-        label.textColor = Constants.Colors.Asset.name
+        label.textColor = ColorConstants.Asset.name
         label.translatesAutoresizingMaskIntoConstraints =  false
         return label
     }()
@@ -74,32 +65,30 @@ final class AssetDetailsView: UIView {
         return stackView
     }()
     
-    
-    
     private lazy var stackLine1: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = Constants.Strings.AssetDetails.marketCap
-        stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
+        stack.leftLabel.text = Constants.AssetDetails.marketCap
+        stack.leftLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.textColor = ColorConstants.Asset.priceUSD
         return stack
     }()
     
     private lazy var stackLine2: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = Constants.Strings.AssetDetails.supply
-        stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
+        stack.leftLabel.text = Constants.AssetDetails.supply
+        stack.leftLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.textColor = ColorConstants.Asset.priceUSD
         return stack
     }()
     
     private lazy var stackLine3: DetailHorizontalStackView = {
         let stack = DetailHorizontalStackView()
-        stack.leftLabel.text = Constants.Strings.AssetDetails.volume24Hr
-        stack.leftLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.font = UIFont.systemFont(ofSize: Constants.Fonts.Size.normal, weight: .regular)
-        stack.rightLabel.textColor = Constants.Colors.Asset.priceUSD
+        stack.leftLabel.text = Constants.AssetDetails.volume24Hr
+        stack.leftLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.font = UIFont.systemFont(ofSize: FontConstants.Size.normal, weight: .regular)
+        stack.rightLabel.textColor = ColorConstants.Asset.priceUSD
         return stack
     }()
     
@@ -126,8 +115,6 @@ final class AssetDetailsView: UIView {
         setupLinesConstraints()
     }
     
-
-    
     // MARK: - CONSTRAINTS METHODS
     
     private func setupScrollViewContstraints() {
@@ -137,7 +124,7 @@ final class AssetDetailsView: UIView {
             scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
@@ -152,16 +139,16 @@ final class AssetDetailsView: UIView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            heightConstraint,
+            heightConstraint
         ])
     }
     
-    private func setupAssetPriceUSDLabelConstraints(){
+    private func setupAssetPriceUSDLabelConstraints() {
         contentView.addSubview(assetPriceUSDLabel)
         NSLayoutConstraint.activate([
             assetPriceUSDLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 24),
             assetPriceUSDLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-            assetPriceUSDLabel.heightAnchor.constraint(equalToConstant: 76),
+            assetPriceUSDLabel.heightAnchor.constraint(equalToConstant: 76)
         ])
     }
     
@@ -173,7 +160,6 @@ final class AssetDetailsView: UIView {
             assetChangePercent24HrLabel.heightAnchor.constraint(equalToConstant: 24)
         ])
     }
-    
     
     private func setupChartScrollViewConstraints() {
         contentView.addSubview(chartScrollView)
@@ -239,8 +225,6 @@ extension AssetDetailsView: AssetDetailAccessable {
         }
     }
     
-
-    
     func updateAssetPriceUSD(with text: String, and color: UIColor) {
         assetPriceUSDLabel.text = text
     }
@@ -261,5 +245,3 @@ extension AssetDetailsView: AssetDetailAccessable {
         stackLine3.rightLabel.text = value
     }
 }
-
-

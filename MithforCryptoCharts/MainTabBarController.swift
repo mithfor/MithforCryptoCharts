@@ -15,16 +15,16 @@ enum MainTabs: CaseIterable {
     var item: UITabBarItem {
         switch self {
         case .assets:
-            return UITabBarItem(title: Constants.Strings.Title.assets,
-                                image: UIImage(systemName: Constants.Strings.IconFill.assets),
+            return UITabBarItem(title: Constants.Title.assets,
+                                image: UIImage(systemName: Constants.IconFill.assets),
                                 tag: MainTabs.allCases.firstIndex(of: .assets) ?? 0)
         case .watchlist:
-            return UITabBarItem(title: Constants.Strings.Title.watchlist,
-                                image: UIImage(systemName: Constants.Strings.IconFill.watchlist),
+            return UITabBarItem(title: Constants.Title.watchlist,
+                                image: UIImage(systemName: Constants.IconFill.watchlist),
                                 tag: MainTabs.allCases.firstIndex(of: .watchlist) ?? 1)
         case .settings:
-            return UITabBarItem(title: Constants.Strings.Title.settings,
-                                image: UIImage(systemName: Constants.Strings.IconFill.settings),
+            return UITabBarItem(title: Constants.Title.settings,
+                                image: UIImage(systemName: Constants.IconFill.settings),
                                 tag: MainTabs.allCases.firstIndex(of: .settings) ?? 2)
         }
     }

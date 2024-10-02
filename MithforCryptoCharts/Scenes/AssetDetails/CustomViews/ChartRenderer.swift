@@ -6,18 +6,18 @@
 //
 
 import Foundation
-//import Charts
 import DGCharts
 import CoreGraphics
 import UIKit
 
+// TODO: - Need to refactor
 class ChartRenderer: LineChartRenderer {
     var xBounds = XBounds()
     
     var minValue: Double
     var maxValue: Double
     
-    init(view: LineChartView, minValue: Double , maxValue: Double) {
+    init(view: LineChartView, minValue: Double, maxValue: Double) {
         self.minValue = minValue
         self.maxValue = maxValue
         
@@ -26,13 +26,9 @@ class ChartRenderer: LineChartRenderer {
                    viewPortHandler: view.viewPortHandler)
     }
     
-    override func drawValues(context: CGContext)
-        {
-            guard
-                let dataProvider = dataProvider,
-                let data = dataProvider.lineData
-                else { return }
-
+    override func drawValues(context: CGContext) {
+            guard let dataProvider = dataProvider,
+                let data = dataProvider.lineData else { return }
 
             let dataSets = data.dataSets
 
@@ -40,10 +36,11 @@ class ChartRenderer: LineChartRenderer {
 
             var point = CGPoint()
 
-            for i in 0 ..< dataSets.count
-            {
-                guard let dataSet = dataSets[i] as? LineChartDataSet
-                    else { continue }
+            for i in 0 ..< dataSets.count {
+                
+                guard let dataSet = dataSets[i] as? LineChartDataSet else {
+                    continue
+                }
 
                 let valueFont = UIFont.systemFont(ofSize: 13, weight: .regular)
                 let trans = dataProvider.getTransformer(forAxis: dataSet.axisDependency)
@@ -54,8 +51,7 @@ class ChartRenderer: LineChartRenderer {
                 let lineHeight = valueFont.lineHeight
                 let yOffset: CGFloat = lineHeight + 5.0
 
-                for j in stride(from: xBounds.min, through: xBounds.range + xBounds.min, by: 1)
-                {
+                for j in stride(from: xBounds.min, through: xBounds.range + xBounds.min, by: 1) {
                     guard let entry = dataSet.entryForIndex(j) else { break }
 
                     guard entry.y == maxValue || entry.y == minValue else { continue }
@@ -68,18 +64,16 @@ class ChartRenderer: LineChartRenderer {
                     }
                     point = point.applying(valueToPixelMatrix)
 
-                    if (!viewPortHandler.isInBoundsRight(point.x))
-                    {
+                    if !viewPortHandler.isInBoundsRight(point.x) {
                         break
                     }
 
-                    if (!viewPortHandler.isInBoundsLeft(point.x) || !viewPortHandler.isInBoundsY(point.y))
-                    {
+                    if !viewPortHandler.isInBoundsLeft(point.x)
+                        || !viewPortHandler.isInBoundsY(point.y) {
                         continue
                     }
 
-                    if dataSet.isDrawValuesEnabled
-                    {
+                    if dataSet.isDrawValuesEnabled {
                         var textValue: String?
                         if entry.y == maxValue {
                             point.y -= yOffset
@@ -97,7 +91,7 @@ class ChartRenderer: LineChartRenderer {
                                                 x: point.x,
                                                 y: point.y ),
                                              align: .center,
-                                             attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: Constants.Colors.Asset.priceUSD])
+                                             attributes: [NSAttributedString.Key.font: valueFont, NSAttributedString.Key.foregroundColor: ColorConstants.Asset.priceUSD])
                         }
                     }
                 }

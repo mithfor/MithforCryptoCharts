@@ -44,7 +44,7 @@ class WatchlistViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK:- OVERRIDEN METHODS
+    // MARK: - OVERRIDEN METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,7 +75,7 @@ class WatchlistViewController: UIViewController {
     
     private func setupUI() {
         
-        self.title = Constants.Strings.Title.watchlist
+        self.title = Constants.Title.watchlist
         
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
@@ -112,13 +112,12 @@ class WatchlistViewController: UIViewController {
     
     fileprivate func setupNavigationItem() {
         let backItem = UIBarButtonItem()
-        backItem.title = Constants.Strings.Title.watchlist
+        backItem.title = Constants.Title.watchlist
         navigationItem.backBarButtonItem = backItem
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
     }
 }
-
 
 // MARK: - UITableViewDataSource
 extension WatchlistViewController: UITableViewDataSource {
@@ -133,8 +132,11 @@ extension WatchlistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard !assets.isEmpty else { return UITableViewCell() }
-        if let cell = tableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier, for: indexPath) as? AssetsTableViewCell {
-            cell.configureWith(delegate: nil, and: assets[indexPath.row], image: UIImage(systemName: "house"))
+        if let cell = tableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier, 
+                                                    for: indexPath) as? AssetsTableViewCell {
+            cell.configureWith(delegate: nil, 
+                               and: assets[indexPath.row],
+                               image: UIImage(systemName: "house"))
             cell.delegate = self
             return cell
         } else {
@@ -142,7 +144,6 @@ extension WatchlistViewController: UITableViewDataSource {
         }
     }
 
-    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -167,13 +168,12 @@ extension WatchlistViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
         
-        //TODO: - Localize it!
-        return Constants.Strings.Common.remove
+        // TODO: - Localize it!
+        return Constants.Common.remove
     }
 }
 
-
-//MARK: - WatchlistViewControllerInput
+// MARK: - WatchlistViewControllerInput
 extension WatchlistViewController: WatchListViewControllerInput {
     func update(_ assets: Assets) {
         self.assets = assets
@@ -183,9 +183,9 @@ extension WatchlistViewController: WatchListViewControllerInput {
     }
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.Strings.Common.error,
+        presentAlertOnMainThread(title: Constants.Common.error,
                                  message: error.rawValue,
-                                 buttonTitle: Constants.Strings.Common.ok)
+                                 buttonTitle: Constants.Common.ok)
     }
 }
 
@@ -193,11 +193,9 @@ extension WatchlistViewController: AssetsTableViewCellDelegate {
     func viewDetails(_ asset: Asset) {
         viewModel?.assetDetailsTapped(asset: asset)
     }
-    
-    
 }
 
-//MARK: - WatchlistViewModel
+// MARK: - WatchlistViewModel
 final class WatchlistViewModel {
     typealias Routes = AssetDetailsRoute
     private let router: Routes

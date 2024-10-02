@@ -21,11 +21,11 @@ final class WatchListInteractor {
     var presenter: WatchListPresenterInput?
 }
 
-//MARK: - WatchListInteractorInput
+// MARK: - WatchListInteractorInput
 extension WatchListInteractor: WatchListInteractorInput {
     
     func fetchAssetDetails(by id: String,
-                           completion: @escaping ((AssetResponse) -> ())) {
+                           completion: @escaping ((AssetResponse) -> Void)) {
         
         NetworkManager.shared.fetchAsset(by: id) { [weak self] result in
             switch result {

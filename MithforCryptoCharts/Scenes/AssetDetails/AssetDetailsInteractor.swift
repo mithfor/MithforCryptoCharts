@@ -10,7 +10,7 @@ import Foundation
 typealias AssetDetailsInteractorInput =  AssetDetailsViewControllerOutput
 
 protocol AssetDetailsInteractorOutput: AnyObject {
-    func historyFetched(assetHistory : [AssetHistory])
+    func historyFetched(assetHistory: [AssetHistory])
     func fetchFailure(error: NetworkError)
 }
 

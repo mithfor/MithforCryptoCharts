@@ -24,16 +24,11 @@ final class AssetsInteractor {
     var networkService: AssetNetworkService?
 }
 
-class AssetNetworkService: DefaultNetworkService {
-    override func request<Request>(_ request: Request,
-                                   completion: @escaping (Result<Request.Response, NetworkError>) -> Void) where Request : DataRequest {
-        super.request(request, completion: completion)
-    }
-}
+class AssetNetworkService: DefaultNetworkService {}
 
 extension AssetsInteractor: AssetsInteractorInput {
     
-    func fetchImage(for asset: Asset, completion: @escaping (() -> ())) {
+    func fetchImage(for asset: Asset, completion: @escaping (() -> Void)) {
         let queue = DispatchQueue(label: "IconQueue", qos: .default, attributes: .concurrent)
         queue.async {
             IconManager.shared.fetchIconFor(asset) { [weak self] (result) in
@@ -73,7 +68,8 @@ extension AssetsInteractor: AssetsInteractorInput {
     
     func fetchAssetsAsync() async throws {
         let request = AssetsRequest()
-        let result = try await networkService?.request(request, completion: { [weak self] (result) in
+        let result = try await networkService?.request(request,
+                                                       completion: { [weak self] (result) in
             switch result {
             case .success(let response):
                 self?.assets = response
@@ -85,7 +81,6 @@ extension AssetsInteractor: AssetsInteractorInput {
         })
     }
 
-    
     func fetchImagesFor(_ assets: Assets) {
         
         let queue = DispatchQueue(label: "FetchingImagesForAssetsQueue", qos: .default, attributes: .concurrent)
@@ -105,5 +100,3 @@ extension AssetsInteractor: AssetsInteractorInput {
         }
     }
 }
-
-

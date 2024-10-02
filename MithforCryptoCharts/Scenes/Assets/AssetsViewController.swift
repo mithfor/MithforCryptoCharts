@@ -54,7 +54,6 @@ class AssetsViewController: UIViewController {
         let tableView = AssetsTableView()
         tableView.register(AssetsTableViewCell.self,
                            forCellReuseIdentifier: AssetsTableViewCell.identifier)
-        tableView.backgroundColor = Constants.Colors.mainBackground
         
         return tableView
     }()
@@ -96,10 +95,12 @@ class AssetsViewController: UIViewController {
     // MARK: - Private methods
     private func setupUI() {
         
-        self.title = Constants.Strings.Title.assets
+        self.title = Constants.Title.assets
         
         assetsTableView.dataSource = self
         assetsTableView.delegate = self
+        
+        self.assetsTableView.backgroundColor = ColorConstants.mainBackground
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
@@ -201,9 +202,9 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.Strings.Error.Network.title,
+        presentAlertOnMainThread(title: Constants.NetworkError.title,
                                  message: error.rawValue,
-                                 buttonTitle: Constants.Strings.Common.ok)
+                                 buttonTitle: Constants.Common.ok)
     }
     
 }
@@ -242,4 +243,3 @@ extension AssetsViewController: UISearchBarDelegate {
         }
     }
 }
-

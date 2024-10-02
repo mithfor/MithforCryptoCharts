@@ -45,10 +45,8 @@ class SearchTextField: UITextField {
         clearButtonMode             = .whileEditing
         placeholder                 = "Search"
         
-        setIcon(UIImage(systemName: Constants.Strings.Icon.search))
+        setIcon(UIImage(systemName: Constants.Icon.search))
     }
-    
-    
 }
 
 extension SearchTextField {

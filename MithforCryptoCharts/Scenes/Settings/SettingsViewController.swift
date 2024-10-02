@@ -7,12 +7,12 @@
 
 import UIKit
 
-//MARK: - SettingsViewController
+// MARK: - SettingsViewController
 final class SettingsViewController: UIViewController {
     
     private var viewModel: SettingsViewModel?
     
-    //MARK: - Init
+    // MARK: - Init
     init(viewModel: SettingsViewModel) {
         super.init(nibName: nil, bundle: nil)
         
@@ -23,17 +23,17 @@ final class SettingsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Override
+    // MARK: - Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
     }
     
-    //MARK: - Setup
+    // MARK: - Setup
     fileprivate func setupUI() {
         view.backgroundColor = .yellow
-        self.title = Constants.Strings.Title.settings
+        self.title = Constants.Title.settings
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
@@ -42,12 +42,11 @@ final class SettingsViewModel {
     typealias Routes = SettingsTabRoute
     private let router: Routes
     
-    init(router:Routes) {
+    init(router: Routes) {
         self.router = router
     }
     
     func viewIconTapped() {
         print("SettingsViewModel: \(#function)")
     }
-    
 }

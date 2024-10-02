@@ -145,10 +145,8 @@ class NetworkManager {
         task.resume()
     }
     
-    
     // MARK: - deprecated
     func downloadImage(from asset: Asset, completed: @escaping ImageHandler) {
-        
         
         let urlString = "https://cryptoicon-api.vercel.app/api/icon/\(String(describing: asset.symbol?.lowercased()))"
         
