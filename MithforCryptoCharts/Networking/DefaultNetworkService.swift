@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: - actualize it
 enum NetworkError: String, Error {
     case endpoint = "Bad endpoint"
     case unableToComplete = "Unable to complete your request. Please check your internet connection."
