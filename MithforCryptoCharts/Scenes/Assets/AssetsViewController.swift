@@ -202,9 +202,9 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: NetworkError.title.rawValue,
-                                 message: error.rawValue,
-                                 buttonTitle: Constants.Common.ok)
+        presentAlertOnMainThread(title: NetworkError.networkError.rawValue.localized(),
+                                 message: error.rawValue.localized(),
+                                 buttonTitle: Constants.Common.ok.localized())
     }
     
 }

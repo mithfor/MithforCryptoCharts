@@ -8,7 +8,7 @@
 import Foundation
 
 enum NetworkError: String, Error {
-    case title = "Network error"
+    case networkError = "Network error"
     case endpoint = "Bad endpoint"
     case unableToComplete = "Unable to complete your request. Please check your internet connection."
     case invalidResponse = "Invalid response from the server. Please try again"
