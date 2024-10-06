@@ -23,6 +23,7 @@
 		881FDEDC29C2420B0057AAB2 /* AssetDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */; };
 		881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEE029C242D10057AAB2 /* PushTransition.swift */; };
 		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
+		887CA5B12CB27FEB00E161D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 887CA5B02CB27FC500E161D0 /* LICENSE */; };
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
 		889FCD162CADD6BC005F1E17 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FCD152CADD6BC005F1E17 /* NetworkError.swift */; };
@@ -102,6 +103,7 @@
 		881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsRoute.swift; sourceTree = "<group>"; };
 		881FDEE029C242D10057AAB2 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		887CA5B02CB27FC500E161D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
 		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		889FCD152CADD6BC005F1E17 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		881FDEBC29C22EF10057AAB2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				887CA5B02CB27FC500E161D0 /* LICENSE */,
 				88E25EA729BF7DD00018C150 /* Assets.xcassets */,
 				88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */,
 			);
@@ -532,6 +535,7 @@
 				88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */,
 				88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */,
 				88E25EA829BF7DD00018C150 /* Assets.xcassets in Resources */,
+				887CA5B12CB27FEB00E161D0 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
