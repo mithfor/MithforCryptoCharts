@@ -17,8 +17,7 @@ protocol ResultError {
 }
 
 protocol AssetsViewControllerInput: AnyObject, ResultError {
-    func update(_ assets: Assets, with assetModel: AssetModel)
-   
+    func update(_ assets: Assets)
 }
 
 protocol AssetsViewControllerOutput: AnyObject {
@@ -32,7 +31,7 @@ enum SearchActionState {
 }
 
 // TODO: - Fix AssetWithImage to AssetViewModel!!!
-struct AssetWithImage {
+struct AssetViewModel {
     let asset: Asset
     let image: UIImage
 }
@@ -44,6 +43,8 @@ class AssetsViewController: UIViewController {
     
     // TODO: - remove optional if needed
     var interactor: AssetsViewControllerOutput?
+    
+    private var assetViewModels: [AssetViewModel] = []
     
     private var assets: Assets?
     private var filteredAssets: Assets = []
@@ -191,9 +192,8 @@ extension AssetsViewController: AssetsTableViewCellDelegate {
 
 // MARK: - AssetsPresenterOutput
 extension AssetsViewController: AssetsPresenterOutput {
-    func update(_ assets: Assets, with assetModel: AssetModel) {
+    func update(_ assets: Assets) {
         self.assets = assets
-        self.assetModel = assetModel
         
         DispatchQueue.main.async {
             self.removeSpinner()
@@ -202,9 +202,9 @@ extension AssetsViewController: AssetsPresenterOutput {
     }
     
     func updateFailed(with error: NetworkError) {
-        presentAlertOnMainThread(title: Constants.NetworkError.title,
-                                 message: error.rawValue,
-                                 buttonTitle: Constants.Common.ok)
+        presentAlertOnMainThread(title: NetworkError.networkError.rawValue.localized(),
+                                 message: error.rawValue.localized(),
+                                 buttonTitle: Constants.Common.ok.localized())
     }
     
 }
@@ -212,7 +212,6 @@ extension AssetsViewController: AssetsPresenterOutput {
 // MARK: - UISearchBarDelegate
 extension AssetsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
      
         guard let text = searchController.searchBar.text,
               let assets = assets

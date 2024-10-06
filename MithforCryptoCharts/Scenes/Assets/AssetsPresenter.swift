@@ -16,11 +16,12 @@ final class AssetsPresenter {
 }
 
 extension AssetsPresenter: AssetsPresenterInput {
-    func fetched(assets: Assets, with assetModel: AssetModel) {
-        viewController?.update(assets, with: assetModel)
+    func fetched(assets: Assets) {
+        viewController?.update(assets)
     }
     
     func fetchFailure(with error: NetworkError) {
         viewController?.updateFailed(with: error)
+        
     }
 }

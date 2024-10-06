@@ -32,7 +32,7 @@ class IconManager: IconManagable {
         }
         let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            guard error != nil else {
+            guard error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }

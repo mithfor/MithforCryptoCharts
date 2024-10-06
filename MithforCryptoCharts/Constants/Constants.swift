@@ -16,10 +16,6 @@ struct Constants {
         static let remove = "Remove".localized()
     }
     
-    struct NetworkError {
-        static let title = "Network error".localized()
-    }
-    
     struct Title {
         static let assets = "Assets".localized()
         static let watchlist = "Watchlist".localized()

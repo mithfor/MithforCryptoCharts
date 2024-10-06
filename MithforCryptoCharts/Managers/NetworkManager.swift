@@ -32,7 +32,7 @@ class NetworkManager {
 
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
 
-            guard error != nil else {
+            guard error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -73,7 +73,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
             
-            guard error != nil else {
+            guard error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -115,7 +115,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (jsonData, response, error) in
             
-            guard error != nil else {
+            guard error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }
@@ -163,7 +163,7 @@ class NetworkManager {
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-            guard error != nil else {
+            guard error == nil else {
                 completed(.failure(.unableToComplete))
                 return
             }

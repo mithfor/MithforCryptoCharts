@@ -11,7 +11,7 @@ typealias Assets = [Asset]
 typealias AssetsInteractorInput = AssetsViewControllerOutput
 
 protocol AssetsInteractorOutput: AnyObject, InteractingError {
-    func fetched(assets: Assets, with assetModel: AssetModel)
+    func fetched(assets: Assets)
     func fetchFailure(with error: NetworkError)
 }
 
@@ -26,7 +26,7 @@ final class AssetsInteractor {
 
 class AssetNetworkService: DefaultNetworkService {}
 
-extension AssetsInteractor: AssetsInteractorInput {
+extension AssetsInteractor: AssetsViewControllerOutput {
     
     func fetchImage(for asset: Asset, completion: @escaping (() -> Void)) {
         let queue = DispatchQueue(label: "IconQueue", qos: .default, attributes: .concurrent)
@@ -55,8 +55,7 @@ extension AssetsInteractor: AssetsInteractorInput {
                     switch result {
                     case .success(let response):
                         self?.assets = response
-                        self?.presenter?.fetched(assets: self?.assets ?? [],
-                                                 with: self?.assetModel ?? [:])
+                        self?.presenter?.fetched(assets: self?.assets ?? [])
 //                        self?.fetchImagesFor(self?.assets ?? Assets())
                     case .failure(let error):
                         self?.presenter?.fetchFailure(with: error)
@@ -73,7 +72,7 @@ extension AssetsInteractor: AssetsInteractorInput {
             switch result {
             case .success(let response):
                 self?.assets = response
-                self?.presenter?.fetched(assets: self?.assets ?? [], with: self?.assetModel ?? [:])
+                self?.presenter?.fetched(assets: self?.assets ?? [])
 //                try? fetchImagesFor(self?.assets ?? Assets())
             case .failure(let error):
                 self?.presenter?.fetchFailure(with: error)
@@ -83,7 +82,9 @@ extension AssetsInteractor: AssetsInteractorInput {
 
     func fetchImagesFor(_ assets: Assets) {
         
-        let queue = DispatchQueue(label: "FetchingImagesForAssetsQueue", qos: .default, attributes: .concurrent)
+        let queue = DispatchQueue(label: "FetchingImagesForAssetsQueue",
+                                  qos: .default, 
+                                  attributes: .concurrent)
         queue.async {
             let group = DispatchGroup()
             assets.forEach({ asset in
@@ -95,7 +96,7 @@ extension AssetsInteractor: AssetsInteractorInput {
             })
             
             group.notify(queue: .main) {
-                self.presenter?.fetched(assets: assets, with: self.assetModel)
+                self.presenter?.fetched(assets: assets)
             }
         }
     }
