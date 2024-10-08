@@ -18,8 +18,11 @@ class CryptoAssetsTableView: UITableView {
     private(set) var state: TableState?
     
     init(frame: CGRect = .zero, style: UITableView.Style = .plain, state: TableState = .initiate) {
-        self.state = state
         super.init(frame: frame, style: style)
+        self.state = state
+        register(
+            CryptoAssetsTableViewCell.self,
+            forCellReuseIdentifier: CryptoAssetsTableViewCell.identifier)
     }
     
     required init?(coder: NSCoder) {

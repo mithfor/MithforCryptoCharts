@@ -31,8 +31,6 @@ enum SearchActionState {
     case inactive
 }
 
-// TODO: - Fix AssetWithImage to CryptoAssetCellViewModel!!!
-
 // MARK: - CryptoAssetsViewController
 class CryptoAssetsViewController: UIViewController {
     
@@ -48,13 +46,7 @@ class CryptoAssetsViewController: UIViewController {
     private var searching: SearchActionState = .inactive
     private var state: TableState = .initiate
         
-    lazy var assetsTableView: CryptoAssetsTableView = {
-        let tableView = CryptoAssetsTableView()
-        tableView.register(CryptoAssetsTableViewCell.self,
-                           forCellReuseIdentifier: CryptoAssetsTableViewCell.identifier)
-        
-        return tableView
-    }()
+    lazy var assetsTableView = CryptoAssetsTableView()
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -84,7 +76,7 @@ class CryptoAssetsViewController: UIViewController {
         self.state = .refreshing
         
         Task {
-            try await interactor?.fetchCryptoAssets()
+            await interactor?.fetchCryptoAssets()
         }
     }
     
@@ -163,21 +155,15 @@ extension CryptoAssetsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        if let cell = assetsTableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier,
-                                                          for: indexPath) as? CryptoAssetsTableViewCell {
-            let asset = assets[indexPath.row]
-            let image = UIImage(named: asset.symbol?.lowercased()
-                                ?? "generic")
-            ?? UIImage(named: "generic")
-            ?? UIImage()
-
-            // TODO: - Configure with Viewmodel
-            
-            cell.configure(
-                with: CryptoAssetCellViewModel(asset: asset,
-                                               image: image,
-                                               delegate: self)
-            )
+        if let cell = assetsTableView.dequeueReusableCell(
+            withIdentifier: CryptoAssetsTableViewCell.identifier,
+            for: indexPath) as? CryptoAssetsTableViewCell {
+                        
+            if let viewModel = CryptoAssetCellViewModelFactory.createViewModel(
+                with: assets[indexPath.row],
+                and: self) as? CryptoAssetCellViewModel {
+                cell.configure(with: viewModel)
+            }
             
             return cell
         } else {

@@ -26,12 +26,7 @@ class WatchlistViewController: UIViewController {
     var watchlist = WatchList()
     var assets = CryptoAssets()
     
-    private lazy var assetsTableView: CryptoAssetsTableView = {
-        let tableView = CryptoAssetsTableView()
-        tableView.register(CryptoAssetsTableViewCell.self, forCellReuseIdentifier: CryptoAssetsTableViewCell.identifier)
-                
-        return tableView
-    }()
+    private lazy var assetsTableView = CryptoAssetsTableView()
     
     // MARK: - Init
     init(viewModel: WatchlistViewModel) {
@@ -134,11 +129,11 @@ extension WatchlistViewController: UITableViewDataSource {
         guard !assets.isEmpty else { return UITableViewCell() }
         if let cell = tableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier, 
                                                     for: indexPath) as? CryptoAssetsTableViewCell {
-            let asset = assets[indexPath.row]
-            cell.configureWith(delegate: nil,
-                               and: asset,
-                               image: UIImage(named: asset.symbol?.lowercased() ?? "ok".lowercased()) ?? UIImage())
-            cell.delegate = self
+            if let viewModel = CryptoAssetCellViewModelFactory.createViewModel(
+                with: assets[indexPath.row],
+                and: self) as? CryptoAssetCellViewModel {
+                cell.configure(with: viewModel)
+            }
             return cell
         } else {
             return UITableViewCell()
@@ -156,7 +151,6 @@ extension WatchlistViewController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
 
 // MARK: - UITableViewDelegate
