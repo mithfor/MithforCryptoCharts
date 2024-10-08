@@ -30,7 +30,7 @@ final class CryptoAssetsViewControllerTests: XCTestCase {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
         
-        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: AssetListViewModel(router: router)))
+        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: CryptoAssetListViewModel(router: router)))
         
         
         XCTAssertNotNil(sut.interactor)
@@ -90,7 +90,7 @@ fileprivate class Helper {
     func makeSUT() -> CryptoAssetsViewController {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: AssetListViewModel(router: router)))
+        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: CryptoAssetListViewModel(router: router)))
         
         sut.interactor = AssetInteractorStub()
         sut.loadViewIfNeeded()

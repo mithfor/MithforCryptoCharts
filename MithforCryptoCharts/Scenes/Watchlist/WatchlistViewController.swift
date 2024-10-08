@@ -134,9 +134,10 @@ extension WatchlistViewController: UITableViewDataSource {
         guard !assets.isEmpty else { return UITableViewCell() }
         if let cell = tableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier, 
                                                     for: indexPath) as? CryptoAssetsTableViewCell {
-            cell.configureWith(delegate: nil, 
-                               and: assets[indexPath.row],
-                               image: UIImage(systemName: "house"))
+            let asset = assets[indexPath.row]
+            cell.configureWith(delegate: nil,
+                               and: asset,
+                               image: UIImage(named: asset.symbol?.lowercased() ?? "ok".lowercased()) ?? UIImage())
             cell.delegate = self
             return cell
         } else {

@@ -14,7 +14,7 @@ protocol CryptoAssetsTableViewCellDelegate: AnyObject {
 class CryptoAssetsTableViewCell: UITableViewCell {
     
     // TODO: - make ViewModel
-    private var assetViewModel: CryptoAsset?
+    private var asset: CryptoAsset?
     
     static let identifier = "CryptoAssetsTableViewCell"
     
@@ -88,7 +88,7 @@ class CryptoAssetsTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @objc func assetDetailsButtonDidTap() {
-        guard let asset = assetViewModel else {return}
+        guard let asset = asset else {return}
         delegate?.viewDetails(asset)
     }
     
@@ -98,13 +98,13 @@ class CryptoAssetsTableViewCell: UITableViewCell {
        contentView.addSubview(assetDetailsButton)
         selectionStyle = .none
     
-       contentView.clipsToBounds = true
-       contentView.contentMode = .center
-       contentView.isMultipleTouchEnabled = true
+        contentView.clipsToBounds = true
+        contentView.contentMode = .center
+        contentView.isMultipleTouchEnabled = true
 
-       assetDetailsButton.contentVerticalAlignment = .center
-       assetDetailsButton.tintColor = UIColor.systemGray2
-       assetDetailsButton.titleLabel?.lineBreakMode = .byTruncatingMiddle
+        assetDetailsButton.contentVerticalAlignment = .center
+        assetDetailsButton.tintColor = UIColor.systemGray2
+        assetDetailsButton.titleLabel?.lineBreakMode = .byTruncatingMiddle
         assetDetailsButton.addTarget(self,
                                      action: #selector(assetDetailsButtonDidTap),
                                      for: .touchUpInside)
@@ -147,27 +147,33 @@ class CryptoAssetsTableViewCell: UITableViewCell {
         ])
     }
     
+    func configure(with viewModel: CryptoAssetCellViewModel) {
+        self.delegate = viewModel.delegate
+        self.asset = viewModel.asset
+        self.assetImage = viewModel.image
+        
+        update()
+    }
+    
+    @available(*, deprecated, message: "Use configure(with viewModel:) instead")
     func configureWith(delegate: CryptoAssetsTableViewCellDelegate?,
                        and asset: CryptoAsset,
-                       image: UIImage?) {
+                       image: UIImage) {
         self.delegate = delegate
-        self.assetViewModel = asset
-        if let image = image {
-            self.assetImage = image
-        } else {
-            self.assetImage = UIImage(named: "defaultlogo")
-        }
+        self.asset = asset
+        self.assetImage = image
         
         update()
     }
     
     func update() {
-        assetImageView.image = assetImage
-        assetSymbolLabel.text = assetViewModel?.symbol
-        assetNameLabel.text = assetViewModel?.name
-        assetPriceUSDLabel.text = "$\(String.formatToCurrency(string: assetViewModel?.priceUsd ?? ""))"
-    
-        assetChangePercent24HrLabel.setupText(with: Double(assetViewModel?.changePercent24Hr ?? "0.00") ?? 0.0)
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else  { return }
+            self.assetImageView.image = assetImage
+            self.assetSymbolLabel.text = asset?.symbol
+            self.assetNameLabel.text = asset?.name
+            self.assetPriceUSDLabel.text = "$\(String.formatToCurrency(string: asset?.priceUsd ?? ""))"
+            self.assetChangePercent24HrLabel.setupText(with: Double(asset?.changePercent24Hr ?? "0.00") ?? 0.0)
+        }
     }
  }

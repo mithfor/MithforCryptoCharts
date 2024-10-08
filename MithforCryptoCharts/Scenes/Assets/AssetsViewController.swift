@@ -30,26 +30,28 @@ enum SearchActionState {
     case inactive
 }
 
-// TODO: - Fix AssetWithImage to AssetViewModel!!!
-struct AssetViewModel {
+// TODO: - Fix AssetWithImage to CryptoAssetCellViewModel!!!
+struct CryptoAssetCellViewModel {
     let asset: CryptoAsset
     let image: UIImage
+    
+    weak var delegate: CryptoAssetsTableViewCellDelegate?
 }
 
 // MARK: - CryptoAssetsViewController
 class CryptoAssetsViewController: UIViewController {
     
-    private var viewModel: AssetListViewModel?
+    private var viewModel: CryptoAssetListViewModel?
     
-    // TODO: - remove optional if needed
     var interactor: CryptoAssetsViewControllerOutput?
     
-    private var assetViewModels: [AssetViewModel] = []
+    private var assetViewModels: [CryptoAssetCellViewModel] = []
     
     private var assets: CryptoAssets?
     private var filteredCryptoAssets: CryptoAssets = []
     private var assetModel: AssetModel = [:]
     private var searching: SearchActionState = .inactive
+    private var state: TableState = .initiate
         
     lazy var assetsTableView: CryptoAssetsTableView = {
         let tableView = CryptoAssetsTableView()
@@ -67,7 +69,7 @@ class CryptoAssetsViewController: UIViewController {
     }()
 
     // MARK: - Init
-    init(viewModel: AssetListViewModel) {
+    init(viewModel: CryptoAssetListViewModel) {
         super.init(nibName: nil, bundle: nil)
         
         self.viewModel = viewModel
@@ -84,6 +86,7 @@ class CryptoAssetsViewController: UIViewController {
         setupUI()
         
         self.showSpinnner()
+        self.state = .refreshing
         interactor?.fetchCryptoAssets()
     }
     
@@ -135,6 +138,7 @@ class CryptoAssetsViewController: UIViewController {
             CFRunLoopPerformBlock(CFRunLoopGetMain(),
                                   CFRunLoopMode.commonModes.rawValue) {
                 self.assetsTableView.refreshControl?.endRefreshing()
+                self.state = .active
             }
         }
     }
@@ -161,7 +165,13 @@ extension CryptoAssetsViewController: UITableViewDataSource {
         
         if let cell = assetsTableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier,
                                                           for: indexPath) as? CryptoAssetsTableViewCell {
-            cell.configureWith(delegate: nil, and: assets[indexPath.row], image: nil)
+            let asset = assets[indexPath.row]
+            let image = UIImage(named: asset.symbol?.lowercased() ?? "") ?? UIImage()
+            
+            // TODO: - Configure with Viewmodel
+            cell.configureWith(delegate: self,
+                               and: asset,
+                               image: image)
             
             return cell
         } else {

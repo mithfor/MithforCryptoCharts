@@ -52,7 +52,7 @@ extension CryptoAssetsInteractor: CryptoAssetsViewControllerOutput {
             "x-rapidapi-host": "open-source-icons-search.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://open-source-icons-search.p.rapidapi.com/vectors/search?query=bitcoin")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://open-source-icons-search.p.rapidapi.com/vectors/search?query=ETH")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -81,28 +81,33 @@ extension CryptoAssetsInteractor: CryptoAssetsViewControllerOutput {
             }
         }
         
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: createRapidAPIRequest() as URLRequest, completionHandler: { (data, response, error) -> Void in
-//            if (error != nil) {
-//                print(error as Any)
-//            } else {
-//                let httpResponse = response as? HTTPURLResponse
-//                print(httpResponse)
-//                
-//            }
-//            
-//            if let jsonData = data {
-//                
-//                do {
-//                    let foundedIcon = try JSONDecoder().decode(FoundedIcon.self, from: jsonData)
-//                } catch let error as NSError {
-//                    print(error.description)
-//                }
-//                
-//            }
-//        })
-//
-//        dataTask.resume()
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: createRapidAPIRequest() as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
+                print(error as Any)
+            } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse)
+                
+            }
+            
+            if let jsonData = data {
+                
+                do {
+                    let foundedIcon = try JSONDecoder().decode(FoundedIcon.self, from: jsonData)
+
+                    foundedIcon.data.objects.forEach{ object in
+                        print(object.url)
+                    }
+                    print(#function)
+                } catch let error as NSError {
+                    print(error.description)
+                }
+                
+            }
+        })
+
+        dataTask.resume()
     }
     
     func fetchCryptoAssetsAsync() async throws {

@@ -14,7 +14,7 @@ protocol CryptoAssetsTabRoute {
 extension CryptoAssetsTabRoute where Self: Router {
     func makeCryptoAssetsTab() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let model = AssetListViewModel(router: router)
+        let model = CryptoAssetListViewModel(router: router)
         let viewController = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: model))
         router.root = viewController
         
