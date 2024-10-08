@@ -19,7 +19,7 @@ extension WatchListPresenter: WatchListPresenterInput {
         viewController?.updateFailed(with: error)
     }
     
-    func assetsDidFetch(_ assets: Assets) {
+    func assetsDidFetch(_ assets: CryptoAssets) {
         viewController?.update(assets)
     }
 }

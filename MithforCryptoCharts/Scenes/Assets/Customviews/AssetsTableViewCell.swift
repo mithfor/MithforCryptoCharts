@@ -1,5 +1,5 @@
 //
-//  AssetsTableViewCell.swift
+//  CryptoAssetsTableViewCell.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 25.02.2023.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol AssetsTableViewCellDelegate: AnyObject {
-    func viewDetails(_ asset: Asset)
+protocol CryptoAssetsTableViewCellDelegate: AnyObject {
+    func viewDetails(_ asset: CryptoAsset)
 }
 
-class AssetsTableViewCell: UITableViewCell {
+class CryptoAssetsTableViewCell: UITableViewCell {
     
     // TODO: - make ViewModel
-    private var assetViewModel: Asset?
+    private var assetViewModel: CryptoAsset?
     
-    static let identifier = "AssetsTableViewCell"
+    static let identifier = "CryptoAssetsTableViewCell"
     
-    weak var delegate: AssetsTableViewCellDelegate?
+    weak var delegate: CryptoAssetsTableViewCellDelegate?
     
     private var assetId: String = ""
     private var assetImage: UIImage?
@@ -147,8 +147,8 @@ class AssetsTableViewCell: UITableViewCell {
         ])
     }
     
-    func configureWith(delegate: AssetsTableViewCellDelegate?,
-                       and asset: Asset,
+    func configureWith(delegate: CryptoAssetsTableViewCellDelegate?,
+                       and asset: CryptoAsset,
                        image: UIImage?) {
         self.delegate = delegate
         self.assetViewModel = asset

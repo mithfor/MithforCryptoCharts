@@ -8,11 +8,11 @@
 import Foundation
 
 protocol AssetDetailsRoute {
-    func openAssetDetails(_ asset: Asset)
+    func openAssetDetails(_ asset: CryptoAsset)
 }
 
 extension AssetDetailsRoute where Self: Router {
-    func openAssetDetails(_ asset: Asset) {
+    func openAssetDetails(_ asset: CryptoAsset) {
         let push = PushTransition()
         let router = DefaultRouter(rootTransition: push)
         let model = AssetDetailsViewModel(router: router, asset: asset)

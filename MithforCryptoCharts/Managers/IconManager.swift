@@ -10,7 +10,7 @@ import UIKit
 typealias  AssetIconResponseHandler = (Result<IconAsset, NetworkError>) -> Void
 
 protocol IconManagable {
-    func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler)
+    func fetchIconFor(_ asset: CryptoAsset, completed: @escaping AssetIconResponseHandler)
 }
 
 class IconManager: IconManagable {
@@ -21,7 +21,7 @@ class IconManager: IconManagable {
     
     private init() {}
     
-    func fetchIconFor(_ asset: Asset, completed: @escaping AssetIconResponseHandler) {
+    func fetchIconFor(_ asset: CryptoAsset, completed: @escaping AssetIconResponseHandler) {
         
         var assetIcon = IconAsset()
         let urlString = "\(IconManager.baseURL)\(String(describing: asset.symbol?.lowercased()))"

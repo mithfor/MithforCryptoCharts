@@ -1,5 +1,5 @@
 //
-//  AssetsConfigurator.swift
+//  CryptoAssetsConfigurator.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 27.02.2023.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-protocol AssetsCongfiguratorProtocol {
-    static func configured(_ vc: AssetsViewController) -> AssetsViewController
+protocol CryptoAssetsCongfiguratorProtocol {
+    static func configured(_ vc: CryptoAssetsViewController) -> CryptoAssetsViewController
 }
 
-class AssetsConfigurator: AssetsCongfiguratorProtocol {
-        static func configured(_ vc: AssetsViewController) -> AssetsViewController {
+class CryptoAssetsConfigurator: CryptoAssetsCongfiguratorProtocol {
+        static func configured(_ vc: CryptoAssetsViewController) -> CryptoAssetsViewController {
         let networkService = AssetNetworkService()
-        let interactor = AssetsInteractor()
-        let presenter = AssetsPresenter()
+        let interactor = CryptoAssetsInteractor()
+        let presenter = CryptoAssetsPresenter()
         interactor.networkService = networkService
         vc.interactor = interactor
         presenter.interactor = interactor

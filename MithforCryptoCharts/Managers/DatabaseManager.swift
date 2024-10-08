@@ -11,21 +11,21 @@ import Foundation
 final class DatabaseManager {
     private let watchlistKey = "watchlist_key"
     
-    func save(assets: Set<Asset>) {
+    func save(assets: Set<CryptoAsset>) {
         
         if let encoded = try? JSONEncoder().encode(assets) {
             UserDefaults.standard.set(encoded, forKey: watchlistKey)
         }
     }
     
-    func load() -> Set<Asset> {
+    func load() -> Set<CryptoAsset> {
         
-        let array = UserDefaults.standard.array(forKey: watchlistKey) as? [Asset] ?? [Asset]()
+        let array = UserDefaults.standard.array(forKey: watchlistKey) as? [CryptoAsset] ?? [CryptoAsset]()
         
         return Set(array)
     }
     
-    func updateWatchList(asset: Asset) {
+    func updateWatchList(asset: CryptoAsset) {
         var assets = load()
         
         assets.insert(asset)

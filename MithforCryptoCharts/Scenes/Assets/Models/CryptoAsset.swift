@@ -1,5 +1,5 @@
 //
-//  Asset.swift
+//  CryptoAsset.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 26.02.2023.
@@ -18,23 +18,23 @@
 
 import Foundation
 
-struct AssetListResponse: Codable {
+struct CryptoAssetListResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case data
     }
     
-    let data: [Asset]
+    let data: [CryptoAsset]
 }
 
-struct AssetResponse: Codable {
+struct CryptoAssetResponse: Codable {
     enum CodingKeys: String, CodingKey {
         case data
     }
     
-    let data: Asset
+    let data: CryptoAsset
 }
 
-struct Asset: Codable, Hashable, Equatable {
+struct CryptoAsset: Codable, Hashable, Equatable {
 
     var id: String?
     var rank: String?
