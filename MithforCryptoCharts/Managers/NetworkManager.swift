@@ -12,10 +12,10 @@ class NetworkManager {
     static let shared = NetworkManager()
     let cache = NSCache<NSString, UIImage>()
     
-    typealias AssetsHandler = (Result<AssetListResponse, NetworkError>) -> Void
+    typealias CryptoAssetsHandler = (Result<CryptoAssetListResponse, NetworkError>) -> Void
     typealias AssetHistoryHandler = (Result<AssetListHistoryResponse, NetworkError>) -> Void
     typealias ImageHandler = (Result<UIImage, NetworkError>) -> Void
-    typealias AssetHandler = (Result<AssetResponse, NetworkError>) -> Void
+    typealias AssetHandler = (Result<CryptoAssetResponse, NetworkError>) -> Void
         
     private let baseURL: String = "http://api.coincap.io/v2/"
     
@@ -92,7 +92,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.dataDecodingStrategy = .base64
-                let asset = try decoder.decode(AssetResponse.self, from: jsonData)
+                let asset = try decoder.decode(CryptoAssetResponse.self, from: jsonData)
                 completed(.success(asset))
             } catch {
                 completed(.failure(.invalidData))
@@ -103,8 +103,8 @@ class NetworkManager {
         task.resume()
     }
     
-    func fetchAssets( page: Int,
-                      completed: @escaping AssetsHandler) {
+    func fetchCryptoAssets( page: Int,
+                      completed: @escaping CryptoAssetsHandler) {
         
         let endpoint = String("\(baseURL)assets")
         
@@ -134,7 +134,7 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 decoder.dataDecodingStrategy = .base64
-                let assets = try decoder.decode(AssetListResponse.self, from: jsonData)
+                let assets = try decoder.decode(CryptoAssetListResponse.self, from: jsonData)
                 completed(.success(assets))
             } catch {
                 completed(.failure(.invalidData))
@@ -146,7 +146,7 @@ class NetworkManager {
     }
     
     // MARK: - deprecated
-    func downloadImage(from asset: Asset, completed: @escaping ImageHandler) {
+    func downloadImage(from asset: CryptoAsset, completed: @escaping ImageHandler) {
         
         let urlString = "https://cryptoicon-api.vercel.app/api/icon/\(String(describing: asset.symbol?.lowercased()))"
         

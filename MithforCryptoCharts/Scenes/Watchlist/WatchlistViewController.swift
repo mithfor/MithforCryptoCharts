@@ -9,13 +9,13 @@ import UIKit
 
 // MARK: - WatchListViewControllerInput
 protocol WatchListViewControllerInput: AnyObject, ResultError {
-    func update(_ assets: Assets)
+    func update(_ assets: CryptoAssets)
 }
 
 // MARK: - WatchListViewControllerOutput
 protocol WatchListViewControllerOutput: AnyObject {
-    func fetchFavoriteAssets(watchList: WatchList)
-    func fetchAssetDetails(by id: String, completion: @escaping (AssetResponse) -> Void)
+    func fetchFavoriteCryptoAssets(watchList: WatchList)
+    func fetchAssetDetails(by id: String, completion: @escaping (CryptoAssetResponse) -> Void)
 }
 
 // MARK: - WatchListViewController
@@ -24,11 +24,11 @@ class WatchlistViewController: UIViewController {
     var interactor: WatchListInteractorInput?
     // MARK: - VARIABLES
     var watchlist = WatchList()
-    var assets = Assets()
+    var assets = CryptoAssets()
     
-    private lazy var assetsTableView: AssetsTableView = {
-        let tableView = AssetsTableView()
-        tableView.register(AssetsTableViewCell.self, forCellReuseIdentifier: AssetsTableViewCell.identifier)
+    private lazy var assetsTableView: CryptoAssetsTableView = {
+        let tableView = CryptoAssetsTableView()
+        tableView.register(CryptoAssetsTableViewCell.self, forCellReuseIdentifier: CryptoAssetsTableViewCell.identifier)
                 
         return tableView
     }()
@@ -50,7 +50,7 @@ class WatchlistViewController: UIViewController {
         
         setupUI()
         
-        fetchFavoriteAssets()
+        fetchFavoriteCryptoAssets()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +58,7 @@ class WatchlistViewController: UIViewController {
 
         setupUI()
         
-        fetchFavoriteAssets()
+        fetchFavoriteCryptoAssets()
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,7 +68,7 @@ class WatchlistViewController: UIViewController {
     }
     
     // MARK: - SETUP
-    private func setupAssetsTableViewConstraints() {
+    private func setupCryptoAssetsTableViewConstraints() {
         view.addSubview(assetsTableView)
         assetsTableView.pinToEdges(of: view)
     }
@@ -82,7 +82,7 @@ class WatchlistViewController: UIViewController {
         
         configureRefreshControl()
         
-        setupAssetsTableViewConstraints()
+        setupCryptoAssetsTableViewConstraints()
         
         setupNavigationItem()
         
@@ -97,7 +97,7 @@ class WatchlistViewController: UIViewController {
         
     @objc func handleRefreshControl() {
         
-        fetchFavoriteAssets()
+        fetchFavoriteCryptoAssets()
 
         CFRunLoopPerformBlock(CFRunLoopGetMain(),
                               CFRunLoopMode.defaultMode.rawValue) {
@@ -106,8 +106,8 @@ class WatchlistViewController: UIViewController {
         }
     }
     
-    private func fetchFavoriteAssets() {
-        interactor?.fetchFavoriteAssets(watchList: watchlist)
+    private func fetchFavoriteCryptoAssets() {
+        interactor?.fetchFavoriteCryptoAssets(watchList: watchlist)
     }
     
     fileprivate func setupNavigationItem() {
@@ -132,8 +132,8 @@ extension WatchlistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard !assets.isEmpty else { return UITableViewCell() }
-        if let cell = tableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier, 
-                                                    for: indexPath) as? AssetsTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier, 
+                                                    for: indexPath) as? CryptoAssetsTableViewCell {
             cell.configureWith(delegate: nil, 
                                and: assets[indexPath.row],
                                image: UIImage(systemName: "house"))
@@ -175,7 +175,7 @@ extension WatchlistViewController: UITableViewDelegate {
 
 // MARK: - WatchlistViewControllerInput
 extension WatchlistViewController: WatchListViewControllerInput {
-    func update(_ assets: Assets) {
+    func update(_ assets: CryptoAssets) {
         self.assets = assets
         DispatchQueue.main.async {
             self.assetsTableView.reloadData()
@@ -189,8 +189,8 @@ extension WatchlistViewController: WatchListViewControllerInput {
     }
 }
 
-extension WatchlistViewController: AssetsTableViewCellDelegate {
-    func viewDetails(_ asset: Asset) {
+extension WatchlistViewController: CryptoAssetsTableViewCellDelegate {
+    func viewDetails(_ asset: CryptoAsset) {
         viewModel?.assetDetailsTapped(asset: asset)
     }
 }
@@ -204,7 +204,7 @@ final class WatchlistViewModel {
         self.router = router
     }
     
-    func assetDetailsTapped(asset: Asset) {
+    func assetDetailsTapped(asset: CryptoAsset) {
         router.openAssetDetails(asset)
     }
 }

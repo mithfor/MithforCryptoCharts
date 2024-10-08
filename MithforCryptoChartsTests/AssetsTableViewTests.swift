@@ -1,5 +1,5 @@
 //
-//  AssetsTableViewTests.swift
+//  CryptoAssetsTableViewTests.swift
 //  MithforCryptoChartsTests
 //
 //  Created by Dmitrii Voronin on 02.10.2024.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import MithforCryptoCharts
 
-final class AssetsTableViewTests: XCTestCase {
+final class CryptoAssetsTableViewTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -20,12 +20,12 @@ final class AssetsTableViewTests: XCTestCase {
     
     func test_InitWiithCoder() {
         let coder = NSKeyedArchiver(requiringSecureCoding: true)
-        let sut = AssetsTableView(coder: coder)
+        let sut = CryptoAssetsTableView(coder: coder)
         XCTAssertNil(sut)
     }
 
     func test_InitWithDefaultState() {
-        let sut = AssetsTableView()
+        let sut = CryptoAssetsTableView()
         
         XCTAssertEqual(sut.state, .initiate)
     }

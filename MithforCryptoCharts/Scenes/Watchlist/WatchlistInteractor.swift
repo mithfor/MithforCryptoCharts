@@ -10,13 +10,13 @@ typealias WatchListInteractorInput = WatchListViewControllerOutput
 
 protocol WatchListInteractorOutput: AnyObject, InteractingError {
     
-    func assetsDidFetch(_ assets: Assets)
+    func assetsDidFetch(_ assets: CryptoAssets)
 }
 
 final class WatchListInteractor {
     lazy var watchList = WatchList()
     
-    private var assets = Assets()
+    private var assets = CryptoAssets()
     
     var presenter: WatchListPresenterInput?
 }
@@ -25,7 +25,7 @@ final class WatchListInteractor {
 extension WatchListInteractor: WatchListInteractorInput {
     
     func fetchAssetDetails(by id: String,
-                           completion: @escaping ((AssetResponse) -> Void)) {
+                           completion: @escaping ((CryptoAssetResponse) -> Void)) {
         
         NetworkManager.shared.fetchAsset(by: id) { [weak self] result in
             switch result {
@@ -38,7 +38,7 @@ extension WatchListInteractor: WatchListInteractorInput {
         }
     }
     
-    func fetchFavoriteAssets(watchList: WatchList) {
+    func fetchFavoriteCryptoAssets(watchList: WatchList) {
         print(#function)
         
         watchList.load()

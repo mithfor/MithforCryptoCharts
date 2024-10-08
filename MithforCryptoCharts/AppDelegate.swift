@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NFX.sharedInstance().start()
         let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
-        let tabs = [mainRouter.makeAssetsTab(),
+        let tabs = [mainRouter.makeCryptoAssetsTab(),
                     mainRouter.makeWatchlistTab(),
                     mainRouter.makeSettingsTab()]
         window = UIWindow(frame: UIScreen.main.bounds)

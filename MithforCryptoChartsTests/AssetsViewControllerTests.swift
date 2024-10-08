@@ -1,5 +1,5 @@
 //
-//  AssetsViewControllerTests.swift
+//  CryptoAssetsViewControllerTests.swift
 //  MithforCryptoChartsTests
 //
 //  Created by Dmitrii Voronin on 01.10.2024.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import MithforCryptoCharts
 
-final class AssetsViewControllerTests: XCTestCase {
+final class CryptoAssetsViewControllerTests: XCTestCase {
 
-    var sut: AssetsViewController?
+    var sut: CryptoAssetsViewController?
     
     override func setUpWithError() throws {
         sut = Helper.shared.makeSUT()
@@ -22,7 +22,7 @@ final class AssetsViewControllerTests: XCTestCase {
 
     func test_initWithCoder() throws {
         let archiver = NSKeyedArchiver(requiringSecureCoding: true)
-        let sut = AssetsViewController(coder: archiver)
+        let sut = CryptoAssetsViewController(coder: archiver)
         XCTAssertNil(sut)
     }
     
@@ -30,7 +30,7 @@ final class AssetsViewControllerTests: XCTestCase {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
         
-        let sut = AssetsConfigurator.configured(AssetsViewController(viewModel: AssetListViewModel(router: router)))
+        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: AssetListViewModel(router: router)))
         
         
         XCTAssertNotNil(sut.interactor)
@@ -55,7 +55,7 @@ final class AssetsViewControllerTests: XCTestCase {
 //        XCTAssertNil(sut.assetsTableView.refreshControl)
 //    }
     
-    func test_AssetsTableViewDelegates_ShouldBeSet() {
+    func test_CryptoAssetsTableViewDelegates_ShouldBeSet() {
                 
         XCTAssertNotNil(sut!.assetsTableView.delegate, "assetsTableView.delegate")
         XCTAssertNotNil(sut!.assetsTableView.dataSource, "assetsTableView.dataSource")
@@ -66,12 +66,12 @@ final class AssetsViewControllerTests: XCTestCase {
         XCTAssertEqual(sut!.assetsTableView.numberOfSections, 1)
     }
     
-    func test_AssetsTableViewNumberOfRowsInSection1_ShouldBe0() {
+    func test_CryptoAssetsTableViewNumberOfRowsInSection1_ShouldBe0() {
         XCTAssertEqual(sut?.assetsTableView.dataSource?.tableView(sut!.assetsTableView, 
                                                                   numberOfRowsInSection: 0), 0)
     }
     
-//    func test_AssetsTableViewBackgroundColor_ShouldBeMainbackground() {
+//    func test_CryptoAssetsTableViewBackgroundColor_ShouldBeMainbackground() {
 //        XCTAssertEqual(sut!.assetsTableView.backgroundColor, .systemRed)
 //    }
     
@@ -87,10 +87,10 @@ fileprivate class Helper {
         
     }
     
-    func makeSUT() -> AssetsViewController {
+    func makeSUT() -> CryptoAssetsViewController {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
-        let sut = AssetsConfigurator.configured(AssetsViewController(viewModel: AssetListViewModel(router: router)))
+        let sut = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: AssetListViewModel(router: router)))
         
         sut.interactor = AssetInteractorStub()
         sut.loadViewIfNeeded()
@@ -99,12 +99,12 @@ fileprivate class Helper {
     }
 }
 
-final class AssetInteractorStub: AssetsViewControllerOutput {
-    func fetchAssets() {
+final class AssetInteractorStub: CryptoAssetsViewControllerOutput {
+    func fetchCryptoAssets() {
         
     }
     
-    func fetchImage(for asset: MithforCryptoCharts.Asset, completion: @escaping (() -> Void)) {
+    func fetchImage(for asset: MithforCryptoCharts.CryptoAsset, completion: @escaping (() -> Void)) {
         
     }
 }

@@ -17,7 +17,7 @@ struct Constants {
     }
     
     struct Title {
-        static let assets = "Assets".localized()
+        static let assets = "CryptoAssets".localized()
         static let watchlist = "Watchlist".localized()
         static let settings = "Settings".localized()
     }

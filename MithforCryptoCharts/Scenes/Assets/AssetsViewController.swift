@@ -1,5 +1,5 @@
 //
-//  AssetsViewController.swift
+//  CryptoAssetsViewController.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 25.02.2023.
@@ -16,13 +16,13 @@ protocol ResultError {
     func updateFailed(with error: NetworkError)
 }
 
-protocol AssetsViewControllerInput: AnyObject, ResultError {
-    func update(_ assets: Assets)
+protocol CryptoAssetsViewControllerInput: AnyObject, ResultError {
+    func update(_ assets: CryptoAssets)
 }
 
-protocol AssetsViewControllerOutput: AnyObject {
-    func fetchAssets()
-    func fetchImage(for asset: Asset, completion: @escaping (() -> Void))
+protocol CryptoAssetsViewControllerOutput: AnyObject {
+    func fetchCryptoAssets()
+    func fetchImage(for asset: CryptoAsset, completion: @escaping (() -> Void))
 }
 
 enum SearchActionState {
@@ -32,29 +32,29 @@ enum SearchActionState {
 
 // TODO: - Fix AssetWithImage to AssetViewModel!!!
 struct AssetViewModel {
-    let asset: Asset
+    let asset: CryptoAsset
     let image: UIImage
 }
 
-// MARK: - AssetsViewController
-class AssetsViewController: UIViewController {
+// MARK: - CryptoAssetsViewController
+class CryptoAssetsViewController: UIViewController {
     
     private var viewModel: AssetListViewModel?
     
     // TODO: - remove optional if needed
-    var interactor: AssetsViewControllerOutput?
+    var interactor: CryptoAssetsViewControllerOutput?
     
     private var assetViewModels: [AssetViewModel] = []
     
-    private var assets: Assets?
-    private var filteredAssets: Assets = []
+    private var assets: CryptoAssets?
+    private var filteredCryptoAssets: CryptoAssets = []
     private var assetModel: AssetModel = [:]
     private var searching: SearchActionState = .inactive
         
-    lazy var assetsTableView: AssetsTableView = {
-        let tableView = AssetsTableView()
-        tableView.register(AssetsTableViewCell.self,
-                           forCellReuseIdentifier: AssetsTableViewCell.identifier)
+    lazy var assetsTableView: CryptoAssetsTableView = {
+        let tableView = CryptoAssetsTableView()
+        tableView.register(CryptoAssetsTableViewCell.self,
+                           forCellReuseIdentifier: CryptoAssetsTableViewCell.identifier)
         
         return tableView
     }()
@@ -84,7 +84,7 @@ class AssetsViewController: UIViewController {
         setupUI()
         
         self.showSpinnner()
-        interactor?.fetchAssets()
+        interactor?.fetchCryptoAssets()
     }
     
     override func viewDidLayoutSubviews() {
@@ -124,7 +124,7 @@ class AssetsViewController: UIViewController {
         
     @objc func handleRefreshControl() {
         
-        interactor?.fetchAssets()
+        interactor?.fetchCryptoAssets()
         
         self.searchController.searchBar.text = ""
         
@@ -141,12 +141,12 @@ class AssetsViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension AssetsViewController: UITableViewDataSource {
+extension CryptoAssetsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let assets = assets else {return .zero}
         switch searching {
         case .active:
-            return filteredAssets.count
+            return filteredCryptoAssets.count
         case .inactive:
             return assets.count
         }
@@ -159,8 +159,8 @@ extension AssetsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        if let cell = assetsTableView.dequeueReusableCell(withIdentifier: AssetsTableViewCell.identifier,
-                                                          for: indexPath) as? AssetsTableViewCell {
+        if let cell = assetsTableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier,
+                                                          for: indexPath) as? CryptoAssetsTableViewCell {
             cell.configureWith(delegate: nil, and: assets[indexPath.row], image: nil)
             
             return cell
@@ -171,7 +171,7 @@ extension AssetsViewController: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension AssetsViewController: UITableViewDelegate {
+extension CryptoAssetsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.tableCellHeight
 
@@ -183,16 +183,16 @@ extension AssetsViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - AssetsTableViewCellDelegate
-extension AssetsViewController: AssetsTableViewCellDelegate {
-    func viewDetails(_ asset: Asset) {
+// MARK: - CryptoAssetsTableViewCellDelegate
+extension CryptoAssetsViewController: CryptoAssetsTableViewCellDelegate {
+    func viewDetails(_ asset: CryptoAsset) {
         viewModel?.assetDetailsTapped(asset: asset)
     }
 }
 
-// MARK: - AssetsPresenterOutput
-extension AssetsViewController: AssetsPresenterOutput {
-    func update(_ assets: Assets) {
+// MARK: - CryptoAssetsPresenterOutput
+extension CryptoAssetsViewController: CryptoAssetsPresenterOutput {
+    func update(_ assets: CryptoAssets) {
         self.assets = assets
         
         DispatchQueue.main.async {
@@ -210,7 +210,7 @@ extension AssetsViewController: AssetsPresenterOutput {
 }
 
 // MARK: - UISearchBarDelegate
-extension AssetsViewController: UISearchBarDelegate {
+extension CryptoAssetsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
      
         guard let text = searchController.searchBar.text,
@@ -222,10 +222,10 @@ extension AssetsViewController: UISearchBarDelegate {
         // TODO: - Extract logic
         if searchText.isEmpty {
             searching = .inactive
-            filteredAssets = assets
+            filteredCryptoAssets = assets
         } else {
             searching = .active
-            filteredAssets = assets.filter({ (asset) -> Bool in
+            filteredCryptoAssets = assets.filter({ (asset) -> Bool in
                 ((asset.id?
                     .lowercased()
                     .contains(text.lowercased())) != nil)

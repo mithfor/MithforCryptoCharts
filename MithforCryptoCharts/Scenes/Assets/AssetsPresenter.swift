@@ -1,5 +1,5 @@
 //
-//  AssetsPresenter.swift
+//  CryptoAssetsPresenter.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 27.02.2023.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-typealias AssetsPresenterInput = AssetsInteractorOutput
-typealias AssetsPresenterOutput = AssetsViewControllerInput
+typealias CryptoAssetsPresenterInput = CryptoAssetsInteractorOutput
+typealias CryptoAssetsPresenterOutput = CryptoAssetsViewControllerInput
 
-final class AssetsPresenter {
-    weak var viewController: AssetsPresenterOutput?
-    var interactor: AssetsInteractorInput?
+final class CryptoAssetsPresenter {
+    weak var viewController: CryptoAssetsPresenterOutput?
+    var interactor: CryptoAssetsInteractorInput?
 }
 
-extension AssetsPresenter: AssetsPresenterInput {
-    func fetched(assets: Assets) {
+extension CryptoAssetsPresenter: CryptoAssetsPresenterInput {
+    func fetched(assets: CryptoAssets) {
         viewController?.update(assets)
     }
     

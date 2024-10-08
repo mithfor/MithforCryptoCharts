@@ -1,5 +1,5 @@
 //
-//  AssetsRequest.swift
+//  CryptoAssetsRequest.swift
 //  MithforCryptoCharts
 //
 //  Created by Dmitrii Voronin on 17.03.2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AssetsRequest: DataRequest {
+struct CryptoAssetsRequest: DataRequest {
         
 //    private let apiKey: String = "some api"
     
@@ -25,7 +25,7 @@ struct AssetsRequest: DataRequest {
         .get
     }
     
-    func decode(_ data: Data) throws -> Assets {
+    func decode(_ data: Data) throws -> CryptoAssets {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let dateFormatter = DateFormatter()
@@ -33,7 +33,7 @@ struct AssetsRequest: DataRequest {
         dateFormatter.dateFormat = "yyyy-mm-dd"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         
-        let response = try decoder.decode( AssetListResponse.self, from: data)
+        let response = try decoder.decode( CryptoAssetListResponse.self, from: data)
         return response.data
     }
 }

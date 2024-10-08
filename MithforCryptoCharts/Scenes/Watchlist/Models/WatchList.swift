@@ -14,16 +14,16 @@ class WatchList {
         //  load saved adata
         self.load()
     }
-    func contains(_ asset: Asset) -> Bool {
+    func contains(_ asset: CryptoAsset) -> Bool {
         print(#function)
         return assetsIds.contains(asset.id ?? "bitcoin")
     }
-    func add(_ asset: Asset) {
+    func add(_ asset: CryptoAsset) {
 
         assetsIds.insert(asset.id ?? "bitcoin")
         save()
     }
-    func remove(_ asset: Asset) {
+    func remove(_ asset: CryptoAsset) {
         assetsIds.remove(asset.id ?? "bitcoin")
         save()
     }

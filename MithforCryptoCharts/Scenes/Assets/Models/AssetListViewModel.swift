@@ -16,7 +16,7 @@ final class AssetListViewModel {
         self.router = router
     }
     
-    func assetDetailsTapped(asset: Asset) {
+    func assetDetailsTapped(asset: CryptoAsset) {
         router.openAssetDetails(asset)
     }
 }

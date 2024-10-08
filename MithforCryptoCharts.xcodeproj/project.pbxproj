@@ -32,6 +32,7 @@
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
+		88BF21DC2CB544BB001CD5FB /* FoundedIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88BF21DB2CB544BB001CD5FB /* FoundedIcon.swift */; };
 		88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */; };
 		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
@@ -48,7 +49,7 @@
 		88E25EAB29BF7DD00018C150 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E25EA929BF7DD00018C150 /* LaunchScreen.storyboard */; };
 		88E31AF129C2047F00719E0E /* AssetsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */; };
 		88E31AF229C2047F00719E0E /* AssetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AE829C2047F00719E0E /* AssetsPresenter.swift */; };
-		88E31AF329C2047F00719E0E /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEA29C2047F00719E0E /* Asset.swift */; };
+		88E31AF329C2047F00719E0E /* CryptoAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEA29C2047F00719E0E /* CryptoAsset.swift */; };
 		88E31AF429C2047F00719E0E /* AssetsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEB29C2047F00719E0E /* AssetsInteractor.swift */; };
 		88E31AF529C2047F00719E0E /* AssetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEC29C2047F00719E0E /* AssetsViewController.swift */; };
 		88E31AF629C2047F00719E0E /* AssetsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E31AEE29C2047F00719E0E /* AssetsTableView.swift */; };
@@ -111,6 +112,7 @@
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		88BF21DB2CB544BB001CD5FB /* FoundedIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundedIcon.swift; sourceTree = "<group>"; };
 		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
 		88DF5F9829C0F78300C47453 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		88E25EB729BF7DD00018C150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88E31AE729C2047F00719E0E /* AssetsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsConfigurator.swift; sourceTree = "<group>"; };
 		88E31AE829C2047F00719E0E /* AssetsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsPresenter.swift; sourceTree = "<group>"; };
-		88E31AEA29C2047F00719E0E /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		88E31AEA29C2047F00719E0E /* CryptoAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoAsset.swift; sourceTree = "<group>"; };
 		88E31AEB29C2047F00719E0E /* AssetsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsInteractor.swift; sourceTree = "<group>"; };
 		88E31AEC29C2047F00719E0E /* AssetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsViewController.swift; sourceTree = "<group>"; };
 		88E31AEE29C2047F00719E0E /* AssetsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsTableView.swift; sourceTree = "<group>"; };
@@ -364,8 +366,9 @@
 		88E31AE929C2047F00719E0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				88E31AEA29C2047F00719E0E /* Asset.swift */,
+				88E31AEA29C2047F00719E0E /* CryptoAsset.swift */,
 				88E68C1D29C495FC009F251C /* AssetListViewModel.swift */,
+				88BF21DB2CB544BB001CD5FB /* FoundedIcon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -588,7 +591,7 @@
 				88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */,
 				881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */,
 				8885267629C0BD77006259E8 /* Constants.swift in Sources */,
-				88E31AF329C2047F00719E0E /* Asset.swift in Sources */,
+				88E31AF329C2047F00719E0E /* CryptoAsset.swift in Sources */,
 				881FDED429C241360057AAB2 /* ChartRenderer.swift in Sources */,
 				88E1E49F29C0A9E9000572FF /* WatchlistTabRoute.swift in Sources */,
 				889FCD162CADD6BC005F1E17 /* NetworkError.swift in Sources */,
@@ -609,6 +612,7 @@
 				881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */,
 				881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */,
 				88E1E4AC29C0AE92000572FF /* AssetsTabRoute.swift in Sources */,
+				88BF21DC2CB544BB001CD5FB /* FoundedIcon.swift in Sources */,
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
 				88E31AF529C2047F00719E0E /* AssetsViewController.swift in Sources */,
 				88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */,

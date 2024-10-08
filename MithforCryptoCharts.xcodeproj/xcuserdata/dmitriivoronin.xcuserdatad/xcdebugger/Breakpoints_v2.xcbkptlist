@@ -84,5 +84,51 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CADC37F7-A7D5-4260-B88D-8858C37B2F85"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MithforCryptoCharts/Managers/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "fetchAssets(page:completed:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CADC37F7-A7D5-4260-B88D-8858C37B2F85 - ce63c996fda27349"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MithforCryptoCharts.NetworkManager.fetchAssets(page: Swift.Int, completed: (Swift.Result&lt;MithforCryptoCharts.CryptoAssetListResponse, MithforCryptoCharts.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MithforCryptoCharts.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/MithforCryptoCharts/MithforCryptoCharts/Managers/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109">
+               </Location>
+               <Location
+                  uuid = "CADC37F7-A7D5-4260-B88D-8858C37B2F85 - 28f2b93047038e1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MithforCryptoCharts.NetworkManager.fetchCryptoAssets(page: Swift.Int, completed: (Swift.Result&lt;MithforCryptoCharts.CryptoAssetListResponse, MithforCryptoCharts.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MithforCryptoCharts.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dmitriivoronin/Develop/MithforCryptoCharts/MithforCryptoCharts/Managers/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

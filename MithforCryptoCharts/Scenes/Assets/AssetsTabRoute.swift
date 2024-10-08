@@ -1,5 +1,5 @@
 //
-//  AssetsTabRoute.swift
+//  CryptoAssetsTabRoute.swift
 //  MithforCryptoCharts
 //
 //  Created by Dmitrii Voronin on 14.03.2023.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol AssetsTabRoute {
-    func makeAssetsTab() -> UIViewController
+protocol CryptoAssetsTabRoute {
+    func makeCryptoAssetsTab() -> UIViewController
 }
 
-extension AssetsTabRoute where Self: Router {
-    func makeAssetsTab() -> UIViewController {
+extension CryptoAssetsTabRoute where Self: Router {
+    func makeCryptoAssetsTab() -> UIViewController {
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = AssetListViewModel(router: router)
-        let viewController = AssetsConfigurator.configured(AssetsViewController(viewModel: model))
+        let viewController = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: model))
         router.root = viewController
         
         let navigation = UINavigationController(rootViewController: viewController)
@@ -23,9 +23,9 @@ extension AssetsTabRoute where Self: Router {
         return navigation
     }
     
-    func selectAssetsTab() {
+    func selectCryptoAssetsTab() {
         root?.tabBarController?.selectedIndex = MainTabs.allCases.firstIndex(of: .assets) ?? 0
     }
 }
 
-extension DefaultRouter: AssetsTabRoute {}
+extension DefaultRouter: CryptoAssetsTabRoute {}

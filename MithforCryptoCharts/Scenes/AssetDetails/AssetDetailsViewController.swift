@@ -14,13 +14,13 @@ protocol AssetDetailsViewControllerInput: AnyObject {
 }
 
 protocol AssetDetailsViewControllerOutput: AnyObject {
-    func fetchHistory(asset: Asset)
+    func fetchHistory(asset: CryptoAsset)
 }
 
 final class AssetDetailsViewController: UIViewController {
     
     // MARK: - Private vars
-    private let asset: Asset
+    private let asset: CryptoAsset
     private let watchList = WatchList()
     
     var interactor: AssetDetailsInteractorInput?
@@ -199,14 +199,14 @@ final class AssetDetailsViewModel {
     typealias Routes = AssetDetailsRoute
     private var router: Routes
     
-    var asset: Asset
+    var asset: CryptoAsset
     
-    init(router: Routes, asset: Asset) {
+    init(router: Routes, asset: CryptoAsset) {
         self.router = router
         self.asset = asset
     }
     
-    func watchListTapped(asset: Asset) {
+    func watchListTapped(asset: CryptoAsset) {
         print(#function)
     }
 }

@@ -38,7 +38,7 @@ final class MainTabBarControllerTests: XCTestCase {
         XCTAssertEqual(MainTabs.allCases.count, 3)
     }
     
-    func test_setupTabBarItem_AssetsTagIsCorrect() {
+    func test_setupTabBarItem_CryptoAssetsTagIsCorrect() {
         let tab = MainTabs.assets
         let item = tab.item
         

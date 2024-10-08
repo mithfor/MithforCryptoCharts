@@ -22,7 +22,7 @@ final class AssetDetailsInteractor {
 }
 
 extension AssetDetailsInteractor: AssetDetailsInteractorInput {
-    func fetchHistory(asset: Asset) {
+    func fetchHistory(asset: CryptoAsset) {
         
         let queue = DispatchQueue(label: "HistoryFetchingQueue", qos: .default, attributes: .concurrent)
         

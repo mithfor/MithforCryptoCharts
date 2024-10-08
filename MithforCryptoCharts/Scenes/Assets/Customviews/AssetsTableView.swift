@@ -1,5 +1,5 @@
 //
-//  AssetsTableView.swift
+//  CryptoAssetsTableView.swift
 //  devoronin-swift-test
 //
 //  Created by Dmitrii Voronin on 07.03.2023.
@@ -13,7 +13,7 @@ enum TableState {
     case refreshing
 }
 
-class AssetsTableView: UITableView {
+class CryptoAssetsTableView: UITableView {
     
     private(set) var state: TableState?
     

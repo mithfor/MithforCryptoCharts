@@ -8,22 +8,22 @@
 import XCTest
 @testable import MithforCryptoCharts
 
-class AssetsTests: XCTestCase {
+class CryptoAssetsTests: XCTestCase {
     
-    func test_GetAssets_NotNil() {
-        let resource = "Assets"
+    func test_GetCryptoAssets_NotNil() {
+        let resource = "CryptoAssets"
         
-        let assets = try? getAssets(for: resource, with: "json")
+        let assets = try? getCryptoAssets(for: resource, with: "json")
         
         XCTAssertNotNil(assets)
     }
     
     func test_GetAssetListResponse_CorrectFirstAsset() throws {
         
-        let resource = "Assets"
+        let resource = "CryptoAssets"
         
         do {
-            let assets = try getAssets(for: resource, with: "json")
+            let assets = try getCryptoAssets(for: resource, with: "json")
 
             XCTAssertEqual(assets.data[0].id, "bitcoin")
 
@@ -36,11 +36,11 @@ class AssetsTests: XCTestCase {
     
     func test_GetAssetListResponse_SetsNilToOptionalField() throws {
         
-        let resource = "Assets"
+        let resource = "CryptoAssets"
         
         
         do {
-            let assets = try getAssets(for: resource, with: "json")
+            let assets = try getCryptoAssets(for: resource, with: "json")
                         
             XCTAssertNil(assets.data[1].maxSupply)
         } catch is NetworkError {
@@ -50,15 +50,15 @@ class AssetsTests: XCTestCase {
     }
     
     func test_ThrowsAssertsModelWithInvalidJson() throws {
-        let resource = "AssetsInvalid"
+        let resource = "CryptoAssetsInvalid"
     
-        XCTAssertThrowsError(try getAssets(for: resource, with: "json"))
+        XCTAssertThrowsError(try getCryptoAssets(for: resource, with: "json"))
     }
 }
 
-extension AssetsTests {
+extension CryptoAssetsTests {
     
-    func getAssets(for resource: String, with ext: String) throws -> AssetListResponse {
+    func getCryptoAssets(for resource: String, with ext: String) throws -> CryptoAssetListResponse {
         
         let bundle = Bundle(for: type(of: self))
         
@@ -66,12 +66,12 @@ extension AssetsTests {
             throw NetworkError.endpoint
         }
         
-        var response = AssetListResponse(data: [])
+        var response = CryptoAssetListResponse(data: [])
         
         do {
             let json = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            response = try decoder.decode(AssetListResponse.self, from: json)
+            response = try decoder.decode(CryptoAssetListResponse.self, from: json)
         } catch let error as NetworkError {
             throw error
         } catch let error as NSError {
