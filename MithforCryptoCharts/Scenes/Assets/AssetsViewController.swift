@@ -21,8 +21,9 @@ protocol CryptoAssetsViewControllerInput: AnyObject, ResultError {
 }
 
 protocol CryptoAssetsViewControllerOutput: AnyObject {
+    @available(*, deprecated, message: "Use fetchCryptoAssets() async throws instead")
     func fetchCryptoAssets()
-    func fetchImage(for asset: CryptoAsset, completion: @escaping (() -> Void))
+    func fetchCryptoAssets() async
 }
 
 enum SearchActionState {
@@ -31,12 +32,6 @@ enum SearchActionState {
 }
 
 // TODO: - Fix AssetWithImage to CryptoAssetCellViewModel!!!
-struct CryptoAssetCellViewModel {
-    let asset: CryptoAsset
-    let image: UIImage
-    
-    weak var delegate: CryptoAssetsTableViewCellDelegate?
-}
 
 // MARK: - CryptoAssetsViewController
 class CryptoAssetsViewController: UIViewController {
@@ -87,7 +82,10 @@ class CryptoAssetsViewController: UIViewController {
         
         self.showSpinnner()
         self.state = .refreshing
-        interactor?.fetchCryptoAssets()
+        
+        Task {
+            try await interactor?.fetchCryptoAssets()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -127,7 +125,9 @@ class CryptoAssetsViewController: UIViewController {
         
     @objc func handleRefreshControl() {
         
-        interactor?.fetchCryptoAssets()
+        Task {
+            await interactor?.fetchCryptoAssets()
+        }
         
         self.searchController.searchBar.text = ""
         
@@ -166,12 +166,18 @@ extension CryptoAssetsViewController: UITableViewDataSource {
         if let cell = assetsTableView.dequeueReusableCell(withIdentifier: CryptoAssetsTableViewCell.identifier,
                                                           for: indexPath) as? CryptoAssetsTableViewCell {
             let asset = assets[indexPath.row]
-            let image = UIImage(named: asset.symbol?.lowercased() ?? "") ?? UIImage()
-            
+            let image = UIImage(named: asset.symbol?.lowercased()
+                                ?? "generic")
+            ?? UIImage(named: "generic")
+            ?? UIImage()
+
             // TODO: - Configure with Viewmodel
-            cell.configureWith(delegate: self,
-                               and: asset,
-                               image: image)
+            
+            cell.configure(
+                with: CryptoAssetCellViewModel(asset: asset,
+                                               image: image,
+                                               delegate: self)
+            )
             
             return cell
         } else {

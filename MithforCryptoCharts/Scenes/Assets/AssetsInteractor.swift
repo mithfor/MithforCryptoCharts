@@ -28,42 +28,8 @@ class AssetNetworkService: DefaultNetworkService {}
 
 extension CryptoAssetsInteractor: CryptoAssetsViewControllerOutput {
     
-    func fetchImage(for asset: CryptoAsset, completion: @escaping (() -> Void)) {
-        let queue = DispatchQueue(label: "IconQueue", qos: .default, attributes: .concurrent)
-        queue.async {
-            IconManager.shared.fetchIconFor(asset) { [weak self] (result) in
-                
-                switch result {
-                case .success(let icon):
-                    self?.assetModel[asset.id ?? ""] = icon.image
-                    completion()
-                case .failure(let error):
-                    self?.assetModel[asset.id ?? ""] = AssetImage()
-                    completion()
-                    self?.presenter?.fetchFailure(with: error)
-                }
-            }
-        }
-    }
-    
-    func createRapidAPIRequest() -> URLRequest  {
-        let headers = [
-            "x-rapidapi-key": "da9fd01c7fmsh9f07e9d134e499ep1a2039jsn96450aead57f",
-            "x-rapidapi-host": "open-source-icons-search.p.rapidapi.com"
-        ]
-
-        let request = NSMutableURLRequest(url: NSURL(string: "https://open-source-icons-search.p.rapidapi.com/vectors/search?query=ETH")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        
-        print(request.description)
-        
-        return request as URLRequest
-    }
-    
     func fetchCryptoAssets() {
+        
         DispatchQueue.global().async {
             
             let request = CryptoAssetsRequest()
@@ -73,76 +39,27 @@ extension CryptoAssetsInteractor: CryptoAssetsViewControllerOutput {
                     case .success(let response):
                         self?.assets = response
                         self?.presenter?.fetched(assets: self?.assets ?? [])
-                        //                        self?.fetchImagesFor(self?.assets ?? CryptoAssets())
                     case .failure(let error):
                         self?.presenter?.fetchFailure(with: error)
                     }
                 })
             }
         }
-        
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: createRapidAPIRequest() as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error as Any)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                print(httpResponse)
-                
-            }
-            
-            if let jsonData = data {
-                
-                do {
-                    let foundedIcon = try JSONDecoder().decode(FoundedIcon.self, from: jsonData)
-
-                    foundedIcon.data.objects.forEach{ object in
-                        print(object.url)
-                    }
-                    print(#function)
-                } catch let error as NSError {
-                    print(error.description)
-                }
-                
-            }
-        })
-
-        dataTask.resume()
     }
     
-    func fetchCryptoAssetsAsync() async throws {
+    func fetchCryptoAssets() async {
         let request = CryptoAssetsRequest()
-        let result = try await networkService?.request(request,
-                                                       completion: { [weak self] (result) in
+        networkService?.request(
+            request,
+            completion: { [weak self] result in
             switch result {
             case .success(let response):
                 self?.assets = response
                 self?.presenter?.fetched(assets: self?.assets ?? [])
-//                try? fetchImagesFor(self?.assets ?? CryptoAssets())
             case .failure(let error):
                 self?.presenter?.fetchFailure(with: error)
+                
             }
         })
-    }
-
-    func fetchImagesFor(_ assets: CryptoAssets) {
-        
-        let queue = DispatchQueue(label: "FetchingImagesForCryptoAssetsQueue",
-                                  qos: .default, 
-                                  attributes: .concurrent)
-        queue.async {
-            let group = DispatchGroup()
-            assets.forEach({ asset in
-                group.enter()
-                
-                self.fetchImage(for: asset) {
-                    group.leave()
-                }
-            })
-            
-            group.notify(queue: .main) {
-                self.presenter?.fetched(assets: assets)
-            }
-        }
     }
 }
