@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88159AF12CAA2C0700028E9B /* Assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* Assets.json */; };
-		88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* AasetsTests.swift */; };
-		88159AF52CAA2EB800028E9B /* AssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* AssetsInvalid.json */; };
+		88159AF12CAA2C0700028E9B /* CryptoAssets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* CryptoAssets.json */; };
+		88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */; };
+		88159AF52CAA2EB800028E9B /* CryptoAssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */; };
 		8817171B2CAD1810002CFE96 /* AssetsTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */; };
 		881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */; };
 		881FDED029C241360057AAB2 /* AssetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */; };
@@ -88,9 +88,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		88159AF02CAA2C0700028E9B /* Assets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Assets.json; sourceTree = "<group>"; };
-		88159AF22CAA2C6500028E9B /* AasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AasetsTests.swift; sourceTree = "<group>"; };
-		88159AF42CAA2EB800028E9B /* AssetsInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssetsInvalid.json; sourceTree = "<group>"; };
+		88159AF02CAA2C0700028E9B /* CryptoAssets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssets.json; sourceTree = "<group>"; };
+		88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAasetsTests.swift; sourceTree = "<group>"; };
+		88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssetsInvalid.json; sourceTree = "<group>"; };
 		8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTableViewTests.swift; sourceTree = "<group>"; };
 		881FDEC429C241360057AAB2 /* AssetDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsPresenter.swift; sourceTree = "<group>"; };
 		881FDEC529C241360057AAB2 /* AssetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 		88159AF62CAA2ED300028E9B /* AssetsTests */ = {
 			isa = PBXGroup;
 			children = (
-				88159AF02CAA2C0700028E9B /* Assets.json */,
-				88159AF22CAA2C6500028E9B /* AasetsTests.swift */,
-				88159AF42CAA2EB800028E9B /* AssetsInvalid.json */,
+				88159AF02CAA2C0700028E9B /* CryptoAssets.json */,
+				88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */,
+				88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */,
 			);
 			path = AssetsTests;
 			sourceTree = "<group>";
@@ -526,8 +526,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88159AF52CAA2EB800028E9B /* AssetsInvalid.json in Resources */,
-				88159AF12CAA2C0700028E9B /* Assets.json in Resources */,
+				88159AF52CAA2EB800028E9B /* CryptoAssetsInvalid.json in Resources */,
+				88159AF12CAA2C0700028E9B /* CryptoAssets.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +551,7 @@
 			files = (
 				88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */,
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
-				88159AF32CAA2C6500028E9B /* AasetsTests.swift in Sources */,
+				88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */,
 				88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */,
 				8817171B2CAD1810002CFE96 /* AssetsTableViewTests.swift in Sources */,
 			);
