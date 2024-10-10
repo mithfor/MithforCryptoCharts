@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftUI
+//import SwiftUI
 
 protocol AssetDetailsViewControllerInput: AnyObject {
     func updateHistory(with assetHistory: [AssetHistory])
