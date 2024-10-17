@@ -23,6 +23,8 @@
 		881FDEDC29C2420B0057AAB2 /* AssetDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */; };
 		881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEE029C242D10057AAB2 /* PushTransition.swift */; };
 		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
+		8864D1342CC0FB0F00E1A985 /* MFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */; };
+		8864D1352CC0FB0F00E1A985 /* MFNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		887CA5B12CB27FEB00E161D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 887CA5B02CB27FC500E161D0 /* LICENSE */; };
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
@@ -88,6 +90,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8864D1062CC0F86200E1A985 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8864D1352CC0FB0F00E1A985 /* MFNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		88159AF02CAA2C0700028E9B /* CryptoAssets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssets.json; sourceTree = "<group>"; };
 		88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAasetsTests.swift; sourceTree = "<group>"; };
@@ -105,6 +121,7 @@
 		881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsRoute.swift; sourceTree = "<group>"; };
 		881FDEE029C242D10057AAB2 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		887CA5B02CB27FC500E161D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
 		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -176,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FE8D682C92A74C000664AE /* netfox in Frameworks */,
+				8864D1342CC0FB0F00E1A985 /* MFNetwork.framework in Frameworks */,
 				88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +274,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		8864D1322CC0FB0F00E1A985 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88A18C9129BF866E008015DB /* Routing */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +346,7 @@
 			children = (
 				88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */,
 				88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */,
+				8864D1322CC0FB0F00E1A985 /* Frameworks */,
 				88E25E9C29BF7DCE0018C150 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -464,6 +491,7 @@
 				88E25E9729BF7DCE0018C150 /* Sources */,
 				88E25E9829BF7DCE0018C150 /* Frameworks */,
 				88E25E9929BF7DCE0018C150 /* Resources */,
+				8864D1062CC0F86200E1A985 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
