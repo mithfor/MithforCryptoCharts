@@ -30,7 +30,7 @@ struct TodoDTO: Encodable, DecodableType{
         self.completed = try container.decode(Bool.self, forKey: .completed)
     }
     
-    init(id: Int?, userId: Int, title: String, completed: Bool) {
+    init(id: Int? = nil, userId: Int, title: String, completed: Bool = false) {
         self.id = id
         self.userId = userId
         self.title = title

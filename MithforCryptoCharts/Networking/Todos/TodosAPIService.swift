@@ -14,6 +14,29 @@ enum TodosAPIServiceError {
 
 class TodosAPIService: APIService {
     func getTodo(with id: Int) async throws -> TodoDTO? {
-        TodoDTO(userId: 1, id: 1, title: "Title", completed: false)
+        let apiSpec: TodosAPISpec = .getTodo(id: id)
+        
+        do {
+            let todo = try await apiClient?.sendRequest(apiSpec)
+            return todo as? TodoDTO
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    func getTodos() async throws -> [TodoDTO] {
+        let apiSpec: TodosAPISpec = .getTodos
+        let todos = try await apiClient?.sendRequest(apiSpec)
+        return todos as? [TodoDTO] ?? []
+    }
+    
+    func create(userId: Int, title: String) async throws -> TodoDTO {
+        let apiSpec: TodosAPISpec = .create(
+            todo: TodoDTO(
+                userId: userId, title: title)
+        )
+        let todo = try await apiClient?.sendRequest(apiSpec)
+        return todo as! TodoDTO
     }
 }
