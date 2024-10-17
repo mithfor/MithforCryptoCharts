@@ -25,6 +25,8 @@
 		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
 		8864D1342CC0FB0F00E1A985 /* MFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */; };
 		8864D1352CC0FB0F00E1A985 /* MFNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
+		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
 		887CA5B12CB27FEB00E161D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 887CA5B02CB27FC500E161D0 /* LICENSE */; };
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
@@ -122,6 +124,8 @@
 		881FDEE029C242D10057AAB2 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
+		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
 		887CA5B02CB27FC500E161D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
 		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -280,6 +284,15 @@
 				8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8864D1402CC13DD700E1A985 /* Todos */ = {
+			isa = PBXGroup;
+			children = (
+				8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */,
+				8864D1412CC1445500E1A985 /* TodosAPISpec.swift */,
+			);
+			path = Todos;
 			sourceTree = "<group>";
 		};
 		88A18C9129BF866E008015DB /* Routing */ = {
@@ -454,6 +467,7 @@
 		88E68C0429C474B3009F251C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				8864D1402CC13DD700E1A985 /* Todos */,
 				88E68C0529C474D7009F251C /* DataRequest.swift */,
 				88E68C0E29C477F9009F251C /* DefaultNetworkService.swift */,
 				88E68C1729C4835B009F251C /* AssetsRequest.swift */,
@@ -607,6 +621,7 @@
 				881FDED629C241360057AAB2 /* AssetDetailsConfigurator.swift in Sources */,
 				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
+				8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */,
@@ -621,6 +636,7 @@
 				88E31AF429C2047F00719E0E /* CryptoAssetsInteractor.swift in Sources */,
 				88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */,
 				88E31B1829C2066B00719E0E /* Extension + UIViewController.swift in Sources */,
+				8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */,
 				88E31B2829C2073D00719E0E /* ChangePercent24HrLabel.swift in Sources */,
 				881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */,
 				8885267629C0BD77006259E8 /* Constants.swift in Sources */,
