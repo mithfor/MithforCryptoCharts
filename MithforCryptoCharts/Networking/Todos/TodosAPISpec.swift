@@ -61,9 +61,4 @@ enum TodosAPISpec: APIClient.APISpec {
     
 }
 
-struct TodoDTO: DecodableType, Encodable {
-    let userId: Int
-    let id: Int
-    let title: String
-    let completed: Bool
-}
+

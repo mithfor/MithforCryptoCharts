@@ -27,6 +27,7 @@
 		8864D1352CC0FB0F00E1A985 /* MFNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
 		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
+		8864D1442CC1480800E1A985 /* TodoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1432CC1480800E1A985 /* TodoDTO.swift */; };
 		887CA5B12CB27FEB00E161D0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 887CA5B02CB27FC500E161D0 /* LICENSE */; };
 		8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885266829C0B873006259E8 /* SettingsTabRoute.swift */; };
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
@@ -126,6 +127,7 @@
 		8864D1332CC0FB0F00E1A985 /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
 		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
+		8864D1432CC1480800E1A985 /* TodoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDTO.swift; sourceTree = "<group>"; };
 		887CA5B02CB27FC500E161D0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8885266829C0B873006259E8 /* SettingsTabRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabRoute.swift; sourceTree = "<group>"; };
 		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 			children = (
 				8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */,
 				8864D1412CC1445500E1A985 /* TodosAPISpec.swift */,
+				8864D1432CC1480800E1A985 /* TodoDTO.swift */,
 			);
 			path = Todos;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */,
+				8864D1442CC1480800E1A985 /* TodoDTO.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */,
