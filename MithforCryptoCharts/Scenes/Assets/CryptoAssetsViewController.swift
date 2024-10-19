@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MFNetwork
 
 typealias AssetId = String
 typealias AssetImage = UIImage
@@ -78,6 +79,60 @@ class CryptoAssetsViewController: UIViewController {
         Task {
             await interactor?.fetchCryptoAssets()
         }
+        
+        // TODO: - Todo module
+        startTodos()
+    }
+    
+    private func fetchTodos(_ todosService: TodosAPIService) -> Task<(), Never> {
+        return Task {
+            do {
+                let todo = try await todosService.getTodos()
+                print(#function, todo)
+            } catch {
+                print(#function, error)
+            }
+        }
+    }
+    
+    private func fetchTodo(by id: Int, _ todosService: TodosAPIService) -> Task<(), Never> {
+        return Task {
+            do {
+                if let todo = try await todosService.getTodo(with: id) {
+                    print("Fetched todo: \(todo.title) - Complited: \(todo.completed)")
+                } else {
+                    print("Error fetching todo")
+                }
+                
+            } catch {
+                print("Failed to fetch todo: \(error)")
+            }
+        }
+    }
+    
+    private func createTodo(_ todosService: TodosAPIService) -> Task<(), Never> {
+        Task {
+            do {
+                let newTodo = try await todosService.create(userId: 1, title: "КУПИТЬ ВСЁ")
+                print("Created todo: \(newTodo.title) with id: \(newTodo.userId)")
+            } catch {
+                print("Faild to create todo: \(error)")
+            }
+        }
+    }
+    
+    func startTodos() {
+        guard let baseURL = URL(string: "https://jsonplaceholder.typicode.com") else {
+            return
+        }
+        
+        let apiClient: APIClient? = APIClient(baseURL: baseURL)
+        let todosService = TodosAPIService(apiClient: apiClient)
+        
+        _ = fetchTodos(todosService)
+        _ = fetchTodo(by: 1, todosService)
+        _ = createTodo(todosService)
+        
     }
     
     override func viewDidLayoutSubviews() {

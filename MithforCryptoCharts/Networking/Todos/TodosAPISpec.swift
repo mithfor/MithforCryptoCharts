@@ -58,7 +58,4 @@ enum TodosAPISpec: APIClient.APISpec {
         }
     }
     
-    
 }
-
-

@@ -13,6 +13,11 @@ enum TodosAPIServiceError {
 }
 
 class TodosAPIService: APIService {
+    
+    override init(apiClient: APIClient?) {
+        super.init(apiClient: apiClient)
+    }
+    
     func getTodo(with id: Int) async throws -> TodoDTO? {
         let apiSpec: TodosAPISpec = .getTodo(id: id)
         
@@ -31,12 +36,15 @@ class TodosAPIService: APIService {
         return todos as? [TodoDTO] ?? []
     }
     
+    // TODO: - to make test
     func create(userId: Int, title: String) async throws -> TodoDTO {
         let apiSpec: TodosAPISpec = .create(
-            todo: TodoDTO(
-                userId: userId, title: title)
+            todo: TodoDTO(userId: userId,
+                          title: title)
         )
         let todo = try await apiClient?.sendRequest(apiSpec)
-        return todo as! TodoDTO
+
+        return todo as? TodoDTO ?? TodoDTO(userId: .zero,
+                                           title: "")
     }
 }
