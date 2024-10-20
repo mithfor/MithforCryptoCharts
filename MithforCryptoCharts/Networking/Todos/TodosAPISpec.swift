@@ -12,7 +12,7 @@ enum TodosAPISpec: APIClient.APISpec {
     
     case getTodos
     case getTodo(id: Int)
-    case create(todo: TodoDTO)
+    case create(todo: TodoModel)
     
     var endpoint: String {
         switch self {
@@ -39,11 +39,11 @@ enum TodosAPISpec: APIClient.APISpec {
     var returnType: any MFNetwork.DecodableType.Type {
         switch self {
         case .getTodos:
-            return [TodoDTO].self
+            return [TodoModel].self
         case .getTodo(id: _):
-            return TodoDTO.self
+            return TodoModel.self
         case .create(_):
-            return TodoDTO.self
+            return TodoModel.self
         }
     }
     

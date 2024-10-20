@@ -1,5 +1,5 @@
 //
-//  TodoDTO.swift
+//  TodoModel.swift
 //  MithforCryptoCharts
 //
 //  Created by Dmitrii Voronin on 17.10.2024.
@@ -8,7 +8,7 @@
 import Foundation
 import MFNetwork
 
-struct TodoDTO: Encodable, DecodableType{
+struct TodoModel: Encodable, DecodableType{
     let id: Int?
     let userId: Int
     let title: String
