@@ -126,11 +126,20 @@ class CryptoAssetsViewController: UIViewController {
             return
         }
         
-        let apiClient: APIClient? = APIClient(baseURL: baseURL)
+        let authorizationMiddleware = AuthorizationMiddleWare(token: "auth-token")
+        let loggingMiddleware = LoggingMiddleware(logger: Logger())
+        
+        let apiClient: APIClient? = APIClient(
+            baseURL: baseURL,
+            middlewares:
+                [
+                    authorizationMiddleware,
+                    loggingMiddleware
+                ])
         let todosService = TodosAPIService(apiClient: apiClient)
         
-        _ = fetchTodos(todosService)
-        _ = fetchTodo(by: 1, todosService)
+//        _ = fetchTodos(todosService)
+//        _ = fetchTodo(by: 1, todosService)
         _ = createTodo(todosService)
         
     }
