@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8809A3C42CD2258F0034E9BE /* MFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8809A3C22CD225210034E9BE /* MFNetwork.framework */; };
-		8809A3C52CD2258F0034E9BE /* MFNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8809A3C22CD225210034E9BE /* MFNetwork.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		88159AF12CAA2C0700028E9B /* CryptoAssets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* CryptoAssets.json */; };
 		88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */; };
 		88159AF52CAA2EB800028E9B /* CryptoAssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */; };
@@ -93,20 +92,6 @@
 			remoteInfo = FlexibleRouting;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8864D1062CC0F86200E1A985 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8809A3C52CD2258F0034E9BE /* MFNetwork.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8809A3C22CD225210034E9BE /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -532,7 +517,6 @@
 				88E25E9729BF7DCE0018C150 /* Sources */,
 				88E25E9829BF7DCE0018C150 /* Frameworks */,
 				88E25E9929BF7DCE0018C150 /* Resources */,
-				8864D1062CC0F86200E1A985 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
