@@ -26,6 +26,8 @@
 		881FDEDC29C2420B0057AAB2 /* AssetDetailsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */; };
 		881FDEE129C242D10057AAB2 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEE029C242D10057AAB2 /* PushTransition.swift */; };
 		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
+		8831F1442CD2396B0004707B /* CryptoAssetsTabRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */; };
+		8831F1472CD241590004707B /* Color + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1462CD241590004707B /* Color + Ext.swift */; };
 		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
 		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
 		8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1432CC1480800E1A985 /* TodoModel.swift */; };
@@ -80,7 +82,6 @@
 		88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1729C4835B009F251C /* AssetsRequest.swift */; };
 		88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* CryptoAssetListViewModel.swift */; };
 		88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
-		88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */; };
 		88FE8D682C92A74C000664AE /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 88FE8D672C92A74C000664AE /* netfox */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +128,8 @@
 		881FDEDB29C2420B0057AAB2 /* AssetDetailsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailsRoute.swift; sourceTree = "<group>"; };
 		881FDEE029C242D10057AAB2 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetsTabRouteTests.swift; sourceTree = "<group>"; };
+		8831F1462CD241590004707B /* Color + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Ext.swift"; sourceTree = "<group>"; };
 		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
 		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
 		8864D1432CC1480800E1A985 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -185,7 +188,6 @@
 		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
 		88E68C1D29C495FC009F251C /* CryptoAssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetListViewModel.swift; sourceTree = "<group>"; };
 		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
-		88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 		8809A4372CD22DF20034E9BE /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8831F1452CD241460004707B /* Extensions */,
 				8809A4382CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift */,
 			);
 			path = SwiftUI;
@@ -288,6 +291,14 @@
 				881FDECC29C241360057AAB2 /* AssetDetailsView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		8831F1452CD241460004707B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8831F1462CD241590004707B /* Color + Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8864D1322CC0FB0F00E1A985 /* Frameworks */ = {
@@ -401,7 +412,6 @@
 				88E1E48429C090EA000572FF /* MainTabBarController.swift */,
 				88E25EAC29BF7DD00018C150 /* Info.plist */,
 				88DF5FA829C0F9FB00C47453 /* Localizable.strings */,
-				88F01AFE29C3CBE2006EEF57 /* AssetsService.swift */,
 				881FDEBC29C22EF10057AAB2 /* Supporting Files */,
 			);
 			path = MithforCryptoCharts;
@@ -417,6 +427,7 @@
 				88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */,
 				8817171A2CAD1810002CFE96 /* AssetsTableViewTests.swift */,
 				88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */,
+				8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */,
 			);
 			path = MithforCryptoChartsTests;
 			sourceTree = "<group>";
@@ -609,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88E1105A2CA48A1D00052A7B /* MithforCryptoChartsTests.swift in Sources */,
+				8831F1442CD2396B0004707B /* CryptoAssetsTabRouteTests.swift in Sources */,
 				88C69BD32CB817CE00F0000D /* FakeUserDefaults.swift in Sources */,
 				88E1105C2CA48A8B00052A7B /* MainTabBarContollerTests.swift in Sources */,
 				88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */,
@@ -643,7 +655,6 @@
 				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */,
-				88F01AFF29C3CBE2006EEF57 /* AssetsService.swift in Sources */,
 				88E31AF229C2047F00719E0E /* CryptoAssetsPresenter.swift in Sources */,
 				881FDED229C241360057AAB2 /* ChartScrollView.swift in Sources */,
 				8885266929C0B873006259E8 /* SettingsTabRoute.swift in Sources */,
@@ -669,6 +680,7 @@
 				881FDED529C241360057AAB2 /* AssetDetailsView.swift in Sources */,
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
 				881FDED329C241360057AAB2 /* DetailHorizontalStackView.swift in Sources */,
+				8831F1472CD241590004707B /* Color + Ext.swift in Sources */,
 				88E1E4B929C0B6AE000572FF /* SettingsViewController.swift in Sources */,
 				88E68C1829C4835B009F251C /* AssetsRequest.swift in Sources */,
 				88E68C0629C474D7009F251C /* DataRequest.swift in Sources */,

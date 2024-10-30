@@ -9,7 +9,26 @@ import SwiftUI
 
 struct SwiftUICryptoAssetsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.theme.background
+                .ignoresSafeArea()
+            
+            VStack(spacing: 50) {
+                
+                Text("Secondary Text Color")
+                    .foregroundColor(Color.theme.secondaryText)
+                
+                Text("Positive Color")
+                    .foregroundColor(Color.theme.positive)
+                
+                Text("Negative Color")
+                    .foregroundColor(Color.theme.negative)
+                
+                Text("Accent Color")
+                    .foregroundColor(Color.theme.primaryText)
+            }
+            .font(.headline)
+        }
     }
 }
 

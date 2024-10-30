@@ -20,6 +20,7 @@ extension CryptoAssetsTabRoute where Self: Router {
         let model = CryptoAssetListViewModel(router: router)
         let viewController: UIViewController?
         
+        // TODO: - Test SwiftUI in UIKit with enableSwiftUI option
         if enableSwiftUI {
             viewController = UIHostingController(rootView: SwiftUICryptoAssetsView())
         } else {
