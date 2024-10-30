@@ -12,6 +12,17 @@ final class SettingsViewController: UIViewController {
     
     private var viewModel: SettingsViewModel?
     
+    private var button: UIButton = {
+        let btn = UIButton(frame: .zero)
+        btn.setTitle("BUTTON", for: .normal)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+    }()
+    
+    @objc private func buttonTapped() {
+        print(#function)
+    }
+    
     // MARK: - Init
     init(viewModel: SettingsViewModel) {
         super.init(nibName: nil, bundle: nil)
@@ -35,6 +46,15 @@ final class SettingsViewController: UIViewController {
         view.backgroundColor = .yellow
         self.title = Constants.Title.settings
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+
+        ])
     }
 }
 

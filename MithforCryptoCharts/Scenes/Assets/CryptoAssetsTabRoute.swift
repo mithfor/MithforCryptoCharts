@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 protocol CryptoAssetsTabRoute {
     func makeCryptoAssetsTab() -> UIViewController
@@ -13,12 +14,22 @@ protocol CryptoAssetsTabRoute {
 
 extension CryptoAssetsTabRoute where Self: Router {
     func makeCryptoAssetsTab() -> UIViewController {
+        
+        let enableSwiftUI: Bool = true
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = CryptoAssetListViewModel(router: router)
-        let viewController = CryptoAssetsConfigurator.configured(CryptoAssetsViewController(viewModel: model))
+        let viewController: UIViewController?
+        
+        if enableSwiftUI {
+            viewController = UIHostingController(rootView: SwiftUICryptoAssetsView())
+        } else {
+            viewController = CryptoAssetsConfigurator.configured(
+                CryptoAssetsViewController(
+                    viewModel: model))
+        }
         router.root = viewController
         
-        let navigation = UINavigationController(rootViewController: viewController)
+        let navigation = UINavigationController(rootViewController: viewController ?? UIViewController(nibName: nil, bundle: nil) )
         navigation.tabBarItem = MainTabs.assets.item
         return navigation
     }
