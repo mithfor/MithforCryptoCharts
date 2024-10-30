@@ -17,27 +17,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
                 
             VStack {
-                HStack {
-                    CircleButtonView(iconName: showPortfolio ? "plus" : "info")
-                        .animation(.none)
-                    Spacer()
-                    Text(showPortfolio ? "Portfolio" : "Live Prices")
-                        .font(.headline)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.theme.primaryText)
-                        .animation(.none)
-                    Spacer()
-                    CircleButtonView(iconName: "chevron.right")
-                        .rotationEffect(
-                            Angle(degrees: showPortfolio ? 180 : 0)
-                        )
-                        .onTapGesture {
-                            withAnimation(.spring()) {
-                                showPortfolio.toggle()
-                            }
-                        }
-                }
-                .padding(.horizontal)
+                homeHeader
                 Spacer()
             }
         }
@@ -46,4 +26,33 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+}
+
+extension HomeView {
+    private var homeHeader: some View {
+        HStack {
+            CircleButtonView(iconName: showPortfolio ? "plus" : "info")
+                .animation(.none)
+                .background {
+                    CircleButtonAnimationView(animate: $showPortfolio)
+                }
+            Spacer()
+            Text(showPortfolio ? "Portfolio" : "Live Prices")
+                .font(.headline)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.theme.primaryText)
+                .animation(.none)
+            Spacer()
+            CircleButtonView(iconName: "chevron.right")
+                .rotationEffect(
+                    Angle(degrees: showPortfolio ? 180 : 0)
+                )
+                .onTapGesture {
+                    withAnimation(.spring()) {
+                        showPortfolio.toggle()
+                    }
+                }
+        }
+        .padding(.horizontal)
+    }
 }
