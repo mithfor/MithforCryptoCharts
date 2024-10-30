@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8809A3C42CD2258F0034E9BE /* MFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8809A3C22CD225210034E9BE /* MFNetwork.framework */; };
 		8809A3C52CD2258F0034E9BE /* MFNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8809A3C22CD225210034E9BE /* MFNetwork.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8809A4392CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8809A4382CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift */; };
 		88159AF12CAA2C0700028E9B /* CryptoAssets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* CryptoAssets.json */; };
 		88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */; };
 		88159AF52CAA2EB800028E9B /* CryptoAssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */; };
@@ -111,7 +110,6 @@
 
 /* Begin PBXFileReference section */
 		8809A3C22CD225210034E9BE /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8809A4382CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICryptoAssetsView.swift; sourceTree = "<group>"; };
 		88159AF02CAA2C0700028E9B /* CryptoAssets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssets.json; sourceTree = "<group>"; };
 		88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAasetsTests.swift; sourceTree = "<group>"; };
 		88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssetsInvalid.json; sourceTree = "<group>"; };
@@ -190,6 +188,10 @@
 		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8831F1482CD24F1E0004707B /* Core */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Core; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		88E1104C2CA4890700052A7B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -214,8 +216,8 @@
 		8809A4372CD22DF20034E9BE /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8831F1482CD24F1E0004707B /* Core */,
 				8831F1452CD241460004707B /* Extensions */,
-				8809A4382CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -537,6 +539,9 @@
 			dependencies = (
 				88159AEF2CA9D08D00028E9B /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				8831F1482CD24F1E0004707B /* Core */,
+			);
 			name = MithforCryptoCharts;
 			packageProductDependencies = (
 				88AA9A682C92A4EF004DDC8D /* DGCharts */,
@@ -691,7 +696,6 @@
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
 				88E31AF529C2047F00719E0E /* CryptoAssetsViewController.swift in Sources */,
 				88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */,
-				8809A4392CD22E3B0034E9BE /* SwiftUICryptoAssetsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SwiftUICryptoAssetsView.swift
+//  HomeView.swift
 //  MithforCryptoCharts
 //
 //  Created by Dmitrii Voronin on 30.10.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SwiftUICryptoAssetsView: View {
+struct HomeView: View {
     var body: some View {
         ZStack {
             Color.theme.background
@@ -33,5 +33,5 @@ struct SwiftUICryptoAssetsView: View {
 }
 
 #Preview {
-    SwiftUICryptoAssetsView()
+    HomeView()
 }

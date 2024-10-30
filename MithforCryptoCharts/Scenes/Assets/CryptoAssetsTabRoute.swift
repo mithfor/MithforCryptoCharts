@@ -22,7 +22,7 @@ extension CryptoAssetsTabRoute where Self: Router {
         
         // TODO: - Test SwiftUI in UIKit with enableSwiftUI option
         if enableSwiftUI {
-            viewController = UIHostingController(rootView: SwiftUICryptoAssetsView())
+            viewController = UIHostingController(rootView: HomeView())
         } else {
             viewController = CryptoAssetsConfigurator.configured(
                 CryptoAssetsViewController(
