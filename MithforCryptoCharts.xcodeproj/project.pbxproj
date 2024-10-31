@@ -38,6 +38,7 @@
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
 		88A6CB8B2CD3895F00D5D4DB /* PreviewProvider + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */; };
+		88A6CB8F2CD3A8D100D5D4DB /* Double + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88AE364D2CB5CE000009D962 /* CryptoAssetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */; };
 		88C69BD32CB817CE00F0000D /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */; };
@@ -139,6 +140,7 @@
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider + Ext.swift"; sourceTree = "<group>"; };
+		88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Ext.swift"; sourceTree = "<group>"; };
 		88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetCellViewModel.swift; sourceTree = "<group>"; };
 		88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
 		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			children = (
 				8831F1462CD241590004707B /* Color + Ext.swift */,
 				88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */,
+				88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				889FCD162CADD6BC005F1E17 /* NetworkError.swift in Sources */,
 				88E1105E2CA5F22600052A7B /* DefaultRouter + ext.swift in Sources */,
 				88E25E9F29BF7DCE0018C150 /* AppDelegate.swift in Sources */,
+				88A6CB8F2CD3A8D100D5D4DB /* Double + Ext.swift in Sources */,
 				88E31B0129C204CA00719E0E /* NetworkManager.swift in Sources */,
 				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,
 				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
@@ -749,7 +753,7 @@
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
@@ -777,7 +781,7 @@
 				DEVELOPMENT_TEAM = 56U6P9HNQ5;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
 				MARKETING_VERSION = 1.0;
