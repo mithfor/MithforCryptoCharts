@@ -37,6 +37,7 @@
 		88A18C8B29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
 		88A18CAD29BF9327008015DB /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18CAC29BF9327008015DB /* ModalTransition.swift */; };
+		88A6CB8B2CD3895F00D5D4DB /* PreviewProvider + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88AE364D2CB5CE000009D962 /* CryptoAssetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */; };
 		88C69BD32CB817CE00F0000D /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */; };
@@ -137,6 +138,7 @@
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
 		88A18CAC29BF9327008015DB /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
+		88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider + Ext.swift"; sourceTree = "<group>"; };
 		88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetCellViewModel.swift; sourceTree = "<group>"; };
 		88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
 		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				8831F1462CD241590004707B /* Color + Ext.swift */,
+				88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				881FDED629C241360057AAB2 /* AssetDetailsConfigurator.swift in Sources */,
 				88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */,
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
+				88A6CB8B2CD3895F00D5D4DB /* PreviewProvider + Ext.swift in Sources */,
 				8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */,
 				8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
