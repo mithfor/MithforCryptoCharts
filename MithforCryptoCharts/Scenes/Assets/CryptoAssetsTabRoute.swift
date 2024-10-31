@@ -18,11 +18,14 @@ extension CryptoAssetsTabRoute where Self: Router {
         let enableSwiftUI: Bool = true
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = CryptoAssetListViewModel(router: router)
+        @StateObject  var homeViewModel = HomeViewModel()
         let viewController: UIViewController?
         
         // TODO: - Test SwiftUI in UIKit with enableSwiftUI option
         if enableSwiftUI {
-            viewController = UIHostingController(rootView: HomeView())
+            viewController = UIHostingController(
+                rootView: HomeView()
+                    .environmentObject(homeViewModel))
         } else {
             viewController = CryptoAssetsConfigurator.configured(
                 CryptoAssetsViewController(
