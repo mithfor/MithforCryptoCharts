@@ -121,6 +121,7 @@ class CryptoAssetsViewController: UIViewController {
         }
     }
     
+    // TODO: - Extract to extension or get rid of it
     func startTodos() {
         guard let baseURL = URL(string: "https://jsonplaceholder.typicode.com") else {
             return

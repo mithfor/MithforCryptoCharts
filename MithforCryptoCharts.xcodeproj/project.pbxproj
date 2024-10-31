@@ -93,6 +93,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		88A6CB6D2CD2818A00D5D4DB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8809A3C22CD225210034E9BE /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88159AF02CAA2C0700028E9B /* CryptoAssets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssets.json; sourceTree = "<group>"; };
@@ -175,6 +188,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8831F1482CD24F1E0004707B /* Core */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Core; sourceTree = "<group>"; };
+		88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftUIPreviews; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +384,7 @@
 			children = (
 				88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */,
 				88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */,
+				88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */,
 				8864D1322CC0FB0F00E1A985 /* Frameworks */,
 				88E25E9C29BF7DCE0018C150 /* Products */,
 			);
@@ -517,6 +532,7 @@
 				88E25E9729BF7DCE0018C150 /* Sources */,
 				88E25E9829BF7DCE0018C150 /* Frameworks */,
 				88E25E9929BF7DCE0018C150 /* Resources */,
+				88A6CB6D2CD2818A00D5D4DB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
