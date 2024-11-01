@@ -72,6 +72,6 @@ extension CoinRowView {
                                  : Color.theme.positive)
             
         }
-        .frame(width: UIScreen.main.bounds.width / 3)
+        .frame(width: UIScreen.main.bounds.width / 3.5, alignment: .trailing)
     }
 }
