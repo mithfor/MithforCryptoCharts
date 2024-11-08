@@ -47,7 +47,11 @@ class CryptoAssetsViewController: UIViewController {
     private var searching: SearchActionState = .inactive
     private var state: TableState = .initiate
         
-    lazy var assetsTableView = CryptoAssetsTableView()
+    lazy var assetsTableView: CryptoAssetsTableView = {
+        let tableView = CryptoAssetsTableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -55,6 +59,18 @@ class CryptoAssetsViewController: UIViewController {
         searchController.searchBar.delegate = self
         return searchController
     }()
+    
+    var timerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "TIMER"
+        label.textColor = .black
+        label.textAlignment = .center
+        label.backgroundColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    var timer = Timer()
 
     // MARK: - Init
     init(viewModel: CryptoAssetListViewModel) {
@@ -80,8 +96,22 @@ class CryptoAssetsViewController: UIViewController {
             await interactor?.fetchCryptoAssets()
         }
         
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: #selector(timerDidTrigger),
+                                     userInfo: nil,
+                                     repeats: true)
+        RunLoop.current.add(self.timer, forMode: RunLoop.Mode.common)
+        
         // TODO: - Todo module
-        startTodos()
+//        startTodos()
+    }
+    
+    @objc private func timerDidTrigger() {
+//        DispatchQueue.main.async { [weak self] in
+            self.timerLabel.text = Date.now.description
+
+//        }
     }
     
     private func fetchTodos(_ todosService: TodosAPIService) -> Task<(), Never> {
@@ -148,7 +178,8 @@ class CryptoAssetsViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        assetsTableView.pinToEdges(of: view)
+//        assetsTableView.pinToEdges(of: view)
+
     }
     
     // MARK: - Private methods
@@ -166,10 +197,24 @@ class CryptoAssetsViewController: UIViewController {
         navigationItem.searchController = searchController
 
         addSubviews()
+        
+        NSLayoutConstraint.activate([
+            timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            timerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            timerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            timerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            assetsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            assetsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            assetsTableView.topAnchor.constraint(equalTo: timerLabel.bottomAnchor),
+            assetsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
         configureRefreshControl()
     }
     
     private func addSubviews() {
+        view.addSubview(timerLabel)
         view.addSubview(assetsTableView)
     }
     

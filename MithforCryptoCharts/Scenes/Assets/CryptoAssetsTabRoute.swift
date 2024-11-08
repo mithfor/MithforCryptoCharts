@@ -15,7 +15,7 @@ protocol CryptoAssetsTabRoute {
 extension CryptoAssetsTabRoute where Self: Router {
     func makeCryptoAssetsTab() -> UIViewController {
         
-        let enableSwiftUI: Bool = true
+        let enableSwiftUI: Bool = false
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = CryptoAssetListViewModel(router: router)
         @StateObject  var homeViewModel = HomeViewModel()
