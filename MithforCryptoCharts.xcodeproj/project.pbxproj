@@ -43,6 +43,7 @@
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88AE364D2CB5CE000009D962 /* CryptoAssetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */; };
 		88C69BD32CB817CE00F0000D /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */; };
+		88C6EC5F2CE62CA80032A5DE /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */; };
 		88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */; };
 		88DF5F9929C0F78300C47453 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DF5F9829C0F78300C47453 /* Extension + String.swift */; };
 		88DF5FA629C0F9FB00C47453 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88DF5FA829C0F9FB00C47453 /* Localizable.strings */; };
@@ -145,6 +146,7 @@
 		88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Ext.swift"; sourceTree = "<group>"; };
 		88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetCellViewModel.swift; sourceTree = "<group>"; };
 		88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
+		88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
 		88DF5F9829C0F78300C47453 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		88DF5FA729C0F9FB00C47453 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -222,10 +224,11 @@
 		8809A4372CD22DF20034E9BE /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				888BC6752CD4C75E00A70670 /* Services */,
 				8831F1482CD24F1E0004707B /* Core */,
 				888BC6732CD4C73D00A70670 /* Models */,
 				8831F1452CD241460004707B /* Extensions */,
+				888BC6752CD4C75E00A70670 /* Services */,
+				88C6EC602CE62CB30032A5DE /* Utilities */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -348,6 +351,14 @@
 				88E1E47829C08EB8000572FF /* Transitions */,
 			);
 			path = Routing;
+			sourceTree = "<group>";
+		};
+		88C6EC602CE62CB30032A5DE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		88E1E47829C08EB8000572FF /* Transitions */ = {
@@ -674,6 +685,7 @@
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88A6CB8B2CD3895F00D5D4DB /* PreviewProvider + Ext.swift in Sources */,
 				8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */,
+				88C6EC5F2CE62CA80032A5DE /* NetworkingManager.swift in Sources */,
 				8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
