@@ -10,14 +10,17 @@ import Combine
 
 class CoinImageService {
     @Published var image: UIImage?
-    var coinImageSubsription: AnyCancellable?
+    private var coinImageSubsription: AnyCancellable?
     
-    init(urlString: String) {
-        fetchCoinImage(urlString: urlString)
+    private var coin: CoinModel
+    
+    init(coin: CoinModel) {
+        self.coin = coin
+        fetchCoinImage()
     }
     
-    private func fetchCoinImage(urlString: String) {
-        guard let url = URL(string: urlString) else { return }
+    private func fetchCoinImage() {
+        guard let url = URL(string: coin.image) else { return }
         
         coinImageSubsription = NetworkingManager.download(url: url)
             .tryMap({ data -> UIImage? in
