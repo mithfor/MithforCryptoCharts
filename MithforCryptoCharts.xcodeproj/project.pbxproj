@@ -34,6 +34,7 @@
 		8885267629C0BD77006259E8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8885267529C0BD77006259E8 /* Constants.swift */; };
 		888BC6772CD4C77E00A70670 /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888BC6762CD4C77E00A70670 /* CoinDataService.swift */; };
 		889FCD162CADD6BC005F1E17 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FCD152CADD6BC005F1E17 /* NetworkError.swift */; };
+		889FEED92CE674E60096B59F /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889FEED82CE674E60096B59F /* CoinImageService.swift */; };
 		88A18C8429BF84D9008015DB /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8329BF84D9008015DB /* Routable.swift */; };
 		88A18C8B29BF85C8008015DB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C8A29BF85C8008015DB /* Transition.swift */; };
 		88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A18C9529BF86C2008015DB /* DefaultRouter.swift */; };
@@ -138,6 +139,7 @@
 		8885267529C0BD77006259E8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		888BC6762CD4C77E00A70670 /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
 		889FCD152CADD6BC005F1E17 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		889FEED82CE674E60096B59F /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		88A18C8329BF84D9008015DB /* Routable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		88A18C8A29BF85C8008015DB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		88A18C9529BF86C2008015DB /* DefaultRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouter.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				888BC6762CD4C77E00A70670 /* CoinDataService.swift */,
+				889FEED82CE674E60096B59F /* CoinImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				88E1E4AC29C0AE92000572FF /* CryptoAssetsTabRoute.swift in Sources */,
 				88A18C8429BF84D9008015DB /* Routable.swift in Sources */,
 				88E31AF529C2047F00719E0E /* CryptoAssetsViewController.swift in Sources */,
+				889FEED92CE674E60096B59F /* CoinImageService.swift in Sources */,
 				88E31B0229C204CA00719E0E /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
