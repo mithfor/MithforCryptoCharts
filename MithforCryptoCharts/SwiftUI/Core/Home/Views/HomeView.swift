@@ -22,7 +22,7 @@ struct HomeView: View {
                 
                 columnTitles
                 
-                if !showPortfolio {
+                if !(showPortfolio) {
                     allCoinsList
                         .transition(.move(edge: .leading))
                 } else {
@@ -32,17 +32,19 @@ struct HomeView: View {
                 
                 Spacer(minLength: 0)
             }
+            .onAppear {
+                viewModel.addSubscribers()
+            }
         }
     }
 }
 
 struct HomeViewPreviews: PreviewProvider {
     static var previews: some View {
-
-            HomeView()
+        
+        HomeView()
             .navigationBarHidden(true)
-            .environmentObject(dev.homeVM)
-
+           .environmentObject(dev.homeVM)
     }
 }
 

@@ -63,7 +63,7 @@ extension CoinRowView {
     
     private var rightColumn: some View {
         VStack(alignment: .trailing) {
-            Text(coin.currentPrice.asCurrencyWith2Decimals())
+            Text(coin.currentPrice?.asCurrencyWith2Decimals() ?? "N/A")
                 .bold()
                 .foregroundColor(Color.theme.primaryText)
             Text(coin.marketCapChangePercentage24H?.asPercentString() ?? "0.0%")

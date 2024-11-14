@@ -33,23 +33,34 @@ class CoinDataService {
                 return output.data
             }
             .receive(on: DispatchQueue.main)
-            .decode(
-                type: [CoinModel].self,
-                decoder: JSONDecoder())
+//            .decode(
+//                type: [CoinModel].self,
+//                decoder: JSONDecoder()
+//            )
+            .tryMap({ data in
+                let decoder = JSONDecoder()
+                do {
+                    print(data)
+                    return  try decoder.decode([CoinModel].self, from: data)
+                } catch let error as DecodingError {
+                    print("\(#function) : \(NetworkError.unableToDecode.rawValue)")
+                    print("DecodingError: \(error)")
+                    throw NetworkError.unableToDecode
+                }
+            })
+
             .sink { (completion) in
                 switch completion {
                 case .finished:
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
-                    
+                    print("\(#function) : \(error.localizedDescription)")
                 }
             } receiveValue: { [weak self] returnedCoins in
                 guard let self = self else { return }
                 self.allCoins = returnedCoins
                 self.coinSubscription?.cancel()
             }
-
     }
     
     private func isSuccessfull(statusCode: Int) -> Bool {
