@@ -34,6 +34,16 @@ class LocalFileManager {
         }
     }
 
+    func loadImage(imageName: String, folderName: String) -> UIImage? {
+        guard
+            let url = urlFor(imageName: imageName,
+                             folderName: folderName),
+            FileManager.default.fileExists(atPath: url.path) else {
+            return nil }
+
+        return UIImage(contentsOfFile: url.path)
+    }
+
     // MARK: - Private funcs
 
     private func createFolderIfNeeded(folderName: String) {
