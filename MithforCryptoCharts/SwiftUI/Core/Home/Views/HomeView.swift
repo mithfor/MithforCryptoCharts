@@ -32,9 +32,6 @@ struct HomeView: View {
                 
                 Spacer(minLength: 0)
             }
-            .onAppear {
-                viewModel.addSubscribers()
-            }
         }
     }
 }
