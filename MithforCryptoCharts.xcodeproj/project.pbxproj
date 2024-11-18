@@ -43,6 +43,7 @@
 		88A6CB8F2CD3A8D100D5D4DB /* Double + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */; };
 		88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 88AA9A682C92A4EF004DDC8D /* DGCharts */; };
 		88AE364D2CB5CE000009D962 /* CryptoAssetCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */; };
+		88C2B73E2CEBBECC007CD467 /* UIApplication + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C2B73D2CEBBECC007CD467 /* UIApplication + Ext.swift */; };
 		88C69BD32CB817CE00F0000D /* FakeUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */; };
 		88C6EC5F2CE62CA80032A5DE /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */; };
 		88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */; };
@@ -86,6 +87,8 @@
 		88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* CryptoAssetListViewModel.swift */; };
 		88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
 		88FE8D682C92A74C000664AE /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 88FE8D672C92A74C000664AE /* netfox */; };
+		D3D9A8A72CE70FC9005CA46C /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9A8A62CE70FC9005CA46C /* LocalFileManager.swift */; };
+		D3D9A8AA2CE713EE005CA46C /* LocalFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9A8A92CE713EE005CA46C /* LocalFileManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +150,7 @@
 		88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreviewProvider + Ext.swift"; sourceTree = "<group>"; };
 		88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double + Ext.swift"; sourceTree = "<group>"; };
 		88AE364C2CB5CE000009D962 /* CryptoAssetCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetCellViewModel.swift; sourceTree = "<group>"; };
+		88C2B73D2CEBBECC007CD467 /* UIApplication + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Ext.swift"; sourceTree = "<group>"; };
 		88C69BD22CB817CE00F0000D /* FakeUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeUserDefaults.swift; sourceTree = "<group>"; };
 		88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		88D3DF102CAC7801002E03DB /* AssetsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsViewControllerTests.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		88E68C1729C4835B009F251C /* AssetsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsRequest.swift; sourceTree = "<group>"; };
 		88E68C1D29C495FC009F251C /* CryptoAssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetListViewModel.swift; sourceTree = "<group>"; };
 		88E68C2329C49E93009F251C /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
+		D3D9A8A62CE70FC9005CA46C /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
+		D3D9A8A92CE713EE005CA46C /* LocalFileManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -314,6 +320,7 @@
 				8831F1462CD241590004707B /* Color + Ext.swift */,
 				88A6CB8A2CD3895F00D5D4DB /* PreviewProvider + Ext.swift */,
 				88A6CB8E2CD3A8D100D5D4DB /* Double + Ext.swift */,
+				88C2B73D2CEBBECC007CD467 /* UIApplication + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				88C6EC5E2CE62CA80032A5DE /* NetworkingManager.swift */,
+				D3D9A8A62CE70FC9005CA46C /* LocalFileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 		88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */ = {
 			isa = PBXGroup;
 			children = (
+				D3D9A8A82CE713AB005CA46C /* SwifttUI */,
 				88159AF62CAA2ED300028E9B /* AssetsTests */,
 				88E110592CA48A1D00052A7B /* MithforCryptoChartsTests.swift */,
 				88E1105B2CA48A8B00052A7B /* MainTabBarContollerTests.swift */,
@@ -535,6 +544,14 @@
 				889FCD152CADD6BC005F1E17 /* NetworkError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D3D9A8A82CE713AB005CA46C /* SwifttUI */ = {
+			isa = PBXGroup;
+			children = (
+				D3D9A8A92CE713EE005CA46C /* LocalFileManagerTests.swift */,
+			);
+			path = SwifttUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -665,6 +682,7 @@
 				88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */,
 				88D3DF112CAC7801002E03DB /* AssetsViewControllerTests.swift in Sources */,
 				8817171B2CAD1810002CFE96 /* AssetsTableViewTests.swift in Sources */,
+				D3D9A8AA2CE713EE005CA46C /* LocalFileManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +709,7 @@
 				88C6EC5F2CE62CA80032A5DE /* NetworkingManager.swift in Sources */,
 				8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
+				88C2B73E2CEBBECC007CD467 /* UIApplication + Ext.swift in Sources */,
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */,
 				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
@@ -719,6 +738,7 @@
 				88E31B2A29C2073D00719E0E /* PaddingLabel.swift in Sources */,
 				88E31B8929C21C6100719E0E /* WatchlistPresenter.swift in Sources */,
 				88E31B2929C2073D00719E0E /* SearchTextField.swift in Sources */,
+				D3D9A8A72CE70FC9005CA46C /* LocalFileManager.swift in Sources */,
 				88E31B1929C2066B00719E0E /* Extension + UIView.swift in Sources */,
 				881FDED529C241360057AAB2 /* AssetDetailsView.swift in Sources */,
 				88A18C9629BF86C2008015DB /* DefaultRouter.swift in Sources */,
