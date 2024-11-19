@@ -30,9 +30,9 @@
             filePath = "MithforCryptoCharts/SwiftUI/Core/Home/Views/HomeView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "portfolioCoinsList"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "allCoinsList"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
