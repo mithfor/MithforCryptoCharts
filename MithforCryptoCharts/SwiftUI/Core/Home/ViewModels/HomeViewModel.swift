@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject {
     private func addSubscribers() {
         $searchText
             .combineLatest(dataService.$allCoins)
+            .debounce(for: 0.5, scheduler: DispatchQueue.main)
             .map(filterCoins)
             .sink(receiveValue: { [weak self] (returnedCoins) in
                 guard let self = self else { return }
