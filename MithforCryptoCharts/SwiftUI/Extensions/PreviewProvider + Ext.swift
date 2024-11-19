@@ -21,6 +21,10 @@ class DeveloperPreview {
     
     let homeVM = HomeViewModel()
     
+    let statDefault = StatisticModel(title: "Total", value: "$1234 Tr")
+    let statWithPercentage = StatisticModel(title: "Market Cap", value: "$4321 Bln", percentageChange: 10.1)
+    let statWithNegaivePercentage = StatisticModel(title: "Market Cap", value: "$4321 Bln", percentageChange: -1.1)
+    
     let coin = CoinModel(id: "bitcoin",
                          symbol: "btc",
                          name: "Bitcoin",
