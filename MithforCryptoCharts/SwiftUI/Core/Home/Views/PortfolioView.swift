@@ -21,30 +21,7 @@ struct PortfolioView: View {
                     coinLogoList
                     
                     if selectedCoin != nil {
-                        VStack(spacing: 20) {
-                            HStack {
-                                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
-                                Spacer()
-                                Text(selectedCoin?.currentPrice?.asCurrencyWith6Decimals() ?? "")
-                            }
-                            Divider()
-                            HStack {
-                                Text("Amount in your portfolio:")
-                                Spacer()
-                                TextField("Ex: 1.4", text: $quantityText)
-                                    .multilineTextAlignment(.trailing)
-                                    .keyboardType(.decimalPad)
-                            }
-                            Divider()
-                            HStack {
-                                Text("Current value:")
-                                Spacer()
-                                Text(getCurrentValue().asCurrencyWith2Decimals())
-                            }
-                        }
-                        .animation(.none)
-                        .padding()
-                        .font(.headline)
+                        portfolioInputSection
                     }
                     
                 }
@@ -91,9 +68,36 @@ extension PortfolioView {
                         )
                 }
             }
-            .padding(.vertical, 4)
+            .frame(width: 120)
             .padding(.leading)
         })
+    }
+    
+    private var portfolioInputSection: some View {
+        VStack(spacing: 20) {
+            HStack {
+                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                Spacer()
+                Text(selectedCoin?.currentPrice?.asCurrencyWith6Decimals() ?? "")
+            }
+            Divider()
+            HStack {
+                Text("Amount holding:")
+                Spacer()
+                TextField("Ex: 1.4", text: $quantityText)
+                    .multilineTextAlignment(.trailing)
+                    .keyboardType(.decimalPad)
+            }
+            Divider()
+            HStack {
+                Text("Current value:")
+                Spacer()
+                Text(getCurrentValue().asCurrencyWith2Decimals())
+            }
+        }
+        .animation(.none)
+        .padding()
+        .font(.headline)
     }
     
     private func getCurrentValue() -> Double {
