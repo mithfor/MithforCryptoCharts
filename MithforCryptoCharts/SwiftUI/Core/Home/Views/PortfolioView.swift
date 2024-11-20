@@ -23,7 +23,7 @@ struct PortfolioView: View {
                         LazyHStack(spacing: 10) {
                             
                             ForEach(viewModel.allCoins) { coin in
-                                Text(coin.symbol.uppercased())
+                                CoinLogoView(coin: coin)
                             }
                         }
                     })
