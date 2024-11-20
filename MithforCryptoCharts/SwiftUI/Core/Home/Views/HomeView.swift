@@ -20,6 +20,7 @@ struct HomeView: View {
                 .sheet(isPresented: $showPortfolioView,
                        content: {
                     PortfolioView()
+                        .environmentObject(viewModel)
                 })
                 
             VStack {
