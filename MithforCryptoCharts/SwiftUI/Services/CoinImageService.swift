@@ -27,10 +27,10 @@ class CoinImageService {
         if let savedImage = fileManager.loadImage(imageName: imageName,
                                              folderName: folderName) {
             image = savedImage
-            print("Retrieved image from File Manager!")
+//            print("Retrieved image from File Manager!")
         } else {
             downloadCoinImage()
-            print("Downloaded image")
+//            print("Downloaded image")
         }
     }
 
