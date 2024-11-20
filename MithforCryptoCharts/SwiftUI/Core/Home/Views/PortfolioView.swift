@@ -11,6 +11,7 @@ struct PortfolioView: View {
     
     @EnvironmentObject private var viewModel: HomeViewModel
     @State private var selectedCoin: CoinModel?
+    @State private var quantityText: String = ""
     
     var body: some View {
         NavigationView {
@@ -18,6 +19,33 @@ struct PortfolioView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     SearchBarView(searchText: $viewModel.searchText)
                     coinLogoList
+                    
+                    if selectedCoin != nil {
+                        VStack(spacing: 20) {
+                            HStack {
+                                Text("Current price of \(selectedCoin?.symbol.uppercased() ?? ""):")
+                                Spacer()
+                                Text(selectedCoin?.currentPrice?.asCurrencyWith6Decimals() ?? "")
+                            }
+                            Divider()
+                            HStack {
+                                Text("Amount in your portfolio:")
+                                Spacer()
+                                TextField("Ex: 1.4", text: $quantityText)
+                                    .multilineTextAlignment(.trailing)
+                                    .keyboardType(.decimalPad)
+                            }
+                            Divider()
+                            HStack {
+                                Text("Current value:")
+                                Spacer()
+                                Text(getCurrentValue().asCurrencyWith2Decimals())
+                            }
+                        }
+                        .animation(.none)
+                        .padding()
+                        .font(.headline)
+                    }
                     
                 }
             }
@@ -66,5 +94,12 @@ extension PortfolioView {
             .padding(.vertical, 4)
             .padding(.leading)
         })
+    }
+    
+    private func getCurrentValue() -> Double {
+        if let quantity = Double(quantityText) {
+            return quantity * (selectedCoin?.currentPrice ?? 0)
+        }
+            return 0.0
     }
 }
