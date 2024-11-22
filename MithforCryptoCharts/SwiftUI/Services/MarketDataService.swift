@@ -12,12 +12,12 @@ class MarketDataService {
     
 //    private var logger = Logger()
     
-    @Published var marketData: MarketDatalModel? = nil
+    @Published var marketData: MarketDatalModel?
     
     var marketDataSubscription: AnyCancellable?
     
     init() {
-        fetchMarketData()
+        fetchData()
     }
     
     private func fetchMarketData() {
@@ -34,5 +34,11 @@ class MarketDataService {
                 self?.marketData = returnedGlobalData.data
                 self?.marketDataSubscription?.cancel()
             })
+    }
+}
+
+extension MarketDataService: DataService {
+    func fetchData() {
+        fetchMarketData()
     }
 }

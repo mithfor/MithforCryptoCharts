@@ -20,7 +20,7 @@ class CoinImageService {
     init(coin: CoinModel) {
         self.coin = coin
         self.imageName = coin.id
-        fetchCoinImage()
+        fetchData()
     }
 
     private func fetchCoinImage() {
@@ -56,5 +56,11 @@ class CoinImageService {
                 }
 
             })
+    }
+}
+
+extension CoinImageService: DataService {
+    func fetchData() {
+        fetchCoinImage()
     }
 }
