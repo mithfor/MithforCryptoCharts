@@ -27,6 +27,7 @@
 		8831F1442CD2396B0004707B /* CryptoAssetsTabRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */; };
 		8831F1472CD241590004707B /* Color + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1462CD241590004707B /* Color + Ext.swift */; };
 		884C6D1A2CF08EC0000C76B4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C6D192CF08EC0000C76B4 /* DataService.swift */; };
+		884C6DC22CF090DF000C76B4 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */; };
 		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
 		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
 		8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1432CC1480800E1A985 /* TodoModel.swift */; };
@@ -137,6 +138,7 @@
 		8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetsTabRouteTests.swift; sourceTree = "<group>"; };
 		8831F1462CD241590004707B /* Color + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Ext.swift"; sourceTree = "<group>"; };
 		884C6D192CF08EC0000C76B4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
 		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
 		8864D1432CC1480800E1A985 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				889FEED82CE674E60096B59F /* CoinImageService.swift */,
 				88BFD4D92CED16CC001F4D71 /* MarketDataService.swift */,
 				884C6D192CF08EC0000C76B4 /* DataService.swift */,
+				884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */,
 				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
+				884C6DC22CF090DF000C76B4 /* PortfolioDataService.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */,
 				88E31AF229C2047F00719E0E /* CryptoAssetsPresenter.swift in Sources */,
