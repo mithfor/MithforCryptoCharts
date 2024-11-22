@@ -13,7 +13,7 @@ class CoinDataService {
     var coinSubscription: AnyCancellable?
     
     init() {
-        fetchCoins()
+        fetchData()
     }
     
     private func fetchCoins() {
@@ -31,5 +31,11 @@ class CoinDataService {
                 self.allCoins = returnedCoins
                 self.coinSubscription?.cancel()
             })
+    }
+}
+
+extension CoinDataService: DataService {
+    func fetchData() {
+        fetchCoins()
     }
 }

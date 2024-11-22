@@ -26,6 +26,7 @@
 		881FDEF929C246F40057AAB2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FDEF829C246F40057AAB2 /* AppConstants.swift */; };
 		8831F1442CD2396B0004707B /* CryptoAssetsTabRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */; };
 		8831F1472CD241590004707B /* Color + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1462CD241590004707B /* Color + Ext.swift */; };
+		884C6D1A2CF08EC0000C76B4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C6D192CF08EC0000C76B4 /* DataService.swift */; };
 		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
 		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
 		8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1432CC1480800E1A985 /* TodoModel.swift */; };
@@ -135,6 +136,7 @@
 		881FDEF829C246F40057AAB2 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetsTabRouteTests.swift; sourceTree = "<group>"; };
 		8831F1462CD241590004707B /* Color + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Ext.swift"; sourceTree = "<group>"; };
+		884C6D192CF08EC0000C76B4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
 		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
 		8864D1432CC1480800E1A985 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				888BC6762CD4C77E00A70670 /* CoinDataService.swift */,
 				889FEED82CE674E60096B59F /* CoinImageService.swift */,
 				88BFD4D92CED16CC001F4D71 /* MarketDataService.swift */,
+				884C6D192CF08EC0000C76B4 /* DataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				88E31B7D29C21C6100719E0E /* WatchlistViewController.swift in Sources */,
 				88A6CB8B2CD3895F00D5D4DB /* PreviewProvider + Ext.swift in Sources */,
 				8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */,
+				884C6D1A2CF08EC0000C76B4 /* DataService.swift in Sources */,
 				88C6EC5F2CE62CA80032A5DE /* NetworkingManager.swift in Sources */,
 				8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */,
 				88E1E48529C090EA000572FF /* MainTabBarController.swift in Sources */,
