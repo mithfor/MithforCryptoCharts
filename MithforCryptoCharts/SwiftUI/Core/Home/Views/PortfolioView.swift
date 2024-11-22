@@ -37,6 +37,11 @@ struct PortfolioView: View {
                     trailingNavBarButtons
                 }
             })
+            .onChange(of: viewModel.searchText) { newValue in
+                if newValue == "" {
+                    removeSelectedCoin()
+                }
+            }
         }
     }
 }
@@ -100,7 +105,7 @@ extension PortfolioView {
                 Text(getCurrentValue().asCurrencyWith2Decimals())
             }
         }
-        .animation(.none)
+        .animation(.none, value: 0)
         .padding()
         .font(.headline)
     }
@@ -120,6 +125,7 @@ extension PortfolioView {
                 saveButtonPressed()
             }, label: {
                 Text("Save".uppercased())
+                    .foregroundStyle(Color.theme.primaryText)
                     .opacity(
                         (selectedCoin != nil
                          &&
@@ -137,8 +143,6 @@ extension PortfolioView {
         guard let coin = selectedCoin else { return }
         
         // save to portfolio
-        
-        
         
         // show checkmark
         
