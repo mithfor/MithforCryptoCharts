@@ -6,18 +6,27 @@
 //
 
 import UIKit
+import SwiftUI
+
 import netfox
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let enableSwiftUI: Bool = true
 
     func application(_ application: UIApplication, 
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NFX.sharedInstance().start()
         let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
-        let tabs = [mainRouter.makeCryptoAssetsTab(),
+        
+        if enableSwiftUI {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.primaryText)]
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.primaryText)]
+        }
+        
+        let tabs = [mainRouter.makeCryptoAssetsTab(enableSwiftUI: enableSwiftUI),
                     mainRouter.makeWatchlistTab(),
                     mainRouter.makeSettingsTab()]
         window = UIWindow(frame: UIScreen.main.bounds)

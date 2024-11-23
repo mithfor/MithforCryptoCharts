@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8809A3C42CD2258F0034E9BE /* MFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8809A3C22CD225210034E9BE /* MFNetwork.framework */; };
 		88159AF12CAA2C0700028E9B /* CryptoAssets.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF02CAA2C0700028E9B /* CryptoAssets.json */; };
 		88159AF32CAA2C6500028E9B /* CryptoAasetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */; };
 		88159AF52CAA2EB800028E9B /* CryptoAssetsInvalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */; };
@@ -27,6 +26,7 @@
 		8831F1442CD2396B0004707B /* CryptoAssetsTabRouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */; };
 		8831F1472CD241590004707B /* Color + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831F1462CD241590004707B /* Color + Ext.swift */; };
 		884C6D1A2CF08EC0000C76B4 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C6D192CF08EC0000C76B4 /* DataService.swift */; };
+		884C6DC22CF090DF000C76B4 /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */; };
 		8864D13F2CC13DCF00E1A985 /* TodosAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */; };
 		8864D1422CC1445500E1A985 /* TodosAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1412CC1445500E1A985 /* TodosAPISpec.swift */; };
 		8864D1442CC1480800E1A985 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8864D1432CC1480800E1A985 /* TodoModel.swift */; };
@@ -89,6 +89,7 @@
 		88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C1D29C495FC009F251C /* CryptoAssetListViewModel.swift */; };
 		88E68C2429C49E93009F251C /* ImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E68C2329C49E93009F251C /* ImageRequest.swift */; };
 		88FE8D682C92A74C000664AE /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 88FE8D672C92A74C000664AE /* netfox */; };
+		D349704F2CF1EA6400F17D2C /* MFNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = D349704E2CF1EA6400F17D2C /* MFNetwork */; };
 		D3D9A8A72CE70FC9005CA46C /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9A8A62CE70FC9005CA46C /* LocalFileManager.swift */; };
 		D3D9A8AA2CE713EE005CA46C /* LocalFileManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D9A8A92CE713EE005CA46C /* LocalFileManagerTests.swift */; };
 /* End PBXBuildFile section */
@@ -117,7 +118,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8809A3C22CD225210034E9BE /* MFNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MFNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88159AF02CAA2C0700028E9B /* CryptoAssets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssets.json; sourceTree = "<group>"; };
 		88159AF22CAA2C6500028E9B /* CryptoAasetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAasetsTests.swift; sourceTree = "<group>"; };
 		88159AF42CAA2EB800028E9B /* CryptoAssetsInvalid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CryptoAssetsInvalid.json; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 		8831F1432CD2396B0004707B /* CryptoAssetsTabRouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAssetsTabRouteTests.swift; sourceTree = "<group>"; };
 		8831F1462CD241590004707B /* Color + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Ext.swift"; sourceTree = "<group>"; };
 		884C6D192CF08EC0000C76B4 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		8864D13E2CC13DCF00E1A985 /* TodosAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPIService.swift; sourceTree = "<group>"; };
 		8864D1412CC1445500E1A985 /* TodosAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodosAPISpec.swift; sourceTree = "<group>"; };
 		8864D1432CC1480800E1A985 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
@@ -225,8 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FE8D682C92A74C000664AE /* netfox in Frameworks */,
-				8809A3C42CD2258F0034E9BE /* MFNetwork.framework in Frameworks */,
 				88AA9A692C92A4EF004DDC8D /* DGCharts in Frameworks */,
+				D349704F2CF1EA6400F17D2C /* MFNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +242,7 @@
 				8831F1452CD241460004707B /* Extensions */,
 				888BC6752CD4C75E00A70670 /* Services */,
 				88C6EC602CE62CB30032A5DE /* Utilities */,
+				88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -332,7 +334,6 @@
 		8864D1322CC0FB0F00E1A985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8809A3C22CD225210034E9BE /* MFNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -354,6 +355,7 @@
 				889FEED82CE674E60096B59F /* CoinImageService.swift */,
 				88BFD4D92CED16CC001F4D71 /* MarketDataService.swift */,
 				884C6D192CF08EC0000C76B4 /* DataService.swift */,
+				884C6DC12CF090DF000C76B4 /* PortfolioDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -431,7 +433,6 @@
 			children = (
 				88E25E9D29BF7DCE0018C150 /* MithforCryptoCharts */,
 				88E25EB429BF7DD00018C150 /* MithforCryptoChartsTests */,
-				88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */,
 				8864D1322CC0FB0F00E1A985 /* Frameworks */,
 				88E25E9C29BF7DCE0018C150 /* Products */,
 			);
@@ -593,7 +594,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				88159AEF2CA9D08D00028E9B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8831F1482CD24F1E0004707B /* Core */,
@@ -603,6 +603,7 @@
 			packageProductDependencies = (
 				88AA9A682C92A4EF004DDC8D /* DGCharts */,
 				88FE8D672C92A74C000664AE /* netfox */,
+				D349704E2CF1EA6400F17D2C /* MFNetwork */,
 			);
 			productName = FlexibleRouting;
 			productReference = 88E25E9B29BF7DCE0018C150 /* MithforCryptoCharts.app */;
@@ -642,6 +643,7 @@
 				88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */,
 				88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */,
 				88159AED2CA9D08200028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				D349704D2CF1EA6400F17D2C /* XCRemoteSwiftPackageReference "MFNetwork" */,
 			);
 			productRefGroup = 88E25E9C29BF7DCE0018C150 /* Products */;
 			projectDirPath = "";
@@ -720,6 +722,7 @@
 				88E31B0029C204CA00719E0E /* IconManager.swift in Sources */,
 				88E68C1E29C495FC009F251C /* CryptoAssetListViewModel.swift in Sources */,
 				881FDECF29C241360057AAB2 /* AssetDetailsPresenter.swift in Sources */,
+				884C6DC22CF090DF000C76B4 /* PortfolioDataService.swift in Sources */,
 				88E1E48029C08ED0000572FF /* EmptyTransition.swift in Sources */,
 				881FDED729C241360057AAB2 /* AssetDetailsInteractor.swift in Sources */,
 				88E31AF229C2047F00719E0E /* CryptoAssetsPresenter.swift in Sources */,
@@ -769,10 +772,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88159AEF2CA9D08D00028E9B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 88159AEE2CA9D08D00028E9B /* SwiftLintBuildToolPlugin */;
-		};
 		88E110542CA4890700052A7B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 88E25E9A29BF7DCE0018C150 /* MithforCryptoCharts */;
@@ -1072,14 +1071,17 @@
 				minimumVersion = 1.21.0;
 			};
 		};
+		D349704D2CF1EA6400F17D2C /* XCRemoteSwiftPackageReference "MFNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mithfor/MFNetwork/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		88159AEE2CA9D08D00028E9B /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 88159AED2CA9D08200028E9B /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
 		88AA9A682C92A4EF004DDC8D /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 88AA9A672C92A4EF004DDC8D /* XCRemoteSwiftPackageReference "Charts" */;
@@ -1089,6 +1091,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 88FE8D662C92A74C000664AE /* XCRemoteSwiftPackageReference "netfox" */;
 			productName = netfox;
+		};
+		D349704E2CF1EA6400F17D2C /* MFNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D349704D2CF1EA6400F17D2C /* XCRemoteSwiftPackageReference "MFNetwork" */;
+			productName = MFNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

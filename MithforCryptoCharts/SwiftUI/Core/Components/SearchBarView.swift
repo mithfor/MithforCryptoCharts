@@ -17,7 +17,7 @@ struct SearchBarView: View {
                                  ? Color.theme.secondaryText
                                  : Color.theme.primaryText)
             
-            TextField("Search by name oir symbol...",
+            TextField("Search by name or symbol...",
                       text: $searchText)
             .foregroundStyle(Color.theme.primaryText)
             .disableAutocorrection(true)
@@ -30,8 +30,7 @@ struct SearchBarView: View {
                     .onTapGesture {
                         UIApplication.shared.endEditing()
                         searchText = ""
-                    }
-                ,alignment: .trailing
+                    }, alignment: .trailing
             )
         }
         .font(.headline)
