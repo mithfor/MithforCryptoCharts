@@ -1,5 +1,5 @@
 {
-  "originHash" : "2102a6bc03c535255b59d06cc04da0284a13487a24ff88ad1d5c9dd4378e7664",
+  "originHash" : "4704dcf12298677eab68a5cada8f22b022f63b75086816be65a0b5bf0a291d1b",
   "pins" : [
     {
       "identity" : "charts",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "678d442c6f7828def400a70ae15968aef67ef52d",
         "version" : "1.8.3"
+      }
+    },
+    {
+      "identity" : "mfnetwork",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mithfor/MFNetwork/",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ddff4e6fd31959869241dc0f5aa771d6872809d0"
       }
     },
     {
