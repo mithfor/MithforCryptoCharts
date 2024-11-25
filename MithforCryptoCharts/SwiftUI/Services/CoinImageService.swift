@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class CoinImageService {
+class CoinImageService: DataService {
     @Published var image: UIImage?
 
     private var coinImageSubsription: AnyCancellable?
@@ -21,6 +21,10 @@ class CoinImageService {
         self.coin = coin
         self.imageName = coin.id
         fetchData()
+    }
+
+    func fetchData() {
+        fetchCoinImage()
     }
 
     private func fetchCoinImage() {
@@ -56,11 +60,5 @@ class CoinImageService {
                 }
 
             })
-    }
-}
-
-extension CoinImageService: DataService {
-    func fetchData() {
-        fetchCoinImage()
     }
 }

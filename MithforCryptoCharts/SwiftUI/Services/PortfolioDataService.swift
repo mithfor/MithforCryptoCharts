@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class PortfolioDataService {
+class PortfolioDataService: DataService {
     private let container: NSPersistentContainer
     private let containerName = "PortfolioContainer"
     private let entityName = "PortfolioEntity"
@@ -22,12 +22,16 @@ class PortfolioDataService {
                 print("🔥 Error loading Core Data \(error)")
             }
             
-            self.fetchPortfolio()
+            self.fetchData()
         }
     }
     
     // MARK: - PUBLIC
-    
+
+    func fetchData() {
+        fetchPortfolio()
+    }
+
     func updatePortfolio(coin: CoinModel, amount: Double) {
         if let entity = savedEntities.first(where: { $0.coinID == coin.id }) {
             if amount > 0 {
@@ -79,12 +83,6 @@ class PortfolioDataService {
     
     private func applyChanges() {
         save()
-        fetchPortfolio()
-    }
-}
-
-extension PortfolioDataService: DataService {
-    func fetchData() {
         fetchPortfolio()
     }
 }

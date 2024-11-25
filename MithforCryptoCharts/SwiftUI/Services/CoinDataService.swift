@@ -8,14 +8,18 @@
 import Foundation
 import Combine
 
-class CoinDataService {
+class CoinDataService: DataService {
     @Published var allCoins: [CoinModel] = []
     var coinSubscription: AnyCancellable?
     
     init() {
         fetchData()
     }
-    
+
+    func fetchData() {
+        fetchCoins()
+    }
+
     private func fetchCoins() {
         
         guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&ids=bitcoin&category=layer-1&order=market_cap_desc&per_page=250&page=1&sparkline=true&price_change_percentage=24h") else { return }
@@ -34,8 +38,3 @@ class CoinDataService {
     }
 }
 
-extension CoinDataService: DataService {
-    func fetchData() {
-        fetchCoins()
-    }
-}

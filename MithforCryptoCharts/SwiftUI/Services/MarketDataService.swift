@@ -8,8 +8,8 @@
 import Foundation
 import Combine
 
-class MarketDataService {
-    
+class MarketDataService: DataService {
+
 //    private var logger = Logger()
     
     @Published var marketData: MarketDatalModel?
@@ -19,7 +19,11 @@ class MarketDataService {
     init() {
         fetchData()
     }
-    
+
+    func fetchData() {
+        fetchMarketData()
+    }
+
     private func fetchMarketData() {
         let urlString = "https://api.coingecko.com/api/v3/global"
         
@@ -34,11 +38,5 @@ class MarketDataService {
                 self?.marketData = returnedGlobalData.data
                 self?.marketDataSubscription?.cancel()
             })
-    }
-}
-
-extension MarketDataService: DataService {
-    func fetchData() {
-        fetchMarketData()
     }
 }
