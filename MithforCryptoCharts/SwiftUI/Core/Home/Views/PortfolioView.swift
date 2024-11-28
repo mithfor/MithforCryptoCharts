@@ -80,7 +80,7 @@ extension PortfolioView {
                         )
                 }
             }
-            .frame(width: 120)
+            .frame(height: 120)
             .padding(.leading)
         })
     }
