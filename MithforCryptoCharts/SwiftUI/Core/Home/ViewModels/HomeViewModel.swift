@@ -8,12 +8,18 @@
 import Foundation
 import Combine
 
+enum HomeViewModelState {
+    case inititate, loading, pending
+}
+
 class HomeViewModel: ObservableObject {
     @Published var statistics: [StatisticModel] = []
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
     @Published var searchText: String = ""
-    
+
+    private(set) var state: HomeViewModelState = .loading
+
     private var coinDataService = CoinDataService()
     private var marketDataService = MarketDataService()
     private var portfolioDataService = PortfolioDataService()
@@ -22,7 +28,13 @@ class HomeViewModel: ObservableObject {
     init() {
         addSubscribers()
     }
-    
+
+    func reloadData() {
+        state = .loading
+        coinDataService.fetchData()
+        marketDataService.fetchData()
+    }
+
     private func addSubscribers() {
         
         // update allCoins
@@ -34,22 +46,23 @@ class HomeViewModel: ObservableObject {
                 self?.allCoins = returnedCoins
             }
             .store(in: &cancellables )
-        
-        // updates marketData
-        marketDataService.$marketData
-            .combineLatest($portfolioCoins)
-            .map(mapGlobalMarketData)
-            .sink { [weak self] returnedStats in
-                self?.statistics = returnedStats
-            }
-            .store(in: &cancellables)
-        
+
         // updates portfolioCoins
         $allCoins
             .combineLatest(portfolioDataService.$savedEntities)
             .map (mapAllCoinToPortfolioCoins)
             .sink { [weak self] returnedCoins in
                 self?.portfolioCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+
+        // updates marketData
+        marketDataService.$marketData
+            .combineLatest($portfolioCoins)
+            .map(mapGlobalMarketData)
+            .sink { [weak self] returnedStats in
+                self?.statistics = returnedStats
+                self?.state = .pending
             }
             .store(in: &cancellables)
     }
