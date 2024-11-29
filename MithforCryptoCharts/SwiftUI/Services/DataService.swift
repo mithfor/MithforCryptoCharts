@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DataService {
+protocol DataService: AnyObject {
     func fetchData()
 }

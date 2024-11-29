@@ -18,21 +18,31 @@ class HomeViewModel: ObservableObject {
     @Published var portfolioCoins: [CoinModel] = []
     @Published var searchText: String = ""
 
-    private(set) var state: HomeViewModelState = .loading
+    private(set) var state: HomeViewModelState = .inititate
 
+
+    // TODO: - Inject Service Container
     private var coinDataService = CoinDataService()
     private var marketDataService = MarketDataService()
     private var portfolioDataService = PortfolioDataService()
+
     private var cancellables = Set<AnyCancellable>()
      
     init() {
+
         addSubscribers()
+    }
+
+    private func resolveServices() {
+
     }
 
     func reloadData() {
         state = .loading
+
         coinDataService.fetchData()
         marketDataService.fetchData()
+        HapticManager.notification(type: .success)
     }
 
     private func addSubscribers() {
