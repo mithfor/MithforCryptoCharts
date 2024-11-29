@@ -20,21 +20,19 @@ class HomeViewModel: ObservableObject {
 
     private(set) var state: HomeViewModelState = .inititate
 
-
-    // TODO: - Inject Service Container
-    private var coinDataService = CoinDataService()
-    private var marketDataService = MarketDataService()
-    private var portfolioDataService = PortfolioDataService()
+    private var coinDataService: CoinDataService
+    private var marketDataService: MarketDataService
+    private var portfolioDataService: PortfolioDataService
 
     private var cancellables = Set<AnyCancellable>()
      
-    init() {
+    init(serviceLocator: ServiceLocating? = nil ) {
+
+        coinDataService = serviceLocator?.resolve() ?? CoinDataService()
+        marketDataService = serviceLocator?.resolve() ?? MarketDataService()
+        portfolioDataService = serviceLocator?.resolve() ?? PortfolioDataService()
 
         addSubscribers()
-    }
-
-    private func resolveServices() {
-
     }
 
     func reloadData() {

@@ -13,11 +13,17 @@ protocol CryptoAssetsTabRoute {
 }
 
 extension CryptoAssetsTabRoute where Self: Router {
+
     func makeCryptoAssetsTab(enableSwiftUI: Bool = false) -> UIViewController {
         
         let router = DefaultRouter(rootTransition: EmptyTransition())
         let model = CryptoAssetListViewModel(router: router)
-        @StateObject  var homeViewModel = HomeViewModel()
+
+        // MARK: - create HomeViewModel
+
+
+        @StateObject var homeViewModel = ViewModelsFactory.shared.createHomeViewModel()
+
         let viewController: UIViewController?
         
         // TODO: - Test SwiftUI in UIKit with enableSwiftUI option
