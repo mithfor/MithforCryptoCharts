@@ -72,10 +72,10 @@ class HomeViewModel: ObservableObject {
     }
 
     private func mapAllCoinToPortfolioCoins(allCoins: [CoinModel],
-                                            portfolioCoins: [PortfolioEntity] ) -> [CoinModel] {
+                                            portfolioEntities: [PortfolioEntity] ) -> [CoinModel] {
         allCoins
             .compactMap { (coin) -> CoinModel? in
-                guard let entity = portfolioCoins.first(where: {$0.coinID == coin.id})
+                guard let entity = portfolioEntities.first(where: {$0.coinID == coin.id})
                 else {
                     return nil
                 }
