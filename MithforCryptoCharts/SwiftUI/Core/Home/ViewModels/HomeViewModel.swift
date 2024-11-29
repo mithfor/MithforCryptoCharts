@@ -47,17 +47,7 @@ class HomeViewModel: ObservableObject {
         // updates portfolioCoins
         $allCoins
             .combineLatest(portfolioDataService.$savedEntities)
-            .map { (coinModels, portfolioEntities) -> [CoinModel] in
-                coinModels
-                    .compactMap { (coin) -> CoinModel? in
-                        guard let entity = portfolioEntities.first(where: {$0.coinID == coin.id})
-                        else {
-                            return nil
-                        }
-                        
-                        return coin.updatedHoldings(amount: entity.amount)
-                    }
-            }
+            .map (mapAllCoinToPortfolioCoins)
             .sink { [weak self] returnedCoins in
                 self?.portfolioCoins = returnedCoins
             }
@@ -80,7 +70,20 @@ class HomeViewModel: ObservableObject {
         
         return filteredCoins
     }
-    
+
+    private func mapAllCoinToPortfolioCoins(allCoins: [CoinModel],
+                                            portfolioCoins: [PortfolioEntity] ) -> [CoinModel] {
+        allCoins
+            .compactMap { (coin) -> CoinModel? in
+                guard let entity = portfolioCoins.first(where: {$0.coinID == coin.id})
+                else {
+                    return nil
+                }
+
+                return coin.updatedHoldings(amount: entity.amount)
+            }
+    }
+
     private func mapGlobalMarketData(marketData: MarketDatalModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
 
         var stats: [StatisticModel] = []
@@ -94,10 +97,6 @@ class HomeViewModel: ObservableObject {
                                     value: data.volume)
         let btcDominance = StatisticModel(title: "BTC Dominance",
                                           value: data.bitcoinDominance)
-
-//        let portfolioValue = portfolioCoins
-//            .map { $0.currentHoldingsValue }
-//            .reduce(0, +)
 
         let portfolioValue = portfolioCoins
             .map(\.currentHoldingsValue)
