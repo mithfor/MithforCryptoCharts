@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var coin: CoinModel?
+    let coin: CoinModel
 
-    init(coin: Binding<CoinModel?>) {
-        self._coin = coin
-        print("Initializing Detail View for \(String(describing: coin.wrappedValue?.name))")
+    init(coin: CoinModel) {
+        self.coin = coin
+        print("Initializing Detail View for \(String(describing: coin.name))")
     }
 
     var body: some View {
-        Text(coin?.name ?? "")
+        Text(coin.name)
     }
 }
 
@@ -24,6 +24,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(coin: .constant(dev.coin))
+        DetailView(coin: dev.coin)
     }
 }
