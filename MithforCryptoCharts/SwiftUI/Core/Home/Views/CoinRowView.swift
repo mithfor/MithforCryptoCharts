@@ -21,10 +21,11 @@ struct CoinRowView: View {
             }
             rightColumn
         }
+        .containerShape(Rectangle())
         .font(.subheadline)
-        .background(
-            Color.theme.background.opacity(0.001)
-        )
+//        .background(
+//            Color.theme.background.opacity(0.001)
+//        )
     }
 }
 
