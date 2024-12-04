@@ -27,52 +27,61 @@ final class DetailViewModel: ObservableObject {
     private func addSubscribers() {
         coinDetailService.$coinDetails
             .combineLatest($coin)
-            .map({ [weak self] (coinDetailModel, coinModel) -> (overview: [StatisticModel],
-                                                    additional: [StatisticModel]) in
-
-                guard let self = self else { return ([], [] ) }
-
-                let priceStat = self.createPriceStat(coin: coinModel)
-                let marketCapStat = self.createMarketCapStat(coin: coinModel)
-                let rankStat = self.createRankStat(coin: coinModel)
-                let volumeStat = self.createVolumeStat(coin: coinModel)
-
-                let overviewArray: [StatisticModel] = [
-                    priceStat,
-                    marketCapStat,
-                    rankStat,
-                    volumeStat
-                ]
-
-                let highStat = self.createHighStat(coin: coinModel)
-                let lowStat = self.createLowStat(coin: coinModel)
-                let priceChangeStat = self.createPriceChangeStat(coin: coinModel)
-                let marketCapChangeStat = self.createMarketCapChangeStat(coin: coinModel)
-                let blockTimeStat = self.createBlockTimeStat(coinDetails: coinDetailModel)
-                let hashingStat = self.createHashingStat(coinDetail: coinDetailModel)
-
-
-
-                let additionalArray: [StatisticModel] = [
-                    highStat,
-                    lowStat,
-                    priceChangeStat,
-                    marketCapChangeStat,
-                    blockTimeStat,
-                    hashingStat
-                ]
-
-                return (overviewArray, additionalArray)
-            })
+            .map(mapDataToStatistic)
             .sink { [weak self] (returnedArrays) in
                 self?.overviewStatistics = returnedArrays.overview
                 self?.additionalStatistics = returnedArrays.additional
             }
             .store(in: &cancellables)
     }
+
+    private func mapDataToStatistic(coinDetails: CoinDetailModel?, coin: CoinModel) -> (overview: [StatisticModel],
+                                          additional: [StatisticModel]) {
+
+        return (createOverviewStats(coin: coin),
+                createAdditionalStats(coin: coin,
+                                      coinDetails: coinDetails))
+    }
 }
 
 private extension DetailViewModel {
+
+    func createOverviewStats(coin: CoinModel) -> [StatisticModel] {
+        let priceStat = self.createPriceStat(coin: coin)
+        let marketCapStat = self.createMarketCapStat(coin: coin)
+        let rankStat = self.createRankStat(coin: coin)
+        let volumeStat = self.createVolumeStat(coin: coin)
+
+        let overviewStats: [StatisticModel] = [
+            priceStat,
+            marketCapStat,
+            rankStat,
+            volumeStat
+        ]
+
+        return overviewStats
+    }
+
+    func createAdditionalStats(coin: CoinModel, coinDetails: CoinDetailModel?) -> [StatisticModel] {
+        let highStat = self.createHighStat(coin: coin)
+        let lowStat = self.createLowStat(coin: coin)
+        let priceChangeStat = self.createPriceChangeStat(coin: coin)
+        let marketCapChangeStat = self.createMarketCapChangeStat(coin: coin)
+        let blockTimeStat = self.createBlockTimeStat(coinDetails: coinDetails)
+        let hashingStat = self.createHashingStat(coinDetail: coinDetails)
+
+        let additionalStats: [StatisticModel] = [
+            highStat,
+            lowStat,
+            priceChangeStat,
+            marketCapChangeStat,
+            blockTimeStat,
+            hashingStat
+        ]
+
+        return additionalStats
+    }
+
     func createPriceStat(coin: CoinModel) -> StatisticModel {
         let price = coin.currentPrice?.asCurrencyWith6Decimals()
         let priceChange = coin.priceChangePercentage24H
