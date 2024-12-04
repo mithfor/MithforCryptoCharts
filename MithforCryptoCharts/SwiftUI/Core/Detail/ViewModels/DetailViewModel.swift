@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-final class DetailViewModel: ObservableObject {
+final class DetailViewModel: ObservableObject, SubscriptableViewModel {
+
 
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var additionalStatistics: [StatisticModel] = []
@@ -24,7 +25,7 @@ final class DetailViewModel: ObservableObject {
         self.addSubscribers()
     }
 
-    private func addSubscribers() {
+    func addSubscribers() {
         coinDetailService.$coinDetails
             .combineLatest($coin)
             .map(mapDataToStatistic)
