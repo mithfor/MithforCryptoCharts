@@ -21,11 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NFX.sharedInstance().start()
         let mainRouter = DefaultRouter(rootTransition: EmptyTransition())
         
-        if enableSwiftUI {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color.theme.primaryText)]
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color.theme.primaryText)]
-        }
-        
         let tabs = [mainRouter.makeCryptoAssetsTab(enableSwiftUI: enableSwiftUI),
                     mainRouter.makeWatchlistTab(),
                     mainRouter.makeSettingsTab()]
