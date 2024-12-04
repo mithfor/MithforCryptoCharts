@@ -40,7 +40,7 @@ struct DetailView: View {
             .padding()
         }
         .navigationTitle(viewModel.coin.name)
-        .navigationBarTitleTextColor(Color.theme.primaryText)
+        .navigationBarTitleTextStyle(Color.theme.primaryText)
     }
 }
 
