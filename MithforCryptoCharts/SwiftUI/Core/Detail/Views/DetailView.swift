@@ -25,17 +25,15 @@ struct DetailView: View {
         ScrollView {
             VStack(spacing: 20)
             {
-                Text("")
-                    .frame(height: 150)
-                    .background(Color.theme.positive)
-
-
-                overviewTitle
-                Divider()
-                overviewGrid
-                additionalTitle
-                Divider()
-                additionalGrid
+                ChartView(coin: viewModel.coin)
+                VStack {
+                    overviewTitle
+                    Divider()
+                    overviewGrid
+                    additionalTitle
+                    Divider()
+                    additionalGrid
+                }
             }
             .padding()
         }
