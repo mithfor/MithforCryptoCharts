@@ -12,7 +12,8 @@ enum HomeViewModelState {
     case inititate, loading, pending
 }
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: ObservableObject, SubscriptableViewModel {
+    
     @Published var statistics: [StatisticModel] = []
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
@@ -48,7 +49,7 @@ class HomeViewModel: ObservableObject {
         HapticManager.notification(type: .success)
     }
 
-    private func addSubscribers() {
+    func addSubscribers() {
         
         // update allCoins
         $searchText
