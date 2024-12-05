@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @StateObject private var viewModel: DetailViewModel
+    @State private var showFullDescription: Bool = false
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible())
@@ -29,10 +30,12 @@ struct DetailView: View {
                 VStack {
                     overviewTitle
                     Divider()
+                    descriptionSectionIfAvailable
                     overviewGrid
                     additionalTitle
                     Divider()
                     additionalGrid
+                    websiteSection
                 }
             }
             .padding()
@@ -56,25 +59,79 @@ private extension DetailView {
                 .foregroundStyle(Color.theme.secondaryText)
             CoinImageView(coin: viewModel.coin)
                 .frame(width: 25, height: 25)
-
         }
-
     }
 
     var overviewTitle: some View {
         Text("Overview")
-            .font(.title)
             .bold()
-            .foregroundStyle(Color.theme.primaryText)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .detailsTitleStyle()
     }
 
     var additionalTitle: some View {
         Text("Additional Details")
-            .font(.title)
             .bold()
-            .foregroundStyle(Color.theme.primaryText)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .detailsTitleStyle()
+    }
+
+    var descriptionSectionIfAvailable: some View {
+        VStack {
+            if let coinDescription = viewModel.coinDescription,
+               !coinDescription.isEmpty {
+                showDescriptionSection(description: coinDescription)
+            }
+        }
+    }
+
+    func showDescriptionSection(description: String) -> some View {
+        return VStack(alignment: .leading) {
+            Text(description)
+                .lineLimit(lineLimit)
+                .font(.callout)
+                .foregroundStyle(Color.theme.secondaryText)
+            if description.count >= 100 {
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        showFullDescription.toggle()
+                    }
+                }, label: {
+                    Text(descriptionButtonTitle)
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .padding(.vertical, 4)
+                })
+                .buttonLinkStyle()
+            }
+        }
+    }
+
+    var lineLimit: Int {
+        return showFullDescription ? .max : 3
+    }
+
+    var descriptionButtonTitle: String {
+        return showFullDescription ? "Less" : "Read more..."
+    }
+
+    var websiteSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let websiteString = viewModel.websiteURL,
+               let url = URL(string: websiteString) {
+                Link(destination: url) {
+                    Text("WebSite localized")
+                        .buttonLinkStyle()
+                }
+            }
+
+            if let redditLinkString = viewModel.redditURL,
+               let url = URL(string: redditLinkString) {
+                Link(destination: url) {
+                    Text("Reddit localized")
+                        .buttonLinkStyle()
+                }
+            }
+        }
+
     }
 
     var overviewGrid: some View {
