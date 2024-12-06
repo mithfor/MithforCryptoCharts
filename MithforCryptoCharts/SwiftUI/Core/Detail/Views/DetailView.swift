@@ -95,10 +95,12 @@ private extension DetailView {
                         showFullDescription.toggle()
                     }
                 }, label: {
-                    Text(descriptionButtonTitle)
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .padding(.vertical, 4)
+                    withAnimation(showFullDescription ? Animation.easeInOut : Animation.default) {
+                        Text(descriptionButtonTitle)
+                            .font(.caption)
+                            .fontWeight(.bold)
+                            .padding(.vertical, 4)
+                    }
                 })
                 .buttonLinkStyle()
             }
