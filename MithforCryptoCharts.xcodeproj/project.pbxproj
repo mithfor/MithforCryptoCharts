@@ -189,6 +189,7 @@
 		8831F1482CD24F1E0004707B /* Core */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Core; sourceTree = "<group>"; };
 		888BC6732CD4C73D00A70670 /* Models */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Models; sourceTree = "<group>"; };
 		88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SwiftUIPreviews; sourceTree = "<group>"; };
+		D31B20EE2D06FA020004ED56 /* ViewModels */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModels; sourceTree = "<group>"; };
 		D340F80B2CFDA29B003B0A03 /* Extensions */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extensions; sourceTree = "<group>"; };
 		D340F8152CFDA29F003B0A03 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
 		D340F81F2CFDA2A3003B0A03 /* Utilities */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Utilities; sourceTree = "<group>"; };
@@ -222,6 +223,7 @@
 				888BC6732CD4C73D00A70670 /* Models */,
 				D340F80B2CFDA29B003B0A03 /* Extensions */,
 				D340F8152CFDA29F003B0A03 /* Services */,
+				D31B20EE2D06FA020004ED56 /* ViewModels */,
 				D340F81F2CFDA2A3003B0A03 /* Utilities */,
 				88A6CB642CD2818A00D5D4DB /* SwiftUIPreviews */,
 			);
@@ -547,6 +549,7 @@
 			fileSystemSynchronizedGroups = (
 				8831F1482CD24F1E0004707B /* Core */,
 				888BC6732CD4C73D00A70670 /* Models */,
+				D31B20EE2D06FA020004ED56 /* ViewModels */,
 				D340F80B2CFDA29B003B0A03 /* Extensions */,
 				D340F8152CFDA29F003B0A03 /* Services */,
 				D340F81F2CFDA2A3003B0A03 /* Utilities */,
