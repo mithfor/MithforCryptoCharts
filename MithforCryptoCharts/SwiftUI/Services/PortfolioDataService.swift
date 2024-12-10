@@ -8,7 +8,8 @@
 import Foundation
 import CoreData
 
-class PortfolioDataService: DataService {
+class PortfolioDataService: PersistanceDataService
+{
     private let container: NSPersistentContainer
     private let containerName = "PortfolioContainer"
     private let entityName = "PortfolioEntity"
