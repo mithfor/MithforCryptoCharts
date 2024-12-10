@@ -9,6 +9,8 @@ import SwiftUI
 import Combine
 
 class CoinImageService: DataService {
+    var networkingManager: NetworkingManager
+    
     @Published var image: UIImage?
 
     private var coinImageSubsription: AnyCancellable?
@@ -20,6 +22,7 @@ class CoinImageService: DataService {
     init(coin: CoinModel) {
         self.coin = coin
         self.imageName = coin.id
+        self.networkingManager = NetworkingManager.shared
         fetchData()
     }
 
@@ -41,11 +44,11 @@ class CoinImageService: DataService {
     private func downloadCoinImage() {
         guard let url = URL(string: coin.image) else { return }
         
-        coinImageSubsription = NetworkingManager.download(url: url)
+        coinImageSubsription = networkingManager.download(url: url)
             .tryMap({ data -> UIImage? in
                 return UIImage(data: data)
             })
-            .sink(receiveCompletion: NetworkingManager.handleCompletion,
+            .sink(receiveCompletion: networkingManager.handleCompletion,
                   receiveValue: { [weak self] returnedImage in
                 guard let self = self,
                 let downloadedImage = returnedImage else { return }

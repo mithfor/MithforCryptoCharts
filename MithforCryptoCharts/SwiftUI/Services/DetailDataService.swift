@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 class DetailDataService: DataService {
-
+    var networkingManager: NetworkingManager
+    
     @Published var coinDetails: CoinDetailModel?
     private let selfCoin: CoinModel?
     private let decoder: JSONDecoder
@@ -18,6 +19,7 @@ class DetailDataService: DataService {
 
     init(coin: CoinModel) {
         self.selfCoin = coin
+        networkingManager = NetworkingManager.shared
         decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
@@ -46,10 +48,10 @@ class DetailDataService: DataService {
             throw NetworkingManager.NetworkingError.badURL(urlString: urlString)
         }
 
-        coinDetailSubscription = NetworkingManager.download(url: url)
+        coinDetailSubscription = networkingManager.download(url: url)
             .decode(type: CoinDetailModel.self,
                     decoder: decoder)
-            .sink(receiveCompletion: NetworkingManager.handleCompletion,
+            .sink(receiveCompletion: networkingManager.handleCompletion,
                   receiveValue: { [weak self] (retrundeCoinDetails) in
                 self?.coinDetails = retrundeCoinDetails
                 self?.coinDetailSubscription?.cancel()

@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 
-class MarketDataService: DataService {
+class MarketDataService: NetworkDataService {    
+    var networkingManager: NetworkingManager
 
 //    private var logger = Logger()
     
@@ -17,6 +18,8 @@ class MarketDataService: DataService {
     var marketDataSubscription: AnyCancellable?
     
     init() {
+        //
+        networkingManager = NetworkingManager.shared
         fetchData()
     }
 
@@ -30,10 +33,10 @@ class MarketDataService: DataService {
         guard let url = URL(string: urlString)
         else { return }
         
-        marketDataSubscription = NetworkingManager.download(url: url)
+        marketDataSubscription = networkingManager.download(url: url)
             .decode(type: GlobalData.self,
                     decoder: JSONDecoder())
-            .sink(receiveCompletion: NetworkingManager.handleCompletion,
+            .sink(receiveCompletion: networkingManager.handleCompletion,
                   receiveValue: { [weak self] returnedGlobalData in
                 self?.marketData = returnedGlobalData.data
                 self?.marketDataSubscription?.cancel()

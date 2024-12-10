@@ -8,7 +8,9 @@
 import Foundation
 import CoreData
 
-class PortfolioDataService: DataService {
+class PortfolioDataService: PersistanceDataService
+{
+    
     private let container: NSPersistentContainer
     private let containerName = "PortfolioContainer"
     private let entityName = "PortfolioEntity"
@@ -16,6 +18,7 @@ class PortfolioDataService: DataService {
     @Published var savedEntities: [PortfolioEntity] = []
     
     init() {
+        
         container = NSPersistentContainer(name: containerName)
         container.loadPersistentStores { (_, error) in
             if let error = error {
