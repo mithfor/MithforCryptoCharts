@@ -146,3 +146,29 @@ struct CoinModel: Identifiable, Codable {
 struct SparklineIn7D: Codable {
     let price: [Double]?
 }
+
+extension SparklineIn7D {
+    
+    var movingAveragePrice: [Double]? {
+        return movingAverage(timeSeries: self.price ?? [], smoothingWindow: 6)
+    }
+    
+    private func movingAverage(timeSeries: [Double], smoothingWindow: Int) -> [Double] {
+        var result: [Double] = []
+        
+        var currentSum = 0.0
+        for ind in 0..<smoothingWindow {
+            currentSum += Double(timeSeries[ind])
+        }
+        result.append(Double(currentSum) / Double(smoothingWindow))
+        
+        for ind in 0..<timeSeries.count - smoothingWindow {
+            currentSum -= Double(timeSeries[ind])
+            currentSum += Double(timeSeries[ind + smoothingWindow])
+            let currentAvg = currentSum / Double(smoothingWindow)
+            result.append(Double(currentAvg))
+        }
+        
+        return result
+    }
+}

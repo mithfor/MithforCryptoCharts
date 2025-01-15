@@ -19,7 +19,9 @@ struct ChartView: View {
     private let priceChange: Bool
 
     init(coin: CoinModel) {
-        data = coin.sparklineIn7D?.price ?? []
+//        data = coin.sparklineIn7D?.price ?? []
+        data = coin.sparklineIn7D?.movingAveragePrice ?? []
+        
         maxY = data.max() ?? 0.0
         minY = data.min() ?? 0.0
 
