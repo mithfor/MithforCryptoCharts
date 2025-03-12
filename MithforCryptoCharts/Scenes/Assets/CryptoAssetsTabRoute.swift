@@ -21,7 +21,7 @@ extension CryptoAssetsTabRoute where Self: Router {
 
         // MARK: - create HomeViewModel
 
-        @StateObject var homeViewModel = ViewModelsFactory.shared.createHomeViewModel()
+        @ObservedObject var homeViewModel = ViewModelsFactory.shared.createHomeViewModel()
 
         let viewController: UIViewController?
         

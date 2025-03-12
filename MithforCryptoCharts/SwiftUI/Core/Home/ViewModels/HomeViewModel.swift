@@ -12,7 +12,7 @@ enum HomeViewModelState {
     case inititate, loading, pending
 }
 
-class HomeViewModel: ObservableObject, SubscriptableViewModel {
+class HomeViewModel: ObservableObject, Subscriptable {
     
     @Published var statistics: [StatisticModel] = []
     @Published var allCoins: [CoinModel] = []

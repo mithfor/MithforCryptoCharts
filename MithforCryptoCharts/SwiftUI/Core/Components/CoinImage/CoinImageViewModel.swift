@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class CoinImageViewModel: ObservableObject, SubscriptableViewModel {
+class CoinImageViewModel: ObservableObject, Subscriptable {
     @Published var image: UIImage?
     @Published var isLoading: Bool = false
     
