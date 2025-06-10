@@ -23,7 +23,7 @@ class MarketDataModelTests: XCTestCase {
         """.data(using: .utf8)!
         
         do {
-            let model = try JSONDecoder().decode(MarketDatalModel.self, from: json)
+            let model = try JSONDecoder().decode(MarketDataModel.self, from: json)
             XCTAssertEqual(model.totalMarketCap["usd"], 123456789000)
             XCTAssertEqual(model.totalVolume["usd"], 98765432000)
             XCTAssertEqual(model.marketCapPercentage["btc"], 0.4567)
@@ -43,10 +43,79 @@ class MarketDataModelTests: XCTestCase {
         """.data(using: .utf8)!
         
         do {
-            let model = try JSONDecoder().decode(MarketDatalModel.self, from: json)
+            let model = try JSONDecoder().decode(MarketDataModel.self, from: json)
             XCTAssertNil(model.marketCapChangePercentage24HUsd)
         } catch {
             XCTFail("Decoding failed \(error)")
         }
+    }
+    
+    // MARK: - Computed Properties Tests
+    
+    func testMarketCup() {
+        let model = MarketDataModel(
+            totalMarketCap: ["usd": 123456789000, "eur": 102345678900],
+            totalVolume: [:],
+            marketCapPercentage: [:],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.marketCap, "$123.46Bn")
+        
+    }
+    
+    func testMarketCupMissingUSD() {
+        let model = MarketDataModel(
+            totalMarketCap: ["eur": 102345678900],
+            totalVolume: [:],
+            marketCapPercentage: [:],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.marketCap, "")
+    }
+    
+    func testVolume() {
+        let model = MarketDataModel(
+            totalMarketCap: [:],
+            totalVolume: ["usd": 98765432000, "eur": 88765432000],
+            marketCapPercentage: [:],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.volume, "$98.77Bn")
+    }
+    
+    func testVolumeMissingUSD() {
+        let model = MarketDataModel(
+            totalMarketCap: [:],
+            totalVolume: ["eur": 88765432000],
+            marketCapPercentage: [:],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.volume, "")
+    }
+    
+    func testBitcoinDominance() {
+        let model = MarketDataModel(
+            totalMarketCap: [:],
+            totalVolume: [:],
+            marketCapPercentage: ["btc": 0.4567, "eth": 0.2345],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.bitcoinDominance, "0.46%")
+    }
+    
+    func testBitcoinDominanceMissngBTC() {
+        let model = MarketDataModel(
+            totalMarketCap: [:],
+            totalVolume: [:],
+            marketCapPercentage: ["eth": 0.2345],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.bitcoinDominance, "")
     }
 }
