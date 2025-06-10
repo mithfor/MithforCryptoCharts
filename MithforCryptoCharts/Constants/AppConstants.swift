@@ -8,12 +8,11 @@
 import UIKit
 
 struct AppConstants {
-    static let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     
     static let navigationItemTextSize: CGFloat = 17
     
     struct API {
-        static let assetsBaseUrl: String = "http://api.coincap.io/v2/"
+        static let assetsBaseUrl: String = "http://rest.coincap.io/v3/"
         static let assetsPath: String = "assets"
     }
     

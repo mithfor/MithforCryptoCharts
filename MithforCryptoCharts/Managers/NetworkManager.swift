@@ -16,14 +16,13 @@ class NetworkManager {
     typealias AssetHistoryHandler = (Result<AssetListHistoryResponse, NetworkError>) -> Void
     typealias ImageHandler = (Result<UIImage, NetworkError>) -> Void
     typealias AssetHandler = (Result<CryptoAssetResponse, NetworkError>) -> Void
-        
-    private let baseURL: String = "http://api.coincap.io/v2/"
     
     private init() {}
     
     func fetchAssetHistory(id: String, completed: @escaping AssetHistoryHandler) {
 
-        let endpoint = String("\(baseURL)assets/\(id)/history?interval=m30")
+        // TODO: - Extract to EndPointFormatter struct
+        let endpoint = String("\(assetsEndPoint)/\(id)/history?interval=m30")
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.endpoint))
@@ -65,7 +64,7 @@ class NetworkManager {
     
     func fetchAsset(by id: String, completed: @escaping AssetHandler) {
         
-        let endpoint = String("\(baseURL)assets/\(id)")
+        let endpoint = String("\(assetsEndPoint)/\(id)")
         guard let url = URL(string: endpoint) else {
             completed(.failure(.endpoint))
             return
@@ -106,7 +105,7 @@ class NetworkManager {
     func fetchCryptoAssets( page: Int,
                       completed: @escaping CryptoAssetsHandler) {
         
-        let endpoint = String("\(baseURL)assets")
+        let endpoint = assetsEndPoint
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.endpoint))
@@ -190,5 +189,9 @@ class NetworkManager {
         }
         
         task.resume()
+    }
+    
+    private var assetsEndPoint: String {
+        return String("\(AppConstants.API.assetsBaseUrl)/\(AppConstants.API.assetsPath)")
     }
 }
