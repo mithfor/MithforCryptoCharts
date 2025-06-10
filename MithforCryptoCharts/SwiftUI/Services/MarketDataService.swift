@@ -12,7 +12,7 @@ class MarketDataService: DataService {
 
 //    private var logger = Logger()
     
-    @Published var marketData: MarketDatalModel?
+    @Published var marketData: MarketDataModel?
     
     var marketDataSubscription: AnyCancellable?
     

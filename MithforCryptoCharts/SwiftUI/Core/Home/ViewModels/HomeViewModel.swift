@@ -146,7 +146,7 @@ class HomeViewModel: ObservableObject, Subscriptable {
             }
     }
 
-    private func mapGlobalMarketData(marketData: MarketDatalModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
+    private func mapGlobalMarketData(marketData: MarketDataModel?, portfolioCoins: [CoinModel]) -> [StatisticModel] {
 
         var stats: [StatisticModel] = []
                        

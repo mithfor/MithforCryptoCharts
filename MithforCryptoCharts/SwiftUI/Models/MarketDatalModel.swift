@@ -168,10 +168,10 @@ import Foundation
  */
 
 struct GlobalData: Codable {
-    let data: MarketDatalModel?
+    let data: MarketDataModel?
 }
 
-struct MarketDatalModel: Codable {
+struct MarketDataModel: Codable {
     let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]
     let marketCapChangePercentage24HUsd: Double?
 
