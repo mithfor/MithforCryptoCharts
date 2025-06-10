@@ -118,4 +118,46 @@ class MarketDataModelTests: XCTestCase {
         
         XCTAssertEqual(model.bitcoinDominance, "")
     }
+    
+    // MARK: - Edge Cases
+    
+    func testEmptyDictionaries() {
+        let model = MarketDataModel(
+            totalMarketCap: [:],
+            totalVolume: [:],
+            marketCapPercentage: [:],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.marketCap, "")
+        XCTAssertEqual(model.volume, "")
+        XCTAssertEqual(model.bitcoinDominance, "")
+    }
+    
+    func testVerySmallValues() {
+        let model = MarketDataModel(
+            totalMarketCap: ["usd": 123],
+            totalVolume: ["usd": 456],
+            marketCapPercentage: ["btc": 0.0001],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.marketCap, "$123.00")
+        XCTAssertEqual(model.volume, "$456.00")
+        XCTAssertEqual(model.bitcoinDominance, "0.00%")
+        
+    }
+    
+    func testVeryLargeValues() {
+        let model = MarketDataModel(
+            totalMarketCap: ["usd": 1_234_567_890_000_000],
+            totalVolume: ["usd": 9_876_543_210_000_000],
+            marketCapPercentage: ["btc": 0.9999],
+            marketCapChangePercentage24HUsd: nil
+        )
+        
+        XCTAssertEqual(model.marketCap, "$1234.57Tr")
+        XCTAssertEqual(model.volume, "$9876.54Tr")
+        XCTAssertEqual(model.bitcoinDominance, "1.00%")
+    }
 }
