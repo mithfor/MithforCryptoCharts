@@ -14,6 +14,8 @@ protocol InteractingError {
 protocol NetworkService {
     func request<Request: DataRequest>(_ request: Request,
                                        completion: @escaping (Result<Request.Response, NetworkError>) -> Void)
+    
+    func request<Request: DataRequest>(_ request: Request) async throws -> Request.Response
 }
 
 class DefaultNetworkService: NetworkService {
@@ -63,5 +65,40 @@ class DefaultNetworkService: NetworkService {
             
         }
         .resume()
+    }
+    
+    func request<Request: DataRequest>(_ request: Request) async throws -> Request.Response {
+        guard var urlComponent = URLComponents(string: request.url) else {
+            throw NetworkError.endpoint
+        }
+        
+        let queryItems: [URLQueryItem] = request.queryItems.map {
+            URLQueryItem(name: $0.key, value: $0.value)
+        }
+        
+        urlComponent.queryItems = queryItems
+        
+        guard let url = urlComponent.url else {
+            throw NetworkError.endpoint
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.method.rawValue
+        urlRequest.allHTTPHeaderFields = request.headers
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              200..<300 ~= httpResponse.statusCode else {
+            throw NetworkError.invalidResponse
+        }
+        
+        do {
+            return try request.decode(data)
+        } catch let error as NetworkError {
+            throw error
+        } catch {
+            throw NetworkError.unableToDecode
+        }
     }
 }
