@@ -9,6 +9,42 @@ import Foundation
 import Combine
 
 final class DetailViewModel: ObservableObject {
+    
+    enum StatisticModelType: String {
+        case rank
+        case marketCapitalization
+        case volume
+        case high24h
+        case low24h
+        case priceChange24h
+        case marketCapitalizationChange24h
+        case blockTime
+        case hashingAlgorithm
+        
+        var description: String {
+            switch self {
+                    
+                case .rank:
+                    "Rank"
+                case .marketCapitalization:
+                    "Market Capitalization"
+                case .volume:
+                    "Volume"
+                case .high24h:
+                    "24h High"
+                case .low24h:
+                    "24h Low"
+                case .priceChange24h:
+                    "24h Price Change"
+                case .marketCapitalizationChange24h:
+                    "24h Market Capitalization"
+                case .blockTime:
+                    "Block Time"
+                case .hashingAlgorithm:
+                    "Hashing Algorithm"
+            }
+        }
+    }
 
     @Published var overviewStatistics: [StatisticModel] = []
     @Published var additionalStatistics: [StatisticModel] = []
@@ -122,7 +158,7 @@ private extension DetailViewModel {
         let marketCapChange = coin.marketCapChangePercentage24H
         
         return StatisticModel(
-            title: "Market Capitalization",
+            title: StatisticModelType.marketCapitalization.description,
             value: marketCap,
             percentageChange: marketCapChange
         )
@@ -132,7 +168,7 @@ private extension DetailViewModel {
         let rank = "\(coin.rank)"
         
         return StatisticModel(
-            title: "Rank",
+            title: StatisticModelType.rank.description,
             value: rank
         )
     }
@@ -141,7 +177,7 @@ private extension DetailViewModel {
         let volume = "$" + (coin.totalVolume?.formatedWithAbbreviations() ?? "")
         
         return  StatisticModel(
-            title: "Volume",
+            title: StatisticModelType.volume.description,
             value: volume
         )
     }
@@ -150,7 +186,7 @@ private extension DetailViewModel {
         let high = coin.high24H?.asCurrencyWith6Decimals() ?? "n/a"
         
         return StatisticModel(
-            title: "24h High",
+            title: StatisticModelType.high24h.description,
             value: high
         )
     }
@@ -159,7 +195,7 @@ private extension DetailViewModel {
         let low = coin.low24H?.asCurrencyWith6Decimals() ?? "n/a"
         
         return StatisticModel(
-            title: "24h Low",
+            title: StatisticModelType.low24h.description,
             value: low
         )
     }
@@ -169,7 +205,7 @@ private extension DetailViewModel {
         let pricePercentChange = coin.priceChangePercentage24H
         
         return StatisticModel(
-            title: "24h Price Change",
+            title: StatisticModelType.priceChange24h.description,
             value: priceChange,
             percentageChange: pricePercentChange
         )
@@ -180,7 +216,7 @@ private extension DetailViewModel {
         let marketCapPercentChange = coin.marketCapChangePercentage24H
         
         return StatisticModel(
-            title: "24h Market Capitalization Change",
+            title: StatisticModelType.marketCapitalization.description,
             value: marketCapChange,
             percentageChange: marketCapPercentChange
         )
@@ -191,7 +227,7 @@ private extension DetailViewModel {
         let blockTimeString = blockTime == 0 ? "n/a" : "\(blockTime)"
         
         return StatisticModel(
-            title: "Block Time",
+            title: StatisticModelType.blockTime.description,
             value: blockTimeString
         )
     }
@@ -200,7 +236,7 @@ private extension DetailViewModel {
         let hashing = coinDetail?.hashingAlgorithm ?? "n/a"
         
         return StatisticModel(
-            title: "Hashing Algorithm",
+            title: StatisticModelType.hashingAlgorithm.description,
             value: hashing
         )
     }
