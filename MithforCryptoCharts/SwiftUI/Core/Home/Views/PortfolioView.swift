@@ -14,6 +14,10 @@ struct PortfolioView: View {
     @State private var quantityText: String = ""
     @State private var showCheckmark: Bool = false
     
+    private var canSave: Bool {
+        selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -28,15 +32,10 @@ struct PortfolioView: View {
                 }
             }
             .navigationTitle("Edit portfolio")
-            .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton()
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    trailingNavBarButtons
-                }
-            })
+            .toolbar {
+                leadingToolBarItems
+                trailingToolBarItems
+            }
             .onChange(of: viewModel.searchText) { newValue in
                 if newValue == "" {
                     removeSelectedCoin()
@@ -132,24 +131,24 @@ extension PortfolioView {
             return 0.0
     }
     
-    private var trailingNavBarButtons: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "checkmark")
-                .opacity(showCheckmark ? 1.0 : 0.0)
-            Button(action: {
-                saveButtonPressed()
-            }, label: {
-                Text("Save".uppercased())
-                    .foregroundStyle(Color.theme.primaryText)
-                    .opacity(
-                        (selectedCoin != nil
-                         &&
-                         selectedCoin?.currentHoldings != Double(quantityText))
-                        ? 1.0 : 0.0
-                    )
-            })
+    private var leadingToolBarItems: some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            XMarkButton()
         }
-        .font(.headline)
+    }
+    
+    // TODO: - Checkmark and SaveButton should be on the same place?
+    
+    private var trailingToolBarItems: some ToolbarContent {
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            
+            CheckMarkView(visible: showCheckmark)
+
+            SaveButton(
+                canSave: canSave,
+                action: saveButtonPressed
+            )
+        }
     }
     
     private func saveButtonPressed() {
@@ -185,5 +184,33 @@ extension PortfolioView {
     private func removeSelectedCoin() {
         selectedCoin = nil
         viewModel.searchText = ""
+    }
+}
+
+
+extension PortfolioView {
+    struct SaveButton: View {
+        
+        var canSave: Bool
+        var action: () -> Void
+        
+        var body: some View {
+            Button(
+                action: action) {
+                    Text("Save".uppercased())
+                        .foregroundStyle(Color.theme.primaryText)
+                        .opacity(canSave ? 1.0 : 0.0)
+                }
+        }
+    }
+
+    struct CheckMarkView: View {
+        
+        let visible: Bool
+        
+        var body: some View {
+            Image(systemName: "checkmark")
+                .opacity(visible ? 1.0 : 0.0)
+        }
     }
 }
